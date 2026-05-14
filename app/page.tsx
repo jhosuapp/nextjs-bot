@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { HomeView } from "@/src/features/home/views/Home.view";
+import { HomeView } from "../src/features/home/views/Home.view";
+import { PageTransition } from "../src/shared/layouts/pageTransition/PageTransition";
 
 export const metadata: Metadata = {
   title: "Home | IA",
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeView />;
+  return (
+    <PageTransition>
+      <HomeView />
+    </PageTransition>
+  );
 }

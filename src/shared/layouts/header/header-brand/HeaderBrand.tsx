@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import type { HeaderContent } from './header-content';
+import type { HeaderContent } from '../header-content';
 
 import styles from './header-brand.module.css';
 

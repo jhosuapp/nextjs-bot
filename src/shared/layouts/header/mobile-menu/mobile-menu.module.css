@@ -35,7 +35,10 @@
 .panel {
   @apply fixed left-3 right-3 z-50 flex flex-col gap-4 rounded-3xl border p-5;
   top: calc(env(safe-area-inset-top, 0px) + 4.5rem);
-  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 6rem);
+  max-height: calc(
+    100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) -
+      6rem
+  );
   overflow-y: auto;
   background: var(--surface-elevated);
   border-color: var(--border-subtle);
@@ -66,28 +69,4 @@
 
 .ctas {
   @apply flex w-full flex-col gap-2;
-}
-
-.cta {
-  @apply inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold no-underline tracking-[-0.005em] transition-[background,color,box-shadow,transform] duration-200;
-}
-
-.ctaPrimary {
-  background: var(--secondary);
-  color: var(--text-on-dark);
-  box-shadow: 0 8px 20px -10px rgba(0, 22, 67, 0.35);
-}
-
-.ctaPrimary:hover {
-  background: var(--accent-cta-hover);
-}
-
-.ctaSecondary {
-  background: transparent;
-  color: var(--text-strong);
-  border: 1px solid var(--border-subtle);
-}
-
-.ctaSecondary:hover {
-  background: var(--bg-section);
 }

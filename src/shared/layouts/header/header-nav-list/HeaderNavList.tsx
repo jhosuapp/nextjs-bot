@@ -4,8 +4,9 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
-import type { NavLink } from './header-content';
+import type { NavLink } from '../header-content';
 import styles from './header-nav-list.module.css';
+import Link from 'next/link';
 
 type Props = {
   items: ReadonlyArray<NavLink>;
@@ -42,13 +43,13 @@ const HeaderNavList = ({
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >
-          <a
+          <Link
             href={item.href}
             className={styles.link}
             onClick={onItemClick}
           >
             {item.label}
-          </a>
+          </Link>
         </motion.li>
       ))}
     </ul>

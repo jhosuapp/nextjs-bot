@@ -12,11 +12,12 @@ import { useEffect, useId } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
-import type { HeaderContent } from './header-content';
-import { HeaderNavList } from './HeaderNavList';
-import { LanguageDropdown } from './LanguageDropdown';
-import { ThemeToggle } from './ThemeToggle';
+import type { HeaderContent } from '../header-content';
+import { HeaderNavList } from '../header-nav-list/HeaderNavList';
+import { LanguageDropdown } from '../language-dropdown/LanguageDropdown';
+import { ThemeToggle } from '../theme-toggle/ThemeToggle';
 import styles from './mobile-menu.module.css';
+import { Button } from '@/src/shared/components/button/Button';
 
 type Props = {
   open: boolean;
@@ -158,21 +159,20 @@ const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
               </motion.div>
 
               <motion.div className={styles.ctas} variants={groupVariants}>
-                <a
-                  href={content.secondaryCta.href}
-                  className={`${styles.cta} ${styles.ctaSecondary}`}
+                <Button
+                  className='!w-full'
+                  text={content.secondaryCta.label}
+                  style="secondary"
+                  type="button"
                   onClick={onClose}
-                >
-                  {content.secondaryCta.label}
-                </a>
-                <a
-                  href={content.primaryCta.href}
-                  className={`${styles.cta} ${styles.ctaPrimary}`}
+                />
+                <Button
+                  className='!w-full'
+                  text={content.primaryCta.label}
+                  style="primary"
+                  type="button"
                   onClick={onClose}
-                >
-                  {content.primaryCta.label}
-                  <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
-                </a>
+                />
               </motion.div>
             </motion.div>
           </>

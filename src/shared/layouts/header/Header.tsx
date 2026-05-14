@@ -6,11 +6,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
 import { headerContent } from './header-content';
-import { HeaderBrand } from './HeaderBrand';
-import { HeaderNavList } from './HeaderNavList';
-import { LanguageDropdown } from './LanguageDropdown';
-import { MobileMenu } from './MobileMenu';
-import { ThemeToggle } from './ThemeToggle';
+import { HeaderBrand } from './header-brand/HeaderBrand';
+import { HeaderNavList } from './header-nav-list/HeaderNavList';
+import { LanguageDropdown } from './language-dropdown/LanguageDropdown';
+import { MobileMenu } from './mobile-menu/MobileMenu';
+import { ThemeToggle } from './theme-toggle/ThemeToggle';
 import { Button } from '../../components/button/Button';
 
 import styles from './header.module.css';
