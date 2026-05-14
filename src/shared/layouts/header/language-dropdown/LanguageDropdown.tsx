@@ -6,29 +6,27 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useId, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import {
-  useLanguageStore,
-  type Locale,
-} from '@/src/shared/stores/language.store';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { headerStaticData } from '../header-content';
 
-import type { LanguageOption } from '../header-content';
 import styles from './language-dropdown.module.css';
 
-type Props = { languages: ReadonlyArray<LanguageOption> };
+type Props = { t: ITranslations };
 
-const LanguageDropdown = ({ languages }: Props) => {
+const LanguageDropdown = ({ t }: Props) => {
   const reduce = useReducedMotion();
-  const { locale, setLocale, hydrate } = useLanguageStore();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const menuId = useId();
 
-  useEffect(() => {
-    hydrate();
-  }, [hydrate]);
+  const currentLocale = router.locale ?? 'es';
+  const languages = headerStaticData.languages;
+  const current = languages.find((l) => l.code === currentLocale) ?? languages[0];
 
   useEffect(() => {
     if (!open) return;
@@ -55,13 +53,11 @@ const LanguageDropdown = ({ languages }: Props) => {
     };
   }, [open]);
 
-  const handleSelect = (next: Locale) => {
-    setLocale(next);
+  const handleSelect = (code: string) => {
+    router.push(router.pathname, router.asPath, { locale: code });
     setOpen(false);
     triggerRef.current?.focus();
   };
-
-  const current = languages.find((l) => l.code === locale) ?? languages[0];
 
   return (
     <div className={styles.root}>
@@ -72,7 +68,7 @@ const LanguageDropdown = ({ languages }: Props) => {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={menuId}
-        aria-label={`Current language: ${current.native}. Change language`}
+        aria-label={t('header.changeLanguageAria', { native: current.native }) as string}
         onClick={() => setOpen((v) => !v)}
         whileHover={reduce ? undefined : { y: -1 }}
         whileTap={reduce ? undefined : { scale: 0.96 }}
@@ -102,7 +98,7 @@ const LanguageDropdown = ({ languages }: Props) => {
             ref={menuRef}
             id={menuId}
             role="listbox"
-            aria-label="Language"
+            aria-label={t('header.languageListAria') as string}
             className={styles.menu}
             initial={
               reduce
@@ -118,7 +114,7 @@ const LanguageDropdown = ({ languages }: Props) => {
             transition={{ duration: DURATION.fast, ease: EASE }}
           >
             {languages.map((lang) => {
-              const active = lang.code === locale;
+              const active = lang.code === currentLocale;
               return (
                 <button
                   key={lang.code}

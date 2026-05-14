@@ -7,14 +7,16 @@ import {
   StaggerItem,
 } from '@/src/shared/components/motion/StaggerGroup';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import type { SplitFeatureContent } from '@/src/features/home/data/home-content';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './agentic-videos-section.module.css';
 
-type Props = { content: SplitFeatureContent };
+type Props = { t: ITranslations };
 
-const AgenticVideosSection = ({ content }: Props) => {
+const AgenticVideosSection = ({ t }: Props) => {
   const reduce = useReducedMotion();
+  const { agentic } = homeStaticData;
 
   return (
     <section className={styles.section} aria-labelledby="agentic-title">
@@ -25,14 +27,14 @@ const AgenticVideosSection = ({ content }: Props) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: DURATION.slow, ease: EASE }}
-          aria-label={content.mediaAlt}
+          aria-label={t('agentic.mediaAlt') as string}
         >
           <div className={styles.mediaInner} aria-hidden="true">
-            <FontAwesomeIcon icon={content.icon} className={styles.mediaIcon} />
+            <FontAwesomeIcon icon={agentic.icon} className={styles.mediaIcon} />
             <button
               type="button"
               className={styles.playButton}
-              aria-label="Play preview"
+              aria-label={t('agentic.playAria') as string}
             >
               <FontAwesomeIcon icon={faPlay} />
             </button>
@@ -41,17 +43,17 @@ const AgenticVideosSection = ({ content }: Props) => {
 
         <StaggerGroup className={styles.copy} stagger={0.1} amount={0.3}>
           <StaggerItem as="span" className={styles.eyebrow}>
-            {content.eyebrow}
+            {t('agentic.eyebrow')}
           </StaggerItem>
           <StaggerItem as="h2" className={styles.title}>
-            <span id="agentic-title">{content.title}</span>
+            <span id="agentic-title">{t('agentic.title')}</span>
           </StaggerItem>
           <StaggerItem as="p" className={styles.description}>
-            {content.description}
+            {t('agentic.description')}
           </StaggerItem>
           <StaggerItem>
-            <a className={styles.cta} href={content.cta.href}>
-              <span>{content.cta.label}</span>
+            <a className={styles.cta} href={agentic.cta.href}>
+              <span>{t('agentic.cta')}</span>
               <span aria-hidden="true">→</span>
             </a>
           </StaggerItem>

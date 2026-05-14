@@ -2,7 +2,7 @@ import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
-import type { NavLink } from '../header-content';
+type NavLink = { label: string; href: string };
 import styles from './header-nav-list.module.css';
 import Link from 'next/link';
 import { useLenisStore } from '@/src/shared/stores/lenis.store';
@@ -52,7 +52,7 @@ const HeaderNavList = ({
     >
       {items.map((item) => (
         <motion.li
-          key={item.label}
+          key={item.href}
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >

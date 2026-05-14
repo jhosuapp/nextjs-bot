@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import {
   AnimatePresence,
   motion,
@@ -9,19 +9,23 @@ import {
 import { useEffect, useId } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
-import type { HeaderContent } from '../header-content';
+import { headerStaticData } from '../header-content';
 import { HeaderNavList } from '../header-nav-list/HeaderNavList';
 import { LanguageDropdown } from '../language-dropdown/LanguageDropdown';
 import { ThemeToggle } from '../theme-toggle/ThemeToggle';
-import styles from './mobile-menu.module.css';
 import { Button } from '@/src/shared/components/button/Button';
+import styles from './mobile-menu.module.css';
+
+type NavItem = { label: string; href: string };
 
 type Props = {
   open: boolean;
   onClose: () => void;
   onToggle: () => void;
-  content: HeaderContent;
+  t: ITranslations;
+  translatedNav: ReadonlyArray<NavItem>;
 };
 
 const panelVariants: Variants = {
@@ -55,7 +59,7 @@ const groupVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } },
 };
 
-const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
+const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: Props) => {
   const reduce = useReducedMotion();
   const panelId = useId();
 
@@ -83,7 +87,10 @@ const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
       <motion.button
         type="button"
         className={styles.trigger}
-        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-label={open
+          ? (t('header.mobileMenu.closeAria') as string)
+          : (t('header.mobileMenu.openAria') as string)
+        }
         aria-expanded={open}
         aria-controls={panelId}
         onClick={onToggle}
@@ -126,7 +133,7 @@ const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
               id={panelId}
               role="dialog"
               aria-modal="true"
-              aria-label="Site navigation"
+              aria-label={t('header.mobileMenu.dialogAria') as string}
               className={styles.panel}
               variants={variants}
               initial="hidden"
@@ -139,7 +146,7 @@ const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
                 aria-label="Primary"
               >
                 <HeaderNavList
-                  items={content.nav}
+                  items={translatedNav}
                   variant="mobile"
                   onItemClick={onClose}
                   animated
@@ -149,24 +156,24 @@ const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
               <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
 
               <motion.div className={styles.controlsRow} variants={groupVariants}>
-                <div className={styles.controlsLabel}>Preferences</div>
+                <div className={styles.controlsLabel}>{t('header.mobileMenu.preferences')}</div>
                 <div className={styles.controls}>
-                  <ThemeToggle />
-                  <LanguageDropdown languages={content.languages} />
+                  <ThemeToggle t={t} />
+                  <LanguageDropdown t={t} />
                 </div>
               </motion.div>
 
               <motion.div className={styles.ctas} variants={groupVariants}>
                 <Button
                   className='!w-full'
-                  text={content.secondaryCta.label}
+                  text={t('header.signIn') as string}
                   style="secondary"
                   type="button"
                   onClick={onClose}
                 />
                 <Button
                   className='!w-full'
-                  text={content.primaryCta.label}
+                  text={t('header.startFree') as string}
                   style="primary"
                   type="button"
                   onClick={onClose}

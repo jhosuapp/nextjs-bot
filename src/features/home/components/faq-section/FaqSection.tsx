@@ -9,23 +9,26 @@ import {
   StaggerItem,
 } from '@/src/shared/components/motion/StaggerGroup';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import type { FaqContent, FaqItem } from '@/src/features/home/data/home-content';
-
-import styles from './faq-section.module.css';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { homeStaticData } from '@/src/features/home/data/home-content';
 import { Button } from '@/src/shared/components/button/Button';
 
-type Props = { content: FaqContent };
+import styles from './faq-section.module.css';
+
+type Props = { t: ITranslations };
 
 type AccordionItemProps = {
-  item: FaqItem;
+  id: string;
+  question: string;
+  answer: string;
   isOpen: boolean;
   onToggle: () => void;
 };
 
-const AccordionItem = ({ item, isOpen, onToggle }: AccordionItemProps) => {
+const AccordionItem = ({ id, question, answer, isOpen, onToggle }: AccordionItemProps) => {
   const reduce = useReducedMotion();
-  const panelId = `faq-panel-${item.id}`;
-  const buttonId = `faq-trigger-${item.id}`;
+  const panelId = `faq-panel-${id}`;
+  const buttonId = `faq-trigger-${id}`;
 
   return (
     <div className={styles.item} data-open={isOpen}>
@@ -38,7 +41,7 @@ const AccordionItem = ({ item, isOpen, onToggle }: AccordionItemProps) => {
           aria-controls={panelId}
           onClick={onToggle}
         >
-          <span className={styles.question}>{item.question}</span>
+          <span className={styles.question}>{question}</span>
           <motion.span
             className={styles.chevron}
             animate={{ rotate: isOpen ? 180 : 0 }}
@@ -76,7 +79,7 @@ const AccordionItem = ({ item, isOpen, onToggle }: AccordionItemProps) => {
               opacity: { duration: 0.2, ease: EASE },
             }}
           >
-            <p className={styles.answer}>{item.answer}</p>
+            <p className={styles.answer}>{answer}</p>
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -84,9 +87,10 @@ const AccordionItem = ({ item, isOpen, onToggle }: AccordionItemProps) => {
   );
 };
 
-const FaqSection = ({ content }: Props) => {
+const FaqSection = ({ t }: Props) => {
+  const { faq } = homeStaticData;
   const [openIds, setOpenIds] = useState<ReadonlyArray<string>>([
-    content.items[0]?.id ?? '',
+    faq.items[0]?.id ?? '',
   ]);
 
   const toggle = (id: string) => {
@@ -98,18 +102,20 @@ const FaqSection = ({ content }: Props) => {
   return (
     <section className={styles.section} aria-labelledby="faq-title">
       <FadeIn className={styles.header} y={16}>
-        <span className={styles.eyebrow}>{content.eyebrow}</span>
+        <span className={styles.eyebrow}>{t('faq.eyebrow')}</span>
         <h2 id="faq-title" className={styles.title}>
-          {content.title}
+          {t('faq.title')}
         </h2>
-        <p className={styles.description}>{content.description}</p>
+        <p className={styles.description}>{t('faq.description')}</p>
       </FadeIn>
 
       <StaggerGroup className={styles.list} stagger={0.06} amount={0.1}>
-        {content.items.map((item) => (
+        {faq.items.map((item) => (
           <StaggerItem key={item.id}>
             <AccordionItem
-              item={item}
+              id={item.id}
+              question={t(`faq.items.${item.id}.question`) as string}
+              answer={t(`faq.items.${item.id}.answer`) as string}
               isOpen={openIds.includes(item.id)}
               onToggle={() => toggle(item.id)}
             />
@@ -118,9 +124,9 @@ const FaqSection = ({ content }: Props) => {
       </StaggerGroup>
 
       <FadeIn className={styles.footer} delay={0.1} y={8} duration="fast">
-        <span className={styles.footerLabel}>Still have a question?</span>
-        <Button 
-          text={content.contactCta.label}
+        <span className={styles.footerLabel}>{t('faq.stillHaveQuestion')}</span>
+        <Button
+          text={t('faq.contactCta') as string}
           style="secondary"
           type="button"
         />

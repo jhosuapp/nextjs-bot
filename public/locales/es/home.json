@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "eyebrowBadge": "Nuevo",
+    "eyebrowText": "V4 Agentes Visuales Expresivos ya está aquí",
+    "titleLead": "Avatares de IA que se sienten",
+    "titleAccent": "genuinamente",
+    "titleTrail": "humanos.",
+    "subtitle": "Una plataforma de humanos digitales que ayuda a los equipos a explicar con claridad, conectar personalmente y escalar mensajes a cualquier audiencia — en segundos.",
+    "primaryCta": "Comenzar — gratis",
+    "secondaryCta": "Ver demo de 60s",
+    "trustNote": "Con la confianza de 10,000+ equipos · Sin tarjeta de crédito",
+    "highlights": [
+      { "label": "Conf. promedio", "value": "< 2 min" },
+      { "label": "Idiomas", "value": "80+" },
+      { "label": "SLA de disponibilidad", "value": "99.9%" }
+    ],
+    "mockup": {
+      "url": "lumina.ai / studio",
+      "badgeLabel": "EN VIVO · Avatar Studio",
+      "line": "\"Hola Marina — tus informes semanales están listos, repasémoslos.\"",
+      "streaming": "Transmisión · 24 fps",
+      "language": "Español (ES) → Inglés (US)",
+      "platformHighlights": "Destacados de la plataforma"
+    }
+  },
+  "trustedBy": {
+    "label": "Con la confianza de"
+  },
+  "agentic": {
+    "eyebrow": "Videos agénticos",
+    "title": "Transforma contenido pasivo en experiencias interactivas de IA.",
+    "description": "Convierte videos estáticos en agentes responsivos que se adaptan a cada espectador en tiempo real, responden preguntas de seguimiento y mantienen a tu audiencia comprometida.",
+    "cta": "Saber más",
+    "mediaAlt": "Vista previa de video con avatar interactivo",
+    "playAria": "Reproducir vista previa"
+  },
+  "realtime": {
+    "badge": "Nuevo · V4 Agentes Visuales Expresivos",
+    "title": "Conversaciones en tiempo real con inteligencia emocional.",
+    "description": "Diseñado para escala de nivel productivo: voz de baja latencia, expresiones faciales matizadas e intercambios naturales que se sienten humanos en cada paso.",
+    "cta": "Explorar V4"
+  },
+  "statement": {
+    "text": "Una plataforma para diseñar, implementar y escalar tus humanos digitales en todos los canales.",
+    "ariaLabel": "Declaración"
+  },
+  "audience": {
+    "eyebrow": "Para cada equipo",
+    "title": "Avatares de IA para cualquier equipo.",
+    "marketing": {
+      "label": "Marketing",
+      "title": "Personaliza cada campaña a escala.",
+      "description": "Crea videos de avatar con tu marca para cualquier segmento de audiencia en minutos, no semanas.",
+      "bullets": [
+        "Creatividades localizadas en 80+ idiomas",
+        "Prueba A/B de guiones sin nuevas filmaciones",
+        "Sincronización con tu CRM y CDP"
+      ]
+    },
+    "creators": {
+      "label": "Creadores de contenido",
+      "title": "Publica más, graba menos.",
+      "description": "Genera explicaciones completas y shorts desde un solo guión, con tu marca y a tiempo.",
+      "bullets": [
+        "Múltiples estilos de avatar y voces",
+        "Exportaciones verticales y horizontales con un clic",
+        "Subtitulado nativo en cualquier idioma"
+      ]
+    },
+    "learning": {
+      "label": "Aprendizaje y Desarrollo",
+      "title": "Implementa formación que realmente se retiene.",
+      "description": "Convierte documentos densos en cursos interactivos con avatares que responden preguntas a demanda.",
+      "bullets": [
+        "Avatares adaptativos con conciencia de cuestionarios",
+        "Compatible con SCORM / xAPI",
+        "Registros de auditoría para equipos de cumplimiento"
+      ]
+    },
+    "sales": {
+      "label": "Ventas",
+      "title": "Preséntate personalizado, siempre.",
+      "description": "Envía pitches de video 1:1 a escala y permite que los prospectos hagan preguntas a un agente siempre disponible.",
+      "bullets": [
+        "Genera videos de prospecto automáticamente desde CRM",
+        "Analíticas de engagement rastreables",
+        "Transferencia al calendario cuando el interés aumenta"
+      ]
+    }
+  },
+  "integrations": {
+    "title": "Combina nuestra plataforma con tus herramientas favoritas.",
+    "description": "Integraciones de primera clase con el stack en el que ya confías. Lleva los avatares donde ya ocurre tu trabajo.",
+    "cta": "Descubrir integraciones"
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Todo lo que necesitas saber.",
+    "description": "Preguntas comunes sobre Lumina — y si falta algo, nuestro equipo responde en menos de un día hábil.",
+    "contactCta": "Hablar con nuestro equipo",
+    "stillHaveQuestion": "¿Tienes otra pregunta?",
+    "items": {
+      "what-is": {
+        "question": "¿Qué hace realmente la plataforma?",
+        "answer": "Lumina convierte guiones, documentos y prompts en videos de avatares realistas y agentes en tiempo real que puedes integrar en tu producto, sitio de marketing, portal de formación o flujo de ventas."
+      },
+      "how-fast": {
+        "question": "¿Con qué rapidez puedo publicar mi primer avatar?",
+        "answer": "La mayoría de los equipos publican su primer avatar en menos de dos minutos desde el registro: elige un presentador, pega un guión, elige una voz e idioma, y luego exporta o integra."
+      },
+      "languages": {
+        "question": "¿Qué idiomas y voces son compatibles?",
+        "answer": "Admitimos más de 80 idiomas y locales con voces de sonido nativo, incluidos acentos regionales. También puedes clonar una voz de marca con consentimiento para planes premium."
+      },
+      "security": {
+        "question": "¿Están mis datos seguros para uso con contenido empresarial?",
+        "answer": "Sí. Somos SOC 2 Tipo II, ciframos los datos en reposo y en tránsito, nunca entrenamos modelos compartidos con contenido del cliente y ofrecemos residencia regional y SSO en planes empresariales."
+      },
+      "brand": {
+        "question": "¿Puedo usar mi propia imagen de marca o presentadores?",
+        "answer": "Por supuesto. Sube tu kit de marca, personaliza los atuendos y fondos de los avatares, o incorpora un presentador personalizado desde una grabación corta con consentimiento."
+      },
+      "pricing": {
+        "question": "¿Cómo funciona el precio?",
+        "answer": "Hay un nivel gratuito para personas y equipos pequeños, planes basados en uso para empresas en crecimiento y precios empresariales personalizados con infraestructura dedicada y SLAs."
+      }
+    }
+  }
+}

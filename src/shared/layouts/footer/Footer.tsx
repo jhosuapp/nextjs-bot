@@ -1,25 +1,28 @@
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+
 import { FooterBottom } from '@/src/shared/layouts/footer/bottom/FooterBottom';
-import { footerContent } from '@/src/shared/layouts/footer/footer-content';
 import { FooterNav } from '@/src/shared/layouts/footer/nav/FooterNav';
 import { FooterNewsletter } from '@/src/shared/layouts/footer/newsletter/FooterNewsletter';
 
 import styles from './footer.module.css';
 
-const Footer = () => {
+type Props = { t: ITranslations };
+
+const Footer = ({ t }: Props) => {
   return (
     <footer className={styles.footer} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
-        Site footer
+        {t('footer.heading')}
       </h2>
       <div className={styles.glow} aria-hidden="true" />
 
-      <FooterNewsletter content={footerContent.newsletter} />
+      <FooterNewsletter t={t} />
 
       <div className={styles.divider} aria-hidden="true" />
 
-      <FooterNav brand={footerContent.brand} content={footerContent.nav} />
+      <FooterNav t={t} />
 
-      <FooterBottom content={footerContent.bottom} />
+      <FooterBottom t={t} />
     </footer>
   );
 };

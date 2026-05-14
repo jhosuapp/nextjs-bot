@@ -1,0 +1,87 @@
+{
+  "seo": {
+    "homeTitle": "Startseite | Lumina",
+    "homeDescription": "KI-Avatare und interaktive Agenten für menschliche Kommunikation, entwickelt für Teams, die Nachrichten skalieren müssen, ohne die persönliche Note zu verlieren."
+  },
+  "nav": {
+    "product": "Produkt",
+    "solutions": "Lösungen",
+    "customers": "Kunden",
+    "pricing": "Preise",
+    "docs": "Dokumentation"
+  },
+  "header": {
+    "skipLink": "Zum Hauptinhalt springen",
+    "startFree": "Kostenlos starten",
+    "signIn": "Anmelden",
+    "changeLanguageAria": "Aktuelle Sprache: {{native}}. Sprache ändern",
+    "languageListAria": "Sprache",
+    "mobileMenu": {
+      "openAria": "Navigationsmenü öffnen",
+      "closeAria": "Navigationsmenü schließen",
+      "dialogAria": "Website-Navigation",
+      "preferences": "Einstellungen"
+    },
+    "themeToggle": {
+      "toLightAria": "Zum hellen Design wechseln",
+      "toDarkAria": "Zum dunklen Design wechseln"
+    }
+  },
+  "footer": {
+    "heading": "Seitenfußzeile",
+    "brand": {
+      "name": "Lumina",
+      "tagline": "KI-Avatare für menschliche Kommunikation.",
+      "homeAria": "{{name}} Startseite"
+    },
+    "newsletter": {
+      "eyebrow": "Newsletter",
+      "title": "Neuigkeiten direkt in Ihren Posteingang.",
+      "description": "Eine monatliche Zusammenfassung von Avatar-Releases, Anwendungsfällen und Plattform-Updates. Kein Spam, jederzeit abmeldbar.",
+      "placeholder": "sie@unternehmen.de",
+      "cta": "Abonnieren",
+      "successMessage": "Danke für Ihre Anmeldung — prüfen Sie Ihren Posteingang zur Bestätigung.",
+      "privacy": "Mit Ihrer Anmeldung stimmen Sie unserer Datenschutzrichtlinie zu.",
+      "emailLabel": "E-Mail-Adresse",
+      "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "subscribedLabel": "Abonniert"
+    },
+    "nav": {
+      "ariaLabel": "Fußzeilen-Navigation",
+      "product": {
+        "title": "Produkt",
+        "avatars": "Avatare",
+        "realtime": "Echtzeit-Agenten",
+        "integrations": "Integrationen",
+        "pricing": "Preise",
+        "changelog": "Änderungsprotokoll"
+      },
+      "company": {
+        "title": "Unternehmen",
+        "about": "Über uns",
+        "customers": "Kunden",
+        "careers": "Karriere",
+        "press": "Presse",
+        "contact": "Kontakt"
+      },
+      "resources": {
+        "title": "Ressourcen",
+        "docs": "Dokumentation",
+        "api": "API-Referenz",
+        "help": "Hilfezentrum",
+        "status": "Status",
+        "security": "Sicherheit"
+      }
+    },
+    "bottom": {
+      "copyright": "© {{year}} Lumina, Inc. Alle Rechte vorbehalten.",
+      "socialsAria": "Soziale Medien",
+      "legalsAria": "Rechtliche Links",
+      "legal": {
+        "privacy": "Datenschutz",
+        "terms": "AGB",
+        "cookies": "Cookies"
+      }
+    }
+  }
+}

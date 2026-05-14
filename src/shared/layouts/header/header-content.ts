@@ -1,48 +1,41 @@
-import type { Locale } from "@/src/shared/stores/language.store";
-
-type NavLink = {
-  label: string;
-  href: string;
-};
-
-type CTA = {
-  label: string;
+type NavLinkStatic = {
+  key: string;
   href: string;
 };
 
 type LanguageOption = {
-  code: Locale;
+  code: string;
   label: string;
   native: string;
 };
 
-type HeaderContent = {
+type HeaderStaticData = {
   brand: { name: string; mark: string };
-  nav: ReadonlyArray<NavLink>;
-  primaryCta: CTA;
-  secondaryCta: CTA;
+  nav: ReadonlyArray<NavLinkStatic>;
+  primaryCta: { href: string };
+  secondaryCta: { href: string };
   languages: ReadonlyArray<LanguageOption>;
 };
 
-const headerContent: HeaderContent = {
-  brand: { name: "Lumina", mark: "L" },
+const headerStaticData: HeaderStaticData = {
+  brand: { name: 'Lumina', mark: 'L' },
   nav: [
-    { label: "Product", href: "/login" },
-    { label: "Solutions", href: "/login" },
-    { label: "Customers", href: "/login" },
-    { label: "Pricing", href: "/login" },
-    { label: "Docs", href: "/login" },
+    { key: 'product', href: '/login' },
+    { key: 'solutions', href: '/login' },
+    { key: 'customers', href: '/login' },
+    { key: 'pricing', href: '/login' },
+    { key: 'docs', href: '/login' },
   ],
-  primaryCta: { label: "Start free", href: "#get-started" },
-  secondaryCta: { label: "Sign in", href: "#signin" },
+  primaryCta: { href: '#get-started' },
+  secondaryCta: { href: '#signin' },
   languages: [
-    { code: "en", label: "EN", native: "English" },
-    { code: "es", label: "ES", native: "Español" },
-    { code: "fr", label: "FR", native: "Français" },
-    { code: "de", label: "DE", native: "Deutsch" },
-    { code: "pt", label: "PT", native: "Português" },
+    { code: 'en', label: 'EN', native: 'English' },
+    { code: 'es', label: 'ES', native: 'Español' },
+    { code: 'fr', label: 'FR', native: 'Français' },
+    { code: 'de', label: 'DE', native: 'Deutsch' },
+    { code: 'pt', label: 'PT', native: 'Português' },
   ],
 };
 
-export { headerContent };
-export type { HeaderContent, NavLink, CTA, LanguageOption };
+export { headerStaticData };
+export type { HeaderStaticData, NavLinkStatic, LanguageOption };

@@ -2,45 +2,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
-import type {
-  FooterBrand,
-  FooterNav as FooterNavContent,
-} from '@/src/shared/layouts/footer/footer-content';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
 
 import styles from './footer-nav.module.css';
 
-type Props = {
-  brand: FooterBrand;
-  content: FooterNavContent;
-};
+type Props = { t: ITranslations };
 
-const FooterNav = ({ brand, content }: Props) => {
+const FooterNav = ({ t }: Props) => {
+  const { brand, nav } = footerStaticData;
+
   return (
     <div className={styles.root}>
       <div className={styles.brandBlock}>
         <Link
           href="/"
           className={styles.brandMark}
-          aria-label={`${brand.name} home`}
+          aria-label={t('footer.brand.homeAria', { name: brand.name }) as string}
         >
           <span className={styles.brandLogo} aria-hidden="true">
             <span className={styles.brandLogoInner}>L</span>
           </span>
           <span className={styles.brandName}>{brand.name}</span>
         </Link>
-        <p className={styles.brandTagline}>{brand.tagline}</p>
+        <p className={styles.brandTagline}>{t('footer.brand.tagline')}</p>
       </div>
 
       <nav
         className={styles.columns}
-        aria-label="Footer navigation"
+        aria-label={t('footer.nav.ariaLabel') as string}
       >
-        {content.columns.map((column) => (
-          <div key={column.title} className={styles.column}>
-            <h3 className={styles.columnTitle}>{column.title}</h3>
+        {nav.columns.map((column) => (
+          <div key={column.key} className={styles.column}>
+            <h3 className={styles.columnTitle}>
+              {t(`footer.nav.${column.key}.title`)}
+            </h3>
             <ul className={styles.list}>
               {column.links.map((link) => (
-                <li key={link.label} className={styles.listItem}>
+                <li key={link.key} className={styles.listItem}>
                   <a
                     href={link.href}
                     className={styles.link}
@@ -48,7 +47,7 @@ const FooterNav = ({ brand, content }: Props) => {
                       ? { target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
                   >
-                    <span>{link.label}</span>
+                    <span>{t(`footer.nav.${column.key}.${link.key}`)}</span>
                     {link.external ? (
                       <FontAwesomeIcon
                         icon={faArrowUpRightFromSquare}

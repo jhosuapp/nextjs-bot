@@ -2,15 +2,17 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import type { RealtimeContent } from '@/src/features/home/data/home-content';
-
-import styles from './realtime-agents-section.module.css';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { homeStaticData } from '@/src/features/home/data/home-content';
 import { Button } from '@/src/shared/components/button/Button';
 
-type Props = { content: RealtimeContent };
+import styles from './realtime-agents-section.module.css';
 
-const RealtimeAgentsSection = ({ content }: Props) => {
+type Props = { t: ITranslations };
+
+const RealtimeAgentsSection = ({ t }: Props) => {
   const reduce = useReducedMotion();
+  const { realtime } = homeStaticData;
 
   return (
     <section className={styles.section} aria-labelledby="realtime-title">
@@ -29,20 +31,20 @@ const RealtimeAgentsSection = ({ content }: Props) => {
           transition={{ duration: DURATION.fast, ease: EASE, delay: 0.15 }}
         >
           <span className={styles.badgeDot} aria-hidden="true" />
-          {content.badge}
+          {t('realtime.badge')}
         </motion.span>
 
         <FadeIn as="h2" className={styles.title} delay={0.1}>
-          <span id="realtime-title">{content.title}</span>
+          <span id="realtime-title">{t('realtime.title')}</span>
         </FadeIn>
 
         <FadeIn className={styles.description} delay={0.2}>
-          {content.description}
+          {t('realtime.description')}
         </FadeIn>
 
         <FadeIn delay={0.3} duration="fast">
           <Button
-            text={content.cta.label}
+            text={t('realtime.cta') as string}
             style="primary"
             type="button"
           />

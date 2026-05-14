@@ -1,0 +1,87 @@
+{
+  "seo": {
+    "homeTitle": "Inicio | Lumina",
+    "homeDescription": "Avatares de IA y agentes interactivos para comunicación humana, diseñados para equipos que necesitan escalar mensajes sin perder el toque personal."
+  },
+  "nav": {
+    "product": "Producto",
+    "solutions": "Soluciones",
+    "customers": "Clientes",
+    "pricing": "Precios",
+    "docs": "Documentación"
+  },
+  "header": {
+    "skipLink": "Ir al contenido principal",
+    "startFree": "Empieza gratis",
+    "signIn": "Iniciar sesión",
+    "changeLanguageAria": "Idioma actual: {{native}}. Cambiar idioma",
+    "languageListAria": "Idioma",
+    "mobileMenu": {
+      "openAria": "Abrir menú de navegación",
+      "closeAria": "Cerrar menú de navegación",
+      "dialogAria": "Navegación del sitio",
+      "preferences": "Preferencias"
+    },
+    "themeToggle": {
+      "toLightAria": "Cambiar a tema claro",
+      "toDarkAria": "Cambiar a tema oscuro"
+    }
+  },
+  "footer": {
+    "heading": "Pie de página",
+    "brand": {
+      "name": "Lumina",
+      "tagline": "Avatares de IA diseñados para comunicación humana.",
+      "homeAria": "Inicio de {{name}}"
+    },
+    "newsletter": {
+      "eyebrow": "Newsletter",
+      "title": "Novedades directamente en tu bandeja de entrada.",
+      "description": "Un resumen mensual de lanzamientos de avatares, casos de uso y actualizaciones de la plataforma. Sin spam, cancela cuando quieras.",
+      "placeholder": "tu@empresa.com",
+      "cta": "Suscribirse",
+      "successMessage": "¡Gracias por unirte! Revisa tu bandeja de entrada para confirmar.",
+      "privacy": "Al suscribirte aceptas nuestra política de privacidad.",
+      "emailLabel": "Dirección de correo",
+      "emailError": "Por favor ingresa una dirección de correo válida.",
+      "subscribedLabel": "Suscrito"
+    },
+    "nav": {
+      "ariaLabel": "Navegación del pie de página",
+      "product": {
+        "title": "Producto",
+        "avatars": "Avatares",
+        "realtime": "Agentes en tiempo real",
+        "integrations": "Integraciones",
+        "pricing": "Precios",
+        "changelog": "Registro de cambios"
+      },
+      "company": {
+        "title": "Empresa",
+        "about": "Acerca de",
+        "customers": "Clientes",
+        "careers": "Empleos",
+        "press": "Prensa",
+        "contact": "Contacto"
+      },
+      "resources": {
+        "title": "Recursos",
+        "docs": "Documentación",
+        "api": "Referencia API",
+        "help": "Centro de ayuda",
+        "status": "Estado",
+        "security": "Seguridad"
+      }
+    },
+    "bottom": {
+      "copyright": "© {{year}} Lumina, Inc. Todos los derechos reservados.",
+      "socialsAria": "Redes sociales",
+      "legalsAria": "Enlaces legales",
+      "legal": {
+        "privacy": "Privacidad",
+        "terms": "Términos",
+        "cookies": "Cookies"
+      }
+    }
+  }
+}

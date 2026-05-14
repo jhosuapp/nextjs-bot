@@ -2,8 +2,9 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
-import { headerContent } from './header-content';
+import { headerStaticData } from './header-content';
 import { HeaderBrand } from './header-brand/HeaderBrand';
 import { HeaderNavList } from './header-nav-list/HeaderNavList';
 import { LanguageDropdown } from './language-dropdown/LanguageDropdown';
@@ -13,7 +14,9 @@ import { Button } from '../../components/button/Button';
 
 import styles from './header.module.css';
 
-const Header = () => {
+type Props = { t: ITranslations };
+
+const Header = ({ t }: Props) => {
   const reduce = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +31,11 @@ const Header = () => {
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const toggleMenu = useCallback(() => setMenuOpen((v) => !v), []);
 
+  const translatedNav = headerStaticData.nav.map((item) => ({
+    label: t(`nav.${item.key}`) as string,
+    href: item.href,
+  }));
+
   return (
     <motion.header
       className={styles.header}
@@ -38,28 +46,28 @@ const Header = () => {
       transition={{ duration: DURATION.base, ease: EASE }}
     >
       <a href="#main-content" className={styles.skipLink}>
-        Skip to main content
+        {t('header.skipLink')}
       </a>
 
       <div className={styles.inner}>
-        <HeaderBrand brand={headerContent.brand} />
+        <HeaderBrand brand={headerStaticData.brand} />
 
         <nav className={styles.navDesktop} aria-label="Primary">
-          <HeaderNavList items={headerContent.nav} variant="desktop" />
+          <HeaderNavList items={translatedNav} variant="desktop" />
         </nav>
 
         <div className={styles.actions}>
           <div className={styles.controls}>
-            <ThemeToggle />
-            <LanguageDropdown languages={headerContent.languages} />
+            <ThemeToggle t={t} />
+            <LanguageDropdown t={t} />
           </div>
 
           <div className={styles.ctas}>
-            <a href={headerContent.secondaryCta.href} className={styles.signIn}>
-              {headerContent.secondaryCta.label}
+            <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
+              {t('header.signIn')}
             </a>
             <Button
-              text={headerContent.primaryCta.label}
+              text={t('header.startFree') as string}
               style="fit"
               type="button"
             />
@@ -69,7 +77,8 @@ const Header = () => {
             open={menuOpen}
             onClose={closeMenu}
             onToggle={toggleMenu}
-            content={headerContent}
+            t={t}
+            translatedNav={translatedNav}
           />
         </div>
       </div>

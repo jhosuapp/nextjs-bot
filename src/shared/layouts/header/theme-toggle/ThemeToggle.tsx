@@ -4,11 +4,14 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useEffect } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { useThemeStore } from '@/src/shared/stores/theme.store';
 
 import styles from './theme-toggle.module.css';
 
-const ThemeToggle = () => {
+type Props = { t: ITranslations };
+
+const ThemeToggle = ({ t }: Props) => {
   const reduce = useReducedMotion();
   const { theme, hydrated, toggleTheme, hydrate } = useThemeStore();
 
@@ -17,7 +20,9 @@ const ThemeToggle = () => {
   }, [hydrate]);
 
   const isDark = theme === 'dark';
-  const nextLabel = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+  const nextLabel = isDark
+    ? (t('header.themeToggle.toLightAria') as string)
+    : (t('header.themeToggle.toDarkAria') as string);
 
   return (
     <motion.button

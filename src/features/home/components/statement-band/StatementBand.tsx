@@ -1,11 +1,11 @@
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import type { StatementContent } from '@/src/features/home/data/home-content';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import styles from './statement-band.module.css';
 
-type Props = { content: StatementContent };
+type Props = { t: ITranslations };
 
 const parentVariants: Variants = {
   hidden: {},
@@ -21,20 +21,21 @@ const wordVariants: Variants = {
   },
 };
 
-const StatementBand = ({ content }: Props) => {
+const StatementBand = ({ t }: Props) => {
   const reduce = useReducedMotion();
-  const words = content.text.split(' ');
+  const text = t('statement.text') as string;
+  const words = text.split(' ');
 
   if (reduce) {
     return (
-      <section className={styles.section} aria-label="Statement">
-        <p className={styles.text}>{content.text}</p>
+      <section className={styles.section} aria-label={t('statement.ariaLabel') as string}>
+        <p className={styles.text}>{text}</p>
       </section>
     );
   }
 
   return (
-    <section className={styles.section} aria-label="Statement">
+    <section className={styles.section} aria-label={t('statement.ariaLabel') as string}>
       <motion.p
         className={styles.text}
         variants={parentVariants}
@@ -46,7 +47,7 @@ const StatementBand = ({ content }: Props) => {
           <span key={`${word}-${i}`} className={styles.wordWrapper}>
             <motion.span variants={wordVariants} className={styles.word}>
               {word}
-              {i < words.length - 1 ? ' ' : ''}
+              {i < words.length - 1 ? ' ' : ''}
             </motion.span>
           </span>
         ))}

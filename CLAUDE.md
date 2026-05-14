@@ -84,3 +84,79 @@ import { HomeView } from "@/src/features/home";
 ```
 
 Do not create `index.ts` or `index.tsx` anywhere in the project.
+
+## Internationalisation (i18n)
+
+**Stack:** `next-i18next` v16 (Pages Router). Locales: `es` (default), `en`, `pt`, `fr`, `de`. Translation files live in `public/locales/{locale}/{namespace}.json`.
+
+### Namespaces
+
+| Namespace | Loaded by | Contains |
+|-----------|-----------|----------|
+| `common` | every page (`_app.tsx`) | nav, header, footer, SEO defaults |
+| `home` | `pages/index.tsx` | home page copy |
+| `<feature>` | `pages/<feature>/index.tsx` | copy scoped to that feature |
+
+### Loading translations (server-side only)
+
+Always load via `getStaticProps` — never client-side. Import paths for v16:
+
+```ts
+import { useTranslation } from "next-i18next/pages";
+import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
+
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? "es", ["common", "home"])),
+    },
+  };
+}
+```
+
+### `t` prop propagation
+
+`useTranslation` is called **only in page files and `_app.tsx`**, never inside shared components. Pass `t` down as a prop typed `ITranslations` (`src/shared/interfaces/i18n.interface.ts`).
+
+```tsx
+// pages/index.tsx
+const { t } = useTranslation("home");
+return <HomeView t={t} />;
+
+// Home.view.tsx
+import type { ITranslations } from "@/src/shared/interfaces/i18n.interface";
+type Props = { t: ITranslations };
+const HomeView = ({ t }: Props) => <HeroSection t={t} />;
+```
+
+`_app.tsx` calls `useTranslation('common')` and passes `t` to `<Header>` and `<Footer>`.
+
+### Data files vs. translation files
+
+- **Text strings** → JSON locale files (never hardcoded in `.ts`/`.tsx`).
+- **Structural data** (icons, hrefs, ids) → stays in the TypeScript data file (e.g., `home-content.ts`, `header-content.ts`).
+- Data file exports are named `*StaticData` (e.g., `homeStaticData`, `headerStaticData`).
+
+### Arrays with `returnObjects`
+
+For translation keys that hold arrays (bullets, highlights), use `returnObjects: true`:
+
+```ts
+const items = t("hero.highlights", { returnObjects: true }) as string[];
+```
+
+### Language switching
+
+Use `useRouter` — **not** a Zustand store:
+
+```ts
+const router = useRouter();
+router.push(router.pathname, router.asPath, { locale: code });
+const currentLocale = router.locale ?? "es";
+```
+
+### Adding a new page
+
+1. Create `public/locales/{es,en,pt,fr,de}/<feature>.json` with the same keys in each locale.
+2. Add `getStaticProps` to the page with `serverSideTranslations(locale, ['common', '<feature>'])`.
+3. Call `useTranslation('<feature>')` in the page, pass `t` to the View.

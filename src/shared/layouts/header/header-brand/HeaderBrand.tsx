@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import type { HeaderContent } from '../header-content';
+import type { HeaderStaticData } from '../header-content';
 
 import styles from './header-brand.module.css';
 
-type Props = { brand: HeaderContent['brand'] };
+type Props = { brand: HeaderStaticData['brand'] };
 
 const HeaderBrand = ({ brand }: Props) => {
   return (

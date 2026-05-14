@@ -6,19 +6,17 @@ import {
 import { useReducedMotion } from 'framer-motion';
 import { useId, useState, type FormEvent } from 'react';
 
-import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-import type { FooterNewsletter as FooterNewsletterContent } from '@/src/shared/layouts/footer/footer-content';
-
-import styles from './footer-newsletter.module.css';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Button } from '@/src/shared/components/button/Button';
 
-type Props = { content: FooterNewsletterContent };
+import styles from './footer-newsletter.module.css';
 
+type Props = { t: ITranslations };
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const FooterNewsletter = ({ content }: Props) => {
+const FooterNewsletter = ({ t }: Props) => {
   const reduce = useReducedMotion();
   const inputId = useId();
   const errorId = useId();
@@ -31,7 +29,7 @@ const FooterNewsletter = ({ content }: Props) => {
     if (status === 'loading' || status === 'success') return;
 
     if (!EMAIL_REGEX.test(email.trim())) {
-      setError('Please enter a valid email address.');
+      setError(t('footer.newsletter.emailError') as string);
       setStatus('error');
       return;
     }
@@ -47,9 +45,9 @@ const FooterNewsletter = ({ content }: Props) => {
   return (
     <div className={styles.root}>
       <div className={styles.copy}>
-        <span className={styles.eyebrow}>{content.eyebrow}</span>
-        <h2 className={styles.title}>{content.title}</h2>
-        <p className={styles.description}>{content.description}</p>
+        <span className={styles.eyebrow}>{t('footer.newsletter.eyebrow')}</span>
+        <h2 className={styles.title}>{t('footer.newsletter.title')}</h2>
+        <p className={styles.description}>{t('footer.newsletter.description')}</p>
       </div>
 
       <form
@@ -59,7 +57,7 @@ const FooterNewsletter = ({ content }: Props) => {
         aria-describedby={error ? errorId : undefined}
       >
         <label htmlFor={inputId} className={styles.label}>
-          Email address
+          {t('footer.newsletter.emailLabel')}
         </label>
 
         <div className={styles.field} data-status={status}>
@@ -76,7 +74,7 @@ const FooterNewsletter = ({ content }: Props) => {
             inputMode="email"
             required
             disabled={isLocked}
-            placeholder={content.placeholder}
+            placeholder={t('footer.newsletter.placeholder') as string}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -90,7 +88,10 @@ const FooterNewsletter = ({ content }: Props) => {
             aria-describedby={error ? errorId : undefined}
           />
           <Button
-            text={`${status === 'success' ? 'Subscribed' : 'Submit'}`}
+            text={status === 'success'
+              ? (t('footer.newsletter.subscribedLabel') as string)
+              : (t('footer.newsletter.cta') as string)
+            }
             style="secondary"
             type="submit"
             isLoad={status === 'loading'}
@@ -109,9 +110,9 @@ const FooterNewsletter = ({ content }: Props) => {
             {status === 'error' ? error : ''}
           </p>
           <p className={styles.success} aria-live="polite">
-            {status === 'success' ? content.successMessage : ''}
+            {status === 'success' ? t('footer.newsletter.successMessage') : ''}
           </p>
-          <p className={styles.privacy}>{content.privacy}</p>
+          <p className={styles.privacy}>{t('footer.newsletter.privacy')}</p>
         </div>
       </form>
     </div>

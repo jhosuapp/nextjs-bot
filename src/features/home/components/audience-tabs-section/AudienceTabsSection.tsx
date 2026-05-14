@@ -5,50 +5,52 @@ import {
   MotionTabs,
   type Tab,
 } from '@/src/shared/components/motion/MotionTabs';
-import type {
-  AudienceTabContent,
-  AudienceTabsContent,
-} from '@/src/features/home/data/home-content';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { homeStaticData } from '@/src/features/home/data/home-content';
+import type { AudienceTabStatic } from '@/src/features/home/data/home-content';
 
 import styles from './audience-tabs-section.module.css';
 
-type Props = { content: AudienceTabsContent };
+type Props = { t: ITranslations };
+type TabKey = AudienceTabStatic['key'];
 
-type TabKey = AudienceTabContent['key'];
+const AudienceTabsSection = ({ t }: Props) => {
+  const { audience } = homeStaticData;
 
-const renderPanel = (tab: AudienceTabContent) => (
-  <article className={styles.panel}>
-    <div className={styles.panelText}>
-      <span className={styles.panelLabel}>{tab.label}</span>
-      <h3 className={styles.panelTitle}>{tab.title}</h3>
-      <p className={styles.panelDesc}>{tab.description}</p>
-      <ul className={styles.bullets}>
-        {tab.bullets.map((b) => (
-          <li key={b} className={styles.bullet}>
-            {b}
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div className={styles.panelMedia} aria-hidden="true">
-      <FontAwesomeIcon icon={tab.icon} className={styles.panelMediaIcon} />
-    </div>
-  </article>
-);
+  const tabs: ReadonlyArray<Tab<TabKey>> = audience.tabs.map((tabItem) => {
+    const bullets = t(`audience.${tabItem.key}.bullets`, { returnObjects: true }) as string[];
 
-const AudienceTabsSection = ({ content }: Props) => {
-  const tabs: ReadonlyArray<Tab<TabKey>> = content.tabs.map((t) => ({
-    key: t.key,
-    label: t.label,
-    content: renderPanel(t),
-  }));
+    return {
+      key: tabItem.key,
+      label: t(`audience.${tabItem.key}.label`) as string,
+      content: (
+        <article className={styles.panel}>
+          <div className={styles.panelText}>
+            <span className={styles.panelLabel}>{t(`audience.${tabItem.key}.label`)}</span>
+            <h3 className={styles.panelTitle}>{t(`audience.${tabItem.key}.title`)}</h3>
+            <p className={styles.panelDesc}>{t(`audience.${tabItem.key}.description`)}</p>
+            <ul className={styles.bullets}>
+              {bullets.map((bullet) => (
+                <li key={bullet} className={styles.bullet}>
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.panelMedia} aria-hidden="true">
+            <FontAwesomeIcon icon={tabItem.icon} className={styles.panelMediaIcon} />
+          </div>
+        </article>
+      ),
+    };
+  });
 
   return (
     <section className={styles.section} aria-labelledby="audience-title">
       <FadeIn className={styles.header} y={16}>
-        <span className={styles.eyebrow}>{content.eyebrow}</span>
+        <span className={styles.eyebrow}>{t('audience.eyebrow')}</span>
         <h2 id="audience-title" className={styles.title}>
-          {content.title}
+          {t('audience.title')}
         </h2>
       </FadeIn>
 

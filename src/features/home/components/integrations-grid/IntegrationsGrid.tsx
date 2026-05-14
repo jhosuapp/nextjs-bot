@@ -6,29 +6,31 @@ import {
   StaggerGroup,
   StaggerItem,
 } from '@/src/shared/components/motion/StaggerGroup';
-import type { IntegrationsContent } from '@/src/features/home/data/home-content';
+import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './integrations-grid.module.css';
 
-type Props = { content: IntegrationsContent };
+type Props = { t: ITranslations };
 
-const IntegrationsGrid = ({ content }: Props) => {
+const IntegrationsGrid = ({ t }: Props) => {
   const reduce = useReducedMotion();
+  const { integrations } = homeStaticData;
 
   return (
     <section className={styles.section} aria-labelledby="integrations-title">
       <FadeIn className={styles.head}>
         <h2 id="integrations-title" className={styles.title}>
-          {content.title}
+          {t('integrations.title')}
         </h2>
-        <p className={styles.description}>{content.description}</p>
-        <a className={styles.cta} href={content.cta.href}>
-          {content.cta.label}
+        <p className={styles.description}>{t('integrations.description')}</p>
+        <a className={styles.cta} href={integrations.cta.href}>
+          {t('integrations.cta')}
         </a>
       </FadeIn>
 
       <StaggerGroup className={styles.grid} stagger={0.05} amount={0.15}>
-        {content.logos.map((logo) => (
+        {integrations.logos.map((logo) => (
           <StaggerItem key={logo.name}>
             <motion.div
               className={styles.tile}

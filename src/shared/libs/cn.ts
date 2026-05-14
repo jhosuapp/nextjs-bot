@@ -11,7 +11,7 @@ const cn = (...inputs: ClassValue[]): string => {
   const out: string[] = [];
   const walk = (value: ClassValue): void => {
     if (!value) return;
-    if (typeof value === 'string' || typeof value === 'number') {
+    if (typeof value === "string" || typeof value === "number") {
       out.push(String(value));
       return;
     }
@@ -19,14 +19,14 @@ const cn = (...inputs: ClassValue[]): string => {
       value.forEach(walk);
       return;
     }
-    if (typeof value === 'object') {
+    if (typeof value === "object") {
       for (const key in value) {
         if (value[key]) out.push(key);
       }
     }
   };
   inputs.forEach(walk);
-  return out.join(' ');
+  return out.join(" ");
 };
 
 export { cn };
