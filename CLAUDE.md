@@ -160,3 +160,29 @@ const currentLocale = router.locale ?? "es";
 1. Create `public/locales/{es,en,pt,fr,de}/<feature>.json` with the same keys in each locale.
 2. Add `getStaticProps` to the page with `serverSideTranslations(locale, ['common', '<feature>'])`.
 3. Call `useTranslation('<feature>')` in the page, pass `t` to the View.
+
+## SEO / Page head
+
+Every page wraps its content in `PageLayout` (`src/shared/layouts/page-layout/PageLayout.tsx`) instead of using `<Head>` directly. This handles the full SEO head: canonical URL, Open Graph, Twitter card, JSON-LD schema, robots, and theme-color.
+
+```tsx
+import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
+
+export default function MyPage() {
+  const { t } = useTranslation("common");
+  return (
+    <PageLayout
+      title={t("seo.myTitle") as string}
+      description={t("seo.myDescription") as string}
+      // image="/images/custom-og.png"  optional, defaults to SITE_OG_IMAGE
+      // hasNoIndex                     add for auth-gated or draft pages
+    >
+      <PageTransition>
+        <MyView t={t} />
+      </PageTransition>
+    </PageLayout>
+  );
+}
+```
+
+SEO translation keys go in the `seo.*` namespace inside `common.json` (available on every page via `useTranslation('common')`). Site-level constants (`SITE_URL`, `SITE_NAME`, `SITE_OG_IMAGE`) live in `src/config/site.ts`.
