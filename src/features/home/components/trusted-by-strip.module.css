@@ -1,0 +1,34 @@
+@reference "tailwindcss";
+
+.section {
+  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-6 py-12;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+.label {
+  @apply text-xs font-semibold uppercase tracking-[0.2em];
+  color: var(--text-muted);
+}
+
+.row {
+  @apply flex w-full flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-80;
+}
+
+.marquee {
+  @apply w-full;
+}
+
+.logo {
+  @apply flex items-center justify-center;
+}
+
+.logoImg {
+  height: 28px;
+  width: auto;
+  filter: grayscale(1) opacity(0.7);
+  transition: filter 200ms ease;
+}
+
+.logoImg:hover {
+  filter: grayscale(0) opacity(1);
+}

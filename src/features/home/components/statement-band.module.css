@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.section {
+  @apply w-full;
+  background: var(--bg-section);
+  padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.text {
+  @apply mx-auto max-w-5xl text-center font-semibold tracking-tight;
+  color: var(--foreground);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.wordWrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}

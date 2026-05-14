@@ -1,0 +1,107 @@
+@reference "tailwindcss";
+
+@keyframes borderShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.4;
+  }
+}
+
+.section {
+  @apply w-full;
+  background: var(--bg-section-alt);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.card {
+  @apply relative mx-auto flex w-full max-w-5xl flex-col items-center gap-6 overflow-hidden rounded-[2rem] p-12 text-center;
+  background: var(--surface-inverted);
+  color: var(--text-on-dark);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    var(--primary),
+    var(--tertiary),
+    var(--primary),
+    var(--tertiary)
+  );
+  background-size: 200% 200%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: borderShift 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card::before {
+    animation: none;
+  }
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em];
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--tertiary);
+  border: 1px solid var(--border-on-dark);
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--tertiary);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badgeDot {
+    animation: none;
+  }
+}
+
+.title {
+  @apply max-w-3xl font-semibold tracking-tight;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.description {
+  @apply max-w-2xl text-base;
+  color: var(--text-muted-on-dark);
+  line-height: 1.65;
+}
+
+.cta {
+  @apply inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors;
+  background: var(--accent-cta);
+  color: var(--secondary);
+}
+
+.cta:hover {
+  background: var(--accent-cta-hover);
+}

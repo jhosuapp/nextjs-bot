@@ -1,0 +1,43 @@
+@reference "tailwindcss";
+
+.root {
+  @apply flex flex-col gap-8 w-full;
+}
+
+.list {
+  @apply flex flex-wrap items-center gap-2 self-center rounded-full border p-1;
+  border-color: var(--border-subtle);
+  background: var(--surface-elevated);
+}
+
+.tab {
+  @apply relative inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium tracking-wide uppercase transition-colors;
+  color: var(--text-muted);
+}
+
+.tab:hover {
+  color: var(--foreground);
+}
+
+.tabActive,
+.tabActive:hover {
+  color: var(--background);
+}
+
+.tabLabel {
+  @apply relative z-10;
+}
+
+.indicator {
+  @apply absolute inset-0 rounded-full;
+  background: var(--foreground);
+  z-index: 0;
+}
+
+.panelWrapper {
+  @apply relative w-full overflow-hidden;
+}
+
+.panel {
+  @apply w-full;
+}

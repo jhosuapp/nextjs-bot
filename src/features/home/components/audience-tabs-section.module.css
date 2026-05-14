@@ -1,0 +1,97 @@
+@reference "tailwindcss";
+
+.section {
+  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-10;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.header {
+  @apply flex max-w-3xl flex-col items-center gap-3 text-center;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.2em];
+  color: var(--primary);
+}
+
+.title {
+  @apply font-semibold tracking-tight;
+  color: var(--foreground);
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.tabsHost {
+  @apply w-full;
+}
+
+.panel {
+  @apply grid w-full items-center gap-10 rounded-3xl p-8;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+  }
+}
+
+.panelText {
+  @apply flex flex-col gap-4;
+}
+
+.panelLabel {
+  @apply text-xs font-semibold uppercase tracking-[0.2em];
+  color: var(--primary);
+}
+
+.panelTitle {
+  @apply text-2xl font-semibold tracking-tight;
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.panelDesc {
+  @apply text-base;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.bullets {
+  @apply flex flex-col gap-2;
+}
+
+.bullet {
+  @apply text-sm;
+  color: var(--foreground);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+.panelMedia {
+  @apply relative w-full overflow-hidden rounded-2xl;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 190, 255, 0.1),
+    rgba(23, 241, 209, 0.06)
+  );
+}
+
+.panelMediaImg {
+  @apply absolute inset-0 m-auto h-1/2 w-1/2 object-contain opacity-80;
+}
