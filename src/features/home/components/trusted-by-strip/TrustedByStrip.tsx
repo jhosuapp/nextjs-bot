@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { Marquee } from '@/src/shared/components/motion/Marquee';
@@ -16,14 +16,13 @@ const TrustedByStrip = ({ content }: Props) => {
       </FadeIn>
       <Marquee className={styles.marquee} speed={32}>
         {content.logos.map((logo) => (
-          <div key={logo.name} className={styles.logo}>
-            <Image
-              src={logo.src}
-              alt={logo.name}
-              width={96}
-              height={32}
-              className={styles.logoImg}
+          <div key={logo.name} className={styles.logo} aria-label={logo.name}>
+            <FontAwesomeIcon
+              icon={logo.icon}
+              className={styles.logoIcon}
+              aria-hidden="true"
             />
+            <span className={styles.logoName}>{logo.name}</span>
           </div>
         ))}
       </Marquee>

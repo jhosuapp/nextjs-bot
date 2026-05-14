@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import {
@@ -32,14 +32,8 @@ const renderPanel = (tab: AudienceTabContent) => (
         ))}
       </ul>
     </div>
-    <div className={styles.panelMedia}>
-      <Image
-        src={tab.mediaSrc}
-        alt=""
-        width={320}
-        height={220}
-        className={styles.panelMediaImg}
-      />
+    <div className={styles.panelMedia} aria-hidden="true">
+      <FontAwesomeIcon icon={tab.icon} className={styles.panelMediaIcon} />
     </div>
   </article>
 );

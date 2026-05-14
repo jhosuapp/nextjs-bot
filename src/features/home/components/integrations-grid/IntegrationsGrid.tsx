@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
@@ -34,17 +34,13 @@ const IntegrationsGrid = ({ content }: Props) => {
           <StaggerItem key={logo.name}>
             <motion.div
               className={styles.tile}
-              whileHover={
-                reduce ? undefined : { y: -3, scale: 1.02 }
-              }
+              whileHover={reduce ? undefined : { y: -3, scale: 1.02 }}
               transition={{ duration: 0.2 }}
             >
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={64}
-                height={64}
+              <FontAwesomeIcon
+                icon={logo.icon}
                 className={styles.icon}
+                aria-hidden="true"
               />
               <span className={styles.tileLabel}>{logo.name}</span>
             </motion.div>

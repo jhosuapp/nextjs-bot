@@ -1,3 +1,29 @@
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  faAtlassian,
+  faFigma,
+  faGithub,
+  faGoogle,
+  faGoogleDrive,
+  faHubspot,
+  faMicrosoft,
+  faNotion,
+  faSalesforce,
+  faShopify,
+  faSlack,
+  faStripe,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faBullhorn,
+  faCircleNodes,
+  faGraduationCap,
+  faHandshake,
+  faLock,
+  faShieldHalved,
+  faVideo,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons';
+
 type CTA = {
   label: string;
   href: string;
@@ -5,7 +31,7 @@ type CTA = {
 
 type LogoItem = {
   name: string;
-  src: string;
+  icon: IconDefinition;
 };
 
 type HeroContent = {
@@ -34,7 +60,7 @@ type SplitFeatureContent = {
   title: string;
   description: string;
   cta: CTA;
-  mediaSrc: string;
+  icon: IconDefinition;
   mediaAlt: string;
 };
 
@@ -50,7 +76,7 @@ type StatementContent = {
 };
 
 type PillarItem = {
-  iconSrc: string;
+  icon: IconDefinition;
   title: string;
   description: string;
 };
@@ -66,7 +92,7 @@ type AudienceTabContent = {
   title: string;
   description: string;
   bullets: ReadonlyArray<string>;
-  mediaSrc: string;
+  icon: IconDefinition;
 };
 
 type AudienceTabsContent = {
@@ -93,6 +119,20 @@ type EnterprisePillarsContent = {
   pillars: ReadonlyArray<PillarItem>;
 };
 
+type FaqItem = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+type FaqContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  contactCta: CTA;
+  items: ReadonlyArray<FaqItem>;
+};
+
 type HomeContent = {
   hero: HeroContent;
   trustedBy: TrustedByContent;
@@ -104,15 +144,8 @@ type HomeContent = {
   integrations: IntegrationsContent;
   awards: AwardsContent;
   enterprise: EnterprisePillarsContent;
+  faq: FaqContent;
 };
-
-const placeholderSvgs = [
-  '/svg/globe.svg',
-  '/svg/window.svg',
-  '/svg/file.svg',
-  '/svg/next.svg',
-  '/svg/vercel.svg',
-] as const;
 
 const homeContent: HomeContent = {
   hero: {
@@ -135,14 +168,14 @@ const homeContent: HomeContent = {
   trustedBy: {
     label: 'Trusted by',
     logos: [
-      { name: 'Brand One', src: placeholderSvgs[0] },
-      { name: 'Brand Two', src: placeholderSvgs[1] },
-      { name: 'Brand Three', src: placeholderSvgs[2] },
-      { name: 'Brand Four', src: placeholderSvgs[3] },
-      { name: 'Brand Five', src: placeholderSvgs[4] },
-      { name: 'Brand Six', src: placeholderSvgs[0] },
-      { name: 'Brand Seven', src: placeholderSvgs[1] },
-      { name: 'Brand Eight', src: placeholderSvgs[2] },
+      { name: 'Microsoft', icon: faMicrosoft },
+      { name: 'Google', icon: faGoogle },
+      { name: 'Slack', icon: faSlack },
+      { name: 'Salesforce', icon: faSalesforce },
+      { name: 'Shopify', icon: faShopify },
+      { name: 'HubSpot', icon: faHubspot },
+      { name: 'Stripe', icon: faStripe },
+      { name: 'Atlassian', icon: faAtlassian },
     ],
   },
   agentic: {
@@ -151,8 +184,8 @@ const homeContent: HomeContent = {
     description:
       'Turn static videos into responsive agents that adapt to each viewer in real time, answer follow-up questions, and keep your audience engaged.',
     cta: { label: 'Learn more', href: '#agentic' },
-    mediaSrc: placeholderSvgs[1],
-    mediaAlt: 'Interactive avatar preview',
+    icon: faVideo,
+    mediaAlt: 'Interactive avatar video preview',
   },
   realtime: {
     badge: 'New · V4 Expressive Visual Agents',
@@ -168,19 +201,19 @@ const homeContent: HomeContent = {
     eyebrow: 'Why teams pick us',
     pillars: [
       {
-        iconSrc: placeholderSvgs[0],
+        icon: faWandMagicSparkles,
         title: 'Studio-grade quality',
         description:
           'Cinematic avatars rendered with realistic lighting, lip-sync and micro-expressions.',
       },
       {
-        iconSrc: placeholderSvgs[1],
+        icon: faCircleNodes,
         title: 'Real-time everywhere',
         description:
           'Sub-second response, ready for web, mobile, kiosks, and embedded experiences.',
       },
       {
-        iconSrc: placeholderSvgs[2],
+        icon: faShieldHalved,
         title: 'Built to scale',
         description:
           'From a single demo to millions of personalized renders without rewriting your stack.',
@@ -202,7 +235,7 @@ const homeContent: HomeContent = {
           'A/B test scripts without re-shoots',
           'Sync with your CRM and CDP',
         ],
-        mediaSrc: placeholderSvgs[3],
+        icon: faBullhorn,
       },
       {
         key: 'creators',
@@ -215,7 +248,7 @@ const homeContent: HomeContent = {
           'One-click vertical and horizontal exports',
           'Native captioning in any language',
         ],
-        mediaSrc: placeholderSvgs[4],
+        icon: faVideo,
       },
       {
         key: 'learning',
@@ -228,7 +261,7 @@ const homeContent: HomeContent = {
           'SCORM / xAPI ready',
           'Audit logs for compliance teams',
         ],
-        mediaSrc: placeholderSvgs[0],
+        icon: faGraduationCap,
       },
       {
         key: 'sales',
@@ -241,7 +274,7 @@ const homeContent: HomeContent = {
           'Trackable engagement analytics',
           'Calendar handoff when intent spikes',
         ],
-        mediaSrc: placeholderSvgs[1],
+        icon: faHandshake,
       },
     ],
   },
@@ -251,24 +284,69 @@ const homeContent: HomeContent = {
       'First-class integrations with the stack you already trust. Bring avatars where your work already happens.',
     cta: { label: 'Discover integrations', href: '#integrations' },
     logos: [
-      { name: 'Tool One', src: placeholderSvgs[0] },
-      { name: 'Tool Two', src: placeholderSvgs[1] },
-      { name: 'Tool Three', src: placeholderSvgs[2] },
-      { name: 'Tool Four', src: placeholderSvgs[3] },
-      { name: 'Tool Five', src: placeholderSvgs[4] },
-      { name: 'Tool Six', src: placeholderSvgs[0] },
-      { name: 'Tool Seven', src: placeholderSvgs[1] },
-      { name: 'Tool Eight', src: placeholderSvgs[2] },
+      { name: 'Slack', icon: faSlack },
+      { name: 'Salesforce', icon: faSalesforce },
+      { name: 'HubSpot', icon: faHubspot },
+      { name: 'Figma', icon: faFigma },
+      { name: 'Notion', icon: faNotion },
+      { name: 'GitHub', icon: faGithub },
+      { name: 'Google Drive', icon: faGoogleDrive },
+      { name: 'Atlassian', icon: faAtlassian },
     ],
   },
   awards: {
     title: 'Leading the industry.',
     awards: [
-      { name: 'Award One', src: placeholderSvgs[0] },
-      { name: 'Award Two', src: placeholderSvgs[1] },
-      { name: 'Award Three', src: placeholderSvgs[2] },
-      { name: 'Award Four', src: placeholderSvgs[3] },
-      { name: 'Award Five', src: placeholderSvgs[4] },
+      { name: 'Microsoft', icon: faMicrosoft },
+      { name: 'Google', icon: faGoogle },
+      { name: 'Stripe', icon: faStripe },
+      { name: 'Salesforce', icon: faSalesforce },
+      { name: 'HubSpot', icon: faHubspot },
+    ],
+  },
+  faq: {
+    eyebrow: 'Frequently asked',
+    title: 'Everything you need to know.',
+    description:
+      'Common questions about Lumina — and if something is missing, our team replies in under a business day.',
+    contactCta: { label: 'Talk to our team', href: '#contact' },
+    items: [
+      {
+        id: 'what-is',
+        question: 'What does the platform actually do?',
+        answer:
+          'Lumina turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow.',
+      },
+      {
+        id: 'how-fast',
+        question: 'How quickly can I publish my first avatar?',
+        answer:
+          'Most teams ship their first avatar in under two minutes from sign-up: pick a presenter, paste a script, choose a voice and language, then export or embed.',
+      },
+      {
+        id: 'languages',
+        question: 'Which languages and voices are supported?',
+        answer:
+          'We support 80+ languages and locales with native-sounding voices, including regional accents. You can also clone a brand voice with consent for premium plans.',
+      },
+      {
+        id: 'security',
+        question: 'Is my data safe to use with enterprise content?',
+        answer:
+          'Yes. We are SOC 2 Type II, encrypt data at rest and in transit, never train shared models on customer content, and offer regional residency and SSO on enterprise plans.',
+      },
+      {
+        id: 'brand',
+        question: 'Can I bring my own brand likeness or presenters?',
+        answer:
+          'Absolutely. Upload your brand kit, customize avatar wardrobes and backdrops, or onboard a custom presenter from a short consented recording.',
+      },
+      {
+        id: 'pricing',
+        question: 'How does pricing work?',
+        answer:
+          'There is a free tier for individuals and small teams, usage-based plans for growing companies, and custom enterprise pricing with dedicated infrastructure and SLAs.',
+      },
     ],
   },
   enterprise: {
@@ -277,25 +355,25 @@ const homeContent: HomeContent = {
       'Security, privacy and compliance designed for the most demanding organizations.',
     pillars: [
       {
-        iconSrc: placeholderSvgs[0],
+        icon: faLock,
         title: 'Privacy',
         description:
           'Customer data is never used to train shared models. Your content stays yours.',
       },
       {
-        iconSrc: placeholderSvgs[1],
+        icon: faShieldHalved,
         title: 'Security',
         description:
           'SOC 2 Type II, end-to-end encryption at rest and in transit, scoped API keys.',
       },
       {
-        iconSrc: placeholderSvgs[2],
+        icon: faCircleNodes,
         title: 'Compliance',
         description:
           'GDPR, HIPAA-ready data handling and configurable regional residency.',
       },
       {
-        iconSrc: placeholderSvgs[3],
+        icon: faWandMagicSparkles,
         title: 'Scale',
         description:
           'High-availability infrastructure that grows with your traffic, with SLAs to back it.',
@@ -318,6 +396,8 @@ export type {
   IntegrationsContent,
   AwardsContent,
   EnterprisePillarsContent,
+  FaqContent,
+  FaqItem,
   CTA,
   LogoItem,
   PillarItem,

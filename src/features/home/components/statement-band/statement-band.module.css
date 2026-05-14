@@ -7,19 +7,16 @@
 }
 
 .text {
-  @apply mx-auto max-w-5xl text-center font-semibold tracking-tight;
+  @apply mx-auto max-w-5xl text-center font-semibold tracking-tight leading-[1.2];
   color: var(--foreground);
   font-size: clamp(1.75rem, 4vw, 3rem);
-  line-height: 1.2;
 }
 
 .wordWrapper {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
+  @apply inline-block overflow-hidden align-top;
 }
 
 .word {
-  display: inline-block;
+  @apply inline-block;
   will-change: transform, opacity;
 }

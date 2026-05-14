@@ -1,6 +1,7 @@
 'use client';
 
-import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { motion, useReducedMotion } from 'framer-motion';
 
 import {
@@ -26,14 +27,18 @@ const AgenticVideosSection = ({ content }: Props) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: DURATION.slow, ease: EASE }}
+          aria-label={content.mediaAlt}
         >
-          <Image
-            src={content.mediaSrc}
-            alt={content.mediaAlt}
-            width={520}
-            height={420}
-            className={styles.mediaImg}
-          />
+          <div className={styles.mediaInner} aria-hidden="true">
+            <FontAwesomeIcon icon={content.icon} className={styles.mediaIcon} />
+            <button
+              type="button"
+              className={styles.playButton}
+              aria-label="Play preview"
+            >
+              <FontAwesomeIcon icon={faPlay} />
+            </button>
+          </div>
         </motion.div>
 
         <StaggerGroup className={styles.copy} stagger={0.1} amount={0.3}>

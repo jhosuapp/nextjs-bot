@@ -1,7 +1,12 @@
-import { SmoothScroll } from "@/src/shared/components/SmoothScroll";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
 
 import { jakarta } from "../src/config/fonts/fonts";
 import "./globals.css";
+
+config.autoAddCss = false;
 
 export default function RootLayout({
   children,

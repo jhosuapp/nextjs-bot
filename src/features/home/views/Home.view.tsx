@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 
 import { AgenticVideosSection } from '@/src/features/home/components/agentic-videos-section/AgenticVideosSection';
 import { AudienceTabsSection } from '@/src/features/home/components/audience-tabs-section/AudienceTabsSection';
+import { FaqSection } from '@/src/features/home/components/faq-section/FaqSection';
 import { HeroSection } from '@/src/features/home/components/hero-section/HeroSection';
 import { IntegrationsGrid } from '@/src/features/home/components/integrations-grid/IntegrationsGrid';
 import { RealtimeAgentsSection } from '@/src/features/home/components/realtime-agents-section/RealtimeAgentsSection';
@@ -21,6 +22,7 @@ const HomeView = (): JSX.Element => {
       <StatementBand content={homeContent.statement} />
       <AudienceTabsSection content={homeContent.audience} />
       <IntegrationsGrid content={homeContent.integrations} />
+      <FaqSection content={homeContent.faq} />
     </main>
   );
 };
