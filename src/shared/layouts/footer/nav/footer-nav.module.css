@@ -1,0 +1,78 @@
+@reference "tailwindcss";
+
+.root {
+  @apply grid w-full max-w-7xl mx-auto gap-10 grid-cols-1 lg:grid-cols-[1fr_2fr];
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.brandBlock {
+  @apply flex flex-col gap-3 max-w-sm;
+}
+
+.brandMark {
+  @apply inline-flex items-center gap-2.5 no-underline w-fit;
+}
+
+.brandLogo {
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-xl;
+  background: var(--gradient-brand);
+}
+
+.brandLogoInner {
+  @apply inline-flex h-[calc(100%-4px)] w-[calc(100%-4px)] items-center justify-center rounded-[10px] font-bold;
+  background: var(--secondary);
+  color: var(--text-on-dark);
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+}
+
+.brandName {
+  @apply text-base font-bold tracking-[-0.01em];
+  color: var(--text-strong);
+}
+
+.brandTagline {
+  @apply text-sm leading-[1.6] m-0;
+  color: var(--text-muted);
+}
+
+.columns {
+  @apply grid gap-8 grid-cols-2 sm:grid-cols-3;
+}
+
+.column {
+  @apply flex flex-col gap-3;
+}
+
+.columnTitle {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] m-0;
+  color: var(--text-strong);
+}
+
+.list {
+  @apply flex flex-col gap-2 m-0 p-0 list-none;
+}
+
+.listItem {
+  @apply m-0;
+}
+
+.link {
+  @apply inline-flex items-center gap-1.5 text-sm no-underline transition-colors duration-200;
+  color: var(--text-muted);
+  padding-block: 0.125rem;
+}
+
+.link:hover {
+  color: var(--text-strong);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.linkIcon {
+  @apply text-[0.625rem] opacity-70;
+}

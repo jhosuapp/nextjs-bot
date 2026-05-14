@@ -1,0 +1,59 @@
+@reference "tailwindcss";
+
+.root {
+  @apply w-full border-t;
+  border-color: var(--border-subtle);
+  background: var(--surface-elevated);
+}
+
+.inner {
+  @apply mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4;
+  padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.copyright {
+  @apply text-xs m-0;
+  color: var(--text-muted);
+}
+
+.legal {
+  @apply flex flex-wrap items-center gap-x-5 gap-y-2 m-0 p-0 list-none;
+}
+
+.legalLink {
+  @apply text-xs font-medium no-underline transition-colors duration-200;
+  color: var(--text-muted);
+}
+
+.legalLink:hover {
+  color: var(--text-strong);
+}
+
+.legalLink:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.socials {
+  @apply flex items-center gap-1 m-0 p-0 list-none;
+}
+
+.socialLink {
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-full transition-[background,color] duration-200;
+  color: var(--text-muted);
+}
+
+.socialLink:hover {
+  background: rgba(11, 16, 36, 0.05);
+  color: var(--text-strong);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.socialIcon {
+  @apply text-base;
+}
