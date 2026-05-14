@@ -1,0 +1,37 @@
+@reference "tailwindcss";
+
+.list {
+  @apply flex items-center gap-1 m-0 p-0 list-none;
+}
+
+.mobile {
+  @apply flex flex-col items-stretch gap-1 w-full;
+}
+
+.item {
+  @apply m-0;
+}
+
+.link {
+  @apply inline-flex items-center rounded-full px-3 py-2 text-sm font-medium no-underline transition-[background,color] duration-200;
+  color: var(--text-muted);
+}
+
+.link:hover {
+  background: var(--surface-overlay);
+  color: var(--text-strong);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.mobile .link {
+  @apply justify-between text-lg font-semibold px-4 py-3 rounded-2xl;
+  color: var(--text-strong);
+}
+
+.mobile .link:hover {
+  background: var(--surface-elevated);
+}

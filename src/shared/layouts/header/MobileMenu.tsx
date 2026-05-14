@@ -1,0 +1,185 @@
+'use client';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Variants,
+} from 'framer-motion';
+import { useEffect, useId } from 'react';
+
+import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
+
+import type { HeaderContent } from './header-content';
+import { HeaderNavList } from './HeaderNavList';
+import { LanguageDropdown } from './LanguageDropdown';
+import { ThemeToggle } from './ThemeToggle';
+import styles from './mobile-menu.module.css';
+
+type Props = {
+  open: boolean;
+  onClose: () => void;
+  onToggle: () => void;
+  content: HeaderContent;
+};
+
+const panelVariants: Variants = {
+  hidden: { opacity: 0, y: -16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: DURATION.base,
+      ease: EASE,
+      when: 'beforeChildren',
+      staggerChildren: 0.05,
+      delayChildren: 0.05,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -12,
+    transition: { duration: 0.2, ease: EASE, when: 'afterChildren' },
+  },
+};
+
+const reducedPanelVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.15 } },
+  exit: { opacity: 0, transition: { duration: 0.1 } },
+};
+
+const groupVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } },
+};
+
+const MobileMenu = ({ open, onClose, onToggle, content }: Props) => {
+  const reduce = useReducedMotion();
+  const panelId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open, onClose]);
+
+  const variants = reduce ? reducedPanelVariants : panelVariants;
+
+  return (
+    <>
+      <motion.button
+        type="button"
+        className={styles.trigger}
+        aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={onToggle}
+        whileTap={reduce ? undefined : { scale: 0.92 }}
+        transition={{ duration: 0.15 }}
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.span
+            key={open ? 'close' : 'open'}
+            className={styles.triggerIconWrap}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, rotate: -45 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            exit={reduce ? { opacity: 0 } : { opacity: 0, rotate: 45 }}
+            transition={{ duration: 0.2, ease: EASE }}
+          >
+            <FontAwesomeIcon
+              icon={open ? faXmark : faBars}
+              className={styles.triggerIcon}
+              aria-hidden="true"
+            />
+          </motion.span>
+        </AnimatePresence>
+      </motion.button>
+
+      <AnimatePresence>
+        {open ? (
+          <>
+            <motion.div
+              key="backdrop"
+              className={styles.backdrop}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={onClose}
+              aria-hidden="true"
+            />
+            <motion.div
+              key="panel"
+              id={panelId}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site navigation"
+              className={styles.panel}
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              <motion.nav
+                className={styles.nav}
+                variants={groupVariants}
+                aria-label="Primary"
+              >
+                <HeaderNavList
+                  items={content.nav}
+                  variant="mobile"
+                  onItemClick={onClose}
+                  animated
+                />
+              </motion.nav>
+
+              <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
+
+              <motion.div className={styles.controlsRow} variants={groupVariants}>
+                <div className={styles.controlsLabel}>Preferences</div>
+                <div className={styles.controls}>
+                  <ThemeToggle />
+                  <LanguageDropdown languages={content.languages} />
+                </div>
+              </motion.div>
+
+              <motion.div className={styles.ctas} variants={groupVariants}>
+                <a
+                  href={content.secondaryCta.href}
+                  className={`${styles.cta} ${styles.ctaSecondary}`}
+                  onClick={onClose}
+                >
+                  {content.secondaryCta.label}
+                </a>
+                <a
+                  href={content.primaryCta.href}
+                  className={`${styles.cta} ${styles.ctaPrimary}`}
+                  onClick={onClose}
+                >
+                  {content.primaryCta.label}
+                  <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
+                </a>
+              </motion.div>
+            </motion.div>
+          </>
+        ) : null}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export { MobileMenu };

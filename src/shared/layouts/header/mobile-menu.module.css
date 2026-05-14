@@ -1,0 +1,93 @@
+@reference "tailwindcss";
+
+.trigger {
+  @apply inline-flex h-11 w-11 items-center justify-center rounded-full cursor-pointer border lg:hidden;
+  background: transparent;
+  border-color: var(--border-subtle);
+  color: var(--text-strong);
+}
+
+.trigger:hover {
+  background: var(--surface-overlay);
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.triggerIconWrap {
+  @apply inline-flex h-5 w-5 items-center justify-center;
+  will-change: transform, opacity;
+}
+
+.triggerIcon {
+  @apply text-lg;
+}
+
+.backdrop {
+  @apply fixed inset-0 z-40;
+  background: rgba(11, 16, 36, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.panel {
+  @apply fixed left-3 right-3 z-50 flex flex-col gap-4 rounded-3xl border p-5;
+  top: calc(env(safe-area-inset-top, 0px) + 4.5rem);
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 6rem);
+  overflow-y: auto;
+  background: var(--surface-elevated);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-floating);
+}
+
+.nav {
+  @apply w-full;
+}
+
+.divider {
+  @apply w-full h-px;
+  background: var(--border-subtle);
+}
+
+.controlsRow {
+  @apply flex w-full items-center justify-between gap-3;
+}
+
+.controlsLabel {
+  @apply text-xs font-semibold uppercase tracking-[0.18em];
+  color: var(--text-muted);
+}
+
+.controls {
+  @apply flex items-center gap-2;
+}
+
+.ctas {
+  @apply flex w-full flex-col gap-2;
+}
+
+.cta {
+  @apply inline-flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 text-sm font-semibold no-underline tracking-[-0.005em] transition-[background,color,box-shadow,transform] duration-200;
+}
+
+.ctaPrimary {
+  background: var(--secondary);
+  color: var(--text-on-dark);
+  box-shadow: 0 8px 20px -10px rgba(0, 22, 67, 0.35);
+}
+
+.ctaPrimary:hover {
+  background: var(--accent-cta-hover);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--text-strong);
+  border: 1px solid var(--border-subtle);
+}
+
+.ctaSecondary:hover {
+  background: var(--bg-section);
+}

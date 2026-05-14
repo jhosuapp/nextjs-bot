@@ -14,7 +14,7 @@ import styles from './home.module.css';
 
 const HomeView = (): JSX.Element => {
   return (
-    <main className={styles.home}>
+    <main id="main-content" className={styles.home}>
       <HeroSection content={homeContent.hero} />
       <TrustedByStrip content={homeContent.trustedBy} />
       <AgenticVideosSection content={homeContent.agentic} />
