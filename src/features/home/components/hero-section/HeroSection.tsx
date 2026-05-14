@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
@@ -11,6 +9,7 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { HeroContent } from '@/src/features/home/data/home-content';
 
 import styles from './hero-section.module.css';
+import { fadeUpMotion } from '@/src/shared/motion/fadeUp.motion';
 
 type Props = { content: HeroContent };
 
@@ -18,7 +17,7 @@ const HeroSection = ({ content }: Props) => {
   const reduce = useReducedMotion();
 
   return (
-    <section className={styles.section} aria-labelledby="hero-title">
+    <motion.section className={styles.section} aria-labelledby="hero-title" {...fadeUpMotion(0.56, 0.13)}>
       <div className={styles.orbs} aria-hidden="true">
         <motion.span
           className={`${styles.orb} ${styles.orbCyan}`}
@@ -187,7 +186,7 @@ const HeroSection = ({ content }: Props) => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

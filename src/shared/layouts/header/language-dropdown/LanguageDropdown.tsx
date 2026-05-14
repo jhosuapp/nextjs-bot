@@ -1,5 +1,3 @@
-'use client';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
@@ -15,7 +13,7 @@ import {
   type Locale,
 } from '@/src/shared/stores/language.store';
 
-import type { LanguageOption } from './header-content';
+import type { LanguageOption } from '../header-content';
 import styles from './language-dropdown.module.css';
 
 type Props = { languages: ReadonlyArray<LanguageOption> };

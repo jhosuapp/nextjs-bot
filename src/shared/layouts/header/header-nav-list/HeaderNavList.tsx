@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
@@ -7,7 +5,8 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { NavLink } from '../header-content';
 import styles from './header-nav-list.module.css';
 import Link from 'next/link';
-
+import { useLenisStore } from '@/src/shared/stores/lenis.store';
+import { useRouter } from 'next/router';
 type Props = {
   items: ReadonlyArray<NavLink>;
   variant?: 'desktop' | 'mobile';
@@ -30,8 +29,22 @@ const HeaderNavList = ({
   onItemClick,
   animated = false,
 }: Props) => {
+  const lenis = useLenisStore(state => state.lenis);
   const reduce = useReducedMotion();
   const itemVariants = buildItemVariants(!!reduce);
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href') || '/';
+
+    lenis?.scrollTo(0, { duration: 1 });
+
+    setTimeout(() => { 
+      router.push(href);
+      onItemClick?.();
+    }, 1000);
+  }
 
   return (
     <ul
@@ -43,13 +56,13 @@ const HeaderNavList = ({
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >
-          <Link
+          <a
             href={item.href}
             className={styles.link}
-            onClick={onItemClick}
+            onClick={(e)=> handleClick(e)}
           >
             {item.label}
-          </Link>
+          </a>
         </motion.li>
       ))}
     </ul>

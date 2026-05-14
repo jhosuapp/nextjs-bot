@@ -1,5 +1,3 @@
-'use client';
-
 import { ButtonHTMLAttributes, type JSX } from 'react';
 import { motion, MotionProps } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

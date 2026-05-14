@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';

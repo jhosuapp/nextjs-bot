@@ -1,7 +1,5 @@
-'use client';
-
 import { ReactNode, useEffect, useState, type JSX } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 
 import { anim, text } from './pageTransition.motion';
@@ -16,7 +14,7 @@ type Props = {
 }
 
 const PageTransition = ({ children }: Props): JSX.Element => {
-    const pathname = usePathname();
+    const pathname = useRouter().pathname;
 
     const isLoadingDelay = useLoaderStore(state => state.isLoadingDelay);
 

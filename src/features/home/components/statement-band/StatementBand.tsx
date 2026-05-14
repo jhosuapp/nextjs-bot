@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
