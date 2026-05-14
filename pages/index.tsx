@@ -1,9 +1,9 @@
-import Head from "next/head";
 import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import type { GetStaticPropsContext } from "next";
 
 import { HomeView } from "@/src/features/home/views/Home.view";
+import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
 import { PageTransition } from "@/src/shared/layouts/pageTransition/PageTransition";
 
 export default function Home() {
@@ -11,15 +11,14 @@ export default function Home() {
   const { t: tc } = useTranslation("common");
 
   return (
-    <>
-      <Head>
-        <title>{tc("seo.homeTitle")}</title>
-        <meta name="description" content={tc("seo.homeDescription")} />
-      </Head>
+    <PageLayout
+      title={tc("seo.homeTitle") as string}
+      description={tc("seo.homeDescription") as string}
+    >
       <PageTransition>
         <HomeView t={t} />
       </PageTransition>
-    </>
+    </PageLayout>
   );
 }
 

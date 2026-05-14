@@ -1,7 +1,9 @@
 {
   "seo": {
     "homeTitle": "Accueil | Lumina",
-    "homeDescription": "Avatars IA et agents interactifs pour une communication humaine, conçus pour les équipes qui doivent faire évoluer leurs messages sans perdre la touche personnelle."
+    "homeDescription": "Avatars IA et agents interactifs pour une communication humaine, conçus pour les équipes qui doivent faire évoluer leurs messages sans perdre la touche personnelle.",
+    "loginTitle": "Connexion | Lumina",
+    "loginDescription": "Accédez à votre compte Lumina et gérez vos avatars IA et agents interactifs."
   },
   "nav": {
     "product": "Produit",

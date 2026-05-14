@@ -1,7 +1,9 @@
 {
   "seo": {
     "homeTitle": "Home | Lumina",
-    "homeDescription": "AI avatars and interactive agents for humanlike communication, built for teams that need to scale messaging without losing the personal touch."
+    "homeDescription": "AI avatars and interactive agents for humanlike communication, built for teams that need to scale messaging without losing the personal touch.",
+    "loginTitle": "Sign In | Lumina",
+    "loginDescription": "Access your Lumina account and manage your AI avatars and interactive agents."
   },
   "nav": {
     "product": "Product",
