@@ -104,20 +104,3 @@
   @apply text-sm;
   color: var(--text-muted);
 }
-
-.footerCta {
-  @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-[background,transform,box-shadow] duration-200;
-  background: var(--secondary);
-  color: var(--text-on-dark);
-}
-
-.footerCta:hover {
-  @apply -translate-y-px;
-  background: var(--accent-cta-hover);
-  box-shadow: 0 8px 20px -10px rgba(0, 22, 67, 0.35);
-}
-
-.footerCta:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
-}

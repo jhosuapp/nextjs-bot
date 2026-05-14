@@ -1,7 +1,5 @@
 'use client';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -13,6 +11,8 @@ import { HeaderNavList } from './HeaderNavList';
 import { LanguageDropdown } from './LanguageDropdown';
 import { MobileMenu } from './MobileMenu';
 import { ThemeToggle } from './ThemeToggle';
+import { Button } from '../../components/button/Button';
+
 import styles from './header.module.css';
 
 const Header = () => {
@@ -60,10 +60,11 @@ const Header = () => {
             <a href={headerContent.secondaryCta.href} className={styles.signIn}>
               {headerContent.secondaryCta.label}
             </a>
-            <a href={headerContent.primaryCta.href} className={styles.primaryCta}>
-              {headerContent.primaryCta.label}
-              <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
-            </a>
+            <Button
+              text={headerContent.primaryCta.label}
+              style="fit"
+              type="button"
+            />
           </div>
 
           <MobileMenu

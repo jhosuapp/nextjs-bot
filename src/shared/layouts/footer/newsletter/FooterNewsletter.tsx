@@ -3,16 +3,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
-  faCircleNotch,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import { useId, useState, type FormEvent } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { FooterNewsletter as FooterNewsletterContent } from '@/src/shared/layouts/footer/footer-content';
 
 import styles from './footer-newsletter.module.css';
+import { Button } from '@/src/shared/components/button/Button';
 
 type Props = { content: FooterNewsletterContent };
 
@@ -91,57 +91,14 @@ const FooterNewsletter = ({ content }: Props) => {
             aria-invalid={status === 'error'}
             aria-describedby={error ? errorId : undefined}
           />
-          <motion.button
+          <Button
+            text={`${status === 'success' ? 'Subscribed' : 'Submit'}`}
+            style="secondary"
             type="submit"
-            className={styles.submit}
+            isLoad={status === 'loading'}
             disabled={isLocked}
-            whileHover={reduce || isLocked ? undefined : { y: -1 }}
-            whileTap={reduce || isLocked ? undefined : { scale: 0.97 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {status === 'success' ? (
-                <motion.span
-                  key="ok"
-                  className={styles.submitInner}
-                  initial={{ opacity: 0, y: reduce ? 0 : 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: reduce ? 0 : -8 }}
-                  transition={{ duration: DURATION.fast, ease: EASE }}
-                >
-                  <FontAwesomeIcon icon={faCheck} aria-hidden="true" />
-                  Subscribed
-                </motion.span>
-              ) : status === 'loading' ? (
-                <motion.span
-                  key="loading"
-                  className={styles.submitInner}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <FontAwesomeIcon
-                    icon={faCircleNotch}
-                    className={styles.spinner}
-                    aria-hidden="true"
-                  />
-                  <span className="sr-only">Subscribing</span>
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="cta"
-                  className={styles.submitInner}
-                  initial={{ opacity: 0, y: reduce ? 0 : 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: reduce ? 0 : -8 }}
-                  transition={{ duration: DURATION.fast, ease: EASE }}
-                >
-                  {content.cta}
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.button>
+            iconRight={status === 'success' ? faCheck : undefined}
+          />
         </div>
 
         <div className={styles.meta}>

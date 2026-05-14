@@ -14,6 +14,7 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { FaqContent, FaqItem } from '@/src/features/home/data/home-content';
 
 import styles from './faq-section.module.css';
+import { Button } from '@/src/shared/components/button/Button';
 
 type Props = { content: FaqContent };
 
@@ -120,10 +121,11 @@ const FaqSection = ({ content }: Props) => {
 
       <FadeIn className={styles.footer} delay={0.1} y={8} duration="fast">
         <span className={styles.footerLabel}>Still have a question?</span>
-        <a className={styles.footerCta} href={content.contactCta.href}>
-          {content.contactCta.label}
-          <span aria-hidden="true">→</span>
-        </a>
+        <Button 
+          text={content.contactCta.label}
+          style="secondary"
+          type="button"
+        />
       </FadeIn>
     </section>
   );

@@ -7,6 +7,7 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { RealtimeContent } from '@/src/features/home/data/home-content';
 
 import styles from './realtime-agents-section.module.css';
+import { Button } from '@/src/shared/components/button/Button';
 
 type Props = { content: RealtimeContent };
 
@@ -42,9 +43,11 @@ const RealtimeAgentsSection = ({ content }: Props) => {
         </FadeIn>
 
         <FadeIn delay={0.3} duration="fast">
-          <a className={styles.cta} href={content.cta.href}>
-            {content.cta.label}
-          </a>
+          <Button
+            text={content.cta.label}
+            style="primary"
+            type="button"
+          />
         </FadeIn>
       </motion.div>
     </section>

@@ -8,7 +8,8 @@
 
 .root {
   @apply grid w-full max-w-7xl mx-auto items-start gap-10 grid-cols-1 lg:grid-cols-[1fr_1.1fr];
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem)
+    clamp(2rem, 4vw, 3rem);
 }
 
 .copy {
@@ -81,26 +82,6 @@
 
 .input:disabled {
   @apply cursor-not-allowed opacity-70;
-}
-
-.submit {
-  @apply inline-flex items-center justify-center rounded-full px-5 text-sm font-semibold cursor-pointer border-0 transition-[background,box-shadow] duration-200 disabled:cursor-not-allowed;
-  background: var(--secondary);
-  color: var(--text-on-dark);
-  height: 44px;
-  min-width: 132px;
-  letter-spacing: -0.005em;
-  box-shadow: 0 1px 2px rgba(0, 22, 67, 0.18);
-}
-
-.submit:not(:disabled):hover {
-  background: var(--accent-cta-hover);
-  box-shadow: 0 8px 18px -10px rgba(0, 22, 67, 0.4);
-}
-
-.submit:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
 }
 
 .submitInner {
