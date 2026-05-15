@@ -20,6 +20,7 @@ type HeaderStaticData = {
 const headerStaticData: HeaderStaticData = {
   brand: { name: "150%", mark: "L" },
   nav: [
+    { key: "bot", href: "/bot" },
     { key: "product", href: "/login" },
     { key: "solutions", href: "/login" },
     { key: "customers", href: "/login" },

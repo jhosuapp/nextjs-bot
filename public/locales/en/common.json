@@ -3,14 +3,17 @@
     "homeTitle": "Home | 150%",
     "homeDescription": "AI avatars and interactive agents for humanlike communication, built for teams that need to scale messaging without losing the personal touch.",
     "loginTitle": "Sign In | 150%",
-    "loginDescription": "Access your 150% account and manage your AI avatars and interactive agents."
+    "loginDescription": "Access your 150% account and manage your AI avatars and interactive agents.",
+    "botTitle": "Conversational bot | 150%",
+    "botDescription": "Talk to an AI avatar that answers you with real-time video. Natural conversation by voice and chat."
   },
   "nav": {
     "product": "Product",
     "solutions": "Solutions",
     "customers": "Customers",
     "pricing": "Pricing",
-    "docs": "Docs"
+    "docs": "Docs",
+    "bot": "Bot"
   },
   "header": {
     "skipLink": "Skip to main content",

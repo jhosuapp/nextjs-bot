@@ -1,0 +1,50 @@
+@reference "tailwindcss";
+
+.row {
+  @apply flex w-full;
+  list-style: none;
+}
+
+.rowUser {
+  @apply justify-end;
+}
+
+.rowBot {
+  @apply justify-start;
+}
+
+.bubble {
+  @apply relative flex max-w-[78%] flex-col gap-1 rounded-2xl px-3.5 py-2.5;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.bubbleUser {
+  background: var(--gradient-brand);
+  color: var(--text-on-dark);
+  border-bottom-right-radius: 6px;
+}
+
+.bubbleBot {
+  background: var(--surface-elevated);
+  color: var(--text-strong);
+  border: 1px solid var(--border-subtle);
+  border-bottom-left-radius: 6px;
+}
+
+.author {
+  @apply text-[0.65rem] font-semibold uppercase tracking-[0.14em];
+  opacity: 0.7;
+}
+
+.text {
+  @apply m-0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.ts {
+  @apply self-end text-[0.65rem];
+  opacity: 0.55;
+}

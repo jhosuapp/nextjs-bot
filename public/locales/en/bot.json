@@ -1,0 +1,59 @@
+{
+  "page": {
+    "eyebrow": "Live bot",
+    "headline": "Talk to your AI avatar",
+    "subhead": "A natural voice conversation. Say \"hello\" to start, or use the button."
+  },
+  "permission": {
+    "title": "We need your microphone",
+    "description": "So the bot can hear you, allow microphone access. We don't store audio — transcription happens in real time.",
+    "allowButton": "Allow microphone",
+    "deniedTitle": "Microphone blocked",
+    "deniedDescription": "Enable microphone access in your browser settings and try again. You can also type your questions in the chat.",
+    "retryButton": "Try again"
+  },
+  "idle": {
+    "ctaStart": "Start conversation",
+    "wakeHint": "You can also say \"hello\" to begin",
+    "welcome": "Ready when you are"
+  },
+  "listening": {
+    "instruction": "Listening…",
+    "interruptHint": "Say \"question\" anytime to be heard again"
+  },
+  "intro": {
+    "label": "Introducing…"
+  },
+  "responding": {
+    "label": "Responding"
+  },
+  "status": {
+    "thinking": "Thinking…",
+    "analyzing": "Analyzing your question…",
+    "preparing": "Preparing answer…"
+  },
+  "chat": {
+    "title": "Conversation",
+    "placeholder": "Type your question…",
+    "send": "Send",
+    "openAria": "Open conversation",
+    "closeAria": "Close conversation",
+    "empty": "No messages yet. Speak or type to start.",
+    "you": "You",
+    "bot": "Bot"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "We couldn't get an answer. Try restarting the conversation.",
+    "resetButton": "Restart bot"
+  },
+  "inactivity": {
+    "warning": "Still there? The bot will reset in 30 seconds due to inactivity.",
+    "resetting": "Resetting for inactivity…",
+    "stay": "I'm still here"
+  },
+  "wakeWords": {
+    "start": "hello",
+    "interrupt": "question"
+  }
+}

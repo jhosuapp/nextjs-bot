@@ -64,7 +64,7 @@ type HomeStaticData = {
 
 const homeStaticData: HomeStaticData = {
   hero: {
-    primaryCta: { href: '#get-started' },
+    primaryCta: { href: '/bot' },
     secondaryCta: { href: '#demo' },
   },
   trustedBy: {

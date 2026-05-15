@@ -1,0 +1,42 @@
+@reference "tailwindcss";
+
+.form {
+  @apply flex items-center gap-2 px-3 pb-3 pt-2;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--surface-elevated);
+}
+
+.input {
+  @apply flex-1 rounded-full border bg-transparent px-4 py-2.5 text-sm outline-none transition-colors;
+  border-color: var(--border-subtle);
+  color: var(--text-strong);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 190, 255, 0.18);
+}
+
+.input:disabled {
+  @apply cursor-not-allowed opacity-60;
+}
+
+.button {
+  @apply inline-flex h-10 w-10 flex-none items-center justify-center rounded-full border-none text-sm transition-opacity;
+  background: var(--gradient-brand);
+  color: var(--text-on-dark);
+  cursor: pointer;
+}
+
+.button:disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}

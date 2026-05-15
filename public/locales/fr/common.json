@@ -3,14 +3,17 @@
     "homeTitle": "Accueil | 150%",
     "homeDescription": "Avatars IA et agents interactifs pour une communication humaine, conçus pour les équipes qui doivent faire évoluer leurs messages sans perdre la touche personnelle.",
     "loginTitle": "Connexion | 150%",
-    "loginDescription": "Accédez à votre compte 150% et gérez vos avatars IA et agents interactifs."
+    "loginDescription": "Accédez à votre compte 150% et gérez vos avatars IA et agents interactifs.",
+    "botTitle": "Bot conversationnel | 150%",
+    "botDescription": "Parlez à un avatar IA qui vous répond en vidéo en temps réel. Conversation naturelle par voix et par chat."
   },
   "nav": {
     "product": "Produit",
     "solutions": "Solutions",
     "customers": "Clients",
     "pricing": "Tarifs",
-    "docs": "Documentation"
+    "docs": "Documentation",
+    "bot": "Bot"
   },
   "header": {
     "skipLink": "Aller au contenu principal",

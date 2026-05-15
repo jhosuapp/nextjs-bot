@@ -1,0 +1,72 @@
+@reference "tailwindcss";
+
+.fab {
+  @apply fixed bottom-6 right-6 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border-none text-lg;
+  background: var(--surface-elevated);
+  color: var(--text-strong);
+  cursor: pointer;
+  box-shadow: var(--shadow-floating);
+  border: 1px solid var(--border-subtle);
+}
+
+.fab:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.badge {
+  @apply absolute -top-1 -right-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-[0.7rem] font-bold;
+  background: var(--tertiary);
+  color: var(--secondary);
+}
+
+.panel {
+  @apply fixed bottom-24 right-6 z-30 flex w-[min(360px,calc(100vw-3rem))] flex-col overflow-hidden rounded-2xl;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-floating);
+  max-height: min(560px, calc(100vh - 12rem));
+}
+
+.header {
+  @apply flex items-center justify-between gap-2 px-4 py-3;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-section);
+}
+
+.title {
+  @apply m-0 text-sm font-semibold;
+  color: var(--text-strong);
+  letter-spacing: 0.01em;
+}
+
+.close {
+  @apply inline-flex h-8 w-8 items-center justify-center rounded-full border-none bg-transparent text-sm;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.close:hover {
+  background: var(--border-subtle);
+  color: var(--text-strong);
+}
+
+.list {
+  @apply flex flex-1 flex-col gap-2 overflow-y-auto px-3 py-4 m-0 list-none;
+  background: var(--bg-section);
+}
+
+.empty {
+  @apply m-auto text-center text-sm;
+  color: var(--text-muted);
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    right: 0.75rem;
+    bottom: 6rem;
+    width: calc(100vw - 1.5rem);
+    max-height: 60vh;
+  }
+}

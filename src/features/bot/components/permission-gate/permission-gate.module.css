@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+.root {
+  @apply absolute inset-0 z-20 flex items-center justify-center px-6;
+  background: rgba(6, 8, 16, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.card {
+  @apply flex w-full max-w-md flex-col items-center gap-4 rounded-3xl p-8 text-center;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-floating);
+}
+
+.iconWrap {
+  @apply inline-flex h-16 w-16 items-center justify-center rounded-full text-2xl;
+  background: var(--bg-section);
+  color: var(--primary);
+}
+
+.iconWrap[data-denied="true"] {
+  color: #b91c1c;
+  background: rgba(220, 38, 38, 0.12);
+}
+
+.title {
+  @apply m-0 text-2xl font-semibold tracking-tight;
+  color: var(--text-strong);
+}
+
+.description {
+  @apply m-0 text-base leading-relaxed;
+  color: var(--text-muted);
+  max-width: 28rem;
+}

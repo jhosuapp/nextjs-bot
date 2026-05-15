@@ -1,0 +1,59 @@
+{
+  "page": {
+    "eyebrow": "Live-Bot",
+    "headline": "Sprich mit deinem KI-Avatar",
+    "subhead": "Eine natürliche Sprachunterhaltung. Sag \"hallo\" zum Starten, oder nutze die Schaltfläche."
+  },
+  "permission": {
+    "title": "Wir brauchen dein Mikrofon",
+    "description": "Damit dich der Bot hören kann, erlaube den Mikrofonzugriff. Wir speichern kein Audio — die Transkription erfolgt in Echtzeit.",
+    "allowButton": "Mikrofon erlauben",
+    "deniedTitle": "Mikrofon blockiert",
+    "deniedDescription": "Aktiviere die Berechtigung in den Browser-Einstellungen und versuche es erneut. Du kannst auch im Chat schreiben.",
+    "retryButton": "Erneut versuchen"
+  },
+  "idle": {
+    "ctaStart": "Unterhaltung starten",
+    "wakeHint": "Du kannst auch \"hallo\" sagen, um zu starten",
+    "welcome": "Bereit, wenn du es bist"
+  },
+  "listening": {
+    "instruction": "Höre zu…",
+    "interruptHint": "Sag jederzeit \"frage\", um wieder gehört zu werden"
+  },
+  "intro": {
+    "label": "Vorstellung…"
+  },
+  "responding": {
+    "label": "Antwort"
+  },
+  "status": {
+    "thinking": "Denke nach…",
+    "analyzing": "Analysiere deine Frage…",
+    "preparing": "Bereite Antwort vor…"
+  },
+  "chat": {
+    "title": "Unterhaltung",
+    "placeholder": "Schreibe deine Frage…",
+    "send": "Senden",
+    "openAria": "Unterhaltung öffnen",
+    "closeAria": "Unterhaltung schließen",
+    "empty": "Noch keine Nachrichten. Sprich oder tippe, um zu starten.",
+    "you": "Du",
+    "bot": "Bot"
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen",
+    "description": "Wir konnten keine Antwort erhalten. Versuche, die Unterhaltung neu zu starten.",
+    "resetButton": "Bot neu starten"
+  },
+  "inactivity": {
+    "warning": "Bist du noch da? Der Bot wird in 30 Sekunden wegen Inaktivität zurückgesetzt.",
+    "resetting": "Zurücksetzen wegen Inaktivität…",
+    "stay": "Ich bin noch da"
+  },
+  "wakeWords": {
+    "start": "hallo",
+    "interrupt": "frage"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "page": {
+    "eyebrow": "Bot en vivo",
+    "headline": "Habla con tu avatar de IA",
+    "subhead": "Una conversación natural por voz. Dí \"hola\" para empezar o usa el botón."
+  },
+  "permission": {
+    "title": "Necesitamos tu micrófono",
+    "description": "Para que el bot pueda escucharte, autoriza el acceso al micrófono. No grabamos audio: la transcripción ocurre en el momento.",
+    "allowButton": "Permitir micrófono",
+    "deniedTitle": "Micrófono bloqueado",
+    "deniedDescription": "Activa el permiso desde la configuración de tu navegador y vuelve a intentarlo. También puedes escribir tus preguntas en el chat.",
+    "retryButton": "Volver a intentar"
+  },
+  "idle": {
+    "ctaStart": "Iniciar conversación",
+    "wakeHint": "También puedes decir \"hola\" para empezar",
+    "welcome": "Listo cuando tú lo estés"
+  },
+  "listening": {
+    "instruction": "Escuchando…",
+    "interruptHint": "Di \"pregunta\" en cualquier momento para volver a escuchar"
+  },
+  "intro": {
+    "label": "Presentando…"
+  },
+  "responding": {
+    "label": "Respondiendo"
+  },
+  "status": {
+    "thinking": "Pensando…",
+    "analyzing": "Analizando tu pregunta…",
+    "preparing": "Preparando respuesta…"
+  },
+  "chat": {
+    "title": "Conversación",
+    "placeholder": "Escribe tu pregunta…",
+    "send": "Enviar",
+    "openAria": "Abrir conversación",
+    "closeAria": "Cerrar conversación",
+    "empty": "Aún no hay mensajes. Habla o escribe para empezar.",
+    "you": "Tú",
+    "bot": "Bot"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "No pudimos obtener una respuesta. Intenta reiniciar la conversación.",
+    "resetButton": "Reiniciar bot"
+  },
+  "inactivity": {
+    "warning": "¿Sigues ahí? El bot se reiniciará en 30 segundos por inactividad.",
+    "resetting": "Reiniciando por inactividad…",
+    "stay": "Sigo aquí"
+  },
+  "wakeWords": {
+    "start": "hola",
+    "interrupt": "pregunta"
+  }
+}

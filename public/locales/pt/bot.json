@@ -1,0 +1,59 @@
+{
+  "page": {
+    "eyebrow": "Bot ao vivo",
+    "headline": "Converse com seu avatar de IA",
+    "subhead": "Uma conversa natural por voz. Diga \"olá\" para começar ou use o botão."
+  },
+  "permission": {
+    "title": "Precisamos do seu microfone",
+    "description": "Para que o bot possa ouvi-lo, autorize o acesso ao microfone. Não armazenamos áudio — a transcrição é em tempo real.",
+    "allowButton": "Permitir microfone",
+    "deniedTitle": "Microfone bloqueado",
+    "deniedDescription": "Ative a permissão nas configurações do navegador e tente novamente. Você também pode escrever no chat.",
+    "retryButton": "Tentar de novo"
+  },
+  "idle": {
+    "ctaStart": "Iniciar conversa",
+    "wakeHint": "Você também pode dizer \"olá\" para começar",
+    "welcome": "Pronto quando você estiver"
+  },
+  "listening": {
+    "instruction": "Ouvindo…",
+    "interruptHint": "Diga \"pergunta\" a qualquer momento para falar novamente"
+  },
+  "intro": {
+    "label": "Apresentando…"
+  },
+  "responding": {
+    "label": "Respondendo"
+  },
+  "status": {
+    "thinking": "Pensando…",
+    "analyzing": "Analisando sua pergunta…",
+    "preparing": "Preparando resposta…"
+  },
+  "chat": {
+    "title": "Conversa",
+    "placeholder": "Digite sua pergunta…",
+    "send": "Enviar",
+    "openAria": "Abrir conversa",
+    "closeAria": "Fechar conversa",
+    "empty": "Nenhuma mensagem ainda. Fale ou digite para começar.",
+    "you": "Você",
+    "bot": "Bot"
+  },
+  "error": {
+    "title": "Algo deu errado",
+    "description": "Não conseguimos obter uma resposta. Tente reiniciar a conversa.",
+    "resetButton": "Reiniciar bot"
+  },
+  "inactivity": {
+    "warning": "Ainda aí? O bot será reiniciado em 30 segundos por inatividade.",
+    "resetting": "Reiniciando por inatividade…",
+    "stay": "Estou aqui"
+  },
+  "wakeWords": {
+    "start": "olá",
+    "interrupt": "pergunta"
+  }
+}
