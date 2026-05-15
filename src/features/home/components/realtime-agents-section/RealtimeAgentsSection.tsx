@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
-import { homeStaticData } from '@/src/features/home/data/home-content';
 import { Button } from '@/src/shared/components/button/Button';
 
 import styles from './realtime-agents-section.module.css';
@@ -12,7 +11,6 @@ type Props = { t: ITranslations };
 
 const RealtimeAgentsSection = ({ t }: Props) => {
   const reduce = useReducedMotion();
-  const { realtime } = homeStaticData;
 
   return (
     <section className={styles.section} aria-labelledby="realtime-title">

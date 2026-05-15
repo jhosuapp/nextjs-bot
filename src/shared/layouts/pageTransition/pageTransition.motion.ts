@@ -48,7 +48,7 @@ export const translate = {
     }
 }
 
-export const anim = (variants:any) => {
+export const anim = (variants: Record<string, unknown>) => {
     return {
         variants,
         initial: "initial",

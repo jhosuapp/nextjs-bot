@@ -4,7 +4,6 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
 type NavLink = { label: string; href: string };
 import styles from './header-nav-list.module.css';
-import Link from 'next/link';
 import { useLenisStore } from '@/src/shared/stores/lenis.store';
 import { useRouter } from 'next/router';
 type Props = {

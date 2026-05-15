@@ -3,7 +3,6 @@ import {
   faCheck,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import { useReducedMotion } from 'framer-motion';
 import { useId, useState, type FormEvent } from 'react';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
@@ -17,7 +16,6 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const FooterNewsletter = ({ t }: Props) => {
-  const reduce = useReducedMotion();
   const inputId = useId();
   const errorId = useId();
   const [email, setEmail] = useState('');

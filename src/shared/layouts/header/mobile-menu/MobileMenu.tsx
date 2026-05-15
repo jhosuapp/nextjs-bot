@@ -11,7 +11,6 @@ import { useEffect, useId } from 'react';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
-import { headerStaticData } from '../header-content';
 import { HeaderNavList } from '../header-nav-list/HeaderNavList';
 import { LanguageDropdown } from '../language-dropdown/LanguageDropdown';
 import { ThemeToggle } from '../theme-toggle/ThemeToggle';

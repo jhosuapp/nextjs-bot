@@ -88,13 +88,3 @@
   @apply max-w-2xl text-base leading-[1.65];
   color: var(--text-muted-on-dark);
 }
-
-.cta {
-  @apply inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors duration-200;
-  background: var(--accent-cta);
-  color: var(--secondary);
-}
-
-.cta:hover {
-  background: var(--accent-cta-hover);
-}
