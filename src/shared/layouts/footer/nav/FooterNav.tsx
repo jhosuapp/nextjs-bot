@@ -6,11 +6,14 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
 
 import styles from './footer-nav.module.css';
+import { useThemeStore } from '@/src/shared/stores/theme.store';
+import Image from 'next/image';
 
 type Props = { t: ITranslations };
 
 const FooterNav = ({ t }: Props) => {
   const { brand, nav } = footerStaticData;
+  const theme = useThemeStore(state => state.theme);
 
   return (
     <div className={styles.root}>
@@ -20,12 +23,12 @@ const FooterNav = ({ t }: Props) => {
           className={styles.brandMark}
           aria-label={t('footer.brand.homeAria', { name: brand.name }) as string}
         >
-          <span className={styles.brandLogo} aria-hidden="true">
-            <span className={styles.brandLogoInner}>L</span>
-          </span>
-          <span className={styles.brandName}>{brand.name}</span>
+          {theme === 'light' ? (
+            <Image src="/svg/logo.svg" alt={brand.name} width={100} height={40} />
+          ) : (
+            <Image src="/svg/logo-white.svg" alt={brand.name} width={100} height={40} />
+          )}
         </Link>
-        <p className={styles.brandTagline}>{t('footer.brand.tagline')}</p>
       </div>
 
       <nav

@@ -40,12 +40,20 @@
 
 .orbTeal {
   @apply h-[480px] w-[480px] bottom-[-120px] left-[-120px];
-  background: radial-gradient(circle, rgba(23, 241, 209, 0.45), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(23, 241, 209, 0.45),
+    transparent 70%
+  );
 }
 
 .orbWhite {
   @apply h-[320px] w-[320px] top-[30%] left-1/2 opacity-70 -translate-x-1/2 -translate-y-1/2;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9),
+    transparent 70%
+  );
 }
 
 .inner {
@@ -194,11 +202,7 @@
 .mockupChrome {
   @apply flex items-center gap-2 border-b px-4 py-3;
   border-color: var(--border-soft);
-  background: linear-gradient(
-    to bottom,
-    rgba(246, 248, 252, 0.8),
-    rgba(255, 255, 255, 0.6)
-  );
+  background: var(--mockup-chrome-bg);
 }
 
 .dot {
@@ -290,7 +294,7 @@
 }
 
 .mockupLine {
-  @apply text-lg leading-snug font-medium tracking-[-0.01em];
+  @apply text-lg text-left leading-snug font-medium tracking-[-0.01em];
   color: var(--text-strong);
 }
 
@@ -315,7 +319,7 @@
 
 .kpi {
   @apply flex flex-col items-center gap-1 rounded-2xl px-4 py-4 border;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--mockup-chrome-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-color: var(--border-subtle);

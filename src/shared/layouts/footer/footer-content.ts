@@ -1,10 +1,10 @@
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faGithub,
   faLinkedinIn,
   faXTwitter,
   faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 
 type FooterLinkStatic = {
   key: string;
@@ -39,52 +39,52 @@ type FooterStaticData = {
 };
 
 const footerStaticData: FooterStaticData = {
-  brand: { name: 'Lumina', mark: 'L' },
+  brand: { name: "150%", mark: "L" },
   nav: {
     columns: [
       {
-        key: 'product',
+        key: "product",
         links: [
-          { key: 'avatars', href: '#avatars' },
-          { key: 'realtime', href: '#realtime' },
-          { key: 'integrations', href: '#integrations' },
-          { key: 'pricing', href: '#pricing' },
-          { key: 'changelog', href: '#changelog' },
+          { key: "avatars", href: "#avatars" },
+          { key: "realtime", href: "#realtime" },
+          { key: "integrations", href: "#integrations" },
+          { key: "pricing", href: "#pricing" },
+          { key: "changelog", href: "#changelog" },
         ],
       },
       {
-        key: 'company',
+        key: "company",
         links: [
-          { key: 'about', href: '#about' },
-          { key: 'customers', href: '#customers' },
-          { key: 'careers', href: '#careers' },
-          { key: 'press', href: '#press' },
-          { key: 'contact', href: '#contact' },
+          { key: "about", href: "#about" },
+          { key: "customers", href: "#customers" },
+          { key: "careers", href: "#careers" },
+          { key: "press", href: "#press" },
+          { key: "contact", href: "#contact" },
         ],
       },
       {
-        key: 'resources',
+        key: "resources",
         links: [
-          { key: 'docs', href: '#docs' },
-          { key: 'api', href: '#api' },
-          { key: 'help', href: '#help' },
-          { key: 'status', href: '#status', external: true },
-          { key: 'security', href: '#security' },
+          { key: "docs", href: "#docs" },
+          { key: "api", href: "#api" },
+          { key: "help", href: "#help" },
+          { key: "status", href: "#status", external: true },
+          { key: "security", href: "#security" },
         ],
       },
     ],
   },
   bottom: {
     socials: [
-      { key: 'twitter', name: 'X (Twitter)', href: '#', icon: faXTwitter },
-      { key: 'linkedin', name: 'LinkedIn', href: '#', icon: faLinkedinIn },
-      { key: 'github', name: 'GitHub', href: '#', icon: faGithub },
-      { key: 'youtube', name: 'YouTube', href: '#', icon: faYoutube },
+      { key: "twitter", name: "X (Twitter)", href: "#", icon: faXTwitter },
+      { key: "linkedin", name: "LinkedIn", href: "#", icon: faLinkedinIn },
+      { key: "github", name: "GitHub", href: "#", icon: faGithub },
+      { key: "youtube", name: "YouTube", href: "#", icon: faYoutube },
     ],
     legalLinks: [
-      { key: 'privacy', href: '#privacy' },
-      { key: 'terms', href: '#terms' },
-      { key: 'cookies', href: '#cookies' },
+      { key: "privacy", href: "#privacy" },
+      { key: "terms", href: "#terms" },
+      { key: "cookies", href: "#cookies" },
     ],
   },
 };

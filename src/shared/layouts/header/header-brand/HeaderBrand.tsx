@@ -3,20 +3,25 @@ import Link from 'next/link';
 import type { HeaderStaticData } from '../header-content';
 
 import styles from './header-brand.module.css';
+import Image from 'next/image';
+import { useThemeStore } from '@/src/shared/stores/theme.store';
 
 type Props = { brand: HeaderStaticData['brand'] };
 
 const HeaderBrand = ({ brand }: Props) => {
+  const theme = useThemeStore(state => state.theme);
+
   return (
     <Link
       href="/"
       className={styles.root}
       aria-label={`${brand.name} home`}
     >
-      <span className={styles.logo} aria-hidden="true">
-        <span className={styles.logoInner}>{brand.mark}</span>
-      </span>
-      <span className={styles.name}>{brand.name}</span>
+      {theme === 'light' ? (
+        <Image src="/svg/logo.svg" alt={brand.name} width={100} height={40} />
+      ) : (
+        <Image src="/svg/logo-white.svg" alt={brand.name} width={100} height={40} />
+      )}
     </Link>
   );
 };

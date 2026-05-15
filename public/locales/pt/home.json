@@ -15,7 +15,7 @@
       { "label": "SLA de uptime", "value": "99.9%" }
     ],
     "mockup": {
-      "url": "lumina.ai / studio",
+      "url": "150porciento.ai / studio",
       "badgeLabel": "AO VIVO · Avatar Studio",
       "line": "\"Olá Marina — seus insights semanais estão prontos, vamos analisá-los.\"",
       "streaming": "Transmissão · 24 fps",
@@ -96,13 +96,13 @@
   "faq": {
     "eyebrow": "Perguntas frequentes",
     "title": "Tudo que você precisa saber.",
-    "description": "Perguntas comuns sobre a Lumina — e se algo estiver faltando, nossa equipe responde em menos de um dia útil.",
+    "description": "Perguntas comuns sobre a 150% — e se algo estiver faltando, nossa equipe responde em menos de um dia útil.",
     "contactCta": "Falar com nossa equipe",
     "stillHaveQuestion": "Ainda tem dúvidas?",
     "items": {
       "what-is": {
         "question": "O que a plataforma realmente faz?",
-        "answer": "A Lumina transforma scripts, documentos e prompts em vídeos de avatares realistas e agentes em tempo real que você pode integrar ao seu produto, site de marketing, portal de treinamento ou fluxo de vendas."
+        "answer": "A 150% transforma scripts, documentos e prompts em vídeos de avatares realistas e agentes em tempo real que você pode integrar ao seu produto, site de marketing, portal de treinamento ou fluxo de vendas."
       },
       "how-fast": {
         "question": "Com que rapidez posso publicar meu primeiro avatar?",

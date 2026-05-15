@@ -1,9 +1,9 @@
 {
   "seo": {
-    "homeTitle": "Startseite | Lumina",
+    "homeTitle": "Startseite | 150%",
     "homeDescription": "KI-Avatare und interaktive Agenten für menschliche Kommunikation, entwickelt für Teams, die Nachrichten skalieren müssen, ohne die persönliche Note zu verlieren.",
-    "loginTitle": "Anmelden | Lumina",
-    "loginDescription": "Melden Sie sich bei Ihrem Lumina-Konto an und verwalten Sie Ihre KI-Avatare und interaktiven Agenten."
+    "loginTitle": "Anmelden | 150%",
+    "loginDescription": "Melden Sie sich bei Ihrem 150%-Konto an und verwalten Sie Ihre KI-Avatare und interaktiven Agenten."
   },
   "nav": {
     "product": "Produkt",
@@ -32,7 +32,7 @@
   "footer": {
     "heading": "Seitenfußzeile",
     "brand": {
-      "name": "Lumina",
+      "name": "150%",
       "tagline": "KI-Avatare für menschliche Kommunikation.",
       "homeAria": "{{name}} Startseite"
     },
@@ -76,7 +76,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} Lumina, Inc. Alle Rechte vorbehalten.",
+      "copyright": "© {{year}} 150%, Inc. Alle Rechte vorbehalten.",
       "socialsAria": "Soziale Medien",
       "legalsAria": "Rechtliche Links",
       "legal": {

@@ -1,9 +1,9 @@
 {
   "seo": {
-    "homeTitle": "Accueil | Lumina",
+    "homeTitle": "Accueil | 150%",
     "homeDescription": "Avatars IA et agents interactifs pour une communication humaine, conçus pour les équipes qui doivent faire évoluer leurs messages sans perdre la touche personnelle.",
-    "loginTitle": "Connexion | Lumina",
-    "loginDescription": "Accédez à votre compte Lumina et gérez vos avatars IA et agents interactifs."
+    "loginTitle": "Connexion | 150%",
+    "loginDescription": "Accédez à votre compte 150% et gérez vos avatars IA et agents interactifs."
   },
   "nav": {
     "product": "Produit",
@@ -32,7 +32,7 @@
   "footer": {
     "heading": "Pied de page",
     "brand": {
-      "name": "Lumina",
+      "name": "150%",
       "tagline": "Avatars IA conçus pour une communication humaine.",
       "homeAria": "Accueil {{name}}"
     },
@@ -76,7 +76,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} Lumina, Inc. Tous droits réservés.",
+      "copyright": "© {{year}} 150%, Inc. Tous droits réservés.",
       "socialsAria": "Réseaux sociaux",
       "legalsAria": "Liens légaux",
       "legal": {

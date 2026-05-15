@@ -18,22 +18,22 @@ type HeaderStaticData = {
 };
 
 const headerStaticData: HeaderStaticData = {
-  brand: { name: 'Lumina', mark: 'L' },
+  brand: { name: "150%", mark: "L" },
   nav: [
-    { key: 'product', href: '/login' },
-    { key: 'solutions', href: '/login' },
-    { key: 'customers', href: '/login' },
-    { key: 'pricing', href: '/login' },
-    { key: 'docs', href: '/login' },
+    { key: "product", href: "/login" },
+    { key: "solutions", href: "/login" },
+    { key: "customers", href: "/login" },
+    { key: "pricing", href: "/login" },
+    { key: "docs", href: "/login" },
   ],
-  primaryCta: { href: '#get-started' },
-  secondaryCta: { href: '#signin' },
+  primaryCta: { href: "#get-started" },
+  secondaryCta: { href: "#signin" },
   languages: [
-    { code: 'en', label: 'EN', native: 'English' },
-    { code: 'es', label: 'ES', native: 'Español' },
-    { code: 'fr', label: 'FR', native: 'Français' },
-    { code: 'de', label: 'DE', native: 'Deutsch' },
-    { code: 'pt', label: 'PT', native: 'Português' },
+    { code: "en", label: "EN", native: "English" },
+    { code: "es", label: "ES", native: "Español" },
+    { code: "fr", label: "FR", native: "Français" },
+    { code: "de", label: "DE", native: "Deutsch" },
+    { code: "pt", label: "PT", native: "Português" },
   ],
 };
 

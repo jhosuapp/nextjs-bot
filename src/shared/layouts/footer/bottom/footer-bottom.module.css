@@ -7,7 +7,7 @@
 }
 
 .inner {
-  @apply mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4;
+  @apply mx-auto flex w-full max-w-7xl flex-wrap flex-col lg:flex-row items-center justify-between gap-4;
   padding: 1.25rem clamp(1.25rem, 5vw, 4rem);
 }
 

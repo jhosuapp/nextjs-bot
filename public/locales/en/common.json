@@ -1,9 +1,9 @@
 {
   "seo": {
-    "homeTitle": "Home | Lumina",
+    "homeTitle": "Home | 150%",
     "homeDescription": "AI avatars and interactive agents for humanlike communication, built for teams that need to scale messaging without losing the personal touch.",
-    "loginTitle": "Sign In | Lumina",
-    "loginDescription": "Access your Lumina account and manage your AI avatars and interactive agents."
+    "loginTitle": "Sign In | 150%",
+    "loginDescription": "Access your 150% account and manage your AI avatars and interactive agents."
   },
   "nav": {
     "product": "Product",
@@ -32,7 +32,7 @@
   "footer": {
     "heading": "Site footer",
     "brand": {
-      "name": "Lumina",
+      "name": "150%",
       "tagline": "AI avatars built for humanlike communication.",
       "homeAria": "{{name}} home"
     },
@@ -76,7 +76,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} Lumina, Inc. All rights reserved.",
+      "copyright": "© {{year}} 150%, Inc. All rights reserved.",
       "socialsAria": "Social media",
       "legalsAria": "Legal links",
       "legal": {
