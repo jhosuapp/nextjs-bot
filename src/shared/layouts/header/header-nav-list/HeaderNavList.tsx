@@ -37,12 +37,12 @@ const HeaderNavList = ({
     e.preventDefault();
     const href = e.currentTarget.getAttribute('href') || '/';
 
-    lenis?.scrollTo(0, { duration: 1 });
+    lenis?.scrollTo(0, { duration: 0.7 });
 
     setTimeout(() => { 
       router.push(href);
       onItemClick?.();
-    }, 1000);
+    }, 700);
   }
 
   return (

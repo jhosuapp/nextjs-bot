@@ -2,7 +2,6 @@
 
 .shell {
   @apply relative w-full;
-  min-height: 100vh;
   background: var(--background);
 }
 

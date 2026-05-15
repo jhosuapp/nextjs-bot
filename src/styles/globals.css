@@ -5,6 +5,7 @@
   --secondary: #001643;
   --tertiary: #17f1d1;
   --cuartary: #e8f8ff;
+  --btn-secondary: #001643;
 
   --background: #ffffff;
   --foreground: #0b1024;
@@ -68,6 +69,8 @@
 }
 
 :root[data-theme="dark"] {
+  --btn-secondary: #00beff;
+
   --background: #060810;
   --foreground: #ededed;
 
@@ -162,9 +165,7 @@ body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 *::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
+  @apply w-0 h-0 hidden;
 }
 
 body {
@@ -188,13 +189,6 @@ body {
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
 }

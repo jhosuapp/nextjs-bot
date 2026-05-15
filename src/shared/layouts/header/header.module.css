@@ -1,9 +1,7 @@
 @reference "tailwindcss";
 
 .header {
-  @apply sticky top-0 left-0 right-0 z-40 w-full transition-[background,backdrop-filter,box-shadow,border-color] duration-200;
-  background: transparent;
-  border-bottom: 1px solid transparent;
+  @apply sticky top-0 left-0 right-0 z-40 w-full transition-[background,backdrop-filter,box-shadow,border-color] duration-200 bg-transparent border-b border-transparent;
 }
 
 .header[data-scrolled="true"] {

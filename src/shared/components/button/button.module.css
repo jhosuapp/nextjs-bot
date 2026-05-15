@@ -76,7 +76,7 @@ button:hover .button__iconSecondary {
 /* secondary */
 .button--secondary {
   transition: 0.5s ease background-color;
-  background-color: var(--secondary);
+  background-color: var(--btn-secondary);
 }
 
 .button--secondary:hover {
@@ -91,7 +91,7 @@ button:hover .button__iconSecondary {
 
 .button--fit {
   transition: 0.5s ease background-color;
-  background: var(--secondary);
+  background: var(--btn-secondary);
   @apply min-h-10 min-w-auto;
 }
 

@@ -10,6 +10,7 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './integrations-grid.module.css';
+import { Button } from '@/src/shared/components/button/Button';
 
 type Props = { t: ITranslations };
 
@@ -24,9 +25,11 @@ const IntegrationsGrid = ({ t }: Props) => {
           {t('integrations.title')}
         </h2>
         <p className={styles.description}>{t('integrations.description')}</p>
-        <a className={styles.cta} href={integrations.cta.href}>
-          {t('integrations.cta')}
-        </a>
+        <Button
+          text={t('integrations.cta') as string}
+          style="secondary"
+          type="button"
+        />
       </FadeIn>
 
       <StaggerGroup className={styles.grid} stagger={0.05} amount={0.15}>

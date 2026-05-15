@@ -14,6 +14,7 @@ import { VoiceControl } from '@/src/features/bot/components/voice-control/VoiceC
 import { useBotEngine } from '@/src/features/bot/hooks/useBotEngine';
 import { useMicPermission } from '@/src/features/bot/hooks/useMicPermission';
 import { useBotStore } from '@/src/features/bot/stores/bot.store';
+import { MainContent } from '@/src/shared/components/main-content/MainContent';
 
 import styles from './bot.module.css';
 
@@ -42,7 +43,7 @@ const BotView = ({ t }: Props): JSX.Element => {
   };
 
   return (
-    <main id="main-content" className={styles.shell}>
+    <MainContent className={styles.shell}>
       <div className={styles.stageContainer}>
         <VideoStage
           refA={engine.videoPlayer.refA}
@@ -104,7 +105,7 @@ const BotView = ({ t }: Props): JSX.Element => {
       </div>
 
       <ChatPanel t={t} />
-    </main>
+    </MainContent>
   );
 };
 

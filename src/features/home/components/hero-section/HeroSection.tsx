@@ -10,7 +10,6 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './hero-section.module.css';
-import { fadeUpMotion } from '@/src/shared/motion/fadeUp.motion';
 
 type Props = { t: ITranslations };
 
@@ -20,7 +19,7 @@ const HeroSection = ({ t }: Props) => {
   const highlights = t('hero.highlights', { returnObjects: true }) as Array<{ label: string; value: string }>;
 
   return (
-    <motion.section className={styles.section} aria-labelledby="hero-title" {...fadeUpMotion(0.56, 0.13)}>
+    <section className={styles.section} aria-labelledby="hero-title">
       <div className={styles.orbs} aria-hidden="true">
         <motion.span
           className={`${styles.orb} ${styles.orbCyan}`}
@@ -189,7 +188,7 @@ const HeroSection = ({ t }: Props) => {
           </div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

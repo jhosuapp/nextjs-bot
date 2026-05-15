@@ -9,6 +9,7 @@ import { IntegrationsGrid } from '@/src/features/home/components/integrations-gr
 import { RealtimeAgentsSection } from '@/src/features/home/components/realtime-agents-section/RealtimeAgentsSection';
 import { StatementBand } from '@/src/features/home/components/statement-band/StatementBand';
 import { TrustedByStrip } from '@/src/features/home/components/trusted-by-strip/TrustedByStrip';
+import { MainContent } from '@/src/shared/components/main-content/MainContent';
 
 import styles from './home.module.css';
 
@@ -16,7 +17,7 @@ type Props = { t: ITranslations };
 
 const HomeView = ({ t }: Props): JSX.Element => {
   return (
-    <main id="main-content" className={styles.home}>
+    <MainContent className={styles.home}>
       <HeroSection t={t} />
       <TrustedByStrip t={t} />
       <AgenticVideosSection t={t} />
@@ -25,7 +26,7 @@ const HomeView = ({ t }: Props): JSX.Element => {
       <AudienceTabsSection t={t} />
       <IntegrationsGrid t={t} />
       <FaqSection t={t} />
-    </main>
+    </MainContent>
   );
 };
 

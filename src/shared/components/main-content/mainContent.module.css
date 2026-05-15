@@ -1,0 +1,4 @@
+.mainContent {
+  background: var(--background);
+  min-height: 100svh;
+}

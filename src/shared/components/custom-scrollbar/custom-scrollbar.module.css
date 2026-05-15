@@ -1,29 +1,22 @@
 @reference "tailwindcss";
 
 .track {
-  position: fixed;
-  top: 16px;
+  @apply fixed w-1.5 rounded-full pointer-events-none;
+  top: 45%;
   right: 8px;
-  bottom: 16px;
-  width: 4px;
-  border-radius: 999px;
+  bottom: 45%;
   background: var(--border-subtle);
   z-index: 9997;
-  pointer-events: none;
 }
 
 .thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 999px;
+  @apply absolute top-0 left-0 w-full rounded-full;
   background: var(--foreground);
   will-change: transform, height, opacity;
 }
 
 @media (pointer: coarse) {
   .track {
-    display: none;
+    @apply hidden;
   }
 }
