@@ -3,15 +3,26 @@ import { devtools } from 'zustand/middleware';
 
 type Theme = 'light' | 'dark';
 
+interface ThemeTransition {
+  active: boolean;
+  x: number;
+  y: number;
+  next: Theme;
+}
+
 interface ThemeState {
   theme: Theme;
   hydrated: boolean;
+  transition: ThemeTransition | null;
 }
 
 interface ThemeActions {
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
   hydrate: () => void;
+  triggerTransition: (x: number, y: number) => void;
+  commitTheme: (theme: Theme) => void;
+  clearTransition: () => void;
 }
 
 const STORAGE_KEY = 'lumina:theme';
@@ -45,6 +56,7 @@ const storeAPI: StateCreator<
 > = (set, get) => ({
   theme: 'light',
   hydrated: false,
+  transition: null,
 
   setTheme: (theme) => {
     applyTheme(theme);
@@ -62,6 +74,20 @@ const storeAPI: StateCreator<
     const theme = readInitialTheme();
     applyTheme(theme);
     set({ theme, hydrated: true }, false, 'hydrate');
+  },
+
+  triggerTransition: (x, y) => {
+    const next: Theme = get().theme === 'light' ? 'dark' : 'light';
+    set({ transition: { active: true, x, y, next } }, false, 'triggerTransition');
+  },
+
+  commitTheme: (theme) => {
+    applyTheme(theme);
+    set({ theme }, false, 'commitTheme');
+  },
+
+  clearTransition: () => {
+    set({ transition: null }, false, 'clearTransition');
   },
 });
 

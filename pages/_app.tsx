@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 import { jakarta } from "@/src/config/fonts/fonts";
 import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
+import { ThemeTransitionOverlay } from "@/src/shared/components/theme-transition/ThemeTransitionOverlay";
 import { Footer } from "@/src/shared/layouts/footer/Footer";
 import { Header } from "@/src/shared/layouts/header/Header";
 import { useLoaderStore } from "@/src/shared/stores/loader.store";
@@ -39,6 +40,7 @@ function App({ Component, pageProps }: AppProps) {
         </motion.div>
       </AnimatePresence>
       <Footer t={t} />
+      <ThemeTransitionOverlay />
     </div>
   );
 }
