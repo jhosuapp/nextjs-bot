@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 import { jakarta } from "@/src/config/fonts/fonts";
+import { CustomScrollbar } from "@/src/shared/components/custom-scrollbar/CustomScrollbar";
 import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
 import { ThemeTransitionOverlay } from "@/src/shared/components/theme-transition/ThemeTransitionOverlay";
 import { Footer } from "@/src/shared/layouts/footer/Footer";
@@ -33,6 +34,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${jakarta.variable} contents`}>
       <SmoothScroll />
+      <CustomScrollbar />
       <Header t={t} />
       <AnimatePresence mode="wait">
         <motion.div key={router.asPath}>

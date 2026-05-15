@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+.track {
+  position: fixed;
+  top: 16px;
+  right: 8px;
+  bottom: 16px;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--border-subtle);
+  z-index: 9997;
+  pointer-events: none;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 999px;
+  background: var(--foreground);
+  will-change: transform, height, opacity;
+}
+
+@media (pointer: coarse) {
+  .track {
+    display: none;
+  }
+}

@@ -20,8 +20,14 @@ const SmoothScroll = () => {
     };
     rafId = requestAnimationFrame(raf);
 
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+    });
+    resizeObserver.observe(document.body);
+
     return () => {
       cancelAnimationFrame(rafId);
+      resizeObserver.disconnect();
       lenis.destroy();
     };
   }, []);
