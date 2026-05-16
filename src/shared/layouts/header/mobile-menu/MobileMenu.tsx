@@ -19,7 +19,7 @@ import styles from './mobile-menu.module.css';
 
 type NavItem = { label: string; href: string };
 
-type Props = {
+type MobileMenuProps = {
   open: boolean;
   onClose: () => void;
   onToggle: () => void;
@@ -58,7 +58,7 @@ const groupVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } },
 };
 
-const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: Props) => {
+const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuProps) => {
   const reduce = useReducedMotion();
   const panelId = useId();
 

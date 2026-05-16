@@ -12,7 +12,7 @@ const OG_LOCALE_MAP: Record<string, string> = {
   de: "de_DE",
 };
 
-type Props = {
+type PageLayoutProps = {
   children: ReactNode;
   title: string;
   description: string;
@@ -26,7 +26,7 @@ const PageLayout = ({
   description,
   image = SITE_OG_IMAGE,
   hasNoIndex = false,
-}: Props) => {
+}: PageLayoutProps) => {
   const router = useRouter();
   const locale = router.locale ?? "es";
   const localePath = locale !== "es" ? `/${locale}` : "";

@@ -91,11 +91,11 @@ Do not create `index.ts` or `index.tsx` anywhere in the project.
 
 ### Namespaces
 
-| Namespace | Loaded by | Contains |
-|-----------|-----------|----------|
-| `common` | every page (`_app.tsx`) | nav, header, footer, SEO defaults |
-| `home` | `pages/index.tsx` | home page copy |
-| `<feature>` | `pages/<feature>/index.tsx` | copy scoped to that feature |
+| Namespace   | Loaded by                   | Contains                          |
+| ----------- | --------------------------- | --------------------------------- |
+| `common`    | every page (`_app.tsx`)     | nav, header, footer, SEO defaults |
+| `home`      | `pages/index.tsx`           | home page copy                    |
+| `<feature>` | `pages/<feature>/index.tsx` | copy scoped to that feature       |
 
 ### Loading translations (server-side only)
 
@@ -125,8 +125,8 @@ return <HomeView t={t} />;
 
 // Home.view.tsx
 import type { ITranslations } from "@/src/shared/interfaces/i18n.interface";
-type Props = { t: ITranslations };
-const HomeView = ({ t }: Props) => <HeroSection t={t} />;
+type HomeViewProps = { t: ITranslations };
+const HomeView = ({ t }: HomeViewProps) => <HeroSection t={t} />;
 ```
 
 `_app.tsx` calls `useTranslation('common')` and passes `t` to `<Header>` and `<Footer>`.

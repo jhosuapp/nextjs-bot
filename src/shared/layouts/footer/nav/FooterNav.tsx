@@ -9,9 +9,9 @@ import styles from './footer-nav.module.css';
 import { useThemeStore } from '@/src/shared/stores/theme.store';
 import Image from 'next/image';
 
-type Props = { t: ITranslations };
+type FooterNavProps = { t: ITranslations };
 
-const FooterNav = ({ t }: Props) => {
+const FooterNav = ({ t }: FooterNavProps) => {
   const { brand, nav } = footerStaticData;
   const theme = useThemeStore(state => state.theme);
 

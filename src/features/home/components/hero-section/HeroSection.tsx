@@ -10,48 +10,52 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './hero-section.module.css';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
-type Props = { t: ITranslations };
+type HeroSectionProps = { t: ITranslations };
 
-const HeroSection = ({ t }: Props) => {
+const HeroSection = ({ t }: HeroSectionProps) => {
   const reduce = useReducedMotion();
   const { hero } = homeStaticData;
   const highlights = t('hero.highlights', { returnObjects: true }) as Array<{ label: string; value: string }>;
 
   return (
     <section className={styles.section} aria-labelledby="hero-title">
-      <div className={styles.orbs} aria-hidden="true">
-        <motion.span
-          className={`${styles.orb} ${styles.orbCyan}`}
-          animate={reduce ? undefined : { x: [0, 24, 0], y: [0, -16, 0] }}
-          transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity }}
-        />
-        <motion.span
-          className={`${styles.orb} ${styles.orbTeal}`}
-          animate={reduce ? undefined : { x: [0, -28, 0], y: [0, 20, 0] }}
-          transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
-        />
-        <motion.span
-          className={`${styles.orb} ${styles.orbWhite}`}
-          animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
-          transition={{ duration: 10, ease: 'easeInOut', repeat: Infinity }}
-        />
-      </div>
+        <div className={styles.orbs} aria-hidden="true">
+          <motion.span
+            className={`${styles.orb} ${styles.orbCyan}`}
+            animate={reduce ? undefined : { x: [0, 24, 0], y: [0, -16, 0] }}
+            transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity }}
+          />
+          <motion.span
+            className={`${styles.orb} ${styles.orbTeal}`}
+            animate={reduce ? undefined : { x: [0, -28, 0], y: [0, 20, 0] }}
+            transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
+          />
+          <motion.span
+            className={`${styles.orb} ${styles.orbWhite}`}
+            animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
+            transition={{ duration: 10, ease: 'easeInOut', repeat: Infinity }}
+          />
+        </div>
 
       <div className={styles.inner}>
-        <motion.a
-          href={hero.secondaryCta.href}
-          className={styles.eyebrow}
-          initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: DURATION.base, ease: EASE }}
-        >
-          <span className={styles.eyebrowBadge}>{t('hero.eyebrowBadge')}</span>
-          <span className={styles.eyebrowText}>{t('hero.eyebrowText')}</span>
-          <span className={styles.eyebrowArrow} aria-hidden="true">
-            →
-          </span>
-        </motion.a>
+        <WrapperMotion delay={{ enter: 0.53, exit: 0.13 }}>
+          <motion.a
+            href={hero.secondaryCta.href}
+            className={styles.eyebrow}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: DURATION.base, ease: EASE }}
+          >
+            <span className={styles.eyebrowBadge}>{t('hero.eyebrowBadge')}</span>
+            <span className={styles.eyebrowText}>{t('hero.eyebrowText')}</span>
+            <span className={styles.eyebrowArrow} aria-hidden="true">
+              →
+            </span>
+          </motion.a>
+        </WrapperMotion>
+
 
         <h1 id="hero-title" className={styles.title}>
           <FadeIn as="span" className={styles.titleLine} y={20}>

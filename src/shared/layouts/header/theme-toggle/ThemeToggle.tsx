@@ -9,9 +9,9 @@ import { useThemeStore } from '@/src/shared/stores/theme.store';
 
 import styles from './theme-toggle.module.css';
 
-type Props = { t: ITranslations };
+type ThemeToggleProps = { t: ITranslations };
 
-const ThemeToggle = ({ t }: Props) => {
+const ThemeToggle = ({ t }: ThemeToggleProps) => {
   const reduce = useReducedMotion();
   const btnRef = useRef<HTMLButtonElement>(null);
   const { theme, hydrated, toggleTheme, hydrate, triggerTransition } = useThemeStore();

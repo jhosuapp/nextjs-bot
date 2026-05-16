@@ -9,11 +9,11 @@ import { useLoaderStore } from '../../stores/loader.store';
 
 import styles from './pageTransition.module.css';
 
-type Props = {
+type PageTransitionProps = {
     children: ReactNode;
 }
 
-const PageTransition = ({ children }: Props): JSX.Element => {
+const PageTransition = ({ children }: PageTransitionProps): JSX.Element => {
     const pathname = useRouter().pathname;
 
     const isLoadingDelay = useLoaderStore(state => state.isLoadingDelay);

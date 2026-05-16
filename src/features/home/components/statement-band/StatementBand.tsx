@@ -5,7 +5,7 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import styles from './statement-band.module.css';
 
-type Props = { t: ITranslations };
+type StatementBandProps = { t: ITranslations };
 
 const parentVariants: Variants = {
   hidden: {},
@@ -21,7 +21,7 @@ const wordVariants: Variants = {
   },
 };
 
-const StatementBand = ({ t }: Props) => {
+const StatementBand = ({ t }: StatementBandProps) => {
   const reduce = useReducedMotion();
   const text = t('statement.text') as string;
   const words = text.split(' ');

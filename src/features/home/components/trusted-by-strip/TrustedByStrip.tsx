@@ -7,9 +7,9 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './trusted-by-strip.module.css';
 
-type Props = { t: ITranslations };
+type TrustedByStripProps = { t: ITranslations };
 
-const TrustedByStrip = ({ t }: Props) => {
+const TrustedByStrip = ({ t }: TrustedByStripProps) => {
   const label = t('trustedBy.label') as string;
   const logos = homeStaticData.trustedBy.logos;
 

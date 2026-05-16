@@ -12,9 +12,9 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 import styles from './integrations-grid.module.css';
 import { Button } from '@/src/shared/components/button/Button';
 
-type Props = { t: ITranslations };
+type IntegrationsGridProps = { t: ITranslations };
 
-const IntegrationsGrid = ({ t }: Props) => {
+const IntegrationsGrid = ({ t }: IntegrationsGridProps) => {
   const reduce = useReducedMotion();
   const { integrations } = homeStaticData;
 

@@ -16,9 +16,8 @@
 }
 
 .title {
-  @apply font-semibold tracking-tight leading-[1.15];
+  @apply font-semibold tracking-tight leading-[1.15] text-2xl lg:text-4xl;
   color: var(--foreground);
-  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .description {
@@ -81,7 +80,6 @@
 .submitInner {
   @apply inline-flex items-center gap-2;
 }
-
 
 .meta {
   @apply flex flex-col gap-1 px-1;

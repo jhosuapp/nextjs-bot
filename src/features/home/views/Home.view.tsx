@@ -13,9 +13,9 @@ import { MainContent } from '@/src/shared/components/main-content/MainContent';
 
 import styles from './home.module.css';
 
-type Props = { t: ITranslations };
+type HomeViewProps = { t: ITranslations };
 
-const HomeView = ({ t }: Props): JSX.Element => {
+const HomeView = ({ t }: HomeViewProps): JSX.Element => {
   return (
     <MainContent className={styles.home}>
       <HeroSection t={t} />

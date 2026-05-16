@@ -3,12 +3,12 @@ import { anim, curve, translate } from './pageTransition.motion';
 import { motion } from 'framer-motion';
 
 
-type Props = {
+type SVGProps = {
     height: number;
     width: number;
 }
 
-const SVG = ({ height, width }:Props):JSX.Element => {
+const SVG = ({ height, width }:SVGProps):JSX.Element => {
 
     const initialPath = `
         M0 300 

@@ -10,12 +10,12 @@ import { Button } from '@/src/shared/components/button/Button';
 
 import styles from './footer-newsletter.module.css';
 
-type Props = { t: ITranslations };
+type FooterNewsletterProps = { t: ITranslations };
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const FooterNewsletter = ({ t }: Props) => {
+const FooterNewsletter = ({ t }: FooterNewsletterProps) => {
   const inputId = useId();
   const errorId = useId();
   const [email, setEmail] = useState('');

@@ -7,9 +7,9 @@ import { Button } from '@/src/shared/components/button/Button';
 
 import styles from './realtime-agents-section.module.css';
 
-type Props = { t: ITranslations };
+type RealtimeAgentsSectionProps = { t: ITranslations };
 
-const RealtimeAgentsSection = ({ t }: Props) => {
+const RealtimeAgentsSection = ({ t }: RealtimeAgentsSectionProps) => {
   const reduce = useReducedMotion();
 
   return (

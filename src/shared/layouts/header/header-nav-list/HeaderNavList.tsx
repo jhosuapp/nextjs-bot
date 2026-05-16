@@ -1,12 +1,14 @@
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
-
-type NavLink = { label: string; href: string };
-import styles from './header-nav-list.module.css';
 import { useLenisStore } from '@/src/shared/stores/lenis.store';
 import { useRouter } from 'next/router';
-type Props = {
+
+import styles from './header-nav-list.module.css';
+
+type NavLink = { label: string; href: string };
+
+type HeaderNavListProps = {
   items: ReadonlyArray<NavLink>;
   variant?: 'desktop' | 'mobile';
   onItemClick?: () => void;
@@ -27,7 +29,7 @@ const HeaderNavList = ({
   variant = 'desktop',
   onItemClick,
   animated = false,
-}: Props) => {
+}: HeaderNavListProps) => {
   const lenis = useLenisStore(state => state.lenis);
   const reduce = useReducedMotion();
   const itemVariants = buildItemVariants(!!reduce);

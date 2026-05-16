@@ -6,9 +6,9 @@ import styles from './header-brand.module.css';
 import Image from 'next/image';
 import { useThemeStore } from '@/src/shared/stores/theme.store';
 
-type Props = { brand: HeaderStaticData['brand'] };
+type HeaderBrandProps = { brand: HeaderStaticData['brand'] };
 
-const HeaderBrand = ({ brand }: Props) => {
+const HeaderBrand = ({ brand }: HeaderBrandProps) => {
   const theme = useThemeStore(state => state.theme);
 
   return (

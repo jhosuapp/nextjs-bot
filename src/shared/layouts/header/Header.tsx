@@ -14,9 +14,9 @@ import { Button } from '../../components/button/Button';
 
 import styles from './header.module.css';
 
-type Props = { t: ITranslations };
+type HeaderProps = { t: ITranslations };
 
-const Header = ({ t }: Props) => {
+const Header = ({ t }: HeaderProps) => {
   const reduce = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

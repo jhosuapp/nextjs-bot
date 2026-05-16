@@ -1,0 +1,3 @@
+.wrapperMotion {
+  @apply w-full relative overflow-hidden;
+}

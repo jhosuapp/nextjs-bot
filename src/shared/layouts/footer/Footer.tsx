@@ -6,9 +6,9 @@ import { FooterNewsletter } from '@/src/shared/layouts/footer/newsletter/FooterN
 
 import styles from './footer.module.css';
 
-type Props = { t: ITranslations };
+type FooterProps = { t: ITranslations };
 
-const Footer = ({ t }: Props) => {
+const Footer = ({ t }: FooterProps) => {
   return (
     <footer className={styles.footer} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">

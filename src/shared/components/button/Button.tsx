@@ -17,9 +17,9 @@ type CustomProps = {
     isLoad?: boolean;
 } & MotionProps;
 
-type Props = CustomProps & NativeProps;
+type ButtonProps = CustomProps & NativeProps;
 
-const Button = ({ text, style, className, icon, iconRight, isLoad = false, ...props }:Props):JSX.Element => {
+const Button = ({ text, style, className, icon, iconRight, isLoad = false, ...props }:ButtonProps):JSX.Element => {
     return (
         <motion.button
             className={ `${styles.button} ${styles[`button--${style}`]} ${className ?? ''} ${isLoad && styles.button__loader}` }

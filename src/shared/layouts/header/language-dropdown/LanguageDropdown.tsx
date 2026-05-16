@@ -14,9 +14,9 @@ import { headerStaticData } from '../header-content';
 
 import styles from './language-dropdown.module.css';
 
-type Props = { t: ITranslations };
+type LanguageDropdownProps = { t: ITranslations };
 
-const LanguageDropdown = ({ t }: Props) => {
+const LanguageDropdown = ({ t }: LanguageDropdownProps) => {
   const reduce = useReducedMotion();
   const router = useRouter();
   const [open, setOpen] = useState(false);

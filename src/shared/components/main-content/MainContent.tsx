@@ -1,15 +1,15 @@
 import type { JSX } from 'react';
 import { motion } from 'framer-motion';
 
-import styles from './mainContent.module.css';
+import styles from './main-content.module.css';
 import { fadeUpMotion } from '../../motion/fadeUp.motion';
 
-type Props ={
+type MainContentProps ={
   children: React.ReactNode;
   className?: string;
 }
 
-const MainContent = ({ children, className = '' }:Props):JSX.Element => {
+const MainContent = ({ children, className = '' }:MainContentProps):JSX.Element => {
   return (
     <motion.main 
       id='main-content' 

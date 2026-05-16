@@ -12,9 +12,9 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './agentic-videos-section.module.css';
 
-type Props = { t: ITranslations };
+type AgenticVideosSectionProps = { t: ITranslations };
 
-const AgenticVideosSection = ({ t }: Props) => {
+const AgenticVideosSection = ({ t }: AgenticVideosSectionProps) => {
   const reduce = useReducedMotion();
   const { agentic } = homeStaticData;
 

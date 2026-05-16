@@ -5,9 +5,9 @@ import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
 
 import styles from './footer-bottom.module.css';
 
-type Props = { t: ITranslations };
+type FooterBottomProps = { t: ITranslations };
 
-const FooterBottom = ({ t }: Props) => {
+const FooterBottom = ({ t }: FooterBottomProps) => {
   const { bottom } = footerStaticData;
   const year = new Date().getFullYear();
 
