@@ -7,6 +7,10 @@
   --cuartary: #e8f8ff;
   --btn-secondary: #001643;
 
+  --text-primary: var(--primary);
+  --text-secondary: var(--secondary);
+  --text-tertiary: var(--tertiary);
+
   --background: #ffffff;
   --foreground: #0b1024;
 
@@ -70,6 +74,10 @@
 
 :root[data-theme="dark"] {
   --btn-secondary: #00beff;
+
+  --text-primary: #fff;
+  --text-secondary: #fff;
+  --text-tertiary: #fff;
 
   --background: #060810;
   --foreground: #ededed;

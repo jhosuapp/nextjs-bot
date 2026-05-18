@@ -11,6 +11,7 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './hero-section.module.css';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import { Text } from '../text/Text';
 
 type HeroSectionProps = { t: ITranslations };
 
@@ -56,27 +57,27 @@ const HeroSection = ({ t }: HeroSectionProps) => {
           </motion.a>
         </WrapperMotion>
 
-
-        <h1 id="hero-title" className={styles.title}>
-          <FadeIn as="span" className={styles.titleLine} y={20}>
-            {t('hero.titleLead')}
-          </FadeIn>{' '}
-          <FadeIn
-            as="span"
-            className={styles.titleAccent}
-            y={20}
-            delay={0.1}
+        <div className={ styles.title }>
+          <Text 
+            tag='h1'
+            variant='title'
+            color='secondary'
+            delay={{ enter: 0.52, exit: 0.36 }}
+            weight='medium'
           >
-            {t('hero.titleAccent')}
-          </FadeIn>{' '}
-          <FadeIn as="span" className={styles.titleLine} y={20} delay={0.2}>
-            {t('hero.titleTrail')}
-          </FadeIn>
-        </h1>
+            {t('hero.titleLead')} <strong className={ styles.titleAccent }> {t('hero.titleAccent')} </strong> {t('hero.titleTrail')}
+          </Text>
+        </div>
 
-        <FadeIn className={styles.subtitle} delay={0.35} y={16}>
+        <Text 
+          className={styles.subtitle}
+          tag='p'
+          variant='description'
+          color='muted'
+          delay={{ enter: 0.54, exit: 0.38 }}
+        >
           {t('hero.subtitle')}
-        </FadeIn>
+        </Text>
 
         <StaggerGroup className={styles.ctas} stagger={0.1} amount={0.5}>
           <StaggerItem>

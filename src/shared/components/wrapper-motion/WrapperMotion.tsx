@@ -11,9 +11,15 @@ type WrapperProps = {
 }
 
 const WrapperMotion = ({ children, delay }: WrapperProps): JSX.Element => {
+  const { initial, animate, exit } = fadeUpMotion(delay.enter, delay.exit);
   return (
     <article className={styles.wrapperMotion}>
-      <motion.div {...fadeUpMotion(delay.enter, delay.exit)}>
+      <motion.div
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {children}
       </motion.div>
     </article>

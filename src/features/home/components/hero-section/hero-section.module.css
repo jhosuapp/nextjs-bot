@@ -96,9 +96,7 @@
 }
 
 .title {
-  @apply mt-6 max-w-4xl font-bold tracking-[-0.02em] leading-[1.04];
-  color: var(--text-strong);
-  font-size: clamp(2.5rem, 6.5vw, 5rem);
+  @apply mt-6 max-w-2xl;
 }
 
 .titleLine,
@@ -117,9 +115,7 @@
 }
 
 .subtitle {
-  @apply mt-5 max-w-2xl leading-[1.55];
-  color: var(--text-muted);
-  font-size: clamp(1rem, 1.6vw, 1.1875rem);
+  @apply mt-5 max-w-xl mx-auto;
 }
 
 .ctas {

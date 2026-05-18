@@ -1,15 +1,37 @@
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 import type { JSX } from 'react';
+import styles from './text.module.css';
+
+type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+type Variant = 'title' | 'title_small' | 'subtitle' | 'subtitle_small' | 'description' | 'description_small';
+type Color = 'primary' | 'secondary' | 'tertiary' | 'muted';
+type Weight = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
 
 type TextProps = {
+  delay: { enter: number; exit: number };
+  tag: Tag;
+  variant: Variant;
+  color?: Color;
+  weight?: Weight;
+  className?: string;
+  children?: React.ReactNode;
+};
 
-}
+const Text = ({ delay, tag: Tag, variant, color, weight, className: customClass, children }: TextProps): JSX.Element => {
+  const className = [
+    styles[variant],
+    color ? styles[`color_${color}`] : '',
+    weight ? styles[`weight_${weight}`] : '',
+    customClass ?? '',
+  ].filter(Boolean).join(' ');
 
-const Text = ({}:TextProps):JSX.Element => {
   return (
-    <>
-      <p>Hola mundo</p>
-    </>
-  )
-}
+    <WrapperMotion delay={delay}>
+      <Tag className={className}>
+        {children}
+      </Tag>
+    </WrapperMotion>
+  );
+};
 
-export { Text }
+export { Text };
