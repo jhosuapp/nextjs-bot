@@ -7,34 +7,7 @@
 
 .stageContainer {
   @apply relative w-full overflow-hidden;
-  min-height: 100vh;
-  padding-top: 5rem;
-  padding-bottom: 9rem;
-}
-
-.head {
-  @apply absolute left-0 right-0 top-0 z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-2 px-6 pt-24 text-center pointer-events-none;
-}
-
-.eyebrow {
-  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em];
-  background: rgba(0, 22, 67, 0.45);
-  color: var(--tertiary);
-  border: 1px solid var(--border-on-dark);
-  backdrop-filter: blur(8px);
-}
-
-.headline {
-  @apply m-0 font-semibold tracking-tight leading-[1.1];
-  color: var(--text-on-dark);
-  font-size: clamp(1.75rem, 4vw, 3rem);
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
-}
-
-.subhead {
-  @apply m-0 max-w-xl text-sm;
-  color: var(--text-muted-on-dark);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  min-height: calc(100svh - var(--h-header));
 }
 
 .toastSlot {

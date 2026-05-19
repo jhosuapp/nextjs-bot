@@ -23,7 +23,6 @@ const VideoStage = ({ refA, refB, active }: Props): JSX.Element => {
         playsInline
         preload="auto"
       />
-      <div className={styles.scrim} aria-hidden="true" />
     </div>
   );
 };

@@ -6,6 +6,7 @@
   --tertiary: #17f1d1;
   --cuartary: #e8f8ff;
   --btn-secondary: #001643;
+  --h-header: 70px;
 
   --text-primary: var(--primary);
   --text-secondary: var(--secondary);
@@ -199,4 +200,13 @@ body {
 .sr-only {
   @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
   clip: rect(0, 0, 0, 0);
+}
+
+.gl-dropshadow {
+  box-shadow:
+    0 0 34.571px #00d5ff33 inset,
+    0 0 8.643px #ffffff1a inset;
+  filter: drop-shadow(0 6.914px 25.929px rgba(0, 0, 0, 0.2));
+  -webkit-backdrop-filter: blur(43.21428680419922px);
+  backdrop-filter: blur(43.21428680419922px);
 }

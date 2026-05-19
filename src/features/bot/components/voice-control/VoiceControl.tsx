@@ -63,17 +63,20 @@ const VoiceControl = ({
         data-listening={isListening}
       >
         <span className={styles.pulseRing} aria-hidden="true" />
-        <span className={styles.pulseRing} aria-hidden="true" />
         <span className={styles.iconWrap}>
           <FontAwesomeIcon icon={icon} className={styles.icon} aria-hidden="true" />
         </span>
       </motion.button>
-      <p className={styles.label}>{label}</p>
-      {state === 'IDLE' ? (
-        <p className={styles.hint}>{t('idle.wakeHint')}</p>
-      ) : state === 'LISTENING' ? (
-        <p className={styles.hint}>{t('listening.interruptHint')}</p>
-      ) : null}
+      {state !== 'LISTENING' && (
+        <div className={ `${styles.wrapper} gl-dropshadow` }>
+          {state !== 'IDLE' && (
+            <p className={styles.label}>{label}</p>
+          )}
+          {state === 'IDLE' && (
+            <p className={styles.label}>{t('idle.wakeHint')}</p>
+          )}
+        </div>
+      )}
     </div>
   );
 };

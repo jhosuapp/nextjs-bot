@@ -51,17 +51,6 @@ const BotView = ({ t }: Props): JSX.Element => {
           active={engine.videoPlayer.active}
         />
 
-        <motion.header
-          className={styles.head}
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: DURATION.base, ease: EASE, delay: 0.1 }}
-        >
-          <span className={styles.eyebrow}>{t('page.eyebrow')}</span>
-          <h1 className={styles.headline}>{t('page.headline')}</h1>
-          <p className={styles.subhead}>{t('page.subhead')}</p>
-        </motion.header>
-
         <div className={styles.toastSlot}>
           <InactivityWarning
             t={t}

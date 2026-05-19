@@ -63,9 +63,9 @@ const Header = ({ t }: HeaderProps) => {
           </div>
 
           <div className={styles.ctas}>
-            <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
+            {/* <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
               {t('header.signIn')}
-            </a>
+            </a> */}
             <Button
               text={t('header.startFree') as string}
               style="fit"

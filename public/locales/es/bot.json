@@ -14,12 +14,12 @@
   },
   "idle": {
     "ctaStart": "Iniciar conversación",
-    "wakeHint": "También puedes decir \"hola\" para empezar",
+    "wakeHint": "Di \"hola\" u oprime el botón para empezar",
     "welcome": "Listo cuando tú lo estés"
   },
   "listening": {
     "instruction": "Escuchando…",
-    "interruptHint": "Di \"pregunta\" en cualquier momento para volver a escuchar"
+    "interruptHint": "Di \"pregunta\" para interrumpir y hacer una nueva pregunta"
   },
   "intro": {
     "label": "Presentando…"

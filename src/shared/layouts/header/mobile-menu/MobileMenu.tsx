@@ -163,13 +163,13 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuPro
               </motion.div>
 
               <motion.div className={styles.ctas} variants={groupVariants}>
-                <Button
+                {/* <Button
                   className='!w-full'
                   text={t('header.signIn') as string}
                   style="secondary"
                   type="button"
                   onClick={onClose}
-                />
+                /> */}
                 <Button
                   className='!w-full'
                   text={t('header.startFree') as string}
