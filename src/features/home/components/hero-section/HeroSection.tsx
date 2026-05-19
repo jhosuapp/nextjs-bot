@@ -8,10 +8,10 @@ import {
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
+import { Text } from '@/src/shared/components/text/Text';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
 import styles from './hero-section.module.css';
-import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
-import { Text } from '../text/Text';
 
 type HeroSectionProps = { t: ITranslations };
 
@@ -69,7 +69,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
           </Text>
         </div>
 
-        <Text 
+        <Text
           className={styles.subtitle}
           tag='p'
           variant='description'

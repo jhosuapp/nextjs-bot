@@ -9,9 +9,9 @@ import {
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
+import { Text } from '@/src/shared/components/text/Text';
 
 import styles from './agentic-videos-section.module.css';
-import { Text } from '../text/Text';
 
 type AgenticVideosSectionProps = { t: ITranslations };
 
