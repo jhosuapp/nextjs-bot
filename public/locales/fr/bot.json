@@ -18,7 +18,7 @@
     "welcome": "Prêt quand vous l'êtes"
   },
   "listening": {
-    "instruction": "À l'écoute…",
+    "instruction": "À l'écoute",
     "interruptHint": "Dites \"question\" à tout moment pour reprendre la parole"
   },
   "intro": {

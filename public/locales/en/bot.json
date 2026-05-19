@@ -18,7 +18,7 @@
     "welcome": "Ready when you are"
   },
   "listening": {
-    "instruction": "Listening…",
+    "instruction": "Listening",
     "interruptHint": "Say \"question\" anytime to be heard again"
   },
   "intro": {

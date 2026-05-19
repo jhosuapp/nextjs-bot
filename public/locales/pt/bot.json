@@ -18,7 +18,7 @@
     "welcome": "Pronto quando você estiver"
   },
   "listening": {
-    "instruction": "Ouvindo…",
+    "instruction": "Ouvindo",
     "interruptHint": "Diga \"pergunta\" a qualquer momento para falar novamente"
   },
   "intro": {

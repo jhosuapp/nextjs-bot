@@ -203,10 +203,17 @@ body {
 }
 
 .gl-dropshadow {
+  @apply rounded-md py-2 px-6;
   box-shadow:
     0 0 34.571px #00d5ff33 inset,
     0 0 8.643px #ffffff1a inset;
   filter: drop-shadow(0 6.914px 25.929px rgba(0, 0, 0, 0.2));
   -webkit-backdrop-filter: blur(43.21428680419922px);
   backdrop-filter: blur(43.21428680419922px);
+}
+
+.gl-label {
+  @apply m-0 text-sm font-semibold text-center;
+  color: var(--text-on-dark);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }

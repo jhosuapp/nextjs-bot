@@ -68,12 +68,12 @@ const VoiceControl = ({
         </span>
       </motion.button>
       {state !== 'LISTENING' && (
-        <div className={ `${styles.wrapper} gl-dropshadow` }>
+        <div className={'gl-dropshadow'}>
           {state !== 'IDLE' && (
-            <p className={styles.label}>{label}</p>
+            <p className={'gl-label'}>{label}</p>
           )}
           {state === 'IDLE' && (
-            <p className={styles.label}>{t('idle.wakeHint')}</p>
+            <p className={'gl-label'}>{t('idle.wakeHint')}</p>
           )}
         </div>
       )}

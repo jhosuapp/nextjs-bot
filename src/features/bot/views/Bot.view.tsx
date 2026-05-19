@@ -51,7 +51,13 @@ const BotView = ({ t }: Props): JSX.Element => {
           active={engine.videoPlayer.active}
         />
 
+
         <div className={styles.toastSlot}>
+          {engine.state === 'LISTENING' && (
+            <div className={`${styles.listening} gl-dropshadow`}>
+              <p className={'gl-label'}>{t('listening.instruction')}</p>
+            </div>
+          )}
           <InactivityWarning
             t={t}
             visible={inactivityWarning}

@@ -18,7 +18,7 @@
     "welcome": "Bereit, wenn du es bist"
   },
   "listening": {
-    "instruction": "Höre zu…",
+    "instruction": "Höre zu",
     "interruptHint": "Sag jederzeit \"frage\", um wieder gehört zu werden"
   },
   "intro": {

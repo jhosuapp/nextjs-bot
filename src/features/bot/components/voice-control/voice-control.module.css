@@ -5,7 +5,7 @@
 }
 
 .button {
-  @apply relative inline-flex h-20 w-20 items-center justify-center rounded-full;
+  @apply relative inline-flex h-16 w-16 items-center justify-center rounded-full;
   background: var(--gradient-brand);
   box-shadow: var(--shadow-floating);
   color: var(--text-on-dark);
@@ -24,7 +24,7 @@
 }
 
 .icon {
-  @apply text-2xl;
+  @apply text-lg;
 }
 
 .pulseRing {
@@ -43,14 +43,8 @@
   }
 }
 
-.label {
-  @apply m-0 text-sm font-semibold text-center;
-  color: var(--text-on-dark);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-.wrapper {
-  @apply rounded-md py-2 px-6;
+.listening {
+  @apply absolute top-0 mt-4;
 }
 
 @keyframes voicePulse {

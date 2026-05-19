@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .stage {
-  @apply absolute inset-0 overflow-hidden bg-white;
+  @apply absolute inset-0 overflow-hidden;
 }
 
 .video {

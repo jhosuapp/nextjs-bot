@@ -7,7 +7,8 @@
 
 .stageContainer {
   @apply relative w-full overflow-hidden;
-  min-height: calc(100svh - var(--h-header));
+  min-height: calc(70svh - var(--h-header));
+  max-height: calc(70svh - var(--h-header));
 }
 
 .toastSlot {
@@ -16,4 +17,12 @@
 
 .controls {
   @apply absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center gap-4 px-6 pb-12 pointer-events-none;
+}
+
+.listening {
+  @apply absolute top-[10vh] mt-4;
+}
+
+.listening p {
+  @apply text-[1.5vh];
 }
