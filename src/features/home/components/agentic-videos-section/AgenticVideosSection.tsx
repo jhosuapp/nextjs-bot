@@ -11,6 +11,7 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 
 import styles from './agentic-videos-section.module.css';
+import { Text } from '../text/Text';
 
 type AgenticVideosSectionProps = { t: ITranslations };
 
@@ -42,15 +43,38 @@ const AgenticVideosSection = ({ t }: AgenticVideosSectionProps) => {
         </motion.div>
 
         <StaggerGroup className={styles.copy} stagger={0.1} amount={0.3}>
-          <StaggerItem as="span" className={styles.eyebrow}>
+          <Text
+            className={styles.eyebrow}
+            tag='p'
+            variant='description_small'
+            color='primary'
+            weight='semibold'
+            fadeUpTertiary
+            staggerItem
+          >
             {t('agentic.eyebrow')}
-          </StaggerItem>
-          <StaggerItem as="h2" className={styles.title}>
-            <span id="agentic-title">{t('agentic.title')}</span>
-          </StaggerItem>
-          <StaggerItem as="p" className={styles.description}>
+          </Text>
+          <Text
+            className={styles.title}
+            tag='h2'
+            variant='title_small'
+            color='secondary'
+            weight='bold'
+            fadeUpTertiary
+            staggerItem
+          >
+            {t('agentic.title')}
+          </Text>
+          <Text
+            className={styles.description}
+            tag='p'
+            variant='description'
+            color='muted'
+            fadeUpTertiary
+            staggerItem
+          >
             {t('agentic.description')}
-          </StaggerItem>
+          </Text>
           <StaggerItem>
             <a className={styles.cta} href={agentic.cta.href}>
               <span>{t('agentic.cta')}</span>

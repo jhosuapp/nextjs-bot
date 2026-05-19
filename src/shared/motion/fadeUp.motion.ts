@@ -44,25 +44,24 @@ export const fadeUpSecondaryMotion = (): PartialMotionVariants => {
 export const fadeUpTertiaryMotion = (
   delayAnimate: number,
   delayExit: number,
-  top: string,
 ): PartialMotionVariants => {
   return {
-    initial: { top: 0 },
+    initial: { translateY: 40, opacity: 0 },
     animate: {
       opacity: 1,
-      top: top,
+      translateY: 0,
       transition: {
-        duration: 5,
         type: "spring",
-        stiffness: 10,
-        damping: 20,
+        stiffness: 100,
+        damping: 18,
         delay: delayAnimate,
       },
     },
     exit: {
       opacity: 0,
+      translateY: -40,
       transition: {
-        duration: 8,
+        duration: 0.5,
         delay: delayExit,
       },
     },

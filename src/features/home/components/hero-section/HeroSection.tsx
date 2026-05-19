@@ -41,7 +41,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
         </div>
 
       <div className={styles.inner}>
-        <WrapperMotion delay={{ enter: 0.53, exit: 0.13 }}>
+        <WrapperMotion delay={{ enter: 0.52, exit: 0.15 }}>
           <motion.a
             href={hero.secondaryCta.href}
             className={styles.eyebrow}
@@ -62,7 +62,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
             tag='h1'
             variant='title'
             color='secondary'
-            delay={{ enter: 0.52, exit: 0.36 }}
+            delay={{ enter: 0.53, exit: 0.14 }}
             weight='medium'
           >
             {t('hero.titleLead')} <strong className={ styles.titleAccent }> {t('hero.titleAccent')} </strong> {t('hero.titleTrail')}
@@ -74,7 +74,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
           tag='p'
           variant='description'
           color='muted'
-          delay={{ enter: 0.54, exit: 0.38 }}
+          delay={{ enter: 0.54, exit: 0.13 }}
         >
           {t('hero.subtitle')}
         </Text>
@@ -111,7 +111,7 @@ const HeroSection = ({ t }: HeroSectionProps) => {
             </motion.a>
           </StaggerItem>
         </StaggerGroup>
-
+        
         <FadeIn className={styles.trustNote} delay={0.6} y={8} duration="fast">
           {t('hero.trustNote')}
         </FadeIn>

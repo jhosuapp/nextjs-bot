@@ -48,14 +48,11 @@
 }
 
 .eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.18em];
-  color: var(--primary);
+  @apply text-xs uppercase tracking-[0.18em];
 }
 
 .title {
-  @apply font-semibold tracking-tight leading-[1.15];
-  color: var(--foreground);
-  font-size: clamp(1.875rem, 3.5vw, 2.5rem);
+  @apply font-semibold tracking-tight;
 }
 
 .description {
