@@ -1,12 +1,13 @@
 import type { JSX } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { BotEmbed } from '../bot-embed/BotEmbed';
-import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { Container } from '../container/Container';
 import { Button } from '@/src/shared/components/button/Button';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import styles from './hero-section.module.css';
-import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
 type HeroSectionProps = {
   t: ITranslations;
@@ -14,8 +15,22 @@ type HeroSectionProps = {
 };
 
 const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
+  const reduce = useReducedMotion();
+
   return (
     <section className={ styles.heroSection }>
+      <div className={styles.heroSection__orbs} aria-hidden="true">
+        <motion.span
+          className={`${styles.heroSection__orb} ${styles.heroSection__orbCyan}`}
+          animate={reduce ? undefined : { x: [0, 24, 0], y: [0, -16, 0] }}
+          transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity }}
+        />
+        <motion.span
+          className={`${styles.heroSection__orb} ${styles.heroSection__orbTeal}`}
+          animate={reduce ? undefined : { x: [0, -28, 0], y: [0, 20, 0] }}
+          transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
+        />
+      </div>
       <Container className={ styles.heroSection__wrapper } padding='md'>
         <article className={ styles.heroSection__bot }>
           <WrapperMotion delay={{ enter: 0.52, exit: 0.15 }}>

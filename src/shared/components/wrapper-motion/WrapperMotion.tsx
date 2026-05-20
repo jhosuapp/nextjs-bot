@@ -22,7 +22,7 @@ const WrapperMotion = ({ children, delay, fadeUpTertiary }: WrapperProps): JSX.E
         initial={initial}
         whileInView={animate}
         exit={exit}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.6 }}
       >
         {children}
       </motion.div>

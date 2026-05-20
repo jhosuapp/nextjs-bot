@@ -9,6 +9,7 @@ import { MainContent } from '@/src/shared/components/main-content/MainContent';
 import { HeroSection } from '../components/hero-section/HeroSection';
 
 import styles from './home.module.css';
+import { FormHero } from '../components/form-hero/FormHero';
 
 type HomeViewProps = { t: ITranslations; tBot: ITranslations };
 
@@ -16,6 +17,7 @@ const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
   return (
     <MainContent className={styles.home}>
       <HeroSection t={tBot} tbot={tBot} />
+      <FormHero />
       <TrustedByStrip t={t} />
       <AgenticVideosSection t={t} />
       <AudienceTabsSection t={t} />

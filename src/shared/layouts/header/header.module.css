@@ -29,8 +29,9 @@
 }
 
 .inner {
-  @apply mx-auto flex w-full max-w-7xl items-center justify-between gap-4;
-  padding: 0.875rem clamp(1rem, 4vw, 2.5rem);
+  @apply mx-auto flex w-[90%] items-center justify-between gap-4;
+  max-width: var(--limit-width);
+  padding: 0.875rem 0;
 }
 
 .navDesktop {

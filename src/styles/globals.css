@@ -32,6 +32,8 @@
   --border-soft: rgba(11, 16, 36, 0.05);
   --border-on-dark: rgba(255, 255, 255, 0.12);
 
+  --danger: #e7000b;
+
   --accent-cta: var(--secondary);
   --accent-cta-hover: #001a55;
   --accent-glow: var(--tertiary);
@@ -157,6 +159,8 @@
   --color-border-subtle: var(--border-subtle);
   --color-border-soft: var(--border-soft);
   --color-border-on-dark: var(--border-on-dark);
+
+  --color-danger: var(--danger);
 
   --color-accent-cta: var(--accent-cta);
   --color-accent-cta-hover: var(--accent-cta-hover);

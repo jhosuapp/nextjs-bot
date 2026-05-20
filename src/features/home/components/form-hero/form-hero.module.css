@@ -1,0 +1,15 @@
+@reference "tailwindcss";
+
+.formHero {
+  @apply flex flex-col lg:flex-row relative items-end -top-16 px-5 lg:px-10 py-5 lg:py-12 rounded-2xl shadow-lg border gap-4;
+  background-color: var(--background);
+  border-color: var(--primary);
+}
+
+.formHero button {
+  @apply min-w-48 w-full max-w-full;
+}
+
+.formHero button span {
+  @apply text-nowrap;
+}

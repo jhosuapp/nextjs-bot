@@ -1,0 +1,73 @@
+@reference "tailwindcss";
+
+.textField {
+  @apply flex flex-col w-full relative;
+}
+
+.textFieldContent {
+  @apply relative flex flex-col justify-center;
+}
+
+.textField input {
+  @apply px-4 py-2 min-h-11 rounded-md w-full block outline-none text-sm transition-all;
+}
+
+.textField label {
+  @apply text-base mb-2.5;
+}
+
+.textField__feedback {
+  @apply text-xs lg:absolute lg:-bottom-5;
+  color: var(--danger);
+}
+
+.textField__icons {
+  @apply absolute right-4 flex items-center gap-2.5 pointer-events-none;
+}
+
+.textField__dangerIcon {
+  @apply text-base;
+}
+
+.textField__tooltip {
+  @apply list-none text-base mt-2.5;
+}
+
+@media (max-width: 768px) {
+  .textField input {
+    @apply min-h-12 py-2;
+  }
+}
+
+/* Primary */
+
+.textField--primary label {
+  @apply text-sm font-semibold;
+  color: var(--text-secondary);
+}
+
+.textField--primary input {
+  @apply border rounded-md;
+  border-color: var(--text-secondary);
+}
+
+.textField--primary input:valid {
+  @apply border-2;
+  border-color: var(--primary);
+}
+
+.textField--primary .textField__feedback {
+  color: var(--danger);
+}
+
+.textField--primary.textFieldError input {
+  border-color: var(--danger);
+}
+
+.textField--primary.textFieldError label {
+  color: var(--danger);
+}
+
+.textField--primary .textField__dangerIcon {
+  color: var(--danger);
+}
