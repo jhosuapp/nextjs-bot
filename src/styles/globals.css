@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #00beff;
+  --primary: #00b1d7;
   --secondary: #001643;
   --tertiary: #17f1d1;
   --cuartary: #e8f8ff;
   --btn-secondary: #001643;
   --h-header: 70px;
+  --limit-width: 1400px;
 
   --text-primary: var(--primary);
   --text-secondary: var(--secondary);
@@ -15,7 +16,7 @@
   --background: #ffffff;
   --foreground: #0b1024;
 
-  --bg-hero: #fbfcff;
+  --bg-hero: #f2f2f2;
   --bg-section: #f6f8fc;
   --bg-section-alt: #ffffff;
   --surface-elevated: #ffffff;
@@ -74,7 +75,7 @@
 }
 
 :root[data-theme="dark"] {
-  --btn-secondary: #00beff;
+  --btn-secondary: #00b1d7;
 
   --text-primary: #fff;
   --text-secondary: #fff;
@@ -216,4 +217,14 @@ body {
   @apply m-0 text-sm font-semibold text-center;
   color: var(--text-on-dark);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gl-degradete-text {
+  @apply tracking-[-0.01em] text-transparent bg-clip-text pr-[0.05em];
+  background-image: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    #0099d6 50%,
+    var(--tertiary) 100%
+  );
 }

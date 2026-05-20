@@ -1,12 +1,13 @@
 @reference "tailwindcss";
 
 .wrapper {
-  @apply flex w-full justify-center px-4 py-8;
+  @apply flex w-full justify-center;
 }
 
 .frame {
   @apply relative overflow-hidden rounded-3xl border;
   height: 50vh;
+  min-height: 500px;
   aspect-ratio: 3 / 4;
   background: var(--bg-section);
   border-color: var(--border-subtle);
@@ -28,12 +29,16 @@
   color: var(--secondary);
   cursor: pointer;
   box-shadow: var(--shadow-floating);
-  transition: box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .playBtn:hover {
   background: color-mix(in srgb, var(--primary) 85%, white);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 20%, transparent), var(--shadow-floating);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--primary) 20%, transparent),
+    var(--shadow-floating);
 }
 
 .playBtn:focus-visible {
@@ -43,7 +48,7 @@
 
 @media (max-width: 640px) {
   .frame {
-    height: 60vh;
+    height: 50vh;
     max-width: calc(100vw - 2rem);
   }
 }

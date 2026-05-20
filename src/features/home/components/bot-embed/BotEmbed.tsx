@@ -56,6 +56,7 @@ const BotEmbedInner = ({ t }: Props): JSX.Element => {
   );
 };
 
+
 const BotEmbed = ({ t }: Props): JSX.Element => {
   const [armed, setArmed] = useState(false);
 
@@ -87,5 +88,4 @@ const BotEmbed = ({ t }: Props): JSX.Element => {
     </div>
   );
 };
-
 export { BotEmbed };

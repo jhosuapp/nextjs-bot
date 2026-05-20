@@ -1,0 +1,10 @@
+@reference "tailwindcss";
+
+.container {
+  @apply flex flex-col w-[90%] mx-auto;
+  max-width: var(--limit-width);
+}
+
+.container__padding_md {
+  @apply py-10;
+}

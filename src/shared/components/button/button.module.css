@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .button {
-  @apply w-fit px-5 min-h-11 max-h-12 min-w-40 flex justify-center items-center gap-4 relative overflow-hidden rounded-full cursor-pointer disabled:cursor-not-allowed;
+  @apply w-fit px-5 min-h-11 max-h-12 min-w-40 flex justify-center items-center gap-4 relative overflow-hidden rounded-md cursor-pointer disabled:cursor-not-allowed;
 }
 
 .button:disabled {
