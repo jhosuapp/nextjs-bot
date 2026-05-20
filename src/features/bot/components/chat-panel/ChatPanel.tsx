@@ -14,9 +14,10 @@ import styles from './chat-panel.module.css';
 
 interface Props {
   t: ITranslations;
+  embedded?: boolean;
 }
 
-const ChatPanel = ({ t }: Props): JSX.Element => {
+const ChatPanel = ({ t, embedded = false }: Props): JSX.Element => {
   const messages = useChatStore((s) => s.messages);
   const submitUserText = useChatStore((s) => s.submitUserText);
   const isOpen = useBotStore((s) => s.isChatOpen);
@@ -32,13 +33,13 @@ const ChatPanel = ({ t }: Props): JSX.Element => {
     if (el) el.scrollTop = el.scrollHeight;
   }, [isOpen, messages.length]);
 
-  const disabledInput = state === 'PERMISSION_PENDING' || state === 'ERROR';
+  const disabledInput = state === 'ERROR';
 
   return (
     <>
       <motion.button
         type="button"
-        className={styles.fab}
+        className={`${styles.fab} ${embedded ? styles.fabEmbedded : ''}`}
         onClick={toggle}
         aria-label={
           isOpen
@@ -58,7 +59,7 @@ const ChatPanel = ({ t }: Props): JSX.Element => {
       <AnimatePresence>
         {isOpen ? (
           <motion.aside
-            className={styles.panel}
+            className={`${styles.panel} ${embedded ? styles.panelEmbedded : ''}`}
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 16 }}

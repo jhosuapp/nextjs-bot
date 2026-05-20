@@ -1,0 +1,46 @@
+@reference "tailwindcss";
+
+.stageContainer {
+  @apply relative w-full overflow-hidden;
+  min-height: calc(70svh - var(--h-header));
+  max-height: calc(70svh - var(--h-header));
+}
+
+.embedded {
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
+}
+
+.toastSlot {
+  @apply absolute left-0 right-0 top-6 z-10 flex justify-center px-6 pointer-events-none;
+}
+
+.embedded .toastSlot {
+  @apply top-3 px-3;
+}
+
+.controls {
+  @apply absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center gap-4 px-6 pb-12 pointer-events-none;
+}
+
+.embedded .controls {
+  @apply gap-2 pb-4 px-3;
+}
+
+.listening {
+  @apply absolute top-[10vh] mt-4;
+}
+
+.listening p {
+  @apply text-[1.5vh];
+}
+
+.embedded .listening {
+  top: 52%;
+  margin-top: 0;
+}
+
+.embedded .listening p {
+  @apply text-sm;
+}

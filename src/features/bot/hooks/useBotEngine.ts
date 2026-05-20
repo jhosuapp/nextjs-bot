@@ -195,7 +195,7 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
 
   useEffect(() => {
     if (pendingUserInput === null) return;
-    if (state === 'THINKING' || state === 'PERMISSION_PENDING') return;
+    if (state === 'THINKING') return;
     const text = consumeUserInput();
     if (text) submitText(text);
   }, [consumeUserInput, pendingUserInput, state, submitText]);

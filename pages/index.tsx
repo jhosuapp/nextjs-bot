@@ -9,6 +9,7 @@ import { PageTransition } from "@/src/shared/layouts/pageTransition/PageTransiti
 export default function Home() {
   const { t } = useTranslation("home");
   const { t: tc } = useTranslation("common");
+  const { t: tBot } = useTranslation("bot");
 
   return (
     <PageLayout
@@ -16,7 +17,7 @@ export default function Home() {
       description={tc("seo.homeDescription") as string}
     >
       <PageTransition>
-        <HomeView t={t} />
+        <HomeView t={t} tBot={tBot} />
       </PageTransition>
     </PageLayout>
   );
@@ -25,7 +26,7 @@ export default function Home() {
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "es", ["common", "home"])),
+      ...(await serverSideTranslations(locale ?? "es", ["common", "home", "bot"])),
     },
   };
 }

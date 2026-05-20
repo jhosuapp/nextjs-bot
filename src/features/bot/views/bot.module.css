@@ -4,25 +4,3 @@
   @apply relative w-full;
   background: var(--background);
 }
-
-.stageContainer {
-  @apply relative w-full overflow-hidden;
-  min-height: calc(70svh - var(--h-header));
-  max-height: calc(70svh - var(--h-header));
-}
-
-.toastSlot {
-  @apply absolute left-0 right-0 top-6 z-10 flex justify-center px-6 pointer-events-none;
-}
-
-.controls {
-  @apply absolute bottom-0 left-0 right-0 z-10 flex flex-col items-center gap-4 px-6 pb-12 pointer-events-none;
-}
-
-.listening {
-  @apply absolute top-[10vh] mt-4;
-}
-
-.listening p {
-  @apply text-[1.5vh];
-}

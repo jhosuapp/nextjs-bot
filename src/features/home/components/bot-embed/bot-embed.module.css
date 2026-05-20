@@ -1,0 +1,49 @@
+@reference "tailwindcss";
+
+.wrapper {
+  @apply flex w-full justify-center px-4 py-8;
+}
+
+.frame {
+  @apply relative overflow-hidden rounded-3xl border;
+  height: 50vh;
+  aspect-ratio: 3 / 4;
+  background: var(--bg-section);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-floating);
+}
+
+.previewVideo {
+  @apply absolute inset-0 h-full w-full object-cover;
+  z-index: 0;
+}
+
+.playBtn {
+  @apply absolute z-20 inline-flex h-16 w-16 items-center justify-center rounded-full border-none text-2xl;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background: var(--primary);
+  color: var(--secondary);
+  cursor: pointer;
+  box-shadow: var(--shadow-floating);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.playBtn:hover {
+  background: color-mix(in srgb, var(--primary) 85%, white);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 20%, transparent), var(--shadow-floating);
+}
+
+.playBtn:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .frame {
+    height: 60vh;
+    max-width: calc(100vw - 2rem);
+  }
+}
