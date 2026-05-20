@@ -7,7 +7,7 @@ import Document, {
   type DocumentInitialProps,
 } from "next/document";
 
-const themeBootstrap = `(function(){try{var k='lumina:theme';var s=localStorage.getItem(k);var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var t=(s==='light'||s==='dark')?s:(m?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
+const themeBootstrap = `(function(){try{history.scrollRestoration='manual';var k='lumina:theme';var s=localStorage.getItem(k);var t=(s==='light'||s==='dark')?s:'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`;
 
 interface Props extends DocumentInitialProps {
   locale: string;

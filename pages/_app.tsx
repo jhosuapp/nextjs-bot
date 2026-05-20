@@ -13,6 +13,7 @@ import { ThemeTransitionOverlay } from "@/src/shared/components/theme-transition
 import { Footer } from "@/src/shared/layouts/footer/Footer";
 import { Header } from "@/src/shared/layouts/header/Header";
 import { useLoaderStore } from "@/src/shared/stores/loader.store";
+import { useLenisStore } from "@/src/shared/stores/lenis.store";
 
 import "@/src/styles/globals.css";
 
@@ -30,6 +31,18 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     document.documentElement.lang = router.locale ?? "es";
   }, [router.locale]);
+
+  useEffect(() => {
+    const scrollToTop = () => {
+      useLenisStore.getState().lenis?.scrollTo(0, { immediate: true });
+    };
+    router.events.on("routeChangeStart", scrollToTop);
+    return () => router.events.off("routeChangeStart", scrollToTop);
+  }, [router.events]);
+
+  useEffect(() => {
+    useLenisStore.getState().lenis?.scrollTo(0, { immediate: true });
+  }, []);
 
   return (
     <div className={`${jakarta.variable} contents`}>

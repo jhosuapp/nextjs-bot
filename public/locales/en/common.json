@@ -1,23 +1,19 @@
 {
   "seo": {
-    "homeTitle": "Home | 150%",
-    "homeDescription": "AI avatars and interactive agents for humanlike communication, built for teams that need to scale messaging without losing the personal touch.",
-    "loginTitle": "Sign In | 150%",
-    "loginDescription": "Access your 150% account and manage your AI avatars and interactive agents.",
-    "botTitle": "Conversational bot | 150%",
-    "botDescription": "Talk to an AI avatar that answers you with real-time video. Natural conversation by voice and chat."
+    "homeTitle": "Home | Humanika",
+    "homeDescription": "Smart avatars for web, WhatsApp, training, sales and BTL experiences.",
+    "botTitle": "Conversational bot | Humanika",
+    "botDescription": "Talk to an AI avatar that responds in real time. Natural conversation by voice and chat."
   },
   "nav": {
-    "product": "Product",
     "solutions": "Solutions",
-    "customers": "Customers",
     "pricing": "Pricing",
     "docs": "Docs",
     "bot": "Bot"
   },
   "header": {
     "skipLink": "Skip to main content",
-    "startFree": "Start free",
+    "startFree": "Request a demo",
     "signIn": "Sign in",
     "changeLanguageAria": "Current language: {{native}}. Change language",
     "languageListAria": "Language",
@@ -33,19 +29,19 @@
     }
   },
   "footer": {
-    "heading": "Site footer",
+    "heading": "Footer",
     "brand": {
-      "name": "150%",
-      "tagline": "AI avatars built for humanlike communication.",
+      "name": "Humanika",
+      "tagline": "Smart avatars built for human communication.",
       "homeAria": "{{name}} home"
     },
     "newsletter": {
       "eyebrow": "Newsletter",
-      "title": "New releases, straight to your inbox.",
-      "description": "A monthly roundup of avatar releases, use cases and platform updates. No spam, unsubscribe anytime.",
+      "title": "Get updates straight to your inbox.",
+      "description": "A monthly digest of launches, use cases and platform updates. No spam, unsubscribe anytime.",
       "placeholder": "you@company.com",
       "cta": "Subscribe",
-      "successMessage": "Thanks for joining — check your inbox to confirm.",
+      "successMessage": "Thanks for joining! Check your inbox to confirm.",
       "privacy": "By subscribing you agree to our privacy policy.",
       "emailLabel": "Email address",
       "emailError": "Please enter a valid email address.",
@@ -71,7 +67,7 @@
       },
       "resources": {
         "title": "Resources",
-        "docs": "Documentation",
+        "docs": "Docs",
         "api": "API reference",
         "help": "Help center",
         "status": "Status",
@@ -79,7 +75,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} 150%, Inc. All rights reserved.",
+      "copyright": "© {{year}} Humanika. All rights reserved.",
       "socialsAria": "Social media",
       "legalsAria": "Legal links",
       "legal": {

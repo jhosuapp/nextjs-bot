@@ -1,23 +1,19 @@
 {
   "seo": {
-    "homeTitle": "Inicio | 150%",
-    "homeDescription": "Avatares de IA y agentes interactivos para comunicación humana, diseñados para equipos que necesitan escalar mensajes sin perder el toque personal.",
-    "loginTitle": "Iniciar sesión | 150%",
-    "loginDescription": "Accede a tu cuenta de 150% y gestiona tus avatares de IA y agentes interactivos.",
-    "botTitle": "Bot conversacional | 150%",
-    "botDescription": "Habla con un avatar de IA que te responde con video en tiempo real. Conversación natural por voz y por chat."
+    "homeTitle": "Inicio | Humanika",
+    "homeDescription": "Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.",
+    "botTitle": "Bot conversacional | Humanika",
+    "botDescription": "Habla con un avatar de IA que te responde en tiempo real. Conversación natural por voz y por chat."
   },
   "nav": {
-    "product": "Producto",
     "solutions": "Soluciones",
-    "customers": "Clientes",
     "pricing": "Precios",
     "docs": "Documentación",
     "bot": "Bot"
   },
   "header": {
     "skipLink": "Ir al contenido principal",
-    "startFree": "Empieza gratis",
+    "startFree": "Solicitar demo",
     "signIn": "Iniciar sesión",
     "changeLanguageAria": "Idioma actual: {{native}}. Cambiar idioma",
     "languageListAria": "Idioma",
@@ -35,14 +31,14 @@
   "footer": {
     "heading": "Pie de página",
     "brand": {
-      "name": "150%",
-      "tagline": "Avatares de IA diseñados para comunicación humana.",
+      "name": "Humanika",
+      "tagline": "Avatares inteligentes diseñados para comunicación humana.",
       "homeAria": "Inicio de {{name}}"
     },
     "newsletter": {
       "eyebrow": "Newsletter",
       "title": "Novedades directamente en tu bandeja de entrada.",
-      "description": "Un resumen mensual de lanzamientos de avatares, casos de uso y actualizaciones de la plataforma. Sin spam, cancela cuando quieras.",
+      "description": "Un resumen mensual de lanzamientos, casos de uso y actualizaciones. Sin spam, cancela cuando quieras.",
       "placeholder": "tu@empresa.com",
       "cta": "Suscribirse",
       "successMessage": "¡Gracias por unirte! Revisa tu bandeja de entrada para confirmar.",
@@ -79,7 +75,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} 150%, Inc. Todos los derechos reservados.",
+      "copyright": "© {{year}} Humanika. Todos los derechos reservados.",
       "socialsAria": "Redes sociales",
       "legalsAria": "Enlaces legales",
       "legal": {

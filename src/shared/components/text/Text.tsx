@@ -19,6 +19,7 @@ type TextProps = {
   children?: React.ReactNode;
   fadeUpTertiary?: boolean;
   staggerItem?: boolean;
+  immediate?: boolean;
 };
 
 const Text = ({
@@ -31,6 +32,7 @@ const Text = ({
   children,
   fadeUpTertiary,
   staggerItem,
+  immediate
 }: TextProps): JSX.Element => {
   const reduce = useReducedMotion();
 
@@ -57,7 +59,7 @@ const Text = ({
   }
 
   return (
-    <WrapperMotion delay={delay!} fadeUpTertiary={fadeUpTertiary}>
+    <WrapperMotion delay={delay!} fadeUpTertiary={fadeUpTertiary} immediate={immediate}>
       <Tag className={className}>
         {children}
       </Tag>

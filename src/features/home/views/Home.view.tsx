@@ -1,7 +1,6 @@
 import type { JSX } from 'react';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
-import { AgenticVideosSection } from '@/src/features/home/components/agentic-videos-section/AgenticVideosSection';
 import { AudienceTabsSection } from '@/src/features/home/components/audience-tabs-section/AudienceTabsSection';
 import { FaqSection } from '@/src/features/home/components/faq-section/FaqSection';
 import { TrustedByStrip } from '@/src/features/home/components/trusted-by-strip/TrustedByStrip';
@@ -16,10 +15,9 @@ type HomeViewProps = { t: ITranslations; tBot: ITranslations };
 const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
   return (
     <MainContent className={styles.home}>
-      <HeroSection t={tBot} tbot={tBot} />
-      <FormHero />
+      <HeroSection t={t} tbot={tBot} />
+      <FormHero t={t} />
       <TrustedByStrip t={t} />
-      <AgenticVideosSection t={t} />
       <AudienceTabsSection t={t} />
       <FaqSection t={t} />
     </MainContent>

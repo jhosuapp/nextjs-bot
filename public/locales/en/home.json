@@ -1,27 +1,22 @@
 {
   "hero": {
-    "eyebrowBadge": "New",
-    "eyebrowText": "V4 Expressive Visual Agents is here",
-    "titleLead": "AI avatars that feel",
-    "titleAccent": "genuinely",
-    "titleTrail": "human.",
-    "subtitle": "A digital human platform that helps teams explain clearly, engage personally, and scale messaging across every audience — in seconds.",
-    "primaryCta": "Get started — free",
-    "secondaryCta": "Watch a 60s demo",
-    "trustNote": "Trusted by 10,000+ teams · No credit card required",
-    "highlights": [
-      { "label": "Avg. setup", "value": "< 2 min" },
-      { "label": "Languages", "value": "80+" },
-      { "label": "Uptime SLA", "value": "99.9%" }
-    ],
-    "mockup": {
-      "url": "150porciento.ai / studio",
-      "badgeLabel": "LIVE · Avatar Studio",
-      "line": "\"Hi Marina — your weekly insights are ready, let's walk through them.\"",
-      "streaming": "Streaming · 24 fps",
-      "language": "Spanish (ES) → English (US)",
-      "platformHighlights": "Platform highlights"
-    }
+    "titleLead": "We built ",
+    "titleAccent": "Humanika",
+    "titleTrail": " for businesses",
+    "subtitle": "Smart avatars for web, WhatsApp, training, sales and BTL experiences.",
+    "primaryCta": "Request a demo",
+    "secondaryCta": "Get consulting"
+  },
+  "contact": {
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "example@email.com",
+    "messageLabel": "What do you want to create?",
+    "messagePlaceholder": "Tell us about your project",
+    "cta": "I want my avatar"
   },
   "trustedBy": {
     "label": "Trusted by"
@@ -34,19 +29,9 @@
     "mediaAlt": "Interactive avatar video preview",
     "playAria": "Play preview"
   },
-  "realtime": {
-    "badge": "New · V4 Expressive Visual Agents",
-    "title": "Real-time, emotionally intelligent conversations.",
-    "description": "Built for product-grade scale: low-latency speech, nuanced facial expressions, and natural turn-taking that feels human at every step.",
-    "cta": "Explore V4"
-  },
-  "statement": {
-    "text": "One platform to design, deploy, and scale your digital humans across every channel.",
-    "ariaLabel": "Statement"
-  },
   "audience": {
     "eyebrow": "For every team",
-    "title": "Engaging AI avatars for any team.",
+    "title": "AI avatars for any team.",
     "marketing": {
       "label": "Marketing",
       "title": "Personalize every campaign at scale.",
@@ -88,21 +73,16 @@
       ]
     }
   },
-  "integrations": {
-    "title": "Combine our platform with your favorite tools.",
-    "description": "First-class integrations with the stack you already trust. Bring avatars where your work already happens.",
-    "cta": "Discover integrations"
-  },
   "faq": {
     "eyebrow": "Frequently asked",
     "title": "Everything you need to know.",
-    "description": "Common questions about 150% — and if something is missing, our team replies in under a business day.",
+    "description": "Common questions about Humanika — and if something is missing, our team replies in under a business day.",
     "contactCta": "Talk to our team",
     "stillHaveQuestion": "Still have a question?",
     "items": {
       "what-is": {
         "question": "What does the platform actually do?",
-        "answer": "150% turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow."
+        "answer": "Humanika turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow."
       },
       "how-fast": {
         "question": "How quickly can I publish my first avatar?",

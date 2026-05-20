@@ -1,27 +1,22 @@
 {
   "hero": {
-    "eyebrowBadge": "Nuevo",
-    "eyebrowText": "V4 Agentes Visuales Expresivos ya está aquí",
-    "titleLead": "Avatares de IA que se sienten",
-    "titleAccent": "genuinamente",
-    "titleTrail": "humanos.",
-    "subtitle": "Una plataforma de humanos digitales que ayuda a los equipos a explicar con claridad, conectar personalmente y escalar mensajes a cualquier audiencia — en segundos.",
-    "primaryCta": "Comenzar — gratis",
-    "secondaryCta": "Ver demo de 60s",
-    "trustNote": "Con la confianza de 10,000+ equipos · Sin tarjeta de crédito",
-    "highlights": [
-      { "label": "Conf. promedio", "value": "< 2 min" },
-      { "label": "Idiomas", "value": "80+" },
-      { "label": "SLA de disponibilidad", "value": "99.9%" }
-    ],
-    "mockup": {
-      "url": "150porciento.ai / studio",
-      "badgeLabel": "EN VIVO · Avatar Studio",
-      "line": "\"Hola Marina — tus informes semanales están listos, repasémoslos.\"",
-      "streaming": "Transmisión · 24 fps",
-      "language": "Español (ES) → Inglés (US)",
-      "platformHighlights": "Destacados de la plataforma"
-    }
+    "titleLead": "Creamos ",
+    "titleAccent": "Humanika",
+    "titleTrail": " para empresas",
+    "subtitle": "Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.",
+    "primaryCta": "Solicitar demo",
+    "secondaryCta": "Quiero asesoría"
+  },
+  "contact": {
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Nombre",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Nombre de la empresa",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "ejemplo@correo.com",
+    "messageLabel": "¿Qué quieres crear?",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto",
+    "cta": "Quiero mi avatar"
   },
   "trustedBy": {
     "label": "Con la confianza de"
@@ -33,16 +28,6 @@
     "cta": "Saber más",
     "mediaAlt": "Vista previa de video con avatar interactivo",
     "playAria": "Reproducir vista previa"
-  },
-  "realtime": {
-    "badge": "Nuevo · V4 Agentes Visuales Expresivos",
-    "title": "Conversaciones en tiempo real con inteligencia emocional.",
-    "description": "Diseñado para escala de nivel productivo: voz de baja latencia, expresiones faciales matizadas e intercambios naturales que se sienten humanos en cada paso.",
-    "cta": "Explorar V4"
-  },
-  "statement": {
-    "text": "Una plataforma para diseñar, implementar y escalar tus humanos digitales en todos los canales.",
-    "ariaLabel": "Declaración"
   },
   "audience": {
     "eyebrow": "Para cada equipo",
@@ -88,21 +73,16 @@
       ]
     }
   },
-  "integrations": {
-    "title": "Combina nuestra plataforma con tus herramientas favoritas.",
-    "description": "Integraciones de primera clase con el stack en el que ya confías. Lleva los avatares donde ya ocurre tu trabajo.",
-    "cta": "Descubrir integraciones"
-  },
   "faq": {
     "eyebrow": "Preguntas frecuentes",
     "title": "Todo lo que necesitas saber.",
-    "description": "Preguntas comunes sobre 150% — y si falta algo, nuestro equipo responde en menos de un día hábil.",
+    "description": "Preguntas comunes sobre Humanika — y si falta algo, nuestro equipo responde en menos de un día hábil.",
     "contactCta": "Hablar con nuestro equipo",
     "stillHaveQuestion": "¿Tienes otra pregunta?",
     "items": {
       "what-is": {
         "question": "¿Qué hace realmente la plataforma?",
-        "answer": "150% convierte guiones, documentos y prompts en videos de avatares realistas y agentes en tiempo real que puedes integrar en tu producto, sitio de marketing, portal de formación o flujo de ventas."
+        "answer": "Humanika convierte guiones, documentos y prompts en videos de avatares realistas y agentes en tiempo real que puedes integrar en tu producto, sitio de marketing, portal de formación o flujo de ventas."
       },
       "how-fast": {
         "question": "¿Con qué rapidez puedo publicar mi primer avatar?",

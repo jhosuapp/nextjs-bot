@@ -33,7 +33,7 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
       </div>
       <Container className={ styles.heroSection__wrapper } padding='md'>
         <article className={ styles.heroSection__bot }>
-          <WrapperMotion delay={{ enter: 0.52, exit: 0.15 }}>
+          <WrapperMotion delay={{ enter: 0.52, exit: 0.15 }} immediate>
             <BotEmbed t={tbot} />
           </WrapperMotion>
         </article>
@@ -44,8 +44,9 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
               color='secondary'
               delay={{ enter: 0.53, exit: 0.14 }}
               weight='semibold'
+              immediate
             >
-              Creamos <strong className='gl-degradete-text font-semibold'>Humanika</strong> para empresas
+              {t('hero.titleLead') as string}<strong className='gl-degradete-text font-semibold'>{t('hero.titleAccent') as string}</strong>{t('hero.titleTrail') as string}
             </Text>
             <Text
               tag='h2'
@@ -53,8 +54,9 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
               color='muted'
               delay={{ enter: 0.55, exit: 0.13 }}
               weight='medium'
+              immediate
             >
-              Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.
+              {t('hero.subtitle') as string}
             </Text>
             <Text
               tag='h2'
@@ -62,18 +64,19 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
               color='muted'
               delay={{ enter: 0.57, exit: 0.12 }}
               weight='normal'
+              immediate
             >
-              Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.
+              {t('hero.subtitle') as string}
             </Text>
-            <WrapperMotion delay={{ enter: 0.59, exit: 0.11 }}>
+            <WrapperMotion delay={{ enter: 0.59, exit: 0.11 }} immediate>
               <div className={ styles.heroSection__buttons }>
                 <Button
-                  text={'Solicitar demo'}
+                  text={t('hero.primaryCta') as string}
                   style="primary"
                   type="button"
                 />
                 <Button
-                  text={'Quiero asesoría'}
+                  text={t('hero.secondaryCta') as string}
                   style="secondary"
                   type="button"
                 />

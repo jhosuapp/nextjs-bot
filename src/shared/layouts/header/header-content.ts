@@ -30,9 +30,6 @@ const headerStaticData: HeaderStaticData = {
   languages: [
     { code: "en", label: "EN", native: "English" },
     { code: "es", label: "ES", native: "Español" },
-    { code: "fr", label: "FR", native: "Français" },
-    { code: "de", label: "DE", native: "Deutsch" },
-    { code: "pt", label: "PT", native: "Português" },
   ],
 };
 

@@ -45,9 +45,7 @@ const readInitialTheme = (): Theme => {
   } catch {
     /* fall through */
   }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+  return 'light';
 };
 
 const storeAPI: StateCreator<

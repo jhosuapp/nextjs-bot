@@ -4,12 +4,15 @@ import { Controller } from 'react-hook-form';
 import { useFormHeroController } from '@/src/features/home/hooks/useFormHero.controller';
 import { TextField } from '@/src/shared/components/text-field/TextField';
 import { Container } from '../container/Container';
+import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import styles from './form-hero.module.css';
 import { Button } from '@/src/shared/components/button/Button';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
-const FormHero = ():JSX.Element => {
+type FormHeroProps = { t: ITranslations };
+
+const FormHero = ({ t }: FormHeroProps):JSX.Element => {
     const {
       control,
       errors,
@@ -19,7 +22,7 @@ const FormHero = ():JSX.Element => {
 
   return (
     <Container>
-      <form 
+      <form
         onSubmit={handleSubmit(onSubmit)}
         className={ styles.formHero }
         noValidate
@@ -30,17 +33,17 @@ const FormHero = ():JSX.Element => {
           render={({ field: { onChange, onBlur, value } }) => (
             <TextField
                 type="text"
-                label="Nombre"
+                label={t('contact.nameLabel') as string}
                 name="name"
                 id="name"
-                placeholder="Nombre"
+                placeholder={t('contact.namePlaceholder') as string}
                 minLength={2}
                 style="primary"
                 feedback={ errors.name?.message }
 
                 delayAnimate={0.57}
                 delayExit={0.15}
-                
+
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}
@@ -56,17 +59,17 @@ const FormHero = ():JSX.Element => {
           render={({ field: { onChange, onBlur, value } }) => (
             <TextField
                 type="text"
-                label="Empresa"
+                label={t('contact.companyLabel') as string}
                 name="company"
                 id="company"
-                placeholder="Nombre de la empresa"
+                placeholder={t('contact.companyPlaceholder') as string}
                 minLength={2}
                 style="primary"
                 feedback={ errors.company?.message }
 
                 delayAnimate={0.57}
                 delayExit={0.15}
-                
+
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}
@@ -82,17 +85,17 @@ const FormHero = ():JSX.Element => {
           render={({ field: { onChange, onBlur, value } }) => (
             <TextField
                 type="text"
-                label="Correo electrónico"
+                label={t('contact.emailLabel') as string}
                 name="email"
                 id="email"
-                placeholder="ejemplo@correo.com"
+                placeholder={t('contact.emailPlaceholder') as string}
                 minLength={2}
                 style="primary"
                 feedback={ errors.email?.message }
 
                 delayAnimate={0.57}
                 delayExit={0.15}
-                
+
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}
@@ -108,17 +111,17 @@ const FormHero = ():JSX.Element => {
           render={({ field: { onChange, onBlur, value } }) => (
             <TextField
                 type="text"
-                label="¿Qué quieres crear?"
+                label={t('contact.messageLabel') as string}
                 name="message"
                 id="message"
-                placeholder="Cuéntanos sobre tu proyecto"
+                placeholder={t('contact.messagePlaceholder') as string}
                 minLength={2}
                 style="primary"
                 feedback={ errors.message?.message }
 
                 delayAnimate={0.57}
                 delayExit={0.15}
-                
+
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}
@@ -128,9 +131,9 @@ const FormHero = ():JSX.Element => {
           )}
         />
 
-        <WrapperMotion delay={{ enter: 0.57, exit: 0.15 }}>
+        <WrapperMotion delay={{ enter: 0.57, exit: 0.15 }} immediate>
           <Button
-            text={'Quiero mi avatar'}
+            text={t('contact.cta') as string}
             style="primary"
             type="submit"
           />

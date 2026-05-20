@@ -9,9 +9,10 @@ type WrapperProps = {
   children: React.ReactNode;
   delay: { enter: number, exit: number };
   fadeUpTertiary?: boolean;
+  immediate?: boolean;
 }
 
-const WrapperMotion = ({ children, delay, fadeUpTertiary }: WrapperProps): JSX.Element => {
+const WrapperMotion = ({ children, delay, fadeUpTertiary, immediate }: WrapperProps): JSX.Element => {
   const { initial, animate, exit } = fadeUpTertiary
     ? fadeUpTertiaryMotion(delay.enter, delay.exit)
     : fadeUpMotion(delay.enter, delay.exit);
@@ -20,9 +21,11 @@ const WrapperMotion = ({ children, delay, fadeUpTertiary }: WrapperProps): JSX.E
     <article className={styles.wrapperMotion}>
       <motion.div
         initial={initial}
-        whileInView={animate}
+        {...(immediate
+          ? { animate }
+          : { whileInView: animate, viewport: { once: true, amount: 0.6 } }
+        )}
         exit={exit}
-        viewport={{ once: true, amount: 0.6 }}
       >
         {children}
       </motion.div>
