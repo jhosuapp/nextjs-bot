@@ -6,7 +6,7 @@
 
 .frame {
   @apply relative overflow-hidden rounded-3xl border;
-  height: 50vh;
+  height: calc(100vh - var(--h-header) - 172px - 120px);
   min-height: 500px;
   aspect-ratio: 3 / 4;
   background: var(--bg-section);

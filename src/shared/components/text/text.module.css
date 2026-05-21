@@ -24,6 +24,10 @@
   @apply text-sm font-normal leading-relaxed;
 }
 
+.description_xs {
+  @apply text-xs uppercase tracking-[0.2em];
+}
+
 .color_primary {
   color: var(--text-primary);
 }

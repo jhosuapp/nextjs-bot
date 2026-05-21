@@ -31,7 +31,8 @@
   },
   "audience": {
     "eyebrow": "Para cada equipo",
-    "title": "Avatares de IA para cualquier equipo.",
+    "title_strong": "Humanos digitales",
+    "title": "listos para operar.",
     "marketing": {
       "label": "Marketing",
       "title": "Personaliza cada campaña a escala.",

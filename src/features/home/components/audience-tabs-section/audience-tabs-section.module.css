@@ -1,23 +1,17 @@
 @reference "tailwindcss";
 
 .section {
-  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-10;
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem);
+  @apply items-center gap-10;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    @apply !pt-0;
+  }
 }
 
 .header {
   @apply flex max-w-3xl flex-col items-center gap-3 text-center;
-}
-
-.eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.2em];
-  color: var(--primary);
-}
-
-.title {
-  @apply font-semibold tracking-tight leading-[1.15];
-  color: var(--foreground);
-  font-size: clamp(1.875rem, 4vw, 2.75rem);
 }
 
 .tabsHost {
@@ -32,21 +26,6 @@
 
 .panelText {
   @apply flex flex-col gap-4;
-}
-
-.panelLabel {
-  @apply text-xs font-semibold uppercase tracking-[0.2em];
-  color: var(--primary);
-}
-
-.panelTitle {
-  @apply text-2xl font-semibold tracking-tight leading-[1.2];
-  color: var(--foreground);
-}
-
-.panelDesc {
-  @apply text-base leading-[1.65];
-  color: var(--text-muted);
 }
 
 .bullets {

@@ -8,3 +8,11 @@
 .container__padding_md {
   @apply py-10;
 }
+
+.container__padding_lg {
+  @apply py-14;
+}
+
+.container__padding_xl {
+  @apply py-16 lg:py-20;
+}

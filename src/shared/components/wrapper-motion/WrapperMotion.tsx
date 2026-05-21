@@ -23,7 +23,7 @@ const WrapperMotion = ({ children, delay, fadeUpTertiary, immediate }: WrapperPr
         initial={initial}
         {...(immediate
           ? { animate }
-          : { whileInView: animate, viewport: { once: true, amount: 0.6 } }
+          : { whileInView: animate, viewport: { once: true, amount: 0.2 } }
         )}
         exit={exit}
       >

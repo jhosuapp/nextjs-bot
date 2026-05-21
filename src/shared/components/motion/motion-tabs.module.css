@@ -5,13 +5,13 @@
 }
 
 .list {
-  @apply flex flex-wrap items-center gap-2 self-center rounded-full border p-1;
+  @apply flex flex-wrap items-center gap-2 self-center rounded-3xl lg:rounded-full border p-4 lg:p-1 flex-col lg:flex-row w-full lg:w-fit;
   border-color: var(--border-subtle);
   background: var(--surface-elevated);
 }
 
 .tab {
-  @apply relative inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium tracking-wide uppercase transition-colors;
+  @apply relative inline-flex items-center justify-center rounded-xl lg:rounded-full px-5 py-2 text-xs lg:text-sm font-medium tracking-wide uppercase transition-colors;
   color: var(--text-muted);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .indicator {
-  @apply absolute inset-0 rounded-full;
+  @apply absolute inset-0 rounded-xl lg:rounded-full;
   background: var(--foreground);
   z-index: 0;
 }

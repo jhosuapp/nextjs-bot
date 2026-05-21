@@ -10,6 +10,9 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 import type { AudienceTabStatic } from '@/src/features/home/data/home-content';
 
 import styles from './audience-tabs-section.module.css';
+import { Container } from '../container/Container';
+import { Text } from '@/src/shared/components/text/Text';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
 type Props = { t: ITranslations };
 type TabKey = AudienceTabStatic['key'];
@@ -26,14 +29,47 @@ const AudienceTabsSection = ({ t }: Props) => {
       content: (
         <article className={styles.panel}>
           <div className={styles.panelText}>
-            <span className={styles.panelLabel}>{t(`audience.${tabItem.key}.label`)}</span>
-            <h3 className={styles.panelTitle}>{t(`audience.${tabItem.key}.title`)}</h3>
-            <p className={styles.panelDesc}>{t(`audience.${tabItem.key}.description`)}</p>
+            <Text 
+              tag="p" 
+              variant="description_xs" 
+              color="secondary"
+              delay={{ enter: 0.1, exit: 0.4 }}
+              fadeUpTertiary
+              immediate
+            >
+              <strong className='gl-degradete-text font-semibold'>{t(`audience.${tabItem.key}.label`)}</strong>
+            </Text>
+            <Text 
+              tag="h3" 
+              variant="subtitle_small" 
+              color="secondary"
+              delay={{ enter: 0.2, exit: 0.3 }}
+              fadeUpTertiary
+              immediate
+            >
+              {t(`audience.${tabItem.key}.title`)}
+            </Text>
+            <Text 
+              tag="p" 
+              variant="description" 
+              color="muted"
+              delay={{ enter: 0.3, exit: 0.2 }}
+              fadeUpTertiary
+              immediate
+            >
+              {t(`audience.${tabItem.key}.description`)}
+            </Text>
             <ul className={styles.bullets}>
-              {bullets.map((bullet) => (
-                <li key={bullet} className={styles.bullet}>
-                  {bullet}
-                </li>
+              {bullets.map((bullet, index) => (
+                <WrapperMotion 
+                  delay={{ enter: `0.${4 + index}` as any, exit: 0.1 }}
+                  fadeUpTertiary
+                  immediate
+                >
+                  <li key={bullet} className={styles.bullet}>
+                    {bullet}
+                  </li>
+                </WrapperMotion>
               ))}
             </ul>
           </div>
@@ -46,12 +82,18 @@ const AudienceTabsSection = ({ t }: Props) => {
   });
 
   return (
-    <section className={styles.section} aria-labelledby="audience-title">
+    <Container className={styles.section} aria-labelledby="audience-title" padding='xl'>
       <FadeIn className={styles.header} y={16}>
-        <span className={styles.eyebrow}>{t('audience.eyebrow')}</span>
-        <h2 id="audience-title" className={styles.title}>
-          {t('audience.title')}
-        </h2>
+        <Text 
+          tag="h2" 
+          variant="title_small" 
+          color="secondary"
+          weight="bold"
+          delay={{ enter: 0, exit: 0 }}
+          fadeUpTertiary
+        >
+          <strong className='gl-degradete-text font-bold'>{t('audience.title_strong')}</strong> {t('audience.title')}
+        </Text>
       </FadeIn>
 
       <MotionTabs<TabKey>
@@ -59,7 +101,7 @@ const AudienceTabsSection = ({ t }: Props) => {
         layoutId="audience-tab-indicator"
         className={styles.tabsHost}
       />
-    </section>
+    </Container>
   );
 };
 

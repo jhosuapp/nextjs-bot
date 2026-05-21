@@ -2,7 +2,6 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import { FooterBottom } from '@/src/shared/layouts/footer/bottom/FooterBottom';
 import { FooterNav } from '@/src/shared/layouts/footer/nav/FooterNav';
-import { FooterNewsletter } from '@/src/shared/layouts/footer/newsletter/FooterNewsletter';
 
 import styles from './footer.module.css';
 
@@ -15,8 +14,6 @@ const Footer = ({ t }: FooterProps) => {
         {t('footer.heading')}
       </h2>
       <div className={styles.glow} aria-hidden="true" />
-
-      <FooterNewsletter t={t} />
 
       <div className={styles.divider} aria-hidden="true" />
 

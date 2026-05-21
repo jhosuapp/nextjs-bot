@@ -170,13 +170,13 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuPro
                   type="button"
                   onClick={onClose}
                 /> */}
-                <Button
+                {/* <Button
                   className='!w-full'
                   text={t('header.startFree') as string}
                   style="primary"
                   type="button"
                   onClick={onClose}
-                />
+                /> */}
               </motion.div>
             </motion.div>
           </>

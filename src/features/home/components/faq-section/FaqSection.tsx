@@ -14,6 +14,9 @@ import { homeStaticData } from '@/src/features/home/data/home-content';
 import { Button } from '@/src/shared/components/button/Button';
 
 import styles from './faq-section.module.css';
+import { Text } from '@/src/shared/components/text/Text';
+import { Container } from '../container/Container';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
 type Props = { t: ITranslations };
 
@@ -79,7 +82,16 @@ const AccordionItem = ({ id, question, answer, isOpen, onToggle }: AccordionItem
               opacity: { duration: 0.2, ease: EASE },
             }}
           >
-            <p className={styles.answer}>{answer}</p>
+            <Text
+              className={ styles.answer }
+              tag="p" 
+              variant="description_small" 
+              color="muted"
+              delay={{ enter: 0, exit: 0 }}
+              fadeUpTertiary
+            >
+              {answer}
+            </Text>
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -100,38 +112,71 @@ const FaqSection = ({ t }: Props) => {
   };
 
   return (
-    <section className={styles.section} aria-labelledby="faq-title">
+    <Container className={styles.section} aria-labelledby="faq-title" padding='xl'>
       <FadeIn className={styles.header} y={16}>
-        <span className={styles.eyebrow}>{t('faq.eyebrow')}</span>
-        <h2 id="faq-title" className={styles.title}>
+        <Text
+          tag="p" 
+          variant="description_xs" 
+          color="primary"
+          weight="semibold"
+          delay={{ enter: 0, exit: 0 }}
+          fadeUpTertiary
+        >
+          {t('faq.eyebrow')}
+        </Text>
+        <Text
+          tag="h2" 
+          variant="title_small" 
+          color="secondary"
+          weight="semibold"
+          delay={{ enter: 0.1, exit: 0 }}
+          fadeUpTertiary
+        >
           {t('faq.title')}
-        </h2>
-        <p className={styles.description}>{t('faq.description')}</p>
+        </Text>
+        <Text
+          tag="p" 
+          variant="description" 
+          color="muted"
+          delay={{ enter: 0.15, exit: 0 }}
+          fadeUpTertiary
+        >
+          {t('faq.description')}
+        </Text>
       </FadeIn>
+      <WrapperMotion delay={{ enter: 0.1, exit: 0 }} fadeUpTertiary>
+        <StaggerGroup className={styles.list} stagger={0.06} amount={0.1}>
+          {faq.items.map((item) => (
+            <StaggerItem key={item.id}>
+              <AccordionItem
+                id={item.id}
+                question={t(`faq.items.${item.id}.question`) as string}
+                answer={t(`faq.items.${item.id}.answer`) as string}
+                isOpen={openIds.includes(item.id)}
+                onToggle={() => toggle(item.id)}
+              />
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </WrapperMotion>
 
-      <StaggerGroup className={styles.list} stagger={0.06} amount={0.1}>
-        {faq.items.map((item) => (
-          <StaggerItem key={item.id}>
-            <AccordionItem
-              id={item.id}
-              question={t(`faq.items.${item.id}.question`) as string}
-              answer={t(`faq.items.${item.id}.answer`) as string}
-              isOpen={openIds.includes(item.id)}
-              onToggle={() => toggle(item.id)}
-            />
-          </StaggerItem>
-        ))}
-      </StaggerGroup>
-
-      <FadeIn className={styles.footer} delay={0.1} y={8} duration="fast">
-        <span className={styles.footerLabel}>{t('faq.stillHaveQuestion')}</span>
+      <FadeIn className={styles.footer} delay={0.1} duration="fast">
+        <Text
+          tag="p" 
+          variant="description_small" 
+          color="muted"
+          delay={{ enter: 0, exit: 0 }}
+          immediate
+        >
+          {t('faq.stillHaveQuestion')}
+        </Text>
         <Button
           text={t('faq.contactCta') as string}
           style="secondary"
           type="button"
         />
       </FadeIn>
-    </section>
+    </Container>
   );
 };
 

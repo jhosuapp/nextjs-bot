@@ -1,32 +1,15 @@
 @reference "tailwindcss";
 
 .section {
-  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-10;
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 4rem);
+  @apply max-w-7xl flex-col items-center gap-10;
 }
 
 .header {
   @apply flex max-w-2xl flex-col items-center gap-3 text-center;
 }
 
-.eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.2em];
-  color: var(--primary);
-}
-
-.title {
-  @apply font-semibold tracking-tight leading-[1.15] tracking-[-0.015em];
-  color: var(--foreground);
-  font-size: clamp(1.875rem, 4vw, 2.75rem);
-}
-
-.description {
-  @apply text-base leading-[1.65] max-w-xl;
-  color: var(--text-muted);
-}
-
 .list {
-  @apply flex w-full max-w-3xl flex-col gap-3;
+  @apply flex w-full max-w-3xl flex-col gap-3 mx-auto;
 }
 
 .item {
@@ -90,9 +73,7 @@
 }
 
 .answer {
-  @apply text-[0.9375rem] leading-[1.65];
   padding: 0 1.5rem 1.375rem 1.5rem;
-  color: var(--text-muted);
   max-width: 60ch;
 }
 
@@ -100,7 +81,6 @@
   @apply mt-4 flex flex-wrap items-center justify-center gap-3;
 }
 
-.footerLabel {
-  @apply text-sm;
-  color: var(--text-muted);
+.footer article {
+  @apply w-fit;
 }

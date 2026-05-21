@@ -5,7 +5,7 @@ import styles from './text.module.css';
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 
 type Tag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-type Variant = 'title' | 'title_small' | 'subtitle' | 'subtitle_small' | 'description' | 'description_small';
+type Variant = 'title' | 'title_small' | 'subtitle' | 'subtitle_small' | 'description' | 'description_small' | 'description_xs';
 type Color = 'primary' | 'secondary' | 'tertiary' | 'muted';
 type Weight = 'thin' | 'extralight' | 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
 

@@ -5,7 +5,7 @@ import styles from './container.module.css';
 type ContainerProps = {
   children: React.ReactNode;
   className?: string;
-  padding?: 'lg' | 'md' | 'sm';
+  padding?: 'xl' | 'lg' | 'md' | 'sm';
 };
 
 const Container = ({ children, className = '', padding }: ContainerProps): JSX.Element => {

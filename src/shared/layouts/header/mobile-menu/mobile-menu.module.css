@@ -34,7 +34,7 @@
 
 .panel {
   @apply fixed left-3 right-3 z-50 flex flex-col gap-4 rounded-3xl border p-5;
-  top: calc(env(safe-area-inset-top, 0px) + 4.5rem);
+  top: calc(env(safe-area-inset-top, 0px) + 6.5rem);
   max-height: calc(
     100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) -
       6rem

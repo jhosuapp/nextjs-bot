@@ -1,13 +1,7 @@
 @reference "tailwindcss";
 
 .section {
-  @apply mx-auto flex w-full max-w-7xl flex-col items-center gap-6 py-12;
-  padding-inline: clamp(1.25rem, 5vw, 4rem);
-}
-
-.label {
-  @apply text-xs font-semibold uppercase tracking-[0.2em];
-  color: var(--text-muted);
+  @apply items-center gap-6;
 }
 
 .marquee {
