@@ -82,7 +82,14 @@ const useSpeechRecognition = ({
   }, []);
 
   const stop = useCallback(() => {
-    recognitionRef.current?.abort();
+    const rec = recognitionRef.current;
+    if (rec) {
+      // Detach handlers BEFORE abort() so the onend auto-restart doesn't fire
+      rec.onresult = null;
+      rec.onerror = null;
+      rec.onend = null;
+      rec.abort();
+    }
     recognitionRef.current = null;
     if (mediaRecorderRef.current?.state === 'recording') {
       mediaRecorderRef.current.stop();

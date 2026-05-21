@@ -44,6 +44,21 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
     stateRef.current = state;
   }, [state]);
 
+  useEffect(() => {
+    return () => {
+      if (statusIntervalRef.current) {
+        clearInterval(statusIntervalRef.current);
+        statusIntervalRef.current = null;
+      }
+      // On unmount during THINKING, the in-flight request becomes orphaned — recover to a stable state.
+      const store = useBotStore.getState();
+      if (store.state === 'THINKING') {
+        store.setStatusKey(null);
+        store.setState(store.micPermission === 'granted' ? 'IDLE' : 'PERMISSION_PENDING');
+      }
+    };
+  }, []);
+
   const transitionToError = useCallback(
     (message: string) => {
       setError(message);
@@ -208,6 +223,11 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
 
   useEffect(() => {
     inactivity.reset();
+    if (state !== 'THINKING' && statusIntervalRef.current) {
+      clearInterval(statusIntervalRef.current);
+      statusIntervalRef.current = null;
+      setStatusKey(null);
+    }
     switch (state) {
       case 'IDLE': {
         setBotVideo(VIDEOS.defaultWait, { loop: true, muted: true });
