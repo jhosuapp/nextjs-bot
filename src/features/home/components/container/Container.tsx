@@ -6,11 +6,12 @@ type ContainerProps = {
   children: React.ReactNode;
   className?: string;
   padding?: 'xl' | 'lg' | 'md' | 'sm';
+  id?: string;
 };
 
-const Container = ({ children, className = '', padding }: ContainerProps): JSX.Element => {
+const Container = ({ children, className = '', padding, id }: ContainerProps): JSX.Element => {
   return (
-    <section className={ `${styles.container} ${className} ${padding ? styles[`container__padding_${padding}`] : ''}` }>
+    <section id={id} className={ `${styles.container} ${className} ${padding ? styles[`container__padding_${padding}`] : ''}` }>
       {children}
     </section>
   )

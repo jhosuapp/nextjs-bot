@@ -82,7 +82,7 @@ const AudienceTabsSection = ({ t }: Props) => {
   });
 
   return (
-    <Container className={styles.section} aria-labelledby="audience-title" padding='xl'>
+    <Container id="solutions" className={styles.section} aria-labelledby="audience-title" padding='xl'>
       <FadeIn className={styles.header} y={16}>
         <Text 
           tag="h2" 

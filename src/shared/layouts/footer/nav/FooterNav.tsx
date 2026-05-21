@@ -1,13 +1,14 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
+import { useThemeStore } from '@/src/shared/stores/theme.store';
+import { Container } from '@/src/features/home/components/container/Container';
 
 import styles from './footer-nav.module.css';
-import { useThemeStore } from '@/src/shared/stores/theme.store';
-import Image from 'next/image';
 
 type FooterNavProps = { t: ITranslations };
 
@@ -16,7 +17,7 @@ const FooterNav = ({ t }: FooterNavProps) => {
   const theme = useThemeStore(state => state.theme);
 
   return (
-    <div className={styles.root}>
+    <Container className={styles.root} padding='md'>
       <div className={styles.brandBlock}>
         <Link
           href="/"
@@ -65,7 +66,7 @@ const FooterNav = ({ t }: FooterNavProps) => {
           </div>
         ))}
       </nav>
-    </div>
+    </Container>
   );
 };
 

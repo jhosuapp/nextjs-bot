@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
+import { Container } from '@/src/features/home/components/container/Container';
 
 import styles from './footer-bottom.module.css';
 
@@ -13,7 +14,7 @@ const FooterBottom = ({ t }: FooterBottomProps) => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.inner}>
+      <Container className={styles.inner}>
         <p className={styles.copyright}>
           {t('footer.bottom.copyright', { year })}
         </p>
@@ -47,7 +48,7 @@ const FooterBottom = ({ t }: FooterBottomProps) => {
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </div>
   );
 };

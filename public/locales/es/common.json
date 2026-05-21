@@ -6,10 +6,11 @@
     "botDescription": "Habla con un avatar de IA que te responde en tiempo real. Conversación natural por voz y por chat."
   },
   "nav": {
+    "bot": "Bot",
     "solutions": "Soluciones",
+    "process": "Cómo funciona",
     "pricing": "Precios",
-    "docs": "Documentación",
-    "bot": "Bot"
+    "faqs": "FAQs"
   },
   "header": {
     "skipLink": "Ir al contenido principal",

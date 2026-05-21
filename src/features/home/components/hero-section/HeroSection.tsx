@@ -18,7 +18,7 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
   const reduce = useReducedMotion();
 
   return (
-    <section className={ styles.heroSection }>
+    <section id="hero" className={ styles.heroSection }>
       <div className={styles.heroSection__orbs} aria-hidden="true">
         <motion.span
           className={`${styles.heroSection__orb} ${styles.heroSection__orbCyan}`}

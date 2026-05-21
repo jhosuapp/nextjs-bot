@@ -75,6 +75,7 @@ const ProcessStepsSection = ({ t }: Props) => {
 
   return (
     <section
+      id="process"
       ref={wrapperRef}
       className={styles.wrapper}
       aria-label={`${t('process.titleLead')}${t('process.titleAccent')}`}

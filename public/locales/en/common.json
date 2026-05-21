@@ -6,10 +6,11 @@
     "botDescription": "Talk to an AI avatar that responds in real time. Natural conversation by voice and chat."
   },
   "nav": {
+    "bot": "Bot",
     "solutions": "Solutions",
+    "process": "How it works",
     "pricing": "Pricing",
-    "docs": "Docs",
-    "bot": "Bot"
+    "faqs": "FAQs"
   },
   "header": {
     "skipLink": "Skip to main content",

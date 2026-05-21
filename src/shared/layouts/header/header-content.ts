@@ -20,10 +20,11 @@ type HeaderStaticData = {
 const headerStaticData: HeaderStaticData = {
   brand: { name: "150%", mark: "L" },
   nav: [
-    { key: "bot", href: "/bot" },
-    { key: "solutions", href: "/login" },
-    { key: "pricing", href: "/login" },
-    { key: "docs", href: "/login" },
+    { key: "bot", href: "/#hero" },
+    { key: "solutions", href: "/#solutions" },
+    { key: "process", href: "/#process" },
+    { key: "pricing", href: "/#pricing" },
+    { key: "faqs", href: "/#faqs" },
   ],
   primaryCta: { href: "#get-started" },
   secondaryCta: { href: "#signin" },

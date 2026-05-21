@@ -26,6 +26,7 @@ type MobileMenuProps = {
   onToggle: () => void;
   t: ITranslations;
   translatedNav: ReadonlyArray<NavItem>;
+  activeSection?: string | null;
 };
 
 const panelVariants: Variants = {
@@ -59,7 +60,7 @@ const groupVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: EASE } },
 };
 
-const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuProps) => {
+const MobileMenu = ({ open, onClose, onToggle, t, translatedNav, activeSection = null }: MobileMenuProps) => {
   const reduce = useReducedMotion();
   const panelId = useId();
   const [mounted, setMounted] = useState(false);
@@ -154,6 +155,7 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuPro
                     variant="mobile"
                     onItemClick={onClose}
                     animated
+                    activeSection={activeSection}
                   />
                 </motion.nav>
 

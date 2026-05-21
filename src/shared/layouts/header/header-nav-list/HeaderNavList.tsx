@@ -13,6 +13,7 @@ type HeaderNavListProps = {
   variant?: 'desktop' | 'mobile';
   onItemClick?: () => void;
   animated?: boolean;
+  activeSection?: string | null;
 };
 
 const buildItemVariants = (reduce: boolean): Variants => ({
@@ -29,6 +30,7 @@ const HeaderNavList = ({
   variant = 'desktop',
   onItemClick,
   animated = false,
+  activeSection = null,
 }: HeaderNavListProps) => {
   const lenis = useLenisStore(state => state.lenis);
   const reduce = useReducedMotion();
@@ -38,10 +40,21 @@ const HeaderNavList = ({
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.getAttribute('href') || '/';
+    const hashMatch = href.match(/^(?:\/)?#(.+)$/);
+
+    if (hashMatch) {
+      const isHome = router.pathname === '/';
+      if (isHome) {
+        lenis?.scrollTo(`#${hashMatch[1]}`, { duration: 0.9, offset: -80 });
+        onItemClick?.();
+      } else {
+        router.push(href).then(() => onItemClick?.());
+      }
+      return;
+    }
 
     lenis?.scrollTo(0, { duration: 0.7 });
-
-    setTimeout(() => { 
+    setTimeout(() => {
       router.push(href);
       onItemClick?.();
     }, 700);
@@ -59,7 +72,8 @@ const HeaderNavList = ({
         >
           <a
             href={item.href}
-            className={styles.link}
+            className={`${styles.link} ${item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? styles.linkActive : ''}`}
+            aria-current={item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? 'true' : undefined}
             onClick={(e)=> handleClick(e)}
           >
             {item.label}

@@ -1,8 +1,7 @@
 @reference "tailwindcss";
 
 .root {
-  @apply grid w-full max-w-7xl mx-auto gap-10 grid-cols-1 lg:grid-cols-[1fr_2fr];
-  padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+  @apply !grid gap-10 grid-cols-1 lg:grid-cols-[1fr_2fr];
 }
 
 .brandBlock {
