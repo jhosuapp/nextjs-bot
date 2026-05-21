@@ -53,7 +53,7 @@ const HeaderNavList = ({
     >
       {items.map((item) => (
         <motion.li
-          key={item.href}
+          key={item.label}
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >

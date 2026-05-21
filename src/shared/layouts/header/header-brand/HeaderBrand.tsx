@@ -18,9 +18,9 @@ const HeaderBrand = ({ brand }: HeaderBrandProps) => {
       aria-label={`${brand.name} home`}
     >
       {theme === 'light' ? (
-        <Image src="/svg/logo.svg" alt={brand.name} width={100} height={40} />
+        <Image src="/svg/logo.svg" alt={brand.name} width={96} height={33} />
       ) : (
-        <Image src="/svg/logo-white.svg" alt={brand.name} width={100} height={40} />
+        <Image src="/svg/logo-white.svg" alt={brand.name} width={96} height={33} />
       )}
     </Link>
   );

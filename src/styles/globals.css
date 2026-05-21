@@ -176,6 +176,10 @@ body {
   -ms-overflow-style: none;
 }
 
+html {
+  position: relative;
+}
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 *::-webkit-scrollbar {
