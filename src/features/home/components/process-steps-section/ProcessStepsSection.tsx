@@ -1,17 +1,19 @@
 import {
   motion,
   useMotionTemplate,
+  useMotionValueEvent,
   useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
 } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { Text } from '@/src/shared/components/text/Text';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 
+import { FloatIcon } from './FloatIcon';
 import { ProcessStep } from './ProcessStep';
 import styles from './process-steps-section.module.css';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
@@ -20,12 +22,24 @@ type Props = { t: ITranslations };
 
 const STEP_THRESHOLDS = [0.18, 0.38, 0.58, 0.78] as const;
 
+const resolveActiveStep = (latest: number): number => {
+  let active = 0;
+  for (let i = 0; i < STEP_THRESHOLDS.length; i++) {
+    if (latest >= STEP_THRESHOLDS[i]) active = i;
+  }
+  return active;
+};
+
 const ProcessStepsSection = ({ t }: Props) => {
   const reduce = useReducedMotion();
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
     offset: ['start start', 'end end'],
+  });
+  const { scrollYProgress: parallaxProgress } = useScroll({
+    target: wrapperRef,
+    offset: ['start end', 'end start'],
   });
 
   const lineProgressRaw = useTransform(scrollYProgress, [0.12, 0.85], [0, 1]);
@@ -48,6 +62,17 @@ const ProcessStepsSection = ({ t }: Props) => {
     [0, 1, 1, 0],
   );
 
+  const [activeStep, setActiveStep] = useState(() =>
+    resolveActiveStep(scrollYProgress.get()),
+  );
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    const next = resolveActiveStep(latest);
+    setActiveStep((prev) => (prev === next ? prev : next));
+  });
+
+  const activeIcon = homeStaticData.process.steps[activeStep].icon;
+
   return (
     <section
       ref={wrapperRef}
@@ -55,6 +80,20 @@ const ProcessStepsSection = ({ t }: Props) => {
       aria-label={`${t('process.titleLead')}${t('process.titleAccent')}`}
     >
       <FadeIn className={styles.sticky} amount={0.5}>
+        {!reduce &&
+          homeStaticData.process.floatIcons.map((item) => (
+            <FloatIcon
+              key={item.id}
+              icon={activeIcon}
+              side={item.side}
+              topPercent={item.topPercent}
+              offset={item.offset}
+              size={item.size}
+              rotate={item.rotate}
+              accent={item.accent}
+              progress={parallaxProgress}
+            />
+          ))}
         <div className={styles.card}>
           <Text
             tag="h2"

@@ -12,11 +12,42 @@
 }
 
 .card {
-  @apply relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
+  @apply relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
   background: var(--surface-elevated);
   border-color: var(--border-subtle);
   padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 5rem);
   box-shadow: 0 40px 120px -40px rgba(0, 22, 67, 0.22);
+}
+
+.floatIcon {
+  @apply pointer-events-none absolute z-0 inline-flex items-center justify-center;
+  width: var(--float-size, 36px);
+  height: var(--float-size, 36px);
+  font-size: calc(var(--float-size, 36px) * 0.85);
+  color: var(--primary);
+  opacity: 0.18;
+  filter: drop-shadow(0 6px 18px rgba(0, 177, 215, 0.18));
+  will-change: transform;
+}
+
+.floatIconAccent {
+  color: var(--tertiary);
+  opacity: 0.22;
+  filter: drop-shadow(0 6px 18px rgba(23, 241, 209, 0.22));
+}
+
+.floatIconGlyph {
+  @apply absolute inset-0 inline-flex items-center justify-center;
+  font-size: inherit;
+  color: inherit;
+}
+
+.floatIconLeft {
+  left: clamp(0.75rem, 4vw, 3.5rem);
+}
+
+.floatIconRight {
+  right: clamp(0.75rem, 4vw, 3.5rem);
 }
 
 .card::before {
@@ -163,5 +194,11 @@
 
   .label {
     @apply max-w-none text-left text-xs;
+  }
+}
+
+@media (max-width: 767px) {
+  .floatIcon {
+    display: none;
   }
 }

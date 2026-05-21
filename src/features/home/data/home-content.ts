@@ -17,11 +17,17 @@ import {
   faBolt,
   faBrain,
   faBullhorn,
+  faChartLine,
+  faCommentDots,
   faGear,
   faGraduationCap,
   faHandshake,
+  faHeadset,
+  faMicrophone,
   faPalette,
+  faRobot,
   faVideo,
+  faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 
 type LogoItem = {
@@ -37,6 +43,17 @@ type AudienceTabStatic = {
 type ProcessStepStatic = {
   id: 'design' | 'train' | 'integrate' | 'operate';
   icon: IconDefinition;
+};
+
+type FloatIconStatic = {
+  id: string;
+  icon: IconDefinition;
+  side: 'left' | 'right';
+  topPercent: number;
+  offset: number;
+  size: number;
+  rotate?: number;
+  accent?: boolean;
 };
 
 type FaqItemStatic = {
@@ -63,6 +80,7 @@ type HomeStaticData = {
   };
   process: {
     steps: ReadonlyArray<ProcessStepStatic>;
+    floatIcons: ReadonlyArray<FloatIconStatic>;
   };
   integrations: {
     cta: { href: string };
@@ -113,6 +131,64 @@ const homeStaticData: HomeStaticData = {
       { id: 'integrate', icon: faBolt },
       { id: 'operate', icon: faGear },
     ],
+    floatIcons: [
+      {
+        id: 'robot',
+        icon: faRobot,
+        side: 'left',
+        topPercent: 12,
+        offset: 140,
+        size: 44,
+        rotate: -8,
+      },
+      {
+        id: 'commentDots',
+        icon: faCommentDots,
+        side: 'left',
+        topPercent: 46,
+        offset: 95,
+        size: 32,
+        rotate: 6,
+        accent: true,
+      },
+      {
+        id: 'microphone',
+        icon: faMicrophone,
+        side: 'left',
+        topPercent: 82,
+        offset: 120,
+        size: 36,
+        rotate: -4,
+      },
+      {
+        id: 'wand',
+        icon: faWandMagicSparkles,
+        side: 'right',
+        topPercent: 16,
+        offset: 110,
+        size: 36,
+        rotate: 9,
+        accent: true,
+      },
+      {
+        id: 'chart',
+        icon: faChartLine,
+        side: 'right',
+        topPercent: 50,
+        offset: 130,
+        size: 40,
+        rotate: -6,
+      },
+      {
+        id: 'headset',
+        icon: faHeadset,
+        side: 'right',
+        topPercent: 84,
+        offset: 85,
+        size: 34,
+        rotate: 4,
+      },
+    ],
   },
   integrations: {
     cta: { href: '#integrations' },
@@ -147,4 +223,5 @@ export type {
   AudienceTabStatic,
   FaqItemStatic,
   ProcessStepStatic,
+  FloatIconStatic,
 };
