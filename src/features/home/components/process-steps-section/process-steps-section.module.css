@@ -193,7 +193,7 @@
   }
 
   .label {
-    @apply max-w-none text-left text-xs;
+    @apply max-w-none text-left text-sm;
   }
 }
 

@@ -1,11 +1,19 @@
 @reference "tailwindcss";
 
+.bg {
+  background-color: var(--bg-section);
+}
+
 .section {
-  @apply max-w-7xl flex-col items-center gap-10;
+  @apply flex-col items-center gap-10;
 }
 
 .header {
   @apply flex max-w-2xl flex-col items-center gap-3 text-center;
+}
+
+.header .headerDescription {
+  @apply max-w-lg;
 }
 
 .list {
@@ -41,10 +49,6 @@
   font-family: inherit;
   color: var(--text-strong);
   padding: 1.125rem 1.5rem;
-}
-
-.trigger:hover {
-  color: var(--secondary);
 }
 
 .trigger:focus-visible {

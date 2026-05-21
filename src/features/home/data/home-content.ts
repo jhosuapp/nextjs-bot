@@ -60,6 +60,10 @@ type FaqItemStatic = {
   id: string;
 };
 
+type PricingFeatureStatic = {
+  id: 'hosting' | 'ai' | 'support';
+};
+
 type HomeStaticData = {
   hero: {
     primaryCta: { href: string };
@@ -85,6 +89,10 @@ type HomeStaticData = {
   integrations: {
     cta: { href: string };
     logos: ReadonlyArray<LogoItem>;
+  };
+  pricing: {
+    features: ReadonlyArray<PricingFeatureStatic>;
+    cta: { href: string };
   };
   faq: {
     items: ReadonlyArray<FaqItemStatic>;
@@ -203,6 +211,14 @@ const homeStaticData: HomeStaticData = {
       { name: 'Atlassian', icon: faAtlassian },
     ],
   },
+  pricing: {
+    features: [
+      { id: 'hosting' },
+      { id: 'ai' },
+      { id: 'support' },
+    ],
+    cta: { href: '#contact' },
+  },
   faq: {
     items: [
       { id: 'what-is' },
@@ -222,6 +238,7 @@ export type {
   LogoItem,
   AudienceTabStatic,
   FaqItemStatic,
+  PricingFeatureStatic,
   ProcessStepStatic,
   FloatIconStatic,
 };

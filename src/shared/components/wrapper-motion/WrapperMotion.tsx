@@ -10,15 +10,16 @@ type WrapperProps = {
   delay: { enter: number, exit: number };
   fadeUpTertiary?: boolean;
   immediate?: boolean;
+  className?: string;
 }
 
-const WrapperMotion = ({ children, delay, fadeUpTertiary, immediate }: WrapperProps): JSX.Element => {
+const WrapperMotion = ({ children, delay, fadeUpTertiary, immediate, className = '' }: WrapperProps): JSX.Element => {
   const { initial, animate, exit } = fadeUpTertiary
     ? fadeUpTertiaryMotion(delay.enter, delay.exit)
     : fadeUpMotion(delay.enter, delay.exit);
 
   return (
-    <article className={styles.wrapperMotion}>
+    <article className={`${styles.wrapperMotion} ${className}`}>
       <motion.div
         initial={initial}
         {...(immediate

@@ -17,7 +17,7 @@
 }
 
 .description {
-  @apply text-base font-normal leading-relaxed;
+  @apply text-sm lg:text-base font-normal leading-relaxed;
 }
 
 .description_small {

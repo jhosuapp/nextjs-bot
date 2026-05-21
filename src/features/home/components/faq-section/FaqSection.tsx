@@ -112,71 +112,74 @@ const FaqSection = ({ t }: Props) => {
   };
 
   return (
-    <Container id="faqs" className={styles.section} aria-labelledby="faq-title" padding='xl'>
-      <FadeIn className={styles.header} y={16}>
-        <Text
-          tag="p" 
-          variant="description_xs" 
-          color="primary"
-          weight="semibold"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
-        >
-          {t('faq.eyebrow')}
-        </Text>
-        <Text
-          tag="h2" 
-          variant="title_small" 
-          color="secondary"
-          weight="semibold"
-          delay={{ enter: 0.1, exit: 0 }}
-          fadeUpTertiary
-        >
-          {t('faq.title')}
-        </Text>
-        <Text
-          tag="p" 
-          variant="description" 
-          color="muted"
-          delay={{ enter: 0.15, exit: 0 }}
-          fadeUpTertiary
-        >
-          {t('faq.description')}
-        </Text>
-      </FadeIn>
-      <WrapperMotion delay={{ enter: 0.1, exit: 0 }} fadeUpTertiary>
-        <StaggerGroup className={styles.list} stagger={0.06} amount={0.1}>
-          {faq.items.map((item) => (
-            <StaggerItem key={item.id}>
-              <AccordionItem
-                id={item.id}
-                question={t(`faq.items.${item.id}.question`) as string}
-                answer={t(`faq.items.${item.id}.answer`) as string}
-                isOpen={openIds.includes(item.id)}
-                onToggle={() => toggle(item.id)}
-              />
-            </StaggerItem>
-          ))}
-        </StaggerGroup>
-      </WrapperMotion>
+    <div className={styles.bg}>
+      <Container id="faqs" className={styles.section} aria-labelledby="faq-title" padding='xl'>
+        <FadeIn className={styles.header} y={16}>
+          <Text
+            tag="p" 
+            variant="description_xs" 
+            color="primary"
+            weight="semibold"
+            delay={{ enter: 0, exit: 0 }}
+            fadeUpTertiary
+          >
+            {t('faq.eyebrow')}
+          </Text>
+          <Text
+            tag="h2" 
+            variant="title_small" 
+            color="secondary"
+            weight="semibold"
+            delay={{ enter: 0.1, exit: 0 }}
+            fadeUpTertiary
+          >
+            {t('faq.title')}
+          </Text>
+          <Text
+            className={styles.headerDescription}
+            tag="p" 
+            variant="description" 
+            color="muted"
+            delay={{ enter: 0.15, exit: 0 }}
+            fadeUpTertiary
+          >
+            {t('faq.description')}
+          </Text>
+        </FadeIn>
+        <WrapperMotion delay={{ enter: 0.1, exit: 0 }} fadeUpTertiary>
+          <StaggerGroup className={styles.list} stagger={0.06} amount={0.1}>
+            {faq.items.map((item) => (
+              <StaggerItem key={item.id}>
+                <AccordionItem
+                  id={item.id}
+                  question={t(`faq.items.${item.id}.question`) as string}
+                  answer={t(`faq.items.${item.id}.answer`) as string}
+                  isOpen={openIds.includes(item.id)}
+                  onToggle={() => toggle(item.id)}
+                />
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
+        </WrapperMotion>
 
-      <FadeIn className={styles.footer} delay={0.1} duration="fast">
-        <Text
-          tag="p" 
-          variant="description_small" 
-          color="muted"
-          delay={{ enter: 0, exit: 0 }}
-          immediate
-        >
-          {t('faq.stillHaveQuestion')}
-        </Text>
-        <Button
-          text={t('faq.contactCta') as string}
-          style="secondary"
-          type="button"
-        />
-      </FadeIn>
-    </Container>
+        <FadeIn className={styles.footer} delay={0.1} duration="fast">
+          <Text
+            tag="p" 
+            variant="description_small" 
+            color="muted"
+            delay={{ enter: 0, exit: 0 }}
+            immediate
+          >
+            {t('faq.stillHaveQuestion')}
+          </Text>
+          <Button
+            text={t('faq.contactCta') as string}
+            style="secondary"
+            type="button"
+          />
+        </FadeIn>
+      </Container>
+    </div>
   );
 };
 

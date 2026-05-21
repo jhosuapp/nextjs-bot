@@ -1,0 +1,74 @@
+@reference "tailwindcss";
+
+.section {
+  @apply items-center gap-10;
+}
+
+.card {
+  @apply relative flex w-full max-w-3xl flex-col items-center gap-7 overflow-hidden rounded-3xl border p-8 text-center lg:p-12;
+  background: var(--surface-elevated);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 190, 255, 0.2);
+  box-shadow: var(--shadow-floating);
+}
+
+.cardGlow {
+  @apply pointer-events-none absolute left-1/2 top-0 -translate-x-1/2;
+  width: 320px;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(0, 177, 215, 0.16) 0%,
+    transparent 70%
+  );
+}
+
+.divider {
+  @apply w-full;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.features {
+  @apply flex flex-wrap items-center justify-center gap-3;
+}
+
+.featurePill {
+  @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium;
+  background: rgba(0, 177, 215, 0.07);
+  border: 1px solid rgba(0, 177, 215, 0.25);
+  color: var(--text-strong);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.featurePill:hover {
+  background: rgba(0, 177, 215, 0.12);
+  border-color: rgba(0, 177, 215, 0.4);
+}
+
+.featureIcon {
+  color: var(--primary);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.footnote__wrapper {
+  @apply flex items-center justify-center w-full;
+}
+
+.footnote {
+  @apply max-w-lg text-center leading-relaxed;
+}
+
+.noteEmphasis {
+  color: var(--text-strong);
+}

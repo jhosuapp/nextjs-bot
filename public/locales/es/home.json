@@ -84,6 +84,21 @@
       "operate": { "label": "Operamos y damos soporte" }
     }
   },
+  "pricing": {
+    "eyebrow": "Inversión empresarial",
+    "titleLead": "Soluciones empresariales desde",
+    "price": "10M COP/año",
+    "description": "Incluye diseño del avatar, inteligencia artificial, despliegue, operación y soporte continuo.",
+    "features": {
+      "hosting": "Hosting incluido",
+      "ai": "IA integrada",
+      "support": "Soporte continuo"
+    },
+    "notePrefix": "Cada implementación se adapta al ",
+    "noteEmphasis": "nivel de interacción, volumen y necesidades",
+    "noteSuffix": " de la empresa.",
+    "cta": "Solicitar propuesta"
+  },
   "faq": {
     "eyebrow": "Preguntas frecuentes",
     "title": "Todo lo que necesitas saber.",

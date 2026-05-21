@@ -83,6 +83,21 @@
       "operate": { "label": "Operate and support" }
     }
   },
+  "pricing": {
+    "eyebrow": "Enterprise investment",
+    "titleLead": "Enterprise solutions from",
+    "price": "10M COP/year",
+    "description": "Includes avatar design, artificial intelligence, deployment, operation and continuous support.",
+    "features": {
+      "hosting": "Hosting included",
+      "ai": "Integrated AI",
+      "support": "Continuous support"
+    },
+    "notePrefix": "Each implementation adapts to the ",
+    "noteEmphasis": "interaction level, volume and needs",
+    "noteSuffix": " of your company.",
+    "cta": "Request a proposal"
+  },
   "faq": {
     "eyebrow": "Frequently asked",
     "title": "Everything you need to know.",
