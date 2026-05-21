@@ -5,14 +5,14 @@
 }
 
 .header[data-scrolled="true"] {
-  background: var(--surface-overlay);
+  background: var(--surface-elevated);
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom-color: var(--border-subtle);
 }
 
 .header[data-menu-open="true"] {
-  background: var(--surface-overlay);
+  background: var(--surface-elevated);
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
 }

@@ -6,7 +6,8 @@ import {
   useReducedMotion,
   type Variants,
 } from 'framer-motion';
-import { useEffect, useId } from 'react';
+import { createPortal } from 'react-dom';
+import { useEffect, useId, useState } from 'react';
 
 import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
@@ -61,6 +62,9 @@ const groupVariants: Variants = {
 const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuProps) => {
   const reduce = useReducedMotion();
   const panelId = useId();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
@@ -114,74 +118,77 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav }: MobileMenuPro
         </AnimatePresence>
       </motion.button>
 
-      <AnimatePresence>
-        {open ? (
-          <>
-            <motion.div
-              key="backdrop"
-              className={styles.backdrop}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={onClose}
-              aria-hidden="true"
-            />
-            <motion.div
-              key="panel"
-              id={panelId}
-              role="dialog"
-              aria-modal="true"
-              aria-label={t('header.mobileMenu.dialogAria') as string}
-              className={styles.panel}
-              variants={variants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <motion.nav
-                className={styles.nav}
-                variants={groupVariants}
-                aria-label="Primary"
+      {mounted && createPortal(
+        <AnimatePresence>
+          {open ? (
+            <>
+              <motion.div
+                key="backdrop"
+                className={styles.backdrop}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={onClose}
+                aria-hidden="true"
+              />
+              <motion.div
+                key="panel"
+                id={panelId}
+                role="dialog"
+                aria-modal="true"
+                aria-label={t('header.mobileMenu.dialogAria') as string}
+                className={styles.panel}
+                variants={variants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
               >
-                <HeaderNavList
-                  items={translatedNav}
-                  variant="mobile"
-                  onItemClick={onClose}
-                  animated
-                />
-              </motion.nav>
+                <motion.nav
+                  className={styles.nav}
+                  variants={groupVariants}
+                  aria-label="Primary"
+                >
+                  <HeaderNavList
+                    items={translatedNav}
+                    variant="mobile"
+                    onItemClick={onClose}
+                    animated
+                  />
+                </motion.nav>
 
-              <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
+                <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
 
-              <motion.div className={styles.controlsRow} variants={groupVariants}>
-                <div className={styles.controlsLabel}>{t('header.mobileMenu.preferences')}</div>
-                <div className={styles.controls}>
-                  <ThemeToggle t={t} />
-                  <LanguageDropdown t={t} />
-                </div>
+                <motion.div className={styles.controlsRow} variants={groupVariants}>
+                  <div className={styles.controlsLabel}>{t('header.mobileMenu.preferences')}</div>
+                  <div className={styles.controls}>
+                    <ThemeToggle t={t} />
+                    <LanguageDropdown t={t} />
+                  </div>
+                </motion.div>
+
+                <motion.div className={styles.ctas} variants={groupVariants}>
+                  {/* <Button
+                    className='!w-full'
+                    text={t('header.signIn') as string}
+                    style="secondary"
+                    type="button"
+                    onClick={onClose}
+                  /> */}
+                  {/* <Button
+                    className='!w-full'
+                    text={t('header.startFree') as string}
+                    style="primary"
+                    type="button"
+                    onClick={onClose}
+                  /> */}
+                </motion.div>
               </motion.div>
-
-              <motion.div className={styles.ctas} variants={groupVariants}>
-                {/* <Button
-                  className='!w-full'
-                  text={t('header.signIn') as string}
-                  style="secondary"
-                  type="button"
-                  onClick={onClose}
-                /> */}
-                {/* <Button
-                  className='!w-full'
-                  text={t('header.startFree') as string}
-                  style="primary"
-                  type="button"
-                  onClick={onClose}
-                /> */}
-              </motion.div>
-            </motion.div>
-          </>
-        ) : null}
-      </AnimatePresence>
+            </>
+          ) : null}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 };
