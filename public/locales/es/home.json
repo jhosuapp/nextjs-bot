@@ -73,6 +73,16 @@
       ]
     }
   },
+  "process": {
+    "titleLead": "Nosotros ",
+    "titleAccent": "hacemos todo",
+    "steps": {
+      "design": { "label": "Diseñamos el avatar" },
+      "train": { "label": "Entrenamos la inteligencia" },
+      "integrate": { "label": "Integramos la experiencia" },
+      "operate": { "label": "Operamos y damos soporte" }
+    }
+  },
   "faq": {
     "eyebrow": "Preguntas frecuentes",
     "title": "Todo lo que necesitas saber.",

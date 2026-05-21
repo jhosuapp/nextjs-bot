@@ -66,11 +66,11 @@ const Header = ({ t }: HeaderProps) => {
             {/* <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
               {t('header.signIn')}
             </a> */}
-            <Button
+            {/* <Button
               text={t('header.startFree') as string}
               style="fit"
               type="button"
-            />
+            /> */}
           </div>
 
           <MobileMenu

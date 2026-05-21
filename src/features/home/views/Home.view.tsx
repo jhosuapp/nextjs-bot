@@ -3,6 +3,7 @@ import type { JSX } from 'react';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { AudienceTabsSection } from '@/src/features/home/components/audience-tabs-section/AudienceTabsSection';
 import { FaqSection } from '@/src/features/home/components/faq-section/FaqSection';
+import { ProcessStepsSection } from '@/src/features/home/components/process-steps-section/ProcessStepsSection';
 import { TrustedByStrip } from '@/src/features/home/components/trusted-by-strip/TrustedByStrip';
 import { MainContent } from '@/src/shared/components/main-content/MainContent';
 import { HeroSection } from '../components/hero-section/HeroSection';
@@ -19,6 +20,7 @@ const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
       <FormHero t={t} />
       <TrustedByStrip t={t} />
       <AudienceTabsSection t={t} />
+      <ProcessStepsSection t={t} />
       <FaqSection t={t} />
     </MainContent>
   );

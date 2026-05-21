@@ -73,6 +73,16 @@
       ]
     }
   },
+  "process": {
+    "titleLead": "We ",
+    "titleAccent": "handle everything",
+    "steps": {
+      "design": { "label": "Design the avatar" },
+      "train": { "label": "Train the intelligence" },
+      "integrate": { "label": "Integrate the experience" },
+      "operate": { "label": "Operate and support" }
+    }
+  },
   "faq": {
     "eyebrow": "Frequently asked",
     "title": "Everything you need to know.",

@@ -1,0 +1,167 @@
+@reference "tailwindcss";
+
+.wrapper {
+  @apply relative w-full;
+  height: 500vh;
+  background-color: var(--bg-section);
+}
+
+.sticky {
+  @apply sticky top-0 flex h-screen w-full items-center justify-center;
+  padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
+}
+
+.card {
+  @apply relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
+  background: var(--surface-elevated);
+  border-color: var(--border-subtle);
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 5rem);
+  box-shadow: 0 40px 120px -40px rgba(0, 22, 67, 0.22);
+}
+
+.card::before {
+  content: "";
+  @apply pointer-events-none absolute inset-0;
+  background: radial-gradient(
+    120% 80% at 50% -20%,
+    rgba(0, 177, 215, 0.08),
+    transparent 60%
+  );
+}
+
+.track {
+  @apply relative z-10 grid w-full grid-cols-4 items-start;
+  gap: clamp(0.75rem, 3vw, 2rem);
+}
+
+.lineRail,
+.lineFill {
+  @apply absolute left-0 right-0 z-0 h-0.5 rounded-sm;
+  top: clamp(32px, 5vw, 40px);
+  margin-inline: calc(100% / 8);
+}
+
+.lineRail {
+  background: var(--border-subtle);
+}
+
+.lineFill {
+  @apply origin-left;
+  background: linear-gradient(90deg, var(--primary), var(--tertiary));
+  transform: scaleX(var(--p, 0));
+  box-shadow: 0 0 12px rgba(23, 241, 209, 0.45);
+}
+
+.comet {
+  @apply pointer-events-none absolute left-0 z-10 block h-2.5 w-2.5 rounded-full bg-white;
+  top: clamp(32px, 5vw, 40px);
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 3px rgba(23, 241, 209, 0.35),
+    0 0 18px 6px rgba(23, 241, 209, 0.6),
+    0 0 32px 12px rgba(0, 177, 215, 0.35);
+}
+
+.step {
+  @apply relative z-20 flex flex-col items-center;
+  gap: clamp(0.85rem, 2vw, 1.35rem);
+}
+
+.circleWrap {
+  @apply relative flex items-center justify-center;
+  width: clamp(56px, 9vw, 72px);
+  height: clamp(56px, 9vw, 72px);
+}
+
+.halo {
+  @apply pointer-events-none absolute z-0 block rounded-full;
+  inset: -22%;
+  background: radial-gradient(
+    closest-side,
+    rgba(23, 241, 209, 0.35),
+    rgba(0, 177, 215, 0.18) 55%,
+    transparent 75%
+  );
+}
+
+.glow {
+  @apply pointer-events-none absolute inset-0 z-10 block rounded-full;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25),
+    0 18px 38px -8px rgba(0, 177, 215, 0.55),
+    0 0 0 6px rgba(0, 177, 215, 0.12);
+}
+
+.circle {
+  @apply relative z-20 flex h-full w-full items-center justify-center rounded-full;
+  background: linear-gradient(135deg, var(--primary), var(--tertiary));
+  box-shadow:
+    0 12px 28px -8px rgba(0, 177, 215, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.iconWrap {
+  @apply flex items-center justify-center text-white;
+  font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+  filter: drop-shadow(0 2px 4px rgba(0, 22, 67, 0.25));
+}
+
+.badge {
+  @apply absolute -right-1.5 -top-1.5 z-30 flex items-center justify-center rounded-full font-semibold leading-none text-white;
+  width: clamp(22px, 2.8vw, 26px);
+  height: clamp(22px, 2.8vw, 26px);
+  background: var(--secondary);
+  font-size: clamp(0.625rem, 1.4vw, 0.75rem);
+  box-shadow:
+    0 4px 10px -2px rgba(0, 22, 67, 0.45),
+    0 0 0 2px var(--surface-elevated);
+}
+
+.label {
+  @apply text-center font-medium leading-snug;
+  color: var(--text-muted);
+  font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+  max-width: 16ch;
+}
+
+@media (max-width: 640px) {
+  .sticky {
+    @apply h-auto min-h-screen items-center;
+    padding-top: clamp(2rem, 8vw, 3rem);
+    padding-bottom: clamp(2rem, 8vw, 3rem);
+  }
+
+  .card {
+    @apply gap-8;
+    padding: clamp(2rem, 6vw, 3rem) clamp(1rem, 5vw, 1.75rem);
+  }
+
+  .track {
+    @apply grid-cols-1 gap-6 pl-1;
+  }
+
+  .step {
+    @apply flex-row items-center justify-start gap-5;
+  }
+
+  .lineRail,
+  .lineFill {
+    @apply right-auto m-0 h-auto w-0.5;
+    top: 28px;
+    bottom: 28px;
+    left: 27px;
+  }
+
+  .lineFill {
+    @apply origin-top;
+    transform: scaleY(var(--p, 0));
+  }
+
+  .comet {
+    @apply hidden;
+  }
+
+  .label {
+    @apply max-w-none text-left text-xs;
+  }
+}

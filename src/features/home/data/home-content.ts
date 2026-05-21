@@ -14,9 +14,13 @@ import {
   faStripe,
 } from '@fortawesome/free-brands-svg-icons';
 import {
+  faBolt,
+  faBrain,
   faBullhorn,
+  faGear,
   faGraduationCap,
   faHandshake,
+  faPalette,
   faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,6 +31,11 @@ type LogoItem = {
 
 type AudienceTabStatic = {
   key: 'marketing' | 'creators' | 'learning' | 'sales';
+  icon: IconDefinition;
+};
+
+type ProcessStepStatic = {
+  id: 'design' | 'train' | 'integrate' | 'operate';
   icon: IconDefinition;
 };
 
@@ -51,6 +60,9 @@ type HomeStaticData = {
   };
   audience: {
     tabs: ReadonlyArray<AudienceTabStatic>;
+  };
+  process: {
+    steps: ReadonlyArray<ProcessStepStatic>;
   };
   integrations: {
     cta: { href: string };
@@ -94,6 +106,14 @@ const homeStaticData: HomeStaticData = {
       { key: 'sales', icon: faHandshake },
     ],
   },
+  process: {
+    steps: [
+      { id: 'design', icon: faPalette },
+      { id: 'train', icon: faBrain },
+      { id: 'integrate', icon: faBolt },
+      { id: 'operate', icon: faGear },
+    ],
+  },
   integrations: {
     cta: { href: '#integrations' },
     logos: [
@@ -121,4 +141,10 @@ const homeStaticData: HomeStaticData = {
 };
 
 export { homeStaticData };
-export type { HomeStaticData, LogoItem, AudienceTabStatic, FaqItemStatic };
+export type {
+  HomeStaticData,
+  LogoItem,
+  AudienceTabStatic,
+  FaqItemStatic,
+  ProcessStepStatic,
+};
