@@ -6,6 +6,7 @@ import { Container } from '../container/Container';
 import { Button } from '@/src/shared/components/button/Button';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import styles from './hero-section.module.css';
 
@@ -71,13 +72,14 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
             <WrapperMotion delay={{ enter: 0.59, exit: 0.11 }} immediate>
               <div className={ styles.heroSection__buttons }>
                 <Button
-                  text={t('hero.primaryCta') as string}
-                  style="primary"
+                  text={t('hero.secondaryCta') as string}
+                  style="whatsapp"
                   type="button"
+                  iconRight={ faWhatsapp }
                 />
                 <Button
-                  text={t('hero.secondaryCta') as string}
-                  style="secondary"
+                  text={t('hero.primaryCta') as string}
+                  style="primary"
                   type="button"
                 />
               </div>

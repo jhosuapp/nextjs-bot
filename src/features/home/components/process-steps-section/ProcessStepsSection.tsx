@@ -17,10 +17,11 @@ import { FloatIcon } from './FloatIcon';
 import { ProcessStep } from './ProcessStep';
 import styles from './process-steps-section.module.css';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
+import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 
 type Props = { t: ITranslations };
 
-const STEP_THRESHOLDS = [0.18, 0.38, 0.58, 0.78] as const;
+const STEP_THRESHOLDS = [0, 0.38, 0.58, 0.78] as const;
 
 const resolveActiveStep = (latest: number): number => {
   let active = 0;
@@ -49,7 +50,7 @@ const ProcessStepsSection = ({ t }: Props) => {
     mass: 0.5,
   });
 
-  const cometRaw = useTransform(scrollYProgress, [0.08, 0.9], [0, 100]);
+  const cometRaw = useTransform(scrollYProgress, [0.08, 0.9], [12.5, 87.5]);
   const cometX = useSpring(cometRaw, {
     stiffness: 110,
     damping: 20,
@@ -110,32 +111,33 @@ const ProcessStepsSection = ({ t }: Props) => {
               {t('process.titleAccent') as string}
             </strong>
           </Text>
-
-          <div className={styles.track}>
-            <div className={styles.lineRail} aria-hidden="true" />
-            <motion.div
-              className={styles.lineFill}
-              aria-hidden="true"
-              style={{ '--p': reduce ? 1 : lineProgress } as React.CSSProperties}
-            />
-            {!reduce && (
-              <motion.span
-                className={styles.comet}
+          <WrapperMotion delay={{ enter:0, exit: 0 }} fadeUpTertiary>
+            <div className={styles.track}>
+              <div className={styles.lineRail} aria-hidden="true" />
+              <motion.div
+                className={styles.lineFill}
                 aria-hidden="true"
-                style={{ left: cometLeft, opacity: cometOpacity }}
+                style={{ '--p': reduce ? 1 : lineProgress } as React.CSSProperties}
               />
-            )}
-            {homeStaticData.process.steps.map((step, i) => (
-              <ProcessStep
-                key={step.id}
-                index={i}
-                progress={scrollYProgress}
-                threshold={STEP_THRESHOLDS[i]}
-                icon={step.icon}
-                label={t(`process.steps.${step.id}.label`) as string}
-              />
-            ))}
-          </div>
+              {!reduce && (
+                <motion.span
+                  className={styles.comet}
+                  aria-hidden="true"
+                  style={{ left: cometLeft, opacity: cometOpacity }}
+                />
+              )}
+              {homeStaticData.process.steps.map((step, i) => (
+                <ProcessStep
+                  key={step.id}
+                  index={i}
+                  progress={scrollYProgress}
+                  threshold={STEP_THRESHOLDS[i]}
+                  icon={step.icon}
+                  label={t(`process.steps.${step.id}.label`) as string}
+                />
+              ))}
+            </div>
+          </WrapperMotion>
         </div>
       </FadeIn>
     </section>

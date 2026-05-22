@@ -2,7 +2,7 @@
 
 .wrapper {
   @apply relative w-full;
-  height: 300vh;
+  height: 250vh;
   background-color: var(--bg-section);
 }
 

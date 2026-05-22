@@ -24,7 +24,7 @@
 
 .button__iconSecondary {
   transition: 0.3s ease all;
-  @apply w-6 relative right-0 text-lg text-white;
+  @apply w-4 relative right-0 text-lg text-white;
 }
 
 .button b {
@@ -46,7 +46,7 @@
 }
 
 button:hover .button__iconSecondary {
-  @apply right-4;
+  @apply scale-0 -right-1;
 }
 
 .button:hover .button__icon {
@@ -87,6 +87,17 @@ button:hover .button__iconSecondary {
   @apply text-white;
 }
 
+/* whatsapp */
+
+.button--whatsapp {
+  transition: 0.5s ease background-color;
+  background-color: var(--bg-whatsapp);
+}
+
+.button--whatsapp span {
+  @apply text-white;
+}
+
 /* Fit */
 
 .button--fit {
@@ -104,7 +115,7 @@ button:hover .button__iconSecondary {
 }
 
 .button--fit .button__iconSecondary {
-  @apply min-w-4;
+  @apply min-w-4 max-w-4;
 }
 
 .button--fit:hover .button__iconSecondary {

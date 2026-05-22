@@ -3,7 +3,10 @@ import {
   useAnimationFrame,
   useMotionValue,
   useReducedMotion,
+  useScroll,
+  useSpring,
   useTransform,
+  useVelocity,
 } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { Children, useRef } from 'react';
@@ -18,6 +21,8 @@ type MarqueeProps = {
   speed?: number;
   direction?: 'left' | 'right';
   pauseOnHover?: boolean;
+  scrollBoost?: boolean;
+  scrollBoostFactor?: number;
 };
 
 const Marquee = ({
@@ -26,11 +31,20 @@ const Marquee = ({
   speed = 40,
   direction = 'left',
   pauseOnHover = true,
+  scrollBoost = false,
+  scrollBoostFactor = 0.35,
 }: MarqueeProps) => {
   const reduce = useReducedMotion();
   const baseX = useMotionValue(0);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const hoveredRef = useRef(false);
+
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    stiffness: 400,
+    damping: 50,
+  });
 
   const wrap = useTransform(baseX, (latest) => {
     const node = trackRef.current;
@@ -45,7 +59,11 @@ const Marquee = ({
     if (reduce) return;
     if (pauseOnHover && hoveredRef.current) return;
     const dir = direction === 'left' ? 1 : -1;
-    baseX.set(baseX.get() + (speed * dir * delta) / 1000);
+    const baseMove = (speed * dir * delta) / 1000;
+    const boost = scrollBoost
+      ? (smoothVelocity.get() * dir * scrollBoostFactor * delta) / 1000
+      : 0;
+    baseX.set(baseX.get() + baseMove + boost);
   });
 
   const items = Children.toArray(children);

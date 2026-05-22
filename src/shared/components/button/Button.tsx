@@ -11,7 +11,7 @@ type NativeProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type CustomProps = {
     text?: string;
-    style?: 'primary' | 'secondary' | 'fit';
+    style?: 'primary' | 'secondary' | 'fit' | 'whatsapp';
     className?: string;
     icon?: IconDefinition;
     iconRight?: IconDefinition;

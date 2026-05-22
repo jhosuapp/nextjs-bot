@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { Marquee } from '@/src/shared/components/motion/Marquee';
@@ -12,16 +12,19 @@ import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMot
 
 type TrustedByStripProps = { t: ITranslations };
 
+const ROW_DIRECTIONS = ['left', 'right'] as const;
+const ROW_SPEEDS = [28, 32] as const;
+
 const TrustedByStrip = ({ t }: TrustedByStripProps) => {
   const label = t('trustedBy.label') as string;
-  const logos = homeStaticData.trustedBy.logos;
+  const rows = homeStaticData.trustedBy.rows;
 
   return (
-    <Container className={styles.section} padding='xl' aria-label={label}>
+    <Container className={styles.section} padding="xl" aria-label={label}>
       <FadeIn y={8} duration="fast">
-        <Text 
-          tag="p" 
-          variant="description_xs" 
+        <Text
+          tag="p"
+          variant="description_xs"
           color="muted"
           weight="semibold"
           delay={{ enter: 0, exit: 0 }}
@@ -30,22 +33,31 @@ const TrustedByStrip = ({ t }: TrustedByStripProps) => {
           {label}
         </Text>
       </FadeIn>
-      <WrapperMotion 
-        delay={{ enter: 0.2, exit: 0 }}
-        fadeUpTertiary
-      >
-        <Marquee className={styles.marquee} speed={32}>
-          {logos.map((logo) => (
-            <div key={logo.name} className={styles.logo} aria-label={logo.name}>
-              <FontAwesomeIcon
-                icon={logo.icon}
-                className={styles.logoIcon}
-                aria-hidden="true"
-              />
-              <span className={styles.logoName}>{logo.name}</span>
-            </div>
+      <WrapperMotion delay={{ enter: 0.2, exit: 0 }} fadeUpTertiary>
+        <div className={styles.rows}>
+          {rows.map((row, rowIndex) => (
+            <Marquee
+              key={rowIndex}
+              className={styles.marquee}
+              speed={ROW_SPEEDS[rowIndex] ?? 30}
+              direction={ROW_DIRECTIONS[rowIndex] ?? 'left'}
+              pauseOnHover={false}
+              scrollBoost
+            >
+              {row.map((logo) => (
+                <div key={logo.name} className={styles.logo}>
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={120}
+                    height={48}
+                    className={styles.logoImg}
+                  />
+                </div>
+              ))}
+            </Marquee>
           ))}
-        </Marquee>
+        </div>
       </WrapperMotion>
     </Container>
   );
