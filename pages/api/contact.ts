@@ -1,7 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "@/src/shared/libs/prisma";
 import { withRateLimit } from "@/src/shared/libs/rate-limit";
-import { SITE_URL } from "@/src/config/site";
+import { sendMail } from "@/src/shared/libs/mailer";
+import { buildUserConfirmationEmail } from "@/src/shared/emails/contact-user-confirmation.template";
+import { buildAdminNotificationEmail } from "@/src/shared/emails/contact-admin-notification.template";
+import { ADMIN_NOTIFICATION_EMAIL, SITE_URL } from "@/src/config/site";
 
 type ContactResponse = { success: true } | { error: string };
 
@@ -64,6 +67,27 @@ async function handler(
 
   try {
     await prisma.contactForm.create({ data: trimmed });
+
+    const submittedAt = new Date();
+    void Promise.allSettled([
+      sendMail({
+        to: trimmed.email,
+        ...buildUserConfirmationEmail({ name: trimmed.name }),
+      }),
+      sendMail({
+        to: ADMIN_NOTIFICATION_EMAIL,
+        replyTo: trimmed.email,
+        ...buildAdminNotificationEmail({ ...trimmed, submittedAt }),
+      }),
+    ]).then((results) => {
+      results.forEach((r, i) => {
+        if (r.status === "rejected") {
+          const target = i === 0 ? "user" : "admin";
+          console.error(`[contact] ${target} mail failed:`, r.reason);
+        }
+      });
+    });
+
     return res.status(201).json({ success: true });
   } catch {
     return res.status(500).json({ error: "internal_server_error" });
