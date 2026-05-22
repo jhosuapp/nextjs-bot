@@ -15,3 +15,29 @@
 .formHero button span {
   @apply text-nowrap;
 }
+
+.formHero__group {
+  @apply w-full flex items-end gap-1;
+}
+
+.formHero__extension {
+  @apply max-w-14;
+}
+
+.formHero__extension input {
+  @apply px-2 pl-5;
+}
+
+.formHero__extension div {
+  @apply relative;
+}
+
+.formHero__extension div::before {
+  content: "+";
+  color: currentColor;
+  @apply absolute w-2 h-2 left-2.5 block text-sm top-[13px] md:top-[10.5px];
+}
+
+.formHero__extension label {
+  @apply text-nowrap;
+}

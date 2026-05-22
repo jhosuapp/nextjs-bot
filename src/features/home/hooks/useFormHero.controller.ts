@@ -19,7 +19,8 @@ const useFormHeroController = () => {
       name: "",
       company: "",
       email: "",
-      message: "",
+      phone_number: "",
+      phone_extension: "57",
     },
   });
 

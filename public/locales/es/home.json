@@ -14,8 +14,10 @@
     "companyPlaceholder": "Nombre de la empresa",
     "emailLabel": "Correo electrónico",
     "emailPlaceholder": "ejemplo@correo.com",
-    "messageLabel": "¿Qué quieres crear?",
-    "messagePlaceholder": "Cuéntanos sobre tu proyecto",
+    "phoneLabel": "Número telefónico",
+    "phonePlaceholder": "3001234567",
+    "phoneExtensionLabel": "Extensión (opcional)",
+    "phoneExtensionPlaceholder": "57",
     "cta": "Quiero mi avatar"
   },
   "trustedBy": {

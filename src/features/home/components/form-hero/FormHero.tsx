@@ -9,6 +9,7 @@ import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import styles from './form-hero.module.css';
 import { Button } from '@/src/shared/components/button/Button';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import { allowOnlyNumbers } from '@/src/shared/helpers/allow-keys';
 
 type FormHeroProps = { t: ITranslations };
 
@@ -40,6 +41,7 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
                 minLength={2}
                 style="primary"
                 feedback={ errors.name?.message }
+                maxLength={100}
 
                 delayAnimate={0.57}
                 delayExit={0.15}
@@ -66,6 +68,7 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
                 minLength={2}
                 style="primary"
                 feedback={ errors.company?.message }
+                maxLength={100}
 
                 delayAnimate={0.57}
                 delayExit={0.15}
@@ -92,6 +95,7 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
                 minLength={2}
                 style="primary"
                 feedback={ errors.email?.message }
+                maxLength={100}
 
                 delayAnimate={0.57}
                 delayExit={0.15}
@@ -104,32 +108,59 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
             />
           )}
         />
+        <div className={styles.formHero__group}>
+          <Controller
+            name="phone_extension"
+            control={control}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextField
+                  type="text"
+                  label={t('contact.phoneLabel') as string}
+                  name="phone_extension"
+                  id="phone_extension"
+                  placeholder={t('contact.phoneExtensionPlaceholder') as string}
+                  style="primary"
+                  feedback={ errors.phone_extension?.message }
+                  maxLength={3}
+                  onKeyDown={(e) => allowOnlyNumbers(e, { separateThousands: true })}
 
-        <Controller
-          name="message"
-          control={control}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextField
-                type="text"
-                label={t('contact.messageLabel') as string}
-                name="message"
-                id="message"
-                placeholder={t('contact.messagePlaceholder') as string}
-                minLength={2}
-                style="primary"
-                feedback={ errors.message?.message }
+                  delayAnimate={0.57}
+                  delayExit={0.15}
+                  classNameParent={ styles.formHero__extension }
 
-                delayAnimate={0.57}
-                delayExit={0.15}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value ?? ""}
+              />
+            )}
+          />
 
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
+          <Controller
+            name="phone_number"
+            control={control}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextField
+                  type="tel"
+                  name="phone_number"
+                  id="phone_number"
+                  placeholder={t('contact.phonePlaceholder') as string}
+                  style="primary"
+                  feedback={ errors.phone_number?.message }
+                  maxLength={9}
+                  onKeyDown={(e) => allowOnlyNumbers(e, { separateThousands: true })}
 
-                required
-            />
-          )}
-        />
+                  delayAnimate={0.57}
+                  delayExit={0.15}
+
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+
+                  required
+              />
+            )}
+          />
+        </div>
 
         <WrapperMotion delay={{ enter: 0.57, exit: 0.15 }} immediate>
           <Button

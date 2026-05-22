@@ -11,12 +11,19 @@ const formHeroValidation = z.object({
     .max(100, "Ingrese máximo 100 caracteres"),
   email: z
     .string()
-    .min(1, "El campo es requerido")
-    .email("Ingrese un email válido"),
-  message: z
+    .min(2, "Ingrese mínimo 2 caracteres")
+    .email("Ingrese un email válido")
+    .max(100, "Ingrese máximo 100 caracteres"),
+  phone_number: z
     .string()
-    .min(5, "Ingrese mínimo 5 caracteres")
-    .max(500, "Ingrese máximo 500 caracteres"),
+    .min(9, "Ingrese mínimo 9 caracteres")
+    .max(9, "Ingrese máximo 9 caracteres")
+    .regex(/^[+\d\s\-().]+$/, "Ingrese un número válido"),
+  phone_extension: z
+    .string()
+    .max(3, "Ingrese máximo 10 caracteres")
+    .regex(/^\d*$/, "Solo se permiten dígitos")
+    .optional(),
 });
 
 export type FormHeroInterface = z.infer<typeof formHeroValidation>;

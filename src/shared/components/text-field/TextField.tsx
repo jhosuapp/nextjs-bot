@@ -15,20 +15,21 @@ type CustomProps = {
     children?: ReactNode;
     childrenIsIcon?: boolean;
     toolTips?: string[];
-
+    
     delayAnimate?: number;
     delayExit?: number;
     noAnimate?: boolean;
+    classNameParent?: string;
 }
 
 export type Props = NativeProps & CustomProps;
 
 
-const TextField = ({ children, childrenIsIcon, feedback, style, toolTips, label, delayAnimate, delayExit, noAnimate, ...props }:Props):JSX.Element => {
+const TextField = ({ children, childrenIsIcon, feedback, style, toolTips, label, delayAnimate, delayExit, noAnimate, classNameParent = '', ...props }:Props):JSX.Element => {
     return (
         <motion.div 
             {...(!noAnimate ? fadeUpMotion(delayAnimate ?? 0.5, delayExit ?? 0.14) : {})}
-            className={ `${styles.textField} ${styles[`textField--${style}`]} ${feedback && styles.textFieldError}` }
+            className={ `${styles.textField} ${styles[`textField--${style}`]} ${feedback && styles.textFieldError} ${classNameParent}` }
         >
             {label && <label htmlFor={ props.name }>{ label }</label>}
             <div className={ styles.textFieldContent }>
