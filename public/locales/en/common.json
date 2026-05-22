@@ -1,8 +1,8 @@
 {
   "seo": {
-    "homeTitle": "Home | Humanika",
+    "homeTitle": "Home | 150%",
     "homeDescription": "Smart avatars for web, WhatsApp, training, sales and BTL experiences.",
-    "botTitle": "Conversational bot | Humanika",
+    "botTitle": "Conversational bot | 150%",
     "botDescription": "Talk to an AI avatar that responds in real time. Natural conversation by voice and chat."
   },
   "nav": {
@@ -32,7 +32,7 @@
   "footer": {
     "heading": "Footer",
     "brand": {
-      "name": "Humanika",
+      "name": "150%",
       "tagline": "Smart avatars built for human communication.",
       "homeAria": "{{name}} home"
     },
@@ -76,7 +76,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} Humanika. All rights reserved.",
+      "copyright": "© {{year}} 150%. All rights reserved.",
       "socialsAria": "Social media",
       "legalsAria": "Legal links",
       "legal": {

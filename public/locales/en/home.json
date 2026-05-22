@@ -1,7 +1,7 @@
 {
   "hero": {
     "titleLead": "We built ",
-    "titleAccent": "Humanika",
+    "titleAccent": "150%",
     "titleTrail": " for businesses",
     "subtitle": "Smart avatars for web, WhatsApp, training, sales and BTL experiences.",
     "primaryCta": "Request a demo",
@@ -101,13 +101,13 @@
   "faq": {
     "eyebrow": "Frequently asked",
     "title": "Everything you need to know.",
-    "description": "Common questions about Humanika — and if something is missing, our team replies in under a business day.",
+    "description": "Common questions about 150% — and if something is missing, our team replies in under a business day.",
     "contactCta": "Talk to our team",
     "stillHaveQuestion": "Still have a question?",
     "items": {
       "what-is": {
         "question": "What does the platform actually do?",
-        "answer": "Humanika turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow."
+        "answer": "150% turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow."
       },
       "how-fast": {
         "question": "How quickly can I publish my first avatar?",
