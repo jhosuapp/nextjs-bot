@@ -1,20 +1,18 @@
 @reference "tailwindcss";
 
 .toast {
-  @apply fixed z-[9999] flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg overflow-hidden pointer-events-auto;
+  @apply fixed z-[9999] flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg overflow-hidden pointer-events-auto right-4 border;
   top: calc(var(--h-header) + 16px);
-  right: 16px;
   min-width: 280px;
   max-width: calc(100vw - 32px);
-  border: 1px solid var(--border-subtle);
+  border-color: var(--border-subtle);
   background: var(--surface-elevated);
   color: var(--foreground);
   box-shadow: var(--shadow-floating);
 }
 
 .toast__icon {
-  @apply flex items-center justify-center w-6 h-6 shrink-0;
-  font-size: 1rem;
+  @apply flex items-center justify-center w-6 h-6 shrink-0 text-sm;
 }
 
 .toast__icon--loading {
@@ -36,10 +34,8 @@
 }
 
 .toast__close {
-  @apply flex items-center justify-center w-6 h-6 rounded-md shrink-0 cursor-pointer transition-colors;
+  @apply flex items-center justify-center w-6 h-6 rounded-md shrink-0 cursor-pointer transition-colors bg-transparent border-none;
   color: var(--text-muted);
-  background: transparent;
-  border: none;
 }
 
 .toast__close:hover {
@@ -68,8 +64,6 @@
 
 @media (max-width: 480px) {
   .toast {
-    left: 16px;
-    right: 16px;
-    min-width: 0;
+    @apply left-4 right-4 min-w-0;
   }
 }
