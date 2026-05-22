@@ -1,7 +1,8 @@
 import { ButtonHTMLAttributes, type JSX } from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import { AnimatePresence, motion, MotionProps } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { zoomInMotion } from '../../motion/zoomIn.motion';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 import styles from './button.module.css';
@@ -33,25 +34,31 @@ const Button = ({ text, style, className, icon, iconRight, isLoad = false, ...pr
                 aria-hidden="true"
             />
             <span>{ text }</span>
-            {isLoad ? (
-                <FontAwesomeIcon
-                    className={ styles.button__iconLoader }
-                    icon={ faCircleNotch }
-                    aria-hidden="true"
-                />
-            ) : (
-                <>
-                    {iconRight ? (
+            <AnimatePresence mode='wait'>
+                {isLoad ? (
+                    <motion.div {...zoomInMotion(0,0)}>
                         <FontAwesomeIcon
-                            className={ styles.button__iconSecondary }
-                            icon={ iconRight }
+                            className={ styles.button__iconLoader }
+                            icon={ faCircleNotch }
                             aria-hidden="true"
                         />
-                    ) : (
-                        <b></b>
-                    )}
-                </>
-            )}
+                    </motion.div>
+                ) : (
+                    <>
+                        {iconRight ? (
+                            <motion.div {...zoomInMotion(0,0)}>
+                                <FontAwesomeIcon
+                                    className={ styles.button__iconSecondary }
+                                    icon={ iconRight }
+                                    aria-hidden="true"
+                                />
+                            </motion.div>
+                        ) : (
+                            <b></b>
+                        )}
+                    </>
+                )}
+            </AnimatePresence>
         </motion.button>
     )
 }

@@ -1,6 +1,6 @@
 @reference "tailwindcss";
 
-.formHero {
+.contactForm {
   @apply flex flex-col lg:flex-row relative items-end -top-16 -mb-16 px-5 lg:px-10 py-5 lg:py-12 rounded-2xl shadow-lg gap-4;
   border: 1px solid transparent;
   background:
@@ -8,36 +8,36 @@
     linear-gradient(135deg, var(--primary), var(--tertiary)) border-box;
 }
 
-.formHero button {
+.contactForm button {
   @apply min-w-48 w-full max-w-full;
 }
 
-.formHero button span {
+.contactForm button span {
   @apply text-nowrap;
 }
 
-.formHero__group {
+.contactForm__group {
   @apply w-full flex items-end gap-1;
 }
 
-.formHero__extension {
+.contactForm__extension {
   @apply max-w-14;
 }
 
-.formHero__extension input {
+.contactForm__extension input {
   @apply px-2 pl-5;
 }
 
-.formHero__extension div {
+.contactForm__extension div {
   @apply relative;
 }
 
-.formHero__extension div::before {
+.contactForm__extension div::before {
   content: "+";
   color: currentColor;
   @apply absolute w-2 h-2 left-2.5 block text-sm top-[13px] md:top-[10.5px];
 }
 
-.formHero__extension label {
+.contactForm__extension label {
   @apply text-nowrap;
 }

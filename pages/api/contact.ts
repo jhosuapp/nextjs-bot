@@ -53,7 +53,12 @@ async function handler(
     phone_number: phone_number.trim(),
   };
 
-  if (!trimmed.name || !trimmed.company || !trimmed.email || !trimmed.phone_number) {
+  if (
+    !trimmed.name ||
+    !trimmed.company ||
+    !trimmed.email ||
+    !trimmed.phone_number
+  ) {
     return res.status(400).json({ error: "missing_required_fields" });
   }
 

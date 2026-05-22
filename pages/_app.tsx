@@ -4,12 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { appWithTranslation, useTranslation } from "next-i18next/pages";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { jakarta } from "@/src/config/fonts/fonts";
 import { CustomScrollbar } from "@/src/shared/components/custom-scrollbar/CustomScrollbar";
 import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
 import { ThemeTransitionOverlay } from "@/src/shared/components/theme-transition/ThemeTransitionOverlay";
+import { Toast } from "@/src/shared/components/toast/Toast";
 import { Footer } from "@/src/shared/layouts/footer/Footer";
 import { Header } from "@/src/shared/layouts/header/Header";
 import { useLoaderStore } from "@/src/shared/stores/loader.store";
@@ -20,6 +22,7 @@ import "@/src/styles/globals.css";
 config.autoAddCss = false;
 
 function App({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
   const router = useRouter();
   const { t } = useTranslation("common");
   const setIsLoading = useLoaderStore((state) => state.setIsLoading);
@@ -45,18 +48,21 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className={`${jakarta.variable} contents`}>
-      <SmoothScroll />
-      <CustomScrollbar />
-      <Header t={t} />
-      <AnimatePresence mode="wait">
-        <motion.div key={router.asPath}>
-          <Component {...pageProps} />
-        </motion.div>
-      </AnimatePresence>
-      <Footer t={t} />
-      <ThemeTransitionOverlay />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={`${jakarta.variable} contents`}>
+        <SmoothScroll />
+        <CustomScrollbar />
+        <Header t={t} />
+        <AnimatePresence mode="wait">
+          <motion.div key={router.asPath}>
+            <Component {...pageProps} />
+          </motion.div>
+        </AnimatePresence>
+        <Footer t={t} />
+        <ThemeTransitionOverlay />
+        <Toast t={t} />
+      </div>
+    </QueryClientProvider>
   );
 }
 

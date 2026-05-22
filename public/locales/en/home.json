@@ -98,7 +98,8 @@
     "notePrefix": "Each implementation adapts to the ",
     "noteEmphasis": "interaction level, volume and needs",
     "noteSuffix": " of your company.",
-    "cta": "Request a proposal"
+    "cta": "Request a proposal",
+    "ctaSuccess": "Success register"
   },
   "faq": {
     "eyebrow": "Frequently asked",

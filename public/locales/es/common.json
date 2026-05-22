@@ -29,6 +29,12 @@
       "toDarkAria": "Cambiar a tema oscuro"
     }
   },
+  "toast": {
+    "loading": "Enviando...",
+    "success": "¡Listo! Te contactaremos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "close": "Cerrar notificación"
+  },
   "footer": {
     "heading": "Pie de página",
     "brand": {

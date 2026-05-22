@@ -1,31 +1,33 @@
 import type { JSX } from 'react';
 
 import { Controller } from 'react-hook-form';
-import { useFormHeroController } from '@/src/features/home/hooks/useFormHero.controller';
 import { TextField } from '@/src/shared/components/text-field/TextField';
 import { Container } from '../container/Container';
 import { ITranslations } from '@/src/shared/interfaces/i18n.interface';
-
-import styles from './form-hero.module.css';
 import { Button } from '@/src/shared/components/button/Button';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 import { allowOnlyNumbers } from '@/src/shared/helpers/allow-keys';
+import { useContactFormController } from '../../hooks/useContactForm.controller';
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
-type FormHeroProps = { t: ITranslations };
+import styles from './contact-form.module.css';
 
-const FormHero = ({ t }: FormHeroProps):JSX.Element => {
+type ContactFormProps = { t: ITranslations };
+
+const ContactForm = ({ t }: ContactFormProps):JSX.Element => {
     const {
       control,
       errors,
       handleSubmit,
       onSubmit,
-  } = useFormHeroController();
+      mutation
+  } = useContactFormController();
 
   return (
     <Container>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={ styles.formHero }
+        className={ styles.contactForm }
         noValidate
       >
         <Controller
@@ -108,7 +110,7 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
             />
           )}
         />
-        <div className={styles.formHero__group}>
+        <div className={styles.contactForm__group}>
           <Controller
             name="phone_extension"
             control={control}
@@ -121,16 +123,19 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
                   placeholder={t('contact.phoneExtensionPlaceholder') as string}
                   style="primary"
                   feedback={ errors.phone_extension?.message }
+                  minLength={1}
                   maxLength={3}
                   onKeyDown={(e) => allowOnlyNumbers(e, { separateThousands: true })}
 
                   delayAnimate={0.57}
                   delayExit={0.15}
-                  classNameParent={ styles.formHero__extension }
+                  classNameParent={ styles.contactForm__extension }
 
                   onChange={onChange}
                   onBlur={onBlur}
-                  value={value ?? ""}
+                  value={value}
+
+                  required
               />
             )}
           />
@@ -164,9 +169,12 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
 
         <WrapperMotion delay={{ enter: 0.57, exit: 0.15 }} immediate>
           <Button
-            text={t('contact.cta') as string}
+            text={`${mutation.isSuccess ? t('contact.ctaSuccess') as string : t('contact.cta') as string}`}
             style="primary"
             type="submit"
+            isLoad={mutation.isPending}
+            disabled={mutation.isSuccess}
+            iconRight={mutation.isSuccess ? faCircleCheck : undefined}
           />
         </WrapperMotion>
       </form>
@@ -174,4 +182,4 @@ const FormHero = ({ t }: FormHeroProps):JSX.Element => {
   )
 }
 
-export { FormHero }
+export { ContactForm }

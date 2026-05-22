@@ -29,6 +29,12 @@
       "toDarkAria": "Switch to dark theme"
     }
   },
+  "toast": {
+    "loading": "Sending...",
+    "success": "Done! We'll get in touch soon.",
+    "error": "Something went wrong. Please try again.",
+    "close": "Close notification"
+  },
   "footer": {
     "heading": "Footer",
     "brand": {

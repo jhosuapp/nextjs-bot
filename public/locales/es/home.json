@@ -18,7 +18,8 @@
     "phonePlaceholder": "3001234567",
     "phoneExtensionLabel": "Extensión (opcional)",
     "phoneExtensionPlaceholder": "57",
-    "cta": "Quiero mi avatar"
+    "cta": "Quiero mi avatar",
+    "ctaSuccess": "Registro exitoso"
   },
   "trustedBy": {
     "label": "Con la confianza de"

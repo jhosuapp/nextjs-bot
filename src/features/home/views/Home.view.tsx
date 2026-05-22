@@ -8,9 +8,9 @@ import { ProcessStepsSection } from '@/src/features/home/components/process-step
 import { TrustedByStrip } from '@/src/features/home/components/trusted-by-strip/TrustedByStrip';
 import { MainContent } from '@/src/shared/components/main-content/MainContent';
 import { HeroSection } from '../components/hero-section/HeroSection';
+import { ContactForm } from '../components/contact-form/ContactForm';
 
 import styles from './home.module.css';
-import { FormHero } from '../components/form-hero/FormHero';
 
 type HomeViewProps = { t: ITranslations; tBot: ITranslations };
 
@@ -18,7 +18,7 @@ const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
   return (
     <MainContent className={styles.home}>
       <HeroSection t={t} tbot={tBot} />
-      <FormHero t={t} />
+      <ContactForm t={t} />
       <TrustedByStrip t={t} />
       <AudienceTabsSection t={t} />
       <ProcessStepsSection t={t} />

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const formHeroValidation = z.object({
+const contactFormValidation = z.object({
   name: z
     .string()
     .min(2, "Ingrese mínimo 2 caracteres")
@@ -21,10 +21,10 @@ const formHeroValidation = z.object({
     .regex(/^[+\d\s\-().]+$/, "Ingrese un número válido"),
   phone_extension: z
     .string()
-    .max(3, "Ingrese máximo 10 caracteres")
-    .regex(/^\d*$/, "Solo se permiten dígitos")
+    .max(3, "Error")
+    .regex(/^\d*$/, "Invalido")
     .optional(),
 });
 
-export type FormHeroInterface = z.infer<typeof formHeroValidation>;
-export { formHeroValidation };
+export type ContactFormInterface = z.infer<typeof contactFormValidation>;
+export { contactFormValidation };
