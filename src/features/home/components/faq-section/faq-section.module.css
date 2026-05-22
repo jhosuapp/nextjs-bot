@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .bg {
-  background-color: var(--bg-section);
+  background-color: var(--background);
 }
 
 .section {

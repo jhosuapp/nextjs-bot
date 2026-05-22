@@ -18,11 +18,11 @@
 }
 
 .heroSection__buttons {
-  @apply flex gap-2 md:gap-4 mt-4 md:mt-6 flex-wrap;
+  @apply flex gap-2 md:gap-4 mt-4 md:mt-6 flex-wrap max-w-96;
 }
 
 .heroSection__buttons button {
-  @apply flex-1 md:max-w-fit;
+  @apply flex-1;
 }
 
 .heroSection__buttons button span {

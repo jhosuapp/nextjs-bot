@@ -16,12 +16,9 @@ import {
 import {
   faBolt,
   faBrain,
-  faBullhorn,
   faChartLine,
   faCommentDots,
   faGear,
-  faGraduationCap,
-  faHandshake,
   faHeadset,
   faMicrophone,
   faPalette,
@@ -41,7 +38,7 @@ type TrustedByLogoItem = {
 };
 
 type AudienceTabStatic = {
-  key: "marketing" | "creators" | "learning" | "sales";
+  key: "digitalHumans" | "aiContent" | "aiAgents";
   icon: IconDefinition;
 };
 
@@ -170,10 +167,9 @@ const homeStaticData: HomeStaticData = {
   },
   audience: {
     tabs: [
-      { key: "marketing", icon: faBullhorn },
-      { key: "creators", icon: faVideo },
-      { key: "learning", icon: faGraduationCap },
-      { key: "sales", icon: faHandshake },
+      { key: "digitalHumans", icon: faMicrophone },
+      { key: "aiContent", icon: faVideo },
+      { key: "aiAgents", icon: faRobot },
     ],
   },
   process: {

@@ -3,10 +3,11 @@
     "titleLead": "Creamos ",
     "titleAccent": "Humanika",
     "titleTrail": " para empresas",
-    "subtitle": "Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.",
+    "subtitle": "Agentes inteligentes para web, WhatsApp, ventas, soporte, capacitación y experiencias digitales.",
     "primaryCta": "Solicitar demo",
     "secondaryCta": "Quiero asesoría"
   },
+
   "contact": {
     "nameLabel": "Nombre",
     "namePlaceholder": "Nombre",
@@ -21,117 +22,149 @@
     "cta": "Quiero mi avatar",
     "ctaSuccess": "Registro exitoso"
   },
+
   "trustedBy": {
     "label": "Con la confianza de"
   },
+
   "agentic": {
-    "eyebrow": "Videos agénticos",
-    "title": "Transforma contenido pasivo en experiencias interactivas de IA.",
-    "description": "Convierte videos estáticos en agentes responsivos que se adaptan a cada espectador en tiempo real, responden preguntas de seguimiento y mantienen a tu audiencia comprometida.",
+    "eyebrow": "Agentes inteligentes",
+    "title": "Transforma contenido estático en experiencias conversacionales con IA.",
+    "description": "Convierte videos, documentos y flujos tradicionales en agentes interactivos que responden preguntas, acompañan usuarios y operan en tiempo real desde web o WhatsApp.",
     "cta": "Saber más",
-    "mediaAlt": "Vista previa de video con avatar interactivo",
+    "mediaAlt": "Vista previa de agente interactivo",
     "playAria": "Reproducir vista previa"
   },
+
   "audience": {
-    "eyebrow": "Para cada equipo",
-    "title_strong": "Humanos digitales",
-    "title": "listos para operar.",
-    "marketing": {
-      "label": "Marketing",
-      "title": "Personaliza cada campaña a escala.",
-      "description": "Crea videos de avatar con tu marca para cualquier segmento de audiencia en minutos, no semanas.",
+    "eyebrow": "Experiencias Humanika",
+
+    "title_strong": "IA lista",
+    "title": "para operar.",
+
+    "digitalHumans": {
+      "label": "Humanos digitales",
+
+      "title": "Presentadores virtuales impulsados por IA.",
+
+      "description": "Crea humanos digitales capaces de comunicar, presentar, explicar y atender usuarios en tiempo real desde web, eventos, formación o canales digitales.",
+
       "bullets": [
-        "Creatividades localizadas en 80+ idiomas",
-        "Prueba A/B de guiones sin nuevas filmaciones",
-        "Sincronización con tu CRM y CDP"
+        "Avatares realistas con voz natural",
+        "Experiencias multilenguaje",
+        "Atención y presentación en tiempo real",
+        "Embajadores digitales para marcas y empresas"
       ]
     },
-    "creators": {
-      "label": "Creadores de contenido",
-      "title": "Publica más, graba menos.",
-      "description": "Genera explicaciones completas y shorts desde un solo guión, con tu marca y a tiempo.",
+
+    "aiContent": {
+      "label": "Contenido IA",
+
+      "title": "Producción audiovisual automatizada para empresas.",
+
+      "description": "Transforma ideas, documentos o guiones en contenido audiovisual generado con IA para campañas, formación, social media y comunicación corporativa.",
+
       "bullets": [
-        "Múltiples estilos de avatar y voces",
-        "Exportaciones verticales y horizontales con un clic",
-        "Subtitulado nativo en cualquier idioma"
+        "Videos automáticos desde texto o documentos",
+        "Shorts, cápsulas y contenido social",
+        "Localización en múltiples idiomas",
+        "Escalamiento de producción sin equipos tradicionales"
       ]
     },
-    "learning": {
-      "label": "Aprendizaje y Desarrollo",
-      "title": "Implementa formación que realmente se retiene.",
-      "description": "Convierte documentos densos en cursos interactivos con avatares que responden preguntas a demanda.",
+
+    "aiAgents": {
+      "label": "Agentes IA",
+
+      "title": "Agentes inteligentes que conversan y operan 24/7.",
+
+      "description": "Implementa agentes IA conectados a tus procesos, canales y sistemas para ventas, soporte, onboarding y automatización empresarial.",
+
       "bullets": [
-        "Avatares adaptativos con conciencia de cuestionarios",
-        "Compatible con SCORM / xAPI",
-        "Registros de auditoría para equipos de cumplimiento"
-      ]
-    },
-    "sales": {
-      "label": "Ventas",
-      "title": "Preséntate personalizado, siempre.",
-      "description": "Envía pitches de video 1:1 a escala y permite que los prospectos hagan preguntas a un agente siempre disponible.",
-      "bullets": [
-        "Genera videos de prospecto automáticamente desde CRM",
-        "Analíticas de engagement rastreables",
-        "Transferencia al calendario cuando el interés aumenta"
+        "Web, WhatsApp y canales digitales",
+        "Integración con CRM y sistemas empresariales",
+        "Automatización de atención y soporte",
+        "Escalamiento a humano cuando es necesario"
       ]
     }
   },
+
   "process": {
     "titleLead": "Nosotros ",
-    "titleAccent": "hacemos todo",
+    "titleAccent": "implementamos todo",
     "steps": {
-      "design": { "label": "Diseñamos el avatar" },
-      "train": { "label": "Entrenamos la inteligencia" },
-      "integrate": { "label": "Integramos la experiencia" },
-      "operate": { "label": "Operamos y damos soporte" }
+      "design": {
+        "label": "Diseñamos la experiencia"
+      },
+      "train": {
+        "label": "Entrenamos el agente"
+      },
+      "integrate": {
+        "label": "Integramos canales y sistemas"
+      },
+      "operate": {
+        "label": "Operamos y optimizamos continuamente"
+      }
     }
   },
+
   "pricing": {
     "eyebrow": "Inversión empresarial",
     "titleLead": "Soluciones empresariales desde",
     "price": "10M COP/año",
-    "description": "Incluye diseño del avatar, inteligencia artificial, despliegue, operación y soporte continuo.",
+    "description": "Incluye estrategia, agente IA, despliegue, integraciones, operación y soporte continuo.",
     "features": {
       "hosting": "Hosting incluido",
-      "ai": "IA integrada",
+      "ai": "IA multimodal integrada",
       "support": "Soporte continuo"
     },
     "notePrefix": "Cada implementación se adapta al ",
-    "noteEmphasis": "nivel de interacción, volumen y necesidades",
+    "noteEmphasis": "volumen, complejidad y objetivos operativos",
     "noteSuffix": " de la empresa.",
     "cta": "Solicitar propuesta"
   },
+
+  "integrations": {
+    "title": "Combina nuestra plataforma con tus herramientas favoritas.",
+    "description": "Integraciones de primera clase con el stack en el que ya confías. Lleva los avatares donde ya ocurre tu trabajo.",
+    "cta": "Descubrir integraciones"
+  },
+
   "faq": {
     "eyebrow": "Preguntas frecuentes",
     "title": "Todo lo que necesitas saber.",
-    "description": "Preguntas comunes sobre 150% — y si falta algo, nuestro equipo responde en menos de un día hábil.",
+    "description": "Preguntas comunes sobre Humanika — y si falta algo, nuestro equipo responde en menos de un día hábil.",
     "contactCta": "Hablar con nuestro equipo",
     "stillHaveQuestion": "¿Tienes otra pregunta?",
+
     "items": {
       "what-is": {
         "question": "¿Qué hace realmente la plataforma?",
-        "answer": "150% convierte guiones, documentos y prompts en videos de avatares realistas y agentes en tiempo real que puedes integrar en tu producto, sitio de marketing, portal de formación o flujo de ventas."
+        "answer": "Humanika permite crear agentes inteligentes capaces de conversar, responder preguntas, automatizar interacciones y operar experiencias digitales desde web, WhatsApp y otros canales."
       },
+
       "how-fast": {
-        "question": "¿Con qué rapidez puedo publicar mi primer avatar?",
-        "answer": "La mayoría de los equipos publican su primer avatar en menos de dos minutos desde el registro: elige un presentador, pega un guión, elige una voz e idioma, y luego exporta o integra."
+        "question": "¿Con qué rapidez puedo publicar mi primer agente?",
+        "answer": "La mayoría de implementaciones iniciales pueden estar operativas en pocos días, dependiendo del nivel de integración y personalización requerido."
       },
+
       "languages": {
         "question": "¿Qué idiomas y voces son compatibles?",
-        "answer": "Admitimos más de 80 idiomas y locales con voces de sonido nativo, incluidos acentos regionales. También puedes clonar una voz de marca con consentimiento para planes premium."
+        "answer": "Humanika soporta más de 80 idiomas y voces con sonido natural, incluidos acentos regionales y experiencias multilenguaje."
       },
+
       "security": {
-        "question": "¿Están mis datos seguros para uso con contenido empresarial?",
-        "answer": "Sí. Somos SOC 2 Tipo II, ciframos los datos en reposo y en tránsito, nunca entrenamos modelos compartidos con contenido del cliente y ofrecemos residencia regional y SSO en planes empresariales."
+        "question": "¿Están mis datos seguros para uso empresarial?",
+        "answer": "Sí. Implementamos cifrado, controles de acceso y arquitecturas empresariales para proteger la información y las integraciones de cada cliente."
       },
+
       "brand": {
-        "question": "¿Puedo usar mi propia imagen de marca o presentadores?",
-        "answer": "Por supuesto. Sube tu kit de marca, personaliza los atuendos y fondos de los avatares, o incorpora un presentador personalizado desde una grabación corta con consentimiento."
+        "question": "¿Puedo usar mi propia imagen de marca o humanos digitales?",
+        "answer": "Sí. Puedes personalizar agentes, voces, flujos, branding y humanos digitales según la identidad y necesidades de tu empresa."
       },
+
       "pricing": {
         "question": "¿Cómo funciona el precio?",
-        "answer": "Hay un nivel gratuito para personas y equipos pequeños, planes basados en uso para empresas en crecimiento y precios empresariales personalizados con infraestructura dedicada y SLAs."
+        "answer": "El costo depende del nivel de interacción, canales, integraciones y volumen operativo requerido por cada implementación."
       }
     }
   }

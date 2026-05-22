@@ -29,7 +29,7 @@ const headerStaticData: HeaderStaticData = {
   primaryCta: { href: "#get-started" },
   secondaryCta: { href: "#signin" },
   languages: [
-    { code: "en", label: "EN", native: "English" },
+    // { code: "en", label: "EN", native: "English" },
     { code: "es", label: "ES", native: "Español" },
   ],
 };

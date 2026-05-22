@@ -146,6 +146,7 @@ const ContactForm = ({ t }: ContactFormProps):JSX.Element => {
             render={({ field: { onChange, onBlur, value } }) => (
               <TextField
                   type="tel"
+                  label={'\u00A0'}
                   name="phone_number"
                   id="phone_number"
                   placeholder={t('contact.phonePlaceholder') as string}

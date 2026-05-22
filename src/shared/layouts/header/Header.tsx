@@ -69,16 +69,16 @@ const Header = ({ t }: HeaderProps) => {
             <LanguageDropdown t={t} />
           </div>
 
-          <div className={styles.ctas}>
-            {/* <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
+          {/* <div className={styles.ctas}>
+            <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
               {t('header.signIn')}
-            </a> */}
-            {/* <Button
+            </a>
+            <Button
               text={t('header.startFree') as string}
               style="fit"
               type="button"
-            /> */}
-          </div>
+            />
+          </div> */}
 
           <MobileMenu
             open={menuOpen}

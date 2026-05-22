@@ -17,7 +17,7 @@
 }
 
 .contactForm__group {
-  @apply w-full flex items-end gap-1;
+  @apply w-full flex items-start lg:items-end gap-1;
 }
 
 .contactForm__extension {

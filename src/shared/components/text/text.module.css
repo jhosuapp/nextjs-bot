@@ -13,7 +13,7 @@
 }
 
 .subtitle_small {
-  @apply text-xl 2xl:text-2xl font-semibold leading-snug;
+  @apply text-lg lg:text-xl font-semibold leading-snug;
 }
 
 .description {

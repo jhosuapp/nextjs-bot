@@ -9,6 +9,7 @@ import { TrustedByStrip } from '@/src/features/home/components/trusted-by-strip/
 import { MainContent } from '@/src/shared/components/main-content/MainContent';
 import { HeroSection } from '../components/hero-section/HeroSection';
 import { ContactForm } from '../components/contact-form/ContactForm';
+import { IntegrationsGrid } from '../components/integrations-grid/IntegrationsGrid';
 
 import styles from './home.module.css';
 
@@ -23,6 +24,7 @@ const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
       <AudienceTabsSection t={t} />
       <ProcessStepsSection t={t} />
       <PricingSection t={t} />
+      <IntegrationsGrid t={t} />
       <FaqSection t={t} />
     </MainContent>
   );

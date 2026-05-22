@@ -12,7 +12,7 @@
 }
 
 .card {
-  @apply relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
+  @apply relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
   background: var(--surface-elevated);
   border-color: var(--border-subtle);
   padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 5rem);
