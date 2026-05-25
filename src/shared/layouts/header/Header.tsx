@@ -64,10 +64,10 @@ const Header = ({ t }: HeaderProps) => {
         </nav>
 
         <div className={styles.actions}>
-          <div className={styles.controls}>
+          {/* <div className={styles.controls}>
             <ThemeToggle t={t} />
             <LanguageDropdown t={t} />
-          </div>
+          </div> */}
 
           {/* <div className={styles.ctas}>
             <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>

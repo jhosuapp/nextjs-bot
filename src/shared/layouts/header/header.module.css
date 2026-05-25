@@ -35,7 +35,7 @@
 }
 
 .navDesktop {
-  @apply hidden lg:flex flex-1 justify-center;
+  @apply hidden lg:flex flex-1 justify-center lg:justify-end;
 }
 
 .actions {

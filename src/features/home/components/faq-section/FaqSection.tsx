@@ -12,11 +12,12 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { homeStaticData } from '@/src/features/home/data/home-content';
 import { Button } from '@/src/shared/components/button/Button';
-
-import styles from './faq-section.module.css';
 import { Text } from '@/src/shared/components/text/Text';
 import { Container } from '../container/Container';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+import styles from './faq-section.module.css';
 
 type Props = { t: ITranslations };
 
@@ -174,8 +175,9 @@ const FaqSection = ({ t }: Props) => {
           </Text>
           <Button
             text={t('faq.contactCta') as string}
-            style="secondary"
+            style="whatsapp"
             type="button"
+            iconRight={ faWhatsapp }
           />
         </FadeIn>
       </Container>

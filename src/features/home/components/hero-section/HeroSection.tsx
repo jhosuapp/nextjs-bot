@@ -41,7 +41,7 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
         <article className={ styles.heroSection__content }>
             <Text
               tag='h1'
-              variant='title'
+              variant='title_small'
               color='secondary'
               delay={{ enter: 0.53, exit: 0.14 }}
               weight='semibold'
@@ -60,14 +60,14 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
               {t('hero.subtitle') as string}
             </Text>
             <Text
-              tag='h2'
+              tag='p'
               variant='description'
               color='muted'
               delay={{ enter: 0.57, exit: 0.12 }}
               weight='normal'
               immediate
             >
-              {t('hero.subtitle') as string}
+              {t('hero.subtitle_small') as string}
             </Text>
             <WrapperMotion delay={{ enter: 0.59, exit: 0.11 }} immediate>
               <div className={ styles.heroSection__buttons }>

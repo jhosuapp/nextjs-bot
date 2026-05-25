@@ -2,7 +2,6 @@ import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import type { GetStaticPropsContext } from "next";
 
-import nextI18NextConfig from "@/next-i18next.config";
 import { HomeView } from "@/src/features/home/views/Home.view";
 import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
 import { PageTransition } from "@/src/shared/layouts/pageTransition/PageTransition";
@@ -27,11 +26,7 @@ export default function Home() {
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
     props: {
-      ...(await serverSideTranslations(
-        locale ?? "es",
-        ["common", "home", "bot"],
-        nextI18NextConfig,
-      )),
+      ...(await serverSideTranslations(locale ?? "es", ["common", "home", "bot"])),
     },
   };
 }

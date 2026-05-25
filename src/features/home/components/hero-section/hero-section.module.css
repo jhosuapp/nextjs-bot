@@ -17,6 +17,10 @@
   @apply w-full md:w-1/2 flex flex-col justify-center gap-4 max-w-lg;
 }
 
+.heroSection__content p {
+  @apply max-w-96;
+}
+
 .heroSection__buttons {
   @apply flex gap-2 md:gap-4 mt-4 md:mt-6 flex-wrap max-w-96;
 }

@@ -159,7 +159,7 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav, activeSection =
                   />
                 </motion.nav>
 
-                <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
+                {/* <motion.div className={styles.divider} variants={groupVariants} aria-hidden="true" />
 
                 <motion.div className={styles.controlsRow} variants={groupVariants}>
                   <div className={styles.controlsLabel}>{t('header.mobileMenu.preferences')}</div>
@@ -167,7 +167,7 @@ const MobileMenu = ({ open, onClose, onToggle, t, translatedNav, activeSection =
                     <ThemeToggle t={t} />
                     <LanguageDropdown t={t} />
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div className={styles.ctas} variants={groupVariants}>
                   {/* <Button

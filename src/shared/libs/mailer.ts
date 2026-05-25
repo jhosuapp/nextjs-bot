@@ -47,7 +47,7 @@ export async function sendMail({
   text,
   replyTo,
 }: SendMailArgs) {
-  const fromEmail = process.env.MAIL_FROM_EMAIL ?? "no-reply@150porciento.ai";
+  const fromEmail = process.env.MAIL_FROM_EMAIL ?? "no-reply@150porciento.com";
   const fromName = process.env.MAIL_FROM_NAME ?? "150%";
 
   return getMailer().sendMail({

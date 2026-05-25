@@ -2,8 +2,9 @@
   "hero": {
     "titleLead": "Creamos ",
     "titleAccent": "Humanika",
-    "titleTrail": " para empresas",
+    "titleTrail": " para empresas que quieren automatizar sus procesos",
     "subtitle": "Agentes inteligentes para web, WhatsApp, ventas, soporte, capacitación y experiencias digitales.",
+    "subtitle_small": "Disponibles en tiempo real desde web, WhatsApp, eventos y pantallas interactivas.",
     "primaryCta": "Solicitar demo",
     "secondaryCta": "Quiero asesoría"
   },
@@ -15,7 +16,7 @@
     "companyPlaceholder": "Nombre de la empresa",
     "emailLabel": "Correo electrónico",
     "emailPlaceholder": "ejemplo@correo.com",
-    "phoneLabel": "Número telefónico",
+    "phoneLabel": "Celular",
     "phonePlaceholder": "3001234567",
     "phoneExtensionLabel": "Extensión (opcional)",
     "phoneExtensionPlaceholder": "57",
