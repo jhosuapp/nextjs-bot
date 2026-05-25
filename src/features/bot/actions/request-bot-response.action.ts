@@ -2,11 +2,11 @@ import {
   MOCK_RESPONSES,
   type BotApiPayload,
   type BotResponse,
-} from '@/src/features/bot/data/bot-content';
+} from "@/src/features/bot/data/bot-content";
 
 const FAILURE_PROBABILITY = 0.05;
-const LATENCY_MS_MIN = 1500;
-const LATENCY_MS_MAX = 2500;
+const LATENCY_MS_MIN = 150000;
+const LATENCY_MS_MAX = 250000;
 
 const rotateIndex = (() => {
   let i = 0;
@@ -19,13 +19,15 @@ const rotateIndex = (() => {
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const requestBotResponse = async ({ input }: BotApiPayload): Promise<BotResponse> => {
+const requestBotResponse = async ({
+  input,
+}: BotApiPayload): Promise<BotResponse> => {
   const latency =
     LATENCY_MS_MIN + Math.random() * (LATENCY_MS_MAX - LATENCY_MS_MIN);
   await wait(latency);
 
   if (Math.random() < FAILURE_PROBABILITY) {
-    throw new Error('mock_endpoint_failure');
+    throw new Error("mock_endpoint_failure");
   }
 
   const base = MOCK_RESPONSES[rotateIndex()];

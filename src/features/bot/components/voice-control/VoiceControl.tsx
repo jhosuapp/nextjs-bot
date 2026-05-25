@@ -49,6 +49,10 @@ const VoiceControl = ({
       : state === 'LISTENING' || state === 'INTRO' || state === 'RESPONDING'
         ? faMicrophone
         : faStop;
+  
+  if(state === 'LISTENING'){
+    return <></>
+  }
 
   return (
     <div className={styles.root}>
@@ -67,7 +71,7 @@ const VoiceControl = ({
           <FontAwesomeIcon icon={icon} className={styles.icon} aria-hidden="true" />
         </span>
       </motion.button>
-      {state !== 'LISTENING' && (
+      {state !== 'THINKING' && (
         <div className={'gl-dropshadow'}>
           {state !== 'IDLE' && (
             <p className={'gl-label'}>{label}</p>

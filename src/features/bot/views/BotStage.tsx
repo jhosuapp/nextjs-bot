@@ -12,6 +12,7 @@ import type { useBotEngine } from '@/src/features/bot/hooks/useBotEngine';
 import { useBotStore } from '@/src/features/bot/stores/bot.store';
 
 import styles from './bot-stage.module.css';
+import { BotSpinner } from '../components/bot-spinner/BotSpinner';
 
 interface Props {
   t: ITranslations;
@@ -49,8 +50,14 @@ const BotStage = ({
       />
 
       <div className={styles.toastSlot}>
+        {engine.state === 'THINKING' && (
+          <div className={`${styles.listening} gl-dropshadow !px-3`}>
+            <BotSpinner />
+          </div>
+        )}
         {engine.state === 'LISTENING' && (
           <div className={`${styles.listening} gl-dropshadow`}>
+            <span className='gl-dot'></span>
             <p className={'gl-label'}>{t('listening.instruction')}</p>
           </div>
         )}

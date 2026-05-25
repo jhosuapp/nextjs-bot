@@ -18,7 +18,7 @@
     "welcome": "Listo cuando tú lo estés"
   },
   "listening": {
-    "instruction": "Escuchando",
+    "instruction": "Te estoy escuchando",
     "interruptHint": "Di \"pregunta\" para interrumpir y hacer una nueva pregunta"
   },
   "intro": {
@@ -54,6 +54,7 @@
   },
   "wakeWords": {
     "start": "hola",
-    "interrupt": "pregunta"
+    "interrupt": "pregunta",
+    "initBot": "Iniciar demo"
   }
 }

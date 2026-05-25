@@ -14,23 +14,27 @@ interface Props {
 
 const StatusIndicator = ({ t, statusKey }: Props): JSX.Element => {
   return (
-    <AnimatePresence mode="wait">
-      {statusKey ? (
-        <motion.div
-          key={statusKey}
-          className={styles.root}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: DURATION.fast, ease: EASE }}
-          role="status"
-          aria-live="polite"
-        >
-          <span className={styles.dot} aria-hidden="true" />
-          <span className={styles.text}>{t(`status.${statusKey}`)}</span>
-        </motion.div>
+    <>
+    {statusKey ? (
+      <div
+        className={`${styles.root} gl-dropshadow`}
+        role="status"
+        aria-live="polite"
+      >
+        <span className={'gl-dot'} aria-hidden="true" />
+          <AnimatePresence mode="wait">
+            <motion.span 
+              transition={{ duration: DURATION.base, ease: EASE }}
+              key={statusKey}
+              initial={{ opacity: 0, y: 9.9 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -9.9 }}
+              className={'gl-label'}
+            >{t(`status.${statusKey}`)}</motion.span>
+          </AnimatePresence>
+      </div>
       ) : null}
-    </AnimatePresence>
+    </>
   );
 };
 

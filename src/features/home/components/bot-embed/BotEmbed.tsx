@@ -82,6 +82,7 @@ const BotEmbed = ({ t }: Props): JSX.Element => {
             aria-label={t('idle.ctaStart') as string}
           >
             <FontAwesomeIcon icon={faPlay} aria-hidden="true" />
+            <span>{ t('wakeWords.initBot') }</span>
           </button>
         )}
       </div>

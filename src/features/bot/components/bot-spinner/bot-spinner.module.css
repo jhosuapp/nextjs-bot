@@ -1,0 +1,16 @@
+@reference "tailwindcss";
+
+.icon {
+  @apply text-lg;
+  color: var(--primary);
+  animation: 1s spinner infinite linear;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

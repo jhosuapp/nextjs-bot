@@ -32,15 +32,7 @@
   @apply absolute top-[10vh] mt-4;
 }
 
-.listening p {
-  @apply text-[1.5vh];
-}
-
 .embedded .listening {
+  @apply mt-0;
   top: 52%;
-  margin-top: 0;
-}
-
-.embedded .listening p {
-  @apply text-sm;
 }

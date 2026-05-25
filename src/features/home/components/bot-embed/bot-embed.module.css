@@ -18,9 +18,17 @@
   @apply absolute inset-0 h-full w-full object-cover;
   z-index: 0;
 }
+.playBtn svg,
+.playBtn span {
+  @apply text-white;
+}
+
+.playBtn span {
+  @apply font-semibold;
+}
 
 .playBtn {
-  @apply absolute z-20 inline-flex h-16 w-16 items-center justify-center rounded-full border-none text-2xl;
+  @apply absolute z-20 inline-flex h-auto w-fit px-3.5 py-2 items-center justify-center rounded-md border-none text-sm text-white gap-2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 import {
   MIN_INPUT_WORDS,
@@ -6,14 +6,14 @@ import {
   VIDEOS,
   WAKE_WORDS_FALLBACK,
   type StatusKey,
-} from '@/src/features/bot/data/bot-content';
-import { requestBotResponse } from '@/src/features/bot/actions/request-bot-response.action';
-import { useBotStore } from '@/src/features/bot/stores/bot.store';
-import { useChatStore } from '@/src/features/bot/stores/chat.store';
-import { useInactivityTimer } from '@/src/features/bot/hooks/useInactivityTimer';
-import { useSpeechRecognition } from '@/src/features/bot/hooks/useSpeechRecognition';
-import { useVideoPlayer } from '@/src/features/bot/hooks/useVideoPlayer';
-import { useWakeWord } from '@/src/features/bot/hooks/useWakeWord';
+} from "@/src/features/bot/data/bot-content";
+import { requestBotResponse } from "@/src/features/bot/actions/request-bot-response.action";
+import { useBotStore } from "@/src/features/bot/stores/bot.store";
+import { useChatStore } from "@/src/features/bot/stores/chat.store";
+import { useInactivityTimer } from "@/src/features/bot/hooks/useInactivityTimer";
+import { useSpeechRecognition } from "@/src/features/bot/hooks/useSpeechRecognition";
+import { useVideoPlayer } from "@/src/features/bot/hooks/useVideoPlayer";
+import { useWakeWord } from "@/src/features/bot/hooks/useWakeWord";
 
 interface UseBotEngineOptions {
   locale: string;
@@ -21,7 +21,11 @@ interface UseBotEngineOptions {
   interruptWord: string;
 }
 
-const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions) => {
+const useBotEngine = ({
+  locale,
+  startWord,
+  interruptWord,
+}: UseBotEngineOptions) => {
   const state = useBotStore((s) => s.state);
   const setState = useBotStore((s) => s.setState);
   const setStatusKey = useBotStore((s) => s.setStatusKey);
@@ -52,9 +56,11 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
       }
       // On unmount during THINKING, the in-flight request becomes orphaned — recover to a stable state.
       const store = useBotStore.getState();
-      if (store.state === 'THINKING') {
+      if (store.state === "THINKING") {
         store.setStatusKey(null);
-        store.setState(store.micPermission === 'granted' ? 'IDLE' : 'PERMISSION_PENDING');
+        store.setState(
+          store.micPermission === "granted" ? "IDLE" : "PERMISSION_PENDING",
+        );
       }
     };
   }, []);
@@ -62,16 +68,16 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
   const transitionToError = useCallback(
     (message: string) => {
       setError(message);
-      setState('ERROR');
+      setState("ERROR");
     },
     [setError, setState],
   );
 
   const sendToBackend = useCallback(
     async (input: string) => {
-      pushMessage({ role: 'user', text: input });
+      pushMessage({ role: "user", text: input });
       setLastInput(input);
-      setState('THINKING');
+      setState("THINKING");
 
       let idx = 0;
       setStatusKey(STATUS_KEYS[0]);
@@ -79,7 +85,7 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
       statusIntervalRef.current = setInterval(() => {
         idx = (idx + 1) % STATUS_KEYS.length;
         setStatusKey(STATUS_KEYS[idx] as StatusKey);
-      }, 900);
+      }, 2000);
 
       try {
         const response = await requestBotResponse({ input, locale });
@@ -88,15 +94,15 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
           statusIntervalRef.current = null;
         }
         setStatusKey(null);
-        pushMessage({ role: 'bot', text: response.text });
+        pushMessage({ role: "bot", text: response.text });
         setBotVideo(response.videoUrl, { loop: false, muted: false });
-        setState('RESPONDING');
+        setState("RESPONDING");
         await videoPlayer.play(response.videoUrl, {
           loop: false,
           muted: false,
           onEnded: () => {
-            if (stateRef.current === 'RESPONDING') {
-              setState('LISTENING');
+            if (stateRef.current === "RESPONDING") {
+              setState("LISTENING");
             }
           },
         });
@@ -105,7 +111,7 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
           clearInterval(statusIntervalRef.current);
           statusIntervalRef.current = null;
         }
-        transitionToError(e instanceof Error ? e.message : 'request_failed');
+        transitionToError(e instanceof Error ? e.message : "request_failed");
       }
     },
     [
@@ -127,16 +133,23 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
       const normalizedInterrupt = interruptWord.toLowerCase();
 
       if (
-        current === 'IDLE' &&
+        current === "IDLE" &&
         (word === normalizedStart || WAKE_WORDS_FALLBACK.start.includes(word))
       ) {
-        setState('INTRO');
+        setState("INTRO");
         return;
       }
 
-      if (word === normalizedInterrupt || WAKE_WORDS_FALLBACK.interrupt.includes(word)) {
-        if (current === 'INTRO' || current === 'RESPONDING' || current === 'THINKING') {
-          setState('LISTENING');
+      if (
+        word === normalizedInterrupt ||
+        WAKE_WORDS_FALLBACK.interrupt.includes(word)
+      ) {
+        if (
+          current === "INTRO" ||
+          current === "RESPONDING" ||
+          current === "THINKING"
+        ) {
+          setState("LISTENING");
         }
       }
     },
@@ -162,7 +175,7 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
       // Wake-word scanning runs in any active state
       const handledByWake = wake.inspect(transcript);
 
-      if (current === 'LISTENING' && isFinal && !handledByWake) {
+      if (current === "LISTENING" && isFinal && !handledByWake) {
         const words = transcript.trim().split(/\s+/).filter(Boolean);
         if (words.length >= MIN_INPUT_WORDS) {
           sendToBackend(transcript.trim());
@@ -175,8 +188,8 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
   const speech = useSpeechRecognition({ locale, onResult: handleSpeechResult });
 
   const start = useCallback(() => {
-    if (stateRef.current === 'IDLE') {
-      setState('INTRO');
+    if (stateRef.current === "IDLE") {
+      setState("INTRO");
     }
   }, [setState]);
 
@@ -198,11 +211,11 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
     clearChat();
     setError(null);
     resetStore();
-    setState(micPermission === 'granted' ? 'IDLE' : 'PERMISSION_PENDING');
+    setState(micPermission === "granted" ? "IDLE" : "PERMISSION_PENDING");
   }, [clearChat, micPermission, resetStore, setError, setState, speech]);
 
   const inactivity = useInactivityTimer({
-    enabled: state !== 'PERMISSION_PENDING' && state !== 'ERROR',
+    enabled: state !== "PERMISSION_PENDING" && state !== "ERROR",
     onTimeout: () => {
       reset();
     },
@@ -210,62 +223,62 @@ const useBotEngine = ({ locale, startWord, interruptWord }: UseBotEngineOptions)
 
   useEffect(() => {
     if (pendingUserInput === null) return;
-    if (state === 'THINKING') return;
+    if (state === "THINKING") return;
     const text = consumeUserInput();
     if (text) submitText(text);
   }, [consumeUserInput, pendingUserInput, state, submitText]);
 
   useEffect(() => {
-    if (state === 'PERMISSION_PENDING' && micPermission === 'granted') {
-      setState('IDLE');
+    if (state === "PERMISSION_PENDING" && micPermission === "granted") {
+      setState("IDLE");
     }
   }, [micPermission, setState, state]);
 
   useEffect(() => {
     inactivity.reset();
-    if (state !== 'THINKING' && statusIntervalRef.current) {
+    if (state !== "THINKING" && statusIntervalRef.current) {
       clearInterval(statusIntervalRef.current);
       statusIntervalRef.current = null;
       setStatusKey(null);
     }
     switch (state) {
-      case 'IDLE': {
+      case "IDLE": {
         setBotVideo(VIDEOS.defaultWait, { loop: true, muted: true });
         videoPlayer.play(VIDEOS.defaultWait, { loop: true, muted: true });
         if (!speech.isListening) speech.start().catch(() => undefined);
         break;
       }
-      case 'INTRO': {
+      case "INTRO": {
         setBotVideo(VIDEOS.intro, { loop: false, muted: false });
         videoPlayer.play(VIDEOS.intro, {
           loop: false,
           muted: false,
           onEnded: () => {
-            if (stateRef.current === 'INTRO') setState('LISTENING');
+            if (stateRef.current === "INTRO") setState("LISTENING");
           },
         });
         if (!speech.isListening) speech.start().catch(() => undefined);
         break;
       }
-      case 'LISTENING': {
+      case "LISTENING": {
         setBotVideo(VIDEOS.defaultWait, { loop: true, muted: true });
         videoPlayer.play(VIDEOS.defaultWait, { loop: true, muted: true });
         if (!speech.isListening) speech.start().catch(() => undefined);
         break;
       }
-      case 'THINKING': {
+      case "THINKING": {
         setBotVideo(VIDEOS.defaultWait, { loop: true, muted: true });
         videoPlayer.play(VIDEOS.defaultWait, { loop: true, muted: true });
         break;
       }
-      case 'RESPONDING': {
+      case "RESPONDING": {
         break;
       }
-      case 'ERROR': {
+      case "ERROR": {
         speech.stop();
         break;
       }
-      case 'PERMISSION_PENDING': {
+      case "PERMISSION_PENDING": {
         speech.stop();
         break;
       }
