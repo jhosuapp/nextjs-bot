@@ -10,6 +10,7 @@ import type { JSX } from 'react';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import type { BotState } from '@/src/features/bot/stores/bot.store';
 
+import { VoiceIndicator } from './VoiceIndicator';
 import styles from './voice-control.module.css';
 
 interface Props {
@@ -50,8 +51,12 @@ const VoiceControl = ({
         ? faMicrophone
         : faStop;
   
-  if(state === 'LISTENING'){
-    return <></>
+  if (state === 'LISTENING') {
+    return (
+      <div className={styles.root}>
+        <VoiceIndicator />
+      </div>
+    );
   }
 
   return (

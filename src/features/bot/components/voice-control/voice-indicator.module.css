@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.row {
+  @apply flex items-center justify-center;
+  gap: 6px;
+  min-height: 72px;
+}
+
+.dot {
+  @apply inline-block rounded-full;
+  transform-origin: center;
+  will-change: transform;
+}
