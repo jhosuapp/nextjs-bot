@@ -172,15 +172,17 @@ const useBotEngine = ({
     (transcript: string, isFinal: boolean) => {
       const current = stateRef.current;
 
-      // Wake-word scanning runs in any active state
-      const handledByWake = wake.inspect(transcript);
-
-      if (current === "LISTENING" && isFinal && !handledByWake) {
+      if (current === "LISTENING") {
+        if (!isFinal) return;
         const words = transcript.trim().split(/\s+/).filter(Boolean);
         if (words.length >= MIN_INPUT_WORDS) {
           sendToBackend(transcript.trim());
         }
+        return;
       }
+
+      // Wake-word scanning runs in every other active state (IDLE, INTRO, RESPONDING, THINKING)
+      wake.inspect(transcript);
     },
     [sendToBackend, wake],
   );
