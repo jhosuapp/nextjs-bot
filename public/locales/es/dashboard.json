@@ -1,0 +1,29 @@
+{
+  "title": "Contactos registrados",
+  "subtitle": "Listado de personas que han contactado a través del formulario.",
+  "filters": {
+    "searchPlaceholder": "Buscar por nombre, empresa, correo o teléfono",
+    "fromLabel": "Desde",
+    "toLabel": "Hasta",
+    "reset": "Limpiar filtros",
+    "resetAria": "Limpiar todos los filtros aplicados"
+  },
+  "table": {
+    "name": "Nombre",
+    "company": "Empresa",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "createdAt": "Fecha de registro",
+    "empty": "Sin resultados",
+    "emptyHint": "Ajusta o limpia los filtros para volver a ver registros."
+  },
+  "pagination": {
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "pageOf": "Página {{page}} de {{totalPages}}",
+    "totalResults": "{{total}} registros"
+  },
+  "status": {
+    "loading": "Actualizando resultados…"
+  }
+}

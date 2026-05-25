@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.dashboard {
+  @apply gap-8;
+}
+
+.header {
+  @apply flex flex-col gap-2;
+}

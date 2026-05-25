@@ -3,20 +3,24 @@ import { motion } from 'framer-motion';
 
 import styles from './wrapper-motion.module.css';
 import { fadeUpMotion, fadeUpTertiaryMotion } from '../../motion/fadeUp.motion';
+import { zoomInMotion } from '../../motion/zoomIn.motion';
 
 
 type WrapperProps = {
   children: React.ReactNode;
   delay: { enter: number, exit: number };
   fadeUpTertiary?: boolean;
+  zoomIn?: boolean;
   immediate?: boolean;
   className?: string;
 }
 
-const WrapperMotion = ({ children, delay, fadeUpTertiary, immediate, className = '' }: WrapperProps): JSX.Element => {
-  const { initial, animate, exit } = fadeUpTertiary
-    ? fadeUpTertiaryMotion(delay.enter, delay.exit)
-    : fadeUpMotion(delay.enter, delay.exit);
+const WrapperMotion = ({ children, delay, fadeUpTertiary, zoomIn, immediate, className = '' }: WrapperProps): JSX.Element => {
+  const { initial, animate, exit } = zoomIn
+    ? zoomInMotion(delay?.enter, delay?.exit)
+    : fadeUpTertiary
+      ? fadeUpTertiaryMotion(delay?.enter, delay?.exit)
+      : fadeUpMotion(delay?.enter, delay?.exit);
 
   return (
     <article className={`${styles.wrapperMotion} ${className}`}>

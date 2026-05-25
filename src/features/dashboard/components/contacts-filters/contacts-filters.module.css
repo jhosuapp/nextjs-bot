@@ -1,0 +1,74 @@
+@reference "tailwindcss";
+
+.filters {
+  @apply flex w-full flex-wrap items-end gap-4;
+}
+
+.searchWrap {
+  @apply flex-1;
+  min-width: 240px;
+}
+
+.searchField {
+  @apply w-full;
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.dateGroup {
+  @apply flex flex-wrap items-end gap-3;
+}
+
+.dateField {
+  @apply flex flex-col gap-2;
+  min-width: 160px;
+}
+
+.dateLabel {
+  @apply text-sm font-semibold;
+  color: var(--text-secondary);
+}
+
+.dateInput {
+  @apply px-4 py-2 min-h-11 rounded-md outline-none text-sm transition-all border;
+  border-color: var(--text-secondary);
+  background: transparent;
+  color: var(--text-strong);
+}
+
+.dateInput:focus {
+  @apply border-2;
+  border-color: var(--primary);
+}
+
+.resetButton {
+  @apply inline-flex items-center gap-2 px-4 py-2 min-h-11 rounded-md text-sm font-semibold transition-colors;
+  background: var(--surface-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.resetButton:hover {
+  color: var(--text-strong);
+  border-color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .filters {
+    @apply gap-3;
+  }
+  .searchWrap,
+  .dateField {
+    @apply w-full;
+    min-width: 0;
+  }
+  .dateGroup {
+    @apply w-full;
+  }
+  .dateField {
+    @apply flex-1;
+  }
+}

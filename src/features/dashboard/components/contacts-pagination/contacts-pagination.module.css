@@ -1,0 +1,42 @@
+@reference "tailwindcss";
+
+.pagination {
+  @apply flex w-full flex-wrap items-center justify-between gap-4;
+}
+
+.controls {
+  @apply inline-flex items-center gap-2;
+}
+
+.pageButton {
+  @apply inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm font-semibold transition-all;
+  background: var(--surface-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.pageButton:hover:not(:disabled) {
+  color: var(--text-strong);
+  border-color: var(--text-secondary);
+}
+
+.pageButton:disabled {
+  @apply opacity-40 cursor-not-allowed;
+}
+
+.pageIndicator {
+  @apply px-3 py-2 text-sm font-medium;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .pagination {
+    @apply justify-center;
+  }
+  .controls {
+    @apply w-full justify-between;
+  }
+  .pageButton span {
+    @apply hidden;
+  }
+}

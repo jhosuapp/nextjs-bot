@@ -3,7 +3,9 @@
     "homeTitle": "Home | 150%",
     "homeDescription": "Smart avatars for web, WhatsApp, training, sales and BTL experiences.",
     "botTitle": "Conversational bot | 150%",
-    "botDescription": "Talk to an AI avatar that responds in real time. Natural conversation by voice and chat."
+    "botDescription": "Talk to an AI avatar that responds in real time. Natural conversation by voice and chat.",
+    "dashboardTitle": "Contacts | 150%",
+    "dashboardDescription": "Internal panel with contacts submitted through the form."
   },
   "nav": {
     "bot": "Bot",

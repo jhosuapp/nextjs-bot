@@ -3,7 +3,9 @@
     "homeTitle": "Inicio | 150%",
     "homeDescription": "Avatares inteligentes para web, WhatsApp, capacitación, ventas y experiencias BTL.",
     "botTitle": "Bot conversacional | 150%",
-    "botDescription": "Habla con un avatar de IA que te responde en tiempo real. Conversación natural por voz y por chat."
+    "botDescription": "Habla con un avatar de IA que te responde en tiempo real. Conversación natural por voz y por chat.",
+    "dashboardTitle": "Contactos | 150%",
+    "dashboardDescription": "Panel interno con los contactos registrados desde el formulario."
   },
   "nav": {
     "bot": "Bot",

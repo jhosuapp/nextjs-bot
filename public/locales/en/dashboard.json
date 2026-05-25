@@ -1,0 +1,29 @@
+{
+  "title": "Registered contacts",
+  "subtitle": "List of people who reached out through the contact form.",
+  "filters": {
+    "searchPlaceholder": "Search by name, company, email or phone",
+    "fromLabel": "From",
+    "toLabel": "To",
+    "reset": "Clear filters",
+    "resetAria": "Clear all applied filters"
+  },
+  "table": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "createdAt": "Registered at",
+    "empty": "No results",
+    "emptyHint": "Adjust or clear the filters to see records again."
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{page}} of {{totalPages}}",
+    "totalResults": "{{total}} records"
+  },
+  "status": {
+    "loading": "Updating results…"
+  }
+}
