@@ -2,6 +2,7 @@ import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import type { GetServerSidePropsContext } from "next";
 
+import nextI18NextConfig from "@/next-i18next.config";
 import { DashboardView } from "@/src/features/dashboard/views/Dashboard.view";
 import type { ContactsResponse } from "@/src/features/dashboard/validations/contacts-query.validation";
 import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
@@ -55,10 +56,11 @@ export async function getServerSideProps({
 
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? "es", [
-        "common",
-        "dashboard",
-      ])),
+      ...(await serverSideTranslations(
+        locale ?? "es",
+        ["common", "dashboard"],
+        nextI18NextConfig,
+      )),
       initial,
     },
   };

@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import nextI18NextConfig from "@/next-i18next.config";
+
 import { jakarta } from "@/src/config/fonts/fonts";
 import { CustomScrollbar } from "@/src/shared/components/custom-scrollbar/CustomScrollbar";
 import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
@@ -66,4 +68,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(App);
+export default appWithTranslation(App, nextI18NextConfig);

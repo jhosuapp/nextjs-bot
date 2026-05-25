@@ -16,8 +16,8 @@ const contactFormValidation = z.object({
     .max(100, "Ingrese máximo 100 caracteres"),
   phone_number: z
     .string()
-    .min(9, "Ingrese mínimo 9 caracteres")
-    .max(9, "Ingrese máximo 9 caracteres")
+    .min(10, "Ingrese mínimo 10 caracteres")
+    .max(10, "Ingrese máximo 10 caracteres")
     .regex(/^[+\d\s\-().]+$/, "Ingrese un número válido"),
   phone_extension: z
     .string()

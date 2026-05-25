@@ -152,7 +152,7 @@ const ContactForm = ({ t }: ContactFormProps):JSX.Element => {
                   placeholder={t('contact.phonePlaceholder') as string}
                   style="primary"
                   feedback={ errors.phone_number?.message }
-                  maxLength={9}
+                  maxLength={10}
                   onKeyDown={(e) => allowOnlyNumbers(e, { separateThousands: true })}
 
                   delayAnimate={0.57}

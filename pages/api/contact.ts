@@ -69,7 +69,7 @@ async function handler(
     await prisma.contactForm.create({ data: trimmed });
 
     const submittedAt = new Date();
-    void Promise.allSettled([
+    const mailResults = await Promise.allSettled([
       sendMail({
         to: trimmed.email,
         ...buildUserConfirmationEmail({ name: trimmed.name }),
@@ -79,13 +79,13 @@ async function handler(
         replyTo: trimmed.email,
         ...buildAdminNotificationEmail({ ...trimmed, submittedAt }),
       }),
-    ]).then((results) => {
-      results.forEach((r, i) => {
-        if (r.status === "rejected") {
-          const target = i === 0 ? "user" : "admin";
-          console.error(`[contact] ${target} mail failed:`, r.reason);
-        }
-      });
+    ]);
+
+    mailResults.forEach((r, i) => {
+      if (r.status === "rejected") {
+        const target = i === 0 ? "user" : "admin";
+        console.error(`[contact] ${target} mail failed:`, r.reason);
+      }
     });
 
     return res.status(201).json({ success: true });

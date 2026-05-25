@@ -18,22 +18,11 @@ export function getMailer(): Transporter {
     );
   }
 
-  // Brevo's southamerica-east regional nodes present certs whose altnames only
-  // include *.sendinblue.com (legacy, pre-rebrand). Forcing servername to the
-  // legacy hostname makes TLS validation pass on every regional node Brevo
-  // routes you to, regardless of whether the env has the .brevo.com or
-  // .sendinblue.com hostname.
-  const isBrevo =
-    host.endsWith("brevo.com") || host.endsWith("sendinblue.com");
-
   const transporter = nodemailer.createTransport({
     host,
     port,
     secure: port === 465,
     auth: { user, pass },
-    ...(isBrevo && {
-      tls: { servername: "smtp-relay.sendinblue.com" },
-    }),
   });
 
   if (process.env.NODE_ENV !== "production") {
