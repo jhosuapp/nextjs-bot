@@ -1,0 +1,36 @@
+@reference "tailwindcss";
+
+.root {
+  @apply w-full min-h-screen;
+  background: var(--background);
+}
+
+.hero {
+  @apply w-full py-16 lg:py-24;
+  background: linear-gradient(180deg, var(--bg-hero) 0%, var(--background) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.heroInner {
+  @apply flex flex-col gap-3;
+  max-width: 48rem;
+}
+
+.heroTitle {
+  @apply text-3xl lg:text-4xl 2xl:text-5xl font-bold m-0;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.heroMeta {
+  @apply text-sm m-0;
+  color: var(--text-muted);
+}
+
+.content {
+  @apply py-12 lg:py-16;
+}
+
+.contentInner {
+  max-width: 48rem;
+}

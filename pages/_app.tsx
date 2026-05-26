@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { jakarta } from "@/src/config/fonts/fonts";
+import { CookieConsent } from "@/src/shared/components/cookie-consent/CookieConsent";
 import { CustomScrollbar } from "@/src/shared/components/custom-scrollbar/CustomScrollbar";
 import { SmoothScroll } from "@/src/shared/components/smoth-scroll/SmoothScroll";
 import { ThemeTransitionOverlay } from "@/src/shared/components/theme-transition/ThemeTransitionOverlay";
@@ -59,6 +60,7 @@ function App({ Component, pageProps }: AppProps) {
           </motion.div>
         </AnimatePresence>
         <Footer t={t} />
+        <CookieConsent t={t} />
         <ThemeTransitionOverlay />
         <Toast t={t} />
       </div>

@@ -2,8 +2,7 @@ import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faGithub,
   faLinkedinIn,
-  faXTwitter,
-  faYoutube,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 
 type FooterLinkStatic = {
@@ -76,15 +75,22 @@ const footerStaticData: FooterStaticData = {
   },
   bottom: {
     socials: [
-      { key: "twitter", name: "X (Twitter)", href: "#", icon: faXTwitter },
-      { key: "linkedin", name: "LinkedIn", href: "#", icon: faLinkedinIn },
-      { key: "github", name: "GitHub", href: "#", icon: faGithub },
-      { key: "youtube", name: "YouTube", href: "#", icon: faYoutube },
+      {
+        key: "linkedin",
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/150porciento/",
+        icon: faLinkedinIn,
+      },
+      {
+        key: "github",
+        name: "GitHub",
+        href: "https://github.com/150PorcientoCol/",
+        icon: faGithub,
+      },
     ],
     legalLinks: [
-      { key: "privacy", href: "#privacy" },
-      { key: "terms", href: "#terms" },
-      { key: "cookies", href: "#cookies" },
+      { key: "privacy", href: "/privacy" },
+      { key: "terms", href: "/terms" },
     ],
   },
 };

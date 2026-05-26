@@ -1,0 +1,170 @@
+{
+  "seo": {
+    "title": "Política de Privacidad | 150%",
+    "description": "Conoce cómo 150% recopila, usa y protege tu información personal."
+  },
+  "hero": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 26 de mayo de 2026"
+  },
+  "sections": [
+    {
+      "type": "p",
+      "text": "En 150% nos tomamos tu privacidad en serio. Esta Política de Privacidad explica qué información recopilamos, cómo la usamos y qué derechos tienes sobre ella. Al utilizar nuestros servicios aceptas las prácticas descritas en este documento."
+    },
+    {
+      "type": "h2",
+      "text": "1. Información que recopilamos"
+    },
+    {
+      "type": "p",
+      "text": "Recopilamos información que nos proporcionas directamente cuando usas nuestra plataforma, por ejemplo:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Nombre y apellidos",
+        "Dirección de correo electrónico",
+        "Número de teléfono",
+        "Nombre de empresa y cargo",
+        "Información de facturación y pago",
+        "Mensajes y contenidos que introduces en la plataforma"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "También recopilamos información de forma automática cuando navegas por nuestra web:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Dirección IP y ubicación aproximada",
+        "Tipo de dispositivo, sistema operativo y navegador",
+        "Páginas visitadas, tiempo de permanencia y acciones realizadas",
+        "Identificadores de cookies y tecnologías similares"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "2. Cómo usamos tu información"
+    },
+    {
+      "type": "p",
+      "text": "Utilizamos la información recopilada para los siguientes fines:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Proporcionar, operar y mejorar nuestros servicios",
+        "Procesar transacciones y gestionar tu cuenta",
+        "Enviarte comunicaciones sobre tu cuenta y actualizaciones del producto",
+        "Responder a tus consultas y solicitudes de soporte",
+        "Analizar el uso de la plataforma para mejorar la experiencia",
+        "Cumplir obligaciones legales y prevenir fraudes"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "3. Cómo compartimos tu información"
+    },
+    {
+      "type": "p",
+      "text": "No vendemos ni alquilamos tu información personal a terceros. Podemos compartir datos en los siguientes casos:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Con proveedores de servicios que nos ayudan a operar la plataforma (procesadores de pago, hosting, análisis)",
+        "Cuando lo exige la ley, una orden judicial o un proceso legal válido",
+        "Para proteger los derechos, la propiedad o la seguridad de 150%, nuestros usuarios o el público",
+        "En el contexto de una fusión, adquisición o venta de activos, previa notificación"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "4. Retención de datos"
+    },
+    {
+      "type": "p",
+      "text": "Conservamos tu información personal durante el tiempo necesario para prestarte el servicio y cumplir las obligaciones legales aplicables. Cuando eliminas tu cuenta, borramos o anonimizamos tus datos en un plazo de 30 días, salvo que la ley nos exija conservarlos durante más tiempo."
+    },
+    {
+      "type": "h2",
+      "text": "5. Tus derechos"
+    },
+    {
+      "type": "p",
+      "text": "Dependiendo de tu lugar de residencia, puedes tener los siguientes derechos respecto a tus datos personales:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Acceso: solicitar una copia de los datos que tenemos sobre ti",
+        "Rectificación: corregir información inexacta o incompleta",
+        "Eliminación: solicitar que borremos tus datos personales",
+        "Oposición: oponerte al procesamiento de tus datos en determinadas circunstancias",
+        "Portabilidad: recibir tus datos en un formato estructurado y legible",
+        "Retirada de consentimiento: cuando el tratamiento se base en tu consentimiento"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Para ejercer cualquiera de estos derechos, contáctanos en privacy@150porciento.ai. Responderemos en un plazo máximo de 30 días."
+    },
+    {
+      "type": "h2",
+      "text": "6. Cookies"
+    },
+    {
+      "type": "p",
+      "text": "Utilizamos cookies y tecnologías similares para mejorar tu experiencia, analizar el uso de la plataforma y personalizar el contenido. Puedes gestionar tus preferencias de cookies en cualquier momento desde el banner de cookies o la configuración de tu navegador."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Cookies esenciales: necesarias para el funcionamiento básico del sitio",
+        "Cookies analíticas: nos ayudan a entender cómo se usa la plataforma (solo con tu consentimiento)",
+        "Cookies de preferencias: recuerdan tus ajustes como el idioma o el tema visual"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "7. Seguridad"
+    },
+    {
+      "type": "p",
+      "text": "Implementamos medidas técnicas y organizativas adecuadas para proteger tu información contra el acceso no autorizado, la pérdida o la alteración. Utilizamos cifrado en tránsito (TLS) y en reposo, y limitamos el acceso a los datos únicamente al personal que lo necesita."
+    },
+    {
+      "type": "h2",
+      "text": "8. Transferencias internacionales"
+    },
+    {
+      "type": "p",
+      "text": "Nuestros servidores están alojados en la Unión Europea. Si tratamos datos de usuarios de otras regiones, lo hacemos bajo los mecanismos de transferencia legalmente reconocidos (como las cláusulas contractuales tipo de la UE)."
+    },
+    {
+      "type": "h2",
+      "text": "9. Cambios en esta política"
+    },
+    {
+      "type": "p",
+      "text": "Podemos actualizar esta política periódicamente. Te notificaremos cualquier cambio significativo por correo electrónico o mediante un aviso destacado en la plataforma. El uso continuado del servicio tras la notificación implica la aceptación de la nueva política."
+    },
+    {
+      "type": "h2",
+      "text": "10. Contacto"
+    },
+    {
+      "type": "p",
+      "text": "Si tienes preguntas sobre esta Política de Privacidad o sobre el tratamiento de tus datos, puedes contactarnos en:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Correo electrónico: privacy@150porciento.ai",
+        "Dirección: 150% AI, Madrid, España"
+      ]
+    }
+  ]
+}

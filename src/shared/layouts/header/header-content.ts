@@ -1,6 +1,7 @@
 type NavLinkStatic = {
   key: string;
   href: string;
+  external?: boolean;
 };
 
 type LanguageOption = {
@@ -25,6 +26,7 @@ const headerStaticData: HeaderStaticData = {
     { key: "process", href: "/#process" },
     { key: "pricing", href: "/#pricing" },
     { key: "faqs", href: "/#faqs" },
+    { key: "about150", href: "https://150porciento.com/", external: true },
   ],
   primaryCta: { href: "#get-started" },
   secondaryCta: { href: "#signin" },

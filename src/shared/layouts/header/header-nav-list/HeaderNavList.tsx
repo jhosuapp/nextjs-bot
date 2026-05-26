@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 import styles from './header-nav-list.module.css';
 
-type NavLink = { label: string; href: string };
+type NavLink = { label: string; href: string; external?: boolean };
 
 type HeaderNavListProps = {
   items: ReadonlyArray<NavLink>;
@@ -70,14 +70,25 @@ const HeaderNavList = ({
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >
-          <a
-            href={item.href}
-            className={`${styles.link} ${item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? styles.linkActive : ''}`}
-            aria-current={item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? 'true' : undefined}
-            onClick={(e)=> handleClick(e)}
-          >
-            {item.label}
-          </a>
+          {item.external ? (
+            <a
+              href={item.href}
+              className={styles.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.label}
+            </a>
+          ) : (
+            <a
+              href={item.href}
+              className={`${styles.link} ${item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? styles.linkActive : ''}`}
+              aria-current={item.href.match(/^(?:\/)?#(.+)$/)?.[1] === activeSection ? 'true' : undefined}
+              onClick={(e) => handleClick(e)}
+            >
+              {item.label}
+            </a>
+          )}
         </motion.li>
       ))}
     </ul>

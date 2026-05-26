@@ -7,12 +7,23 @@
     "dashboardTitle": "Contacts | 150%",
     "dashboardDescription": "Internal panel with contacts submitted through the form."
   },
+  "cookies": {
+    "banner": {
+      "title": "We use cookies",
+      "description": "We use essential cookies to keep the site running and, with your consent, analytics cookies to improve your experience.",
+      "accept": "Accept all",
+      "decline": "Essentials only",
+      "learnMore": "Learn more",
+      "learnMoreAria": "Read our privacy and cookies policy"
+    }
+  },
   "nav": {
     "bot": "Bot",
     "solutions": "Solutions",
     "process": "How it works",
     "pricing": "Pricing",
-    "faqs": "FAQs"
+    "faqs": "FAQs",
+    "about150": "What is 150%?"
   },
   "header": {
     "skipLink": "Skip to main content",

@@ -7,12 +7,23 @@
     "dashboardTitle": "Contactos | 150%",
     "dashboardDescription": "Panel interno con los contactos registrados desde el formulario."
   },
+  "cookies": {
+    "banner": {
+      "title": "Usamos cookies",
+      "description": "Utilizamos cookies esenciales para que el sitio funcione correctamente y, con tu consentimiento, cookies analíticas para mejorar tu experiencia.",
+      "accept": "Aceptar todas",
+      "decline": "Solo esenciales",
+      "learnMore": "Más información",
+      "learnMoreAria": "Leer nuestra política de privacidad y cookies"
+    }
+  },
   "nav": {
     "bot": "Bot",
     "solutions": "Soluciones",
     "process": "Cómo funciona",
     "pricing": "Precios",
-    "faqs": "FAQs"
+    "faqs": "FAQs",
+    "about150": "¿Qué es 150%?"
   },
   "header": {
     "skipLink": "Ir al contenido principal",

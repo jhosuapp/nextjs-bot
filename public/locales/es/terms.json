@@ -1,0 +1,155 @@
+{
+  "seo": {
+    "title": "Términos y Condiciones | 150%",
+    "description": "Lee los términos y condiciones que rigen el uso de los servicios de 150%."
+  },
+  "hero": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: 26 de mayo de 2026"
+  },
+  "sections": [
+    {
+      "type": "p",
+      "text": "Estos Términos y Condiciones («Términos») regulan el acceso y uso de los servicios ofrecidos por 150% AI («150%», «nosotros» o «nuestro»). Al crear una cuenta o utilizar la plataforma, aceptas quedar vinculado por estos Términos. Si no estás de acuerdo, no uses el servicio."
+    },
+    {
+      "type": "h2",
+      "text": "1. Descripción del servicio"
+    },
+    {
+      "type": "p",
+      "text": "150% proporciona una plataforma de avatares inteligentes para comunicación empresarial, que incluye agentes conversacionales por voz y texto, integraciones con canales de mensajería y herramientas de análisis. El servicio se ofrece bajo un modelo de suscripción con diferentes planes."
+    },
+    {
+      "type": "h2",
+      "text": "2. Elegibilidad y registro"
+    },
+    {
+      "type": "p",
+      "text": "Para usar el servicio debes:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Tener al menos 18 años o la mayoría de edad legal en tu jurisdicción",
+        "Proporcionar información de registro veraz, completa y actualizada",
+        "Mantener la confidencialidad de las credenciales de tu cuenta",
+        "Notificarnos inmediatamente ante cualquier uso no autorizado de tu cuenta"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Eres responsable de todas las actividades que ocurran bajo tu cuenta."
+    },
+    {
+      "type": "h2",
+      "text": "3. Uso aceptable"
+    },
+    {
+      "type": "p",
+      "text": "Al usar la plataforma, te comprometes a NO:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Usar el servicio para actividades ilegales, fraudulentas o dañinas",
+        "Distribuir contenido que infrinja derechos de propiedad intelectual",
+        "Transmitir malware, spam o cualquier código malicioso",
+        "Intentar acceder de forma no autorizada a sistemas o datos de otros usuarios",
+        "Reproducir, duplicar o revender partes del servicio sin autorización expresa",
+        "Usar el servicio para entrenar modelos de inteligencia artificial de terceros"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "4. Suscripción y pagos"
+    },
+    {
+      "type": "p",
+      "text": "El acceso a ciertas funciones requiere una suscripción de pago. Los precios están disponibles en nuestra página de precios y pueden cambiar con previo aviso de 30 días. Las suscripciones se renuevan automáticamente salvo que las canceles antes del fin del período actual. No realizamos reembolsos por períodos parciales salvo lo exigido por ley."
+    },
+    {
+      "type": "h2",
+      "text": "5. Propiedad intelectual"
+    },
+    {
+      "type": "p",
+      "text": "150% y sus licenciantes son titulares de todos los derechos de propiedad intelectual sobre la plataforma, el software, los diseños, las marcas y los contenidos generados por 150%. Se te otorga una licencia limitada, no exclusiva, intransferible y revocable para usar el servicio de acuerdo con estos Términos."
+    },
+    {
+      "type": "p",
+      "text": "Tú conservas la propiedad de los contenidos que introduces en la plataforma. Al hacerlo, nos otorgas una licencia mundial para usarlos exclusivamente con el fin de prestarte el servicio."
+    },
+    {
+      "type": "h2",
+      "text": "6. Privacidad"
+    },
+    {
+      "type": "p",
+      "text": "El uso de tus datos personales se rige por nuestra Política de Privacidad, que forma parte integrante de estos Términos. Al aceptar los Términos, también aceptas nuestra Política de Privacidad."
+    },
+    {
+      "type": "h2",
+      "text": "7. Exención de garantías"
+    },
+    {
+      "type": "p",
+      "text": "El servicio se proporciona «tal cual» y «según disponibilidad», sin garantías de ningún tipo, expresas o implícitas. No garantizamos que el servicio sea ininterrumpido, libre de errores o que cumpla tus expectativas específicas. Utilizas el servicio bajo tu propio riesgo."
+    },
+    {
+      "type": "h2",
+      "text": "8. Limitación de responsabilidad"
+    },
+    {
+      "type": "p",
+      "text": "En la máxima medida permitida por la ley, 150% no será responsable de daños indirectos, incidentales, especiales, consecuentes o punitivos, incluidos la pérdida de beneficios, datos o fondo de comercio. La responsabilidad total de 150% derivada de estos Términos no superará el importe que hayas abonado en los 12 meses anteriores al evento que da lugar a la reclamación."
+    },
+    {
+      "type": "h2",
+      "text": "9. Indemnización"
+    },
+    {
+      "type": "p",
+      "text": "Aceptas indemnizar y mantener indemne a 150%, sus directores, empleados y agentes frente a cualquier reclamación, daño, pérdida o gasto (incluidos honorarios de abogados) derivado de tu uso del servicio, del incumplimiento de estos Términos o de la infracción de derechos de terceros."
+    },
+    {
+      "type": "h2",
+      "text": "10. Terminación"
+    },
+    {
+      "type": "p",
+      "text": "Podemos suspender o cancelar tu acceso al servicio en cualquier momento y por cualquier motivo, incluyendo el incumplimiento de estos Términos, con o sin previo aviso. Puedes cancelar tu cuenta en cualquier momento desde la configuración de tu perfil. Tras la cancelación, conservaremos tus datos durante 30 días antes de eliminarlos definitivamente."
+    },
+    {
+      "type": "h2",
+      "text": "11. Ley aplicable y jurisdicción"
+    },
+    {
+      "type": "p",
+      "text": "Estos Términos se rigen por las leyes de España. Cualquier disputa se someterá a la jurisdicción exclusiva de los tribunales de Madrid, salvo que la normativa de protección al consumidor de tu país establezca otra cosa."
+    },
+    {
+      "type": "h2",
+      "text": "12. Cambios en los Términos"
+    },
+    {
+      "type": "p",
+      "text": "Podemos modificar estos Términos en cualquier momento. Te notificaremos los cambios significativos con al menos 15 días de antelación por correo electrónico o mediante un aviso en la plataforma. El uso continuado del servicio tras la entrada en vigor de los cambios implica la aceptación de los nuevos Términos."
+    },
+    {
+      "type": "h2",
+      "text": "13. Contacto"
+    },
+    {
+      "type": "p",
+      "text": "Si tienes preguntas sobre estos Términos, contáctanos en:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Correo electrónico: legal@150porciento.ai",
+        "Dirección: 150% AI, Madrid, España"
+      ]
+    }
+  ]
+}

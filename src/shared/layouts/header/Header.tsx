@@ -8,10 +8,7 @@ import { useActiveSection } from '@/src/shared/hooks/useActiveSection';
 import { headerStaticData } from './header-content';
 import { HeaderBrand } from './header-brand/HeaderBrand';
 import { HeaderNavList } from './header-nav-list/HeaderNavList';
-import { LanguageDropdown } from './language-dropdown/LanguageDropdown';
 import { MobileMenu } from './mobile-menu/MobileMenu';
-import { ThemeToggle } from './theme-toggle/ThemeToggle';
-import { Button } from '../../components/button/Button';
 
 import styles from './header.module.css';
 
@@ -41,6 +38,7 @@ const Header = ({ t }: HeaderProps) => {
   const translatedNav = headerStaticData.nav.map((item) => ({
     label: t(`nav.${item.key}`) as string,
     href: item.href,
+    external: item.external,
   }));
 
   return (

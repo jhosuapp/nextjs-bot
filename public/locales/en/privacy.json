@@ -1,0 +1,170 @@
+{
+  "seo": {
+    "title": "Privacy Policy | 150%",
+    "description": "Learn how 150% collects, uses and protects your personal information."
+  },
+  "hero": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 26, 2026"
+  },
+  "sections": [
+    {
+      "type": "p",
+      "text": "At 150% we take your privacy seriously. This Privacy Policy explains what information we collect, how we use it and what rights you have over it. By using our services you accept the practices described in this document."
+    },
+    {
+      "type": "h2",
+      "text": "1. Information we collect"
+    },
+    {
+      "type": "p",
+      "text": "We collect information you provide directly when using our platform, such as:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "First and last name",
+        "Email address",
+        "Phone number",
+        "Company name and job title",
+        "Billing and payment information",
+        "Messages and content you enter into the platform"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "We also collect information automatically when you browse our site:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "IP address and approximate location",
+        "Device type, operating system and browser",
+        "Pages visited, time spent and actions taken",
+        "Cookie identifiers and similar technologies"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "2. How we use your information"
+    },
+    {
+      "type": "p",
+      "text": "We use the collected information for the following purposes:"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Provide, operate and improve our services",
+        "Process transactions and manage your account",
+        "Send you communications about your account and product updates",
+        "Respond to your inquiries and support requests",
+        "Analyze platform usage to improve the experience",
+        "Comply with legal obligations and prevent fraud"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "3. How we share your information"
+    },
+    {
+      "type": "p",
+      "text": "We do not sell or rent your personal information to third parties. We may share data in the following cases:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "With service providers who help us operate the platform (payment processors, hosting, analytics)",
+        "When required by law, court order or valid legal process",
+        "To protect the rights, property or safety of 150%, our users or the public",
+        "In the context of a merger, acquisition or asset sale, with prior notice"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "4. Data retention"
+    },
+    {
+      "type": "p",
+      "text": "We retain your personal information for as long as necessary to provide the service and comply with applicable legal obligations. When you delete your account, we delete or anonymize your data within 30 days, unless the law requires us to retain it for longer."
+    },
+    {
+      "type": "h2",
+      "text": "5. Your rights"
+    },
+    {
+      "type": "p",
+      "text": "Depending on your place of residence, you may have the following rights regarding your personal data:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Access: request a copy of the data we hold about you",
+        "Rectification: correct inaccurate or incomplete information",
+        "Erasure: request that we delete your personal data",
+        "Objection: object to the processing of your data in certain circumstances",
+        "Portability: receive your data in a structured, machine-readable format",
+        "Withdrawal of consent: where processing is based on your consent"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "To exercise any of these rights, contact us at privacy@150porciento.ai. We will respond within a maximum of 30 days."
+    },
+    {
+      "type": "h2",
+      "text": "6. Cookies"
+    },
+    {
+      "type": "p",
+      "text": "We use cookies and similar technologies to improve your experience, analyze platform usage and personalize content. You can manage your cookie preferences at any time from the cookie banner or your browser settings."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Essential cookies: necessary for the basic functioning of the site",
+        "Analytics cookies: help us understand how the platform is used (only with your consent)",
+        "Preference cookies: remember your settings such as language or visual theme"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "7. Security"
+    },
+    {
+      "type": "p",
+      "text": "We implement appropriate technical and organizational measures to protect your information against unauthorized access, loss or alteration. We use encryption in transit (TLS) and at rest, and limit access to data only to staff who need it."
+    },
+    {
+      "type": "h2",
+      "text": "8. International transfers"
+    },
+    {
+      "type": "p",
+      "text": "Our servers are hosted in the European Union. If we process data from users in other regions, we do so under legally recognized transfer mechanisms (such as EU standard contractual clauses)."
+    },
+    {
+      "type": "h2",
+      "text": "9. Changes to this policy"
+    },
+    {
+      "type": "p",
+      "text": "We may update this policy periodically. We will notify you of any significant changes by email or through a prominent notice on the platform. Continued use of the service after notification implies acceptance of the new policy."
+    },
+    {
+      "type": "h2",
+      "text": "10. Contact"
+    },
+    {
+      "type": "p",
+      "text": "If you have questions about this Privacy Policy or about how your data is processed, you can contact us at:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Email: privacy@150porciento.ai",
+        "Address: 150% AI, Madrid, Spain"
+      ]
+    }
+  ]
+}

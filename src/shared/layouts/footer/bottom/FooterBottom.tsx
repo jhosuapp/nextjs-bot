@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
+import { useRouter } from 'next/router';
+import { useLenisStore } from '@/src/shared/stores/lenis.store';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
 import { Container } from '@/src/features/home/components/container/Container';
@@ -11,6 +14,18 @@ type FooterBottomProps = { t: ITranslations };
 const FooterBottom = ({ t }: FooterBottomProps) => {
   const { bottom } = footerStaticData;
   const year = new Date().getFullYear();
+  const lenis = useLenisStore(state => state.lenis);
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href') || '/';
+    console.log(href);
+    lenis?.scrollTo(0, { duration: 0.7 });
+    setTimeout(() => {
+      router.push(href);
+    }, 700);
+  }
 
   return (
     <div className={styles.root}>
@@ -22,7 +37,7 @@ const FooterBottom = ({ t }: FooterBottomProps) => {
         <ul className={styles.legal} aria-label={t('footer.bottom.legalsAria') as string}>
           {bottom.legalLinks.map((link) => (
             <li key={link.key}>
-              <a href={link.href} className={styles.legalLink}>
+              <a onClick={ (e)=> handleClick(e)} href={ link.href } className={styles.legalLink}>
                 {t(`footer.bottom.legal.${link.key}`)}
               </a>
             </li>
