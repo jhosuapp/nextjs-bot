@@ -11,6 +11,10 @@
   padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
 }
 
+.image {
+  @apply absolute !w-full !h-full object-cover;
+}
+
 .card {
   @apply relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center gap-12 overflow-hidden rounded-3xl border;
   background: var(--surface-elevated);

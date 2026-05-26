@@ -18,6 +18,7 @@ import { ProcessStep } from './ProcessStep';
 import styles from './process-steps-section.module.css';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import Image from 'next/image';
 
 type Props = { t: ITranslations };
 
@@ -82,6 +83,7 @@ const ProcessStepsSection = ({ t }: Props) => {
       aria-label={`${t('process.titleLead')}${t('process.titleAccent')}`}
     >
       <FadeIn className={styles.sticky} amount={0.5}>
+        <Image className={ styles.image } src={'/images/bg.jpg'} alt='test' width={1920} height={1220}/>
         {!reduce &&
           homeStaticData.process.floatIcons.map((item) => (
             <FloatIcon
