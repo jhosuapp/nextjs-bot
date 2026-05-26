@@ -6,7 +6,7 @@
 }
 
 .heroSection__wrapper {
-  @apply items-center lg:!flex-row gap-10 pb-28;
+  @apply items-center lg:!flex-row gap-10 !pb-28;
 }
 
 .heroSection__bot {
