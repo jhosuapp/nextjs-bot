@@ -82,7 +82,7 @@ const ProcessStepsSection = ({ t }: Props) => {
       className={styles.wrapper}
       aria-label={`${t('process.titleLead')}${t('process.titleAccent')}`}
     >
-      <FadeIn className={styles.sticky} amount={0.5}>
+      <div className={styles.sticky}>
         <Image className={ styles.image } src={'/images/bg.jpg'} alt='test' width={1920} height={1220}/>
         {!reduce &&
           homeStaticData.process.floatIcons.map((item) => (
@@ -141,7 +141,20 @@ const ProcessStepsSection = ({ t }: Props) => {
             </div>
           </WrapperMotion>
         </div>
-      </FadeIn>
+        <div className={ `${styles.card} ${styles.cardSecondary} gl-dropshadow` }>
+          <Text
+            tag="p"
+            variant="description_small"
+            color="muted"
+            weight="semibold"
+            delay={{ enter: 0.1, exit: 0.1 }}
+            className="text-center"
+            fadeUpTertiary
+          >
+            <strong className='gl-degradete-text'>En Humanika@150%</strong> desarrollamos agentes inteligentes conectados a canales, datos y operaciones reales de negocio. Combinamos <strong className='gl-degradete-text'>inteligencia artificial</strong>, automatización, contenido dinámico y experiencias conversacionales para crear soluciones capaces de atender usuarios, ejecutar procesos, impulsar ventas y operar campañas a escala en web, WhatsApp y ecosistemas enterprise. Nuestros avatars son solo una pequeña capa visible de la infraestructura de interacción inteligente que construimos para empresas.
+          </Text>
+        </div>
+      </div>
     </section>
   );
 };

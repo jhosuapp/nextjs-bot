@@ -7,7 +7,9 @@
 }
 
 .sticky {
-  @apply sticky top-0 flex h-screen w-full items-center justify-center;
+  @apply sticky flex w-full flex-col items-center justify-center gap-2;
+  height: calc(100svh - var(--h-header));
+  top: var(--h-header);
   padding: clamp(1rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem);
 }
 
@@ -21,6 +23,11 @@
   border-color: var(--border-subtle);
   padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 5rem);
   box-shadow: 0 40px 120px -40px rgba(0, 22, 67, 0.22);
+}
+
+.cardSecondary {
+  @apply !hidden lg:!flex;
+  padding: clamp(2rem, 2vw, 3rem) clamp(1.5rem, 3vw, 3rem);
 }
 
 .floatIcon {
@@ -106,6 +113,8 @@
   @apply relative flex items-center justify-center;
   width: clamp(56px, 9vw, 72px);
   height: clamp(56px, 9vw, 72px);
+  min-width: clamp(56px, 9vw, 72px);
+  min-height: clamp(56px, 9vw, 72px);
 }
 
 .halo {
