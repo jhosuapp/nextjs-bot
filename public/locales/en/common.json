@@ -23,6 +23,7 @@
     "process": "How it works",
     "pricing": "Pricing",
     "faqs": "FAQs",
+    "trust": "Trust",
     "about150": "What is 150%?"
   },
   "header": {
@@ -75,7 +76,8 @@
         "solutions": "Solutions",
         "process": "Process",
         "pricing": "Pricing",
-        "faqs": "FAQs"
+        "faqs": "FAQs",
+        "trust": "Trust"
       },
       "company": {
         "title": "Company",

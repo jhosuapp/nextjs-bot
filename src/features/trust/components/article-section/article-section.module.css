@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+.section {
+  @apply flex flex-col gap-4;
+}
+
+.title {
+  @apply m-0;
+}

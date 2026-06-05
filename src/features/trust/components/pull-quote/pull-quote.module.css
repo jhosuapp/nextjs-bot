@@ -1,0 +1,15 @@
+@reference "tailwindcss";
+
+.quote {
+  @apply relative m-0 pl-6 py-2;
+  border-left: 4px solid var(--primary);
+}
+
+.text {
+  @apply text-xl lg:text-2xl font-semibold leading-snug m-0;
+  color: var(--text-strong);
+}
+
+.accent {
+  @apply block text-xl lg:text-2xl font-semibold leading-snug mt-2 mb-0;
+}

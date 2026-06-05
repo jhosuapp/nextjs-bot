@@ -1,0 +1,55 @@
+@reference "tailwindcss";
+
+.hero {
+  @apply w-full;
+  background: var(--background);
+}
+
+.heroInner {
+  @apply flex flex-col items-center text-center gap-7 mx-auto;
+  max-width: 48rem;
+}
+
+.eyebrow {
+  @apply tracking-[0.28em];
+}
+
+.title {
+  @apply m-0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.07;
+  letter-spacing: -0.01em;
+}
+
+.dividerWrap {
+  @apply flex justify-center w-full;
+}
+
+.divider {
+  @apply block h-0.5 w-14 rounded-full;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--tertiary) 100%);
+}
+
+.lead {
+  @apply flex flex-col gap-4 mx-auto;
+  max-width: 40rem;
+}
+
+/* Featured image slot */
+.heroMediaWrap {
+  @apply w-full mx-auto mt-12 lg:mt-16;
+  max-width: 56rem;
+}
+
+.heroMedia {
+  @apply relative w-full overflow-hidden rounded-2xl m-0;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-section);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 60px -30px rgba(11, 16, 36, 0.45);
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}

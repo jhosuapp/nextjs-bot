@@ -1,0 +1,69 @@
+{
+  "seo": {
+    "title": "Building trust, not just avatars | 150%",
+    "description": "Why a digital agent's success doesn't depend on hyper-realism, but on how trustworthy, useful and relevant it is for people."
+  },
+  "hero": {
+    "eyebrow": "Perspective",
+    "titleLead": "The problem isn't creating an avatar. The problem is ",
+    "titleAccent": "building trust",
+    "titleTrail": ".",
+    "imageAlt": "AI digital agent interacting with a person",
+    "lead": [
+      "Over the past few years we've seen an explosion of virtual assistants, digital avatars and artificial intelligence agents. Yet most conversations on the topic remain focused on the technology: which model they use, which voice engine powers them or how realistic they look.",
+      "The reality is that a digital agent's success doesn't depend on how human it seems, but on how trustworthy, useful and relevant it turns out to be for people."
+    ]
+  },
+  "hiperrealismo": {
+    "title": "The mistake of chasing hyper-realism",
+    "paragraphs": [
+      "Many organizations believe the goal is to build an avatar indistinguishable from a human being. Paradoxically, this tends to produce the opposite effect.",
+      "When an avatar reaches a very high but not perfect level of realism, it enters what's known as the «uncanny valley»: a feeling of unease that appears when something looks human, but our brain detects that it isn't.",
+      "For this reason, the most successful digital agents of the future probably won't be exact copies of people. They'll be a new visual category: human enough to create empathy and digital enough to clearly communicate that we're interacting with an artificial intelligence."
+    ]
+  },
+  "aiNative": {
+    "title": "From the corporate avatar to the AI Native Human",
+    "paragraphs": [
+      "For years the stereotype of the corporate virtual advisor prevailed: blue shirt, perfect smile and the look of a bank executive.",
+      "That visual language is being left behind.",
+      "Newer generations feel more comfortable with digital identities inspired by technology, design and digital culture. Characters that seem to have been born in a world where artificial intelligence is part of everyday life."
+    ],
+    "shortLines": "They're not robots. Nor are they traditional executives.",
+    "closingLead": "They are what we might call ",
+    "closingTerm": "AI Native Humans",
+    "closingTrail": ": digital professionals that represent a new relationship between humans and technology."
+  },
+  "comportamiento": {
+    "title": "Trust is built through behavior, not graphics",
+    "intro": "An avatar builds trust when it:",
+    "bullets": [
+      "Understands the context.",
+      "Responds accurately.",
+      "Acknowledges its limits.",
+      "Escalates to a human when needed.",
+      "Keeps a consistent personality."
+    ],
+    "paragraphs": [
+      "Voice, tone and usefulness matter far more than the number of polygons or the quality of the facial animation."
+    ],
+    "quote": "People remember how an interaction made them feel. They don't remember which artificial intelligence model was behind it."
+  },
+  "futuro": {
+    "title": "The future of digital agents",
+    "paragraphs": [
+      "We believe digital agents will evolve from simple conversational interfaces into true specialized collaborators.",
+      "Agents that sell, train, accompany, guide and solve problems.",
+      "Agents present on WhatsApp, websites, applications, interactive screens, kiosks and immersive experiences.",
+      "The question is no longer whether companies will use digital agents.",
+      "The question is how human the experiences these agents are able to create will be."
+    ],
+    "quote": "Because in the end, the best artificial intelligence isn't the one that looks most like a person.",
+    "quoteAccent": "It's the one that helps people achieve more."
+  },
+  "cta": {
+    "title": "Ready to create experiences that build trust?",
+    "description": "Let's talk about how a digital agent can help your company sell, train and support your customers.",
+    "button": "Chat on WhatsApp"
+  }
+}

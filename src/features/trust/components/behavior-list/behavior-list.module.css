@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1;
+}
+
+.item {
+  @apply flex items-center gap-3 rounded-xl px-4 py-3;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+}
+
+.icon {
+  @apply text-base shrink-0;
+  color: var(--primary);
+}
+
+.text {
+  @apply text-sm lg:text-base font-medium leading-snug;
+  color: var(--text-strong);
+}

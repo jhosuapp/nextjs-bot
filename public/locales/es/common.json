@@ -23,6 +23,7 @@
     "process": "Cómo funciona",
     "pricing": "Precios",
     "faqs": "FAQs",
+    "trust": "Confianza",
     "about150": "¿Qué es 150%?"
   },
   "header": {
@@ -75,7 +76,8 @@
         "solutions": "Soluciones",
         "process": "Proceso",
         "pricing": "Precios",
-        "faqs": "Preguntas frecuentes"
+        "faqs": "Preguntas frecuentes",
+        "trust": "Confianza"
       },
       "company": {
         "title": "Empresa",

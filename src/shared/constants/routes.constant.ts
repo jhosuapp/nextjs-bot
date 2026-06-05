@@ -3,4 +3,5 @@ export const routes: Record<string, string> = {
   "/login": "Login",
   "/privacy": "Privacidad",
   "/terms": "Términos",
+  "/crear-confianza": "Confianza",
 };

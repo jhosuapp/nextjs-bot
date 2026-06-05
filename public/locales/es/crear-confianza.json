@@ -1,0 +1,69 @@
+{
+  "seo": {
+    "title": "Crear confianza, no solo avatares | 150%",
+    "description": "Por qué el éxito de un agente digital no depende del hiperrealismo, sino de la confianza, la utilidad y la relevancia para las personas."
+  },
+  "hero": {
+    "eyebrow": "Perspectiva",
+    "titleLead": "El problema no es crear un avatar. El problema es ",
+    "titleAccent": "crear confianza",
+    "titleTrail": ".",
+    "imageAlt": "Agente digital de IA interactuando con una persona",
+    "lead": [
+      "Durante los últimos años hemos visto una explosión de asistentes virtuales, avatares digitales y agentes de inteligencia artificial. Sin embargo, la mayoría de las conversaciones sobre este tema siguen enfocadas en la tecnología: qué modelo utilizan, qué motor de voz los impulsa o qué tan realista es su apariencia.",
+      "La realidad es que el éxito de un agente digital no depende de qué tan humano parezca, sino de qué tan confiable, útil y relevante resulte para las personas."
+    ]
+  },
+  "hiperrealismo": {
+    "title": "El error de perseguir el hiperrealismo",
+    "paragraphs": [
+      "Muchas organizaciones creen que el objetivo es construir un avatar indistinguible de un ser humano. Paradójicamente, esto suele generar el efecto contrario.",
+      "Cuando un avatar alcanza un nivel de realismo muy alto, pero no perfecto, entra en lo que se conoce como el «uncanny valley»: una sensación de incomodidad que aparece cuando algo parece humano, pero nuestro cerebro detecta que no lo es.",
+      "Por esta razón, los agentes digitales más exitosos del futuro probablemente no serán copias exactas de las personas. Serán una nueva categoría visual: suficientemente humanos para generar empatía y suficientemente digitales para comunicar claramente que estamos interactuando con una inteligencia artificial."
+    ]
+  },
+  "aiNative": {
+    "title": "Del avatar corporativo al AI Native Human",
+    "paragraphs": [
+      "Durante años predominó el estereotipo del asesor virtual corporativo: camisa azul, sonrisa perfecta y apariencia de ejecutivo de banco.",
+      "Ese lenguaje visual está quedando atrás.",
+      "Las nuevas generaciones se sienten más cómodas con identidades digitales inspiradas en la tecnología, el diseño y la cultura digital. Personajes que parecen haber nacido en un mundo donde la inteligencia artificial forma parte de la vida cotidiana."
+    ],
+    "shortLines": "No son robots. Tampoco son ejecutivos tradicionales.",
+    "closingLead": "Son lo que podríamos llamar ",
+    "closingTerm": "AI Native Humans",
+    "closingTrail": ": profesionales digitales que representan una nueva relación entre humanos y tecnología."
+  },
+  "comportamiento": {
+    "title": "La confianza se construye con comportamiento, no con gráficos",
+    "intro": "Un avatar genera confianza cuando:",
+    "bullets": [
+      "Entiende el contexto.",
+      "Responde con precisión.",
+      "Reconoce sus límites.",
+      "Escala a un humano cuando es necesario.",
+      "Mantiene una personalidad consistente."
+    ],
+    "paragraphs": [
+      "La voz, el tono y la utilidad son mucho más importantes que la cantidad de polígonos o la calidad de la animación facial."
+    ],
+    "quote": "Las personas recuerdan cómo las hizo sentir una interacción. No recuerdan qué modelo de inteligencia artificial estaba detrás."
+  },
+  "futuro": {
+    "title": "El futuro de los agentes digitales",
+    "paragraphs": [
+      "Creemos que los agentes digitales evolucionarán desde simples interfaces conversacionales hacia verdaderos colaboradores especializados.",
+      "Agentes que venden, capacitan, acompañan, orientan y resuelven problemas.",
+      "Agentes presentes en WhatsApp, sitios web, aplicaciones, pantallas interactivas, kioscos y experiencias inmersivas.",
+      "La pregunta ya no es si las empresas utilizarán agentes digitales.",
+      "La pregunta es qué tan humanas serán las experiencias que estos agentes serán capaces de crear."
+    ],
+    "quote": "Porque al final, la mejor inteligencia artificial no es la que más parece una persona.",
+    "quoteAccent": "Es la que ayuda a las personas a lograr más."
+  },
+  "cta": {
+    "title": "¿Listo para crear experiencias que generen confianza?",
+    "description": "Conversemos sobre cómo un agente digital puede ayudar a tu empresa a vender, capacitar y acompañar a tus clientes.",
+    "button": "Hablar por WhatsApp"
+  }
+}
