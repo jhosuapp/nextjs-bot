@@ -69,29 +69,20 @@
     },
     "nav": {
       "ariaLabel": "Footer navigation",
-      "product": {
-        "title": "Product",
-        "avatars": "Avatars",
-        "realtime": "Real-time agents",
-        "integrations": "Integrations",
+      "explore": {
+        "title": "Explore",
+        "bot": "Bot",
+        "solutions": "Solutions",
+        "process": "Process",
         "pricing": "Pricing",
-        "changelog": "Changelog"
+        "faqs": "FAQs"
       },
       "company": {
         "title": "Company",
-        "about": "About",
-        "customers": "Customers",
-        "careers": "Careers",
-        "press": "Press",
+        "digitalTransformation": "Digital transformation",
+        "services": "Services",
+        "blog": "Blog",
         "contact": "Contact"
-      },
-      "resources": {
-        "title": "Resources",
-        "docs": "Docs",
-        "api": "API reference",
-        "help": "Help center",
-        "status": "Status",
-        "security": "Security"
       }
     },
     "bottom": {

@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { footerStaticData } from '@/src/shared/layouts/footer/footer-content';
 import { useThemeStore } from '@/src/shared/stores/theme.store';
+import { useLenisStore } from '@/src/shared/stores/lenis.store';
 import { Container } from '@/src/features/home/components/container/Container';
 
 import styles from './footer-nav.module.css';
@@ -15,6 +17,27 @@ type FooterNavProps = { t: ITranslations };
 const FooterNav = ({ t }: FooterNavProps) => {
   const { brand, nav } = footerStaticData;
   const theme = useThemeStore(state => state.theme);
+  const lenis = useLenisStore(state => state.lenis);
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href') || '/';
+    const hashMatch = href.match(/^(?:\/)?#(.+)$/);
+
+    if (hashMatch) {
+      const isHome = router.pathname === '/';
+      if (isHome) {
+        lenis?.scrollTo(`#${hashMatch[1]}`, { duration: 0.9, offset: -80 });
+      } else {
+        router.push(href);
+      }
+      return;
+    }
+
+    lenis?.scrollTo(0, { duration: 0.7 });
+    setTimeout(() => router.push(href), 700);
+  };
 
   return (
     <Container className={styles.root} padding='md'>
@@ -49,7 +72,7 @@ const FooterNav = ({ t }: FooterNavProps) => {
                     className={styles.link}
                     {...(link.external
                       ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
+                      : { onClick: handleClick })}
                   >
                     <span>{t(`footer.nav.${column.key}.${link.key}`)}</span>
                     {link.external ? (

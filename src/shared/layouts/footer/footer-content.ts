@@ -42,33 +42,38 @@ const footerStaticData: FooterStaticData = {
   nav: {
     columns: [
       {
-        key: "product",
+        key: "explore",
         links: [
-          { key: "avatars", href: "#avatars" },
-          { key: "realtime", href: "#realtime" },
-          { key: "integrations", href: "#integrations" },
-          { key: "pricing", href: "#pricing" },
-          { key: "changelog", href: "#changelog" },
+          { key: "bot", href: "/#hero" },
+          { key: "solutions", href: "/#solutions" },
+          { key: "process", href: "/#process" },
+          { key: "pricing", href: "/#pricing" },
+          { key: "faqs", href: "/#faqs" },
         ],
       },
       {
         key: "company",
         links: [
-          { key: "about", href: "#about" },
-          { key: "customers", href: "#customers" },
-          { key: "careers", href: "#careers" },
-          { key: "press", href: "#press" },
-          { key: "contact", href: "#contact" },
-        ],
-      },
-      {
-        key: "resources",
-        links: [
-          { key: "docs", href: "#docs" },
-          { key: "api", href: "#api" },
-          { key: "help", href: "#help" },
-          { key: "status", href: "#status", external: true },
-          { key: "security", href: "#security" },
+          {
+            key: "digitalTransformation",
+            href: "https://150porciento.com/digital-transformation/",
+            external: true,
+          },
+          {
+            key: "services",
+            href: "https://150porciento.com/digital-agency-services/",
+            external: true,
+          },
+          {
+            key: "blog",
+            href: "https://150porciento.com/blog",
+            external: true,
+          },
+          {
+            key: "contact",
+            href: "https://150porciento.com/contact-us/",
+            external: true,
+          },
         ],
       },
     ],

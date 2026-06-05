@@ -69,29 +69,20 @@
     },
     "nav": {
       "ariaLabel": "Navegación del pie de página",
-      "product": {
-        "title": "Producto",
-        "avatars": "Avatares",
-        "realtime": "Agentes en tiempo real",
-        "integrations": "Integraciones",
+      "explore": {
+        "title": "Explorar",
+        "bot": "Bot",
+        "solutions": "Soluciones",
+        "process": "Proceso",
         "pricing": "Precios",
-        "changelog": "Registro de cambios"
+        "faqs": "Preguntas frecuentes"
       },
       "company": {
         "title": "Empresa",
-        "about": "Acerca de",
-        "customers": "Clientes",
-        "careers": "Empleos",
-        "press": "Prensa",
+        "digitalTransformation": "Transformación digital",
+        "services": "Servicios",
+        "blog": "Blog",
         "contact": "Contacto"
-      },
-      "resources": {
-        "title": "Recursos",
-        "docs": "Documentación",
-        "api": "Referencia API",
-        "help": "Centro de ayuda",
-        "status": "Estado",
-        "security": "Seguridad"
       }
     },
     "bottom": {
