@@ -1,7 +1,22 @@
 @reference "tailwindcss";
 
 .section {
-  @apply flex flex-col gap-4;
+  @apply flex flex-col gap-4 scroll-mt-28;
+}
+
+.kicker {
+  @apply flex items-center gap-3;
+}
+
+.index {
+  @apply text-sm font-bold leading-none;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.2em];
+  color: var(--text-muted);
 }
 
 .title {

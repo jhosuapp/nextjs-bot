@@ -1,0 +1,7 @@
+@reference "tailwindcss";
+
+.bar {
+  @apply fixed top-0 left-0 right-0 z-50 h-1 origin-left;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--tertiary) 100%);
+  transform: scaleX(0);
+}

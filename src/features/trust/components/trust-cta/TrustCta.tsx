@@ -18,42 +18,41 @@ const TrustCta = ({ t }: TrustCtaProps): JSX.Element => {
     window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
 
   return (
-    <Container>
-      <div className={styles.inner}>
-        <FadeIn className={styles.card} y={24}>
-          <div className={styles.copy}>
-            <Text
-              tag="h2"
-              variant="title_small"
-              color="secondary"
-              weight="bold"
-              delay={{ enter: 0, exit: 0 }}
-              immediate
-            >
-              {t('cta.title') as string}
-            </Text>
-            <Text
-              tag="p"
-              variant="description"
-              color="muted"
-              delay={{ enter: 0, exit: 0 }}
-              immediate
-            >
-              {t('cta.description') as string}
-            </Text>
-          </div>
-          <WrapperMotion delay={{ enter: 0, exit: 0 }} immediate>
-            <Button
-              text={t('cta.button') as string}
-              style="whatsapp"
-              type="button"
-              iconRight={faWhatsapp}
-              onClick={openWhatsApp}
-            />
-          </WrapperMotion>
-        </FadeIn>
-      </div>
-    </Container>
+    <div className={styles.inner}>
+      <FadeIn className={styles.card} y={24}>
+        <div className={styles.glow} aria-hidden="true" />
+        <div className={styles.copy}>
+          <Text
+            tag="h2"
+            variant="title_small"
+            color="secondary"
+            weight="bold"
+            delay={{ enter: 0, exit: 0 }}
+            immediate
+          >
+            {t('cta.title') as string}
+          </Text>
+          <Text
+            tag="p"
+            variant="description"
+            color="muted"
+            delay={{ enter: 0, exit: 0 }}
+            immediate
+          >
+            {t('cta.description') as string}
+          </Text>
+        </div>
+        <WrapperMotion delay={{ enter: 0, exit: 0 }} immediate>
+          <Button
+            text={t('cta.button') as string}
+            style="whatsapp"
+            type="button"
+            iconRight={faWhatsapp}
+            onClick={openWhatsApp}
+          />
+        </WrapperMotion>
+      </FadeIn>
+    </div>
   );
 };
 

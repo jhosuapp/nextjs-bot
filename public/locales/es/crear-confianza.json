@@ -9,12 +9,26 @@
     "titleAccent": "crear confianza",
     "titleTrail": ".",
     "imageAlt": "Agente digital de IA interactuando con una persona",
+    "meta": {
+      "readingTime": "5 min de lectura",
+      "date": "Junio 2026",
+      "author": "Equipo 150%"
+    },
     "lead": [
       "Durante los últimos años hemos visto una explosión de asistentes virtuales, avatares digitales y agentes de inteligencia artificial. Sin embargo, la mayoría de las conversaciones sobre este tema siguen enfocadas en la tecnología: qué modelo utilizan, qué motor de voz los impulsa o qué tan realista es su apariencia.",
       "La realidad es que el éxito de un agente digital no depende de qué tan humano parezca, sino de qué tan confiable, útil y relevante resulte para las personas."
     ]
   },
+  "toc": {
+    "title": "En este artículo",
+    "hiperrealismo": "El hiperrealismo",
+    "aiNative": "AI Native Human",
+    "comportamiento": "Comportamiento",
+    "futuro": "El futuro",
+    "canales": "Canales"
+  },
   "hiperrealismo": {
+    "eyebrow": "El problema",
     "title": "El error de perseguir el hiperrealismo",
     "paragraphs": [
       "Muchas organizaciones creen que el objetivo es construir un avatar indistinguible de un ser humano. Paradójicamente, esto suele generar el efecto contrario.",
@@ -23,6 +37,7 @@
     ]
   },
   "aiNative": {
+    "eyebrow": "El cambio",
     "title": "Del avatar corporativo al AI Native Human",
     "paragraphs": [
       "Durante años predominó el estereotipo del asesor virtual corporativo: camisa azul, sonrisa perfecta y apariencia de ejecutivo de banco.",
@@ -34,7 +49,30 @@
     "closingTerm": "AI Native Humans",
     "closingTrail": ": profesionales digitales que representan una nueva relación entre humanos y tecnología."
   },
+  "comparison": {
+    "eyebrow": "Antes y después",
+    "title": "Dos formas de pensar un agente digital",
+    "corporativo": {
+      "label": "Avatar corporativo",
+      "items": [
+        "Camisa azul y sonrisa de catálogo",
+        "Busca el hiperrealismo y cae en el uncanny valley",
+        "Estética de ejecutivo de banco",
+        "Diseñado para impresionar"
+      ]
+    },
+    "aiNative": {
+      "label": "AI Native Human",
+      "items": [
+        "Identidad nativa digital",
+        "Suficientemente humano para generar empatía",
+        "Claramente una IA, sin fingir lo contrario",
+        "Diseñado para ayudar"
+      ]
+    }
+  },
   "comportamiento": {
+    "eyebrow": "La clave",
     "title": "La confianza se construye con comportamiento, no con gráficos",
     "intro": "Un avatar genera confianza cuando:",
     "bullets": [
@@ -50,16 +88,37 @@
     "quote": "Las personas recuerdan cómo las hizo sentir una interacción. No recuerdan qué modelo de inteligencia artificial estaba detrás."
   },
   "futuro": {
+    "eyebrow": "El futuro",
     "title": "El futuro de los agentes digitales",
     "paragraphs": [
       "Creemos que los agentes digitales evolucionarán desde simples interfaces conversacionales hacia verdaderos colaboradores especializados.",
       "Agentes que venden, capacitan, acompañan, orientan y resuelven problemas.",
-      "Agentes presentes en WhatsApp, sitios web, aplicaciones, pantallas interactivas, kioscos y experiencias inmersivas.",
       "La pregunta ya no es si las empresas utilizarán agentes digitales.",
       "La pregunta es qué tan humanas serán las experiencias que estos agentes serán capaces de crear."
     ],
     "quote": "Porque al final, la mejor inteligencia artificial no es la que más parece una persona.",
     "quoteAccent": "Es la que ayuda a las personas a lograr más."
+  },
+  "channels": {
+    "eyebrow": "Omnicanal",
+    "title": "Dónde viven los agentes",
+    "description": "Una misma personalidad, presente en cada punto de contacto con tus clientes.",
+    "items": {
+      "whatsapp": "WhatsApp",
+      "web": "Sitios web",
+      "apps": "Aplicaciones",
+      "screens": "Pantallas interactivas",
+      "kiosks": "Kioscos",
+      "immersive": "Experiencias inmersivas"
+    }
+  },
+  "takeaways": {
+    "title": "En resumen",
+    "items": [
+      "El éxito de un agente no depende del hiperrealismo, sino de la confianza que genera.",
+      "Los AI Native Humans son suficientemente humanos para empatizar y claramente digitales para no engañar.",
+      "La confianza se construye con comportamiento —contexto, precisión y límites—, no con polígonos."
+    ]
   },
   "cta": {
     "title": "¿Listo para crear experiencias que generen confianza?",

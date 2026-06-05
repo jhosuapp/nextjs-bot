@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.meta {
+  @apply flex flex-wrap items-center justify-center gap-x-5 gap-y-2 m-0 p-0 list-none;
+}
+
+.item {
+  @apply relative flex items-center gap-2 text-sm m-0;
+  color: var(--text-muted);
+}
+
+/* Dot separator between items */
+.item:not(:last-child)::after {
+  content: '';
+  @apply absolute -right-[0.7rem] h-1 w-1 rounded-full;
+  background: var(--border-subtle);
+}
+
+.icon {
+  @apply text-xs;
+  color: var(--primary);
+}

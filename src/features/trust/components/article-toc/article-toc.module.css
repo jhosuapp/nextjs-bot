@@ -1,0 +1,44 @@
+@reference "tailwindcss";
+
+.toc {
+  @apply hidden lg:flex flex-col gap-3 sticky self-start;
+  top: 7rem;
+}
+
+.title {
+  @apply text-xs font-semibold uppercase tracking-[0.18em] m-0 mb-1;
+  color: var(--text-muted);
+}
+
+.list {
+  @apply flex flex-col gap-1 m-0 p-0 list-none;
+}
+
+.link {
+  @apply flex items-center gap-2.5 w-full text-left text-sm rounded-lg px-2 py-1.5 cursor-pointer bg-transparent border-0 transition-colors duration-200;
+  color: var(--text-muted);
+}
+
+.link:hover {
+  color: var(--text-strong);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.marker {
+  @apply h-1.5 w-1.5 rounded-full shrink-0 transition-all duration-200;
+  background: var(--border-subtle);
+}
+
+.linkActive {
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.linkActive .marker {
+  background: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 177, 215, 0.18);
+}

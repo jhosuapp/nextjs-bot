@@ -6,13 +6,27 @@
 }
 
 .card {
-  @apply flex flex-col items-start gap-5 rounded-3xl px-7 py-10 lg:px-12 lg:py-14;
+  @apply relative overflow-hidden flex flex-col items-start gap-5 rounded-3xl px-7 py-10 lg:px-12 lg:py-14;
   background: linear-gradient(
     135deg,
     var(--bg-section) 0%,
     var(--surface-elevated) 100%
   );
   border: 1px solid var(--border-subtle);
+}
+
+.glow {
+  @apply pointer-events-none absolute -top-16 right-0 h-48 w-72;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(0, 177, 215, 0.16),
+    transparent 70%
+  );
+}
+
+.copy,
+.card > :global(.wrapperMotion) {
+  @apply relative;
 }
 
 .copy {

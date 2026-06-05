@@ -9,12 +9,26 @@
     "titleAccent": "building trust",
     "titleTrail": ".",
     "imageAlt": "AI digital agent interacting with a person",
+    "meta": {
+      "readingTime": "5 min read",
+      "date": "June 2026",
+      "author": "150% Team"
+    },
     "lead": [
       "Over the past few years we've seen an explosion of virtual assistants, digital avatars and artificial intelligence agents. Yet most conversations on the topic remain focused on the technology: which model they use, which voice engine powers them or how realistic they look.",
       "The reality is that a digital agent's success doesn't depend on how human it seems, but on how trustworthy, useful and relevant it turns out to be for people."
     ]
   },
+  "toc": {
+    "title": "In this article",
+    "hiperrealismo": "Hyper-realism",
+    "aiNative": "AI Native Human",
+    "comportamiento": "Behavior",
+    "futuro": "The future",
+    "canales": "Channels"
+  },
   "hiperrealismo": {
+    "eyebrow": "The problem",
     "title": "The mistake of chasing hyper-realism",
     "paragraphs": [
       "Many organizations believe the goal is to build an avatar indistinguishable from a human being. Paradoxically, this tends to produce the opposite effect.",
@@ -23,6 +37,7 @@
     ]
   },
   "aiNative": {
+    "eyebrow": "The shift",
     "title": "From the corporate avatar to the AI Native Human",
     "paragraphs": [
       "For years the stereotype of the corporate virtual advisor prevailed: blue shirt, perfect smile and the look of a bank executive.",
@@ -34,7 +49,30 @@
     "closingTerm": "AI Native Humans",
     "closingTrail": ": digital professionals that represent a new relationship between humans and technology."
   },
+  "comparison": {
+    "eyebrow": "Before and after",
+    "title": "Two ways to think about a digital agent",
+    "corporativo": {
+      "label": "Corporate avatar",
+      "items": [
+        "Blue shirt and catalog smile",
+        "Chases hyper-realism and falls into the uncanny valley",
+        "Bank-executive aesthetic",
+        "Designed to impress"
+      ]
+    },
+    "aiNative": {
+      "label": "AI Native Human",
+      "items": [
+        "Digital-native identity",
+        "Human enough to create empathy",
+        "Clearly an AI, without pretending otherwise",
+        "Designed to help"
+      ]
+    }
+  },
   "comportamiento": {
+    "eyebrow": "The key",
     "title": "Trust is built through behavior, not graphics",
     "intro": "An avatar builds trust when it:",
     "bullets": [
@@ -50,16 +88,37 @@
     "quote": "People remember how an interaction made them feel. They don't remember which artificial intelligence model was behind it."
   },
   "futuro": {
+    "eyebrow": "The future",
     "title": "The future of digital agents",
     "paragraphs": [
       "We believe digital agents will evolve from simple conversational interfaces into true specialized collaborators.",
       "Agents that sell, train, accompany, guide and solve problems.",
-      "Agents present on WhatsApp, websites, applications, interactive screens, kiosks and immersive experiences.",
       "The question is no longer whether companies will use digital agents.",
       "The question is how human the experiences these agents are able to create will be."
     ],
     "quote": "Because in the end, the best artificial intelligence isn't the one that looks most like a person.",
     "quoteAccent": "It's the one that helps people achieve more."
+  },
+  "channels": {
+    "eyebrow": "Omnichannel",
+    "title": "Where agents live",
+    "description": "One personality, present at every touchpoint with your customers.",
+    "items": {
+      "whatsapp": "WhatsApp",
+      "web": "Websites",
+      "apps": "Applications",
+      "screens": "Interactive screens",
+      "kiosks": "Kiosks",
+      "immersive": "Immersive experiences"
+    }
+  },
+  "takeaways": {
+    "title": "In short",
+    "items": [
+      "An agent's success doesn't depend on hyper-realism, but on the trust it builds.",
+      "AI Native Humans are human enough to empathize and clearly digital enough not to deceive.",
+      "Trust is built through behavior —context, accuracy and limits—, not polygons."
+    ]
   },
   "cta": {
     "title": "Ready to create experiences that build trust?",

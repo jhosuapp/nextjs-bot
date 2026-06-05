@@ -5,6 +5,7 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { Container } from '@/src/features/home/components/container/Container';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
+import { ArticleMeta } from '@/src/features/trust/components/article-meta/ArticleMeta';
 
 import styles from './trust-hero.module.css';
 
@@ -53,6 +54,10 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
             <span className={styles.divider} aria-hidden="true" />
           </WrapperMotion>
 
+          <WrapperMotion delay={{ enter: 0.58, exit: 0.12 }} immediate>
+            <ArticleMeta t={t} />
+          </WrapperMotion>
+
           <div className={styles.lead}>
             {lead.map((paragraph, index) => (
               <Text
@@ -84,6 +89,7 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
               className={styles.heroImage}
               priority
             />
+            <span className={styles.heroOverlay} aria-hidden="true" />
           </figure>
         </WrapperMotion>
       </Container>

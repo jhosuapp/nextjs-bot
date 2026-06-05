@@ -53,3 +53,12 @@
   object-fit: cover;
   object-position: center;
 }
+
+.heroOverlay {
+  @apply pointer-events-none absolute inset-0;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(0, 22, 67, 0.28) 100%
+  );
+}

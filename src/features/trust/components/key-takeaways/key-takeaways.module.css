@@ -1,0 +1,39 @@
+@reference "tailwindcss";
+
+.card {
+  @apply relative overflow-hidden flex flex-col gap-5 rounded-3xl px-7 py-8 lg:px-10 lg:py-10;
+  background: var(--surface-elevated);
+  border: 1px solid rgba(0, 177, 215, 0.25);
+}
+
+.glow {
+  @apply pointer-events-none absolute -top-12 -left-10 h-40 w-64;
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(0, 177, 215, 0.14),
+    transparent 70%
+  );
+}
+
+.title {
+  @apply m-0;
+}
+
+.list {
+  @apply flex flex-col gap-4 m-0 p-0 list-none;
+}
+
+.item {
+  @apply flex items-start gap-4 m-0;
+}
+
+.number {
+  @apply text-sm font-bold leading-none pt-1 shrink-0;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.text {
+  @apply text-sm lg:text-base leading-relaxed;
+  color: var(--text-strong);
+}

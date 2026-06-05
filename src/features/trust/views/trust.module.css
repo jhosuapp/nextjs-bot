@@ -5,10 +5,16 @@
   background: var(--background);
 }
 
-/* Body reading column */
+/* Two-column layout: sticky TOC (desktop) + reading column */
+.layout {
+  @apply flex flex-col lg:grid lg:gap-12 lg:justify-center;
+  grid-template-columns: 14rem minmax(0, 46rem);
+}
+
+/* Reading column */
 .inner {
-  @apply flex flex-col gap-14 lg:gap-20 mx-auto;
-  max-width: 48rem;
+  @apply flex flex-col gap-14 lg:gap-20 mx-auto w-full;
+  max-width: 46rem;
 }
 
 /* Inline accent inside a paragraph */

@@ -1,0 +1,66 @@
+@reference "tailwindcss";
+
+.section {
+  @apply flex flex-col gap-6;
+}
+
+.header {
+  @apply flex flex-col gap-2;
+}
+
+.grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.card {
+  @apply relative overflow-hidden flex flex-col gap-4 rounded-2xl px-6 py-7;
+}
+
+.cardMuted {
+  background: var(--bg-section);
+  border: 1px solid var(--border-subtle);
+}
+
+.cardAccent {
+  background: var(--surface-elevated);
+  border: 1px solid rgba(0, 177, 215, 0.4);
+  box-shadow: 0 18px 50px -28px rgba(0, 177, 215, 0.45);
+}
+
+.cardGlow {
+  @apply pointer-events-none absolute -top-10 right-0 h-32 w-48;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(0, 177, 215, 0.16),
+    transparent 70%
+  );
+}
+
+.label {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] m-0;
+  color: var(--text-muted);
+}
+
+.labelAccent {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] m-0;
+  color: var(--primary);
+}
+
+.list {
+  @apply flex flex-col gap-3 m-0 p-0 list-none;
+}
+
+.item {
+  @apply flex items-start gap-3 text-sm lg:text-base leading-snug m-0;
+  color: var(--text-strong);
+}
+
+.iconNeg {
+  @apply text-sm mt-1 shrink-0;
+  color: var(--text-muted);
+}
+
+.iconPos {
+  @apply text-sm mt-1 shrink-0;
+  color: var(--primary);
+}

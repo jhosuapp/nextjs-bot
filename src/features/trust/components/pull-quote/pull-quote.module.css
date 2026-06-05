@@ -5,8 +5,14 @@
   border-left: 4px solid var(--primary);
 }
 
+.mark {
+  @apply pointer-events-none absolute -top-2 left-4 text-4xl;
+  color: var(--primary);
+  opacity: 0.12;
+}
+
 .text {
-  @apply text-xl lg:text-2xl font-semibold leading-snug m-0;
+  @apply relative text-xl lg:text-2xl font-semibold leading-snug m-0;
   color: var(--text-strong);
 }
 
