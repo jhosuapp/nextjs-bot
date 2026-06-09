@@ -4,11 +4,11 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 import { StaggerGroup, StaggerItem } from '@/src/shared/components/motion/StaggerGroup';
 
-import styles from './behavior-list.module.css';
+import styles from './feature-list.module.css';
 
-type BehaviorListProps = { items: string[] };
+type FeatureListProps = { items: string[] };
 
-const BehaviorList = ({ items }: BehaviorListProps): JSX.Element => (
+const FeatureList = ({ items }: FeatureListProps): JSX.Element => (
   <StaggerGroup className={styles.grid} stagger={0.06} amount={0.2}>
     {items.map((item) => (
       <StaggerItem key={item} className={styles.item}>
@@ -23,4 +23,4 @@ const BehaviorList = ({ items }: BehaviorListProps): JSX.Element => (
   </StaggerGroup>
 );
 
-export { BehaviorList };
+export { FeatureList };

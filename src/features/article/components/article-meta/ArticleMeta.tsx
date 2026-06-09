@@ -7,7 +7,7 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 
 import styles from './article-meta.module.css';
 
-type ArticleMetaProps = { t: ITranslations };
+type ArticleMetaProps = { t: ITranslations; tKey?: string };
 
 const items: ReadonlyArray<{ key: string; icon: IconDefinition }> = [
   { key: 'author', icon: faPenNib },
@@ -15,7 +15,7 @@ const items: ReadonlyArray<{ key: string; icon: IconDefinition }> = [
   { key: 'date', icon: faCalendar },
 ];
 
-const ArticleMeta = ({ t }: ArticleMetaProps): JSX.Element => (
+const ArticleMeta = ({ t, tKey = 'hero' }: ArticleMetaProps): JSX.Element => (
   <ul className={styles.meta}>
     {items.map((item) => (
       <li key={item.key} className={styles.item}>
@@ -24,7 +24,7 @@ const ArticleMeta = ({ t }: ArticleMetaProps): JSX.Element => (
           className={styles.icon}
           aria-hidden="true"
         />
-        <span>{t(`hero.meta.${item.key}`) as string}</span>
+        <span>{t(`${tKey}.meta.${item.key}`) as string}</span>
       </li>
     ))}
   </ul>

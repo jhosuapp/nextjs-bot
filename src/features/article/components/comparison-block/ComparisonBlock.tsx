@@ -6,16 +6,20 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 
-import styles from './comparison-section.module.css';
+import styles from './comparison-block.module.css';
 
-type ComparisonSectionProps = { t: ITranslations };
+type ComparisonBlockProps = {
+  t: ITranslations;
+  tKey: string;
+  id?: string;
+};
 
-const ComparisonSection = ({ t }: ComparisonSectionProps): JSX.Element => {
-  const corporativo = t('comparison.corporativo.items', { returnObjects: true }) as string[];
-  const aiNative = t('comparison.aiNative.items', { returnObjects: true }) as string[];
+const ComparisonBlock = ({ t, tKey, id }: ComparisonBlockProps): JSX.Element => {
+  const left = t(`${tKey}.left.items`, { returnObjects: true }) as string[];
+  const right = t(`${tKey}.right.items`, { returnObjects: true }) as string[];
 
   return (
-    <section className={styles.section}>
+    <section id={id} className={styles.section}>
       <div className={styles.header}>
         <Text
           tag="p"
@@ -25,7 +29,7 @@ const ComparisonSection = ({ t }: ComparisonSectionProps): JSX.Element => {
           delay={{ enter: 0, exit: 0 }}
           fadeUpTertiary
         >
-          {t('comparison.eyebrow') as string}
+          {t(`${tKey}.eyebrow`) as string}
         </Text>
         <Text
           tag="h2"
@@ -35,15 +39,15 @@ const ComparisonSection = ({ t }: ComparisonSectionProps): JSX.Element => {
           delay={{ enter: 0, exit: 0 }}
           fadeUpTertiary
         >
-          {t('comparison.title') as string}
+          {t(`${tKey}.title`) as string}
         </Text>
       </div>
 
       <div className={styles.grid}>
         <FadeIn className={`${styles.card} ${styles.cardMuted}`} y={20}>
-          <p className={styles.label}>{t('comparison.corporativo.label') as string}</p>
+          <p className={styles.label}>{t(`${tKey}.left.label`) as string}</p>
           <ul className={styles.list}>
-            {corporativo.map((item) => (
+            {left.map((item) => (
               <li key={item} className={styles.item}>
                 <FontAwesomeIcon
                   icon={faXmark}
@@ -58,9 +62,9 @@ const ComparisonSection = ({ t }: ComparisonSectionProps): JSX.Element => {
 
         <FadeIn className={`${styles.card} ${styles.cardAccent}`} y={20} delay={0.08}>
           <div className={styles.cardGlow} aria-hidden="true" />
-          <p className={styles.labelAccent}>{t('comparison.aiNative.label') as string}</p>
+          <p className={styles.labelAccent}>{t(`${tKey}.right.label`) as string}</p>
           <ul className={styles.list}>
-            {aiNative.map((item) => (
+            {right.map((item) => (
               <li key={item} className={styles.item}>
                 <FontAwesomeIcon
                   icon={faCheck}
@@ -77,4 +81,4 @@ const ComparisonSection = ({ t }: ComparisonSectionProps): JSX.Element => {
   );
 };
 
-export { ComparisonSection };
+export { ComparisonBlock };

@@ -1,0 +1,80 @@
+{
+  "seo": {
+    "title": "La fuerza laboral híbrida ya está aquí | Humanika",
+    "description": "En los próximos años todas las empresas tendrán colaboradores digitales. La ventaja será de las que aprendan a integrarlos primero junto a sus equipos."
+  },
+  "hero": {
+    "eyebrow": "Visión",
+    "titleLead": "La ",
+    "titleAccent": "Fuerza Laboral Híbrida",
+    "titleTrail": " ya está aquí",
+    "imageAlt": "Equipo humano trabajando junto a agentes de inteligencia artificial",
+    "meta": {
+      "readingTime": "4 min de lectura",
+      "date": "Junio 2026",
+      "author": "Equipo Humanika"
+    },
+    "lead": [
+      "En los próximos años, todas las empresas tendrán colaboradores digitales. La única diferencia será cuáles aprendieron a integrarlos primero.",
+      "Durante décadas, las organizaciones crecieron contratando más personas para vender más, atender más clientes y ejecutar más procesos. Sin embargo, por primera vez en la historia, las empresas pueden aumentar su capacidad operativa sin aumentar proporcionalmente sus equipos."
+    ]
+  },
+  "intro": {
+    "quote": "Estamos entrando en la era de la fuerza laboral híbrida."
+  },
+  "toc": {
+    "title": "En este artículo",
+    "transformacion": "La transformación",
+    "diferencia": "La diferencia",
+    "workforce": "Humanika Workforce"
+  },
+  "transformacion": {
+    "eyebrow": "El cambio",
+    "title": "La próxima gran transformación empresarial",
+    "paragraphs": [
+      "Las organizaciones líderes de la próxima década no serán las que tengan más empleados ni las que compren más herramientas de inteligencia artificial.",
+      "Serán las que logren combinar mejor el talento humano con el talento digital."
+    ],
+    "examples": [
+      "Un ejecutivo comercial apoyado por agentes inteligentes investiga prospectos, prepara propuestas y realiza seguimientos en minutos.",
+      "Un equipo de servicio atiende miles de solicitudes simultáneamente mientras las personas se concentran en los casos que requieren criterio, empatía y experiencia.",
+      "Un área operativa automatiza procesos repetitivos, valida información y genera reportes de forma continua."
+    ],
+    "emphasis": "No hablamos del futuro. Hablamos de una realidad que ya está transformando empresas en todo el mundo."
+  },
+  "diferencia": {
+    "eyebrow": "La clave",
+    "title": "La diferencia no es la tecnología",
+    "paragraphs": [
+      "Muchas organizaciones están adoptando inteligencia artificial. Muy pocas están rediseñando la forma en que trabajan.",
+      "La ventaja competitiva ya no estará en tener acceso a una herramienta de IA. Esa tecnología será cada vez más accesible para todos.",
+      "La verdadera diferencia estará en cómo las empresas integren colaboradores digitales dentro de sus equipos, procesos y operaciones."
+    ],
+    "emphasis": "Las organizaciones más exitosas no serán las que utilicen inteligencia artificial. Serán las que aprendan a trabajar junto a ella."
+  },
+  "workforce": {
+    "eyebrow": "Nuestra visión",
+    "title": "Humanika Workforce",
+    "paragraphs": [
+      "En Humanika creemos que la próxima revolución empresarial no consiste en reemplazar personas. Consiste en potenciar a las personas.",
+      "Diseñamos fuerzas laborales híbridas donde humanos y agentes inteligentes trabajan juntos para aumentar la productividad, acelerar la ejecución y generar mejores resultados de negocio.",
+      "Así como la nube transformó la infraestructura y el trabajo remoto transformó la colaboración, la fuerza laboral híbrida transformará la manera en que las empresas operan durante los próximos años."
+    ],
+    "quote": "La pregunta ya no es si tu organización incorporará colaboradores digitales. La pregunta es cuándo comenzará a obtener ventaja gracias a ellos.",
+    "quoteAccent": "Ese futuro ya comenzó.",
+    "tagline": "Humanos + Inteligencia Artificial + Resultados."
+  },
+  "takeaways": {
+    "title": "En resumen",
+    "items": [
+      "La fuerza laboral híbrida combina talento humano y digital para crecer sin aumentar proporcionalmente los equipos.",
+      "La ventaja no está en acceder a la IA, sino en rediseñar cómo se trabaja junto a ella.",
+      "Las empresas ganadoras serán las que aprendan a integrar colaboradores digitales en sus equipos, procesos y operaciones."
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para construir tu fuerza laboral híbrida?",
+    "description": "Conversemos sobre cómo integrar colaboradores digitales en tus equipos para aumentar la productividad y acelerar la ejecución.",
+    "button": "Hablar por WhatsApp"
+  }
+}

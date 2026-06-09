@@ -22,3 +22,15 @@
 .title {
   @apply m-0;
 }
+
+/* Inline accent inside a paragraph (inlineHighlight content) */
+.highlight {
+  @apply font-semibold;
+  color: var(--text-primary);
+}
+
+/* Emphasised short line with accent left border (emphasis content) */
+.emphasis {
+  @apply pl-4 my-1;
+  border-left: 3px solid var(--primary);
+}

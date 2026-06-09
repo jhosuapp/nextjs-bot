@@ -11,20 +11,13 @@
   grid-template-columns: 14rem minmax(0, 46rem);
 }
 
+/* Single-column layout when the article has no table of contents */
+.layoutNoToc {
+  grid-template-columns: minmax(0, 46rem);
+}
+
 /* Reading column */
 .inner {
   @apply flex flex-col gap-14 lg:gap-20 mx-auto w-full;
   max-width: 46rem;
-}
-
-/* Inline accent inside a paragraph */
-.highlight {
-  @apply font-semibold;
-  color: var(--text-primary);
-}
-
-/* Emphasised short lines ("No son robots...") */
-.shortLines {
-  @apply pl-4 my-1;
-  border-left: 3px solid var(--primary);
 }

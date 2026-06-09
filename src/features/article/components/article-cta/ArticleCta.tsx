@@ -4,16 +4,15 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { Button } from '@/src/shared/components/button/Button';
-import { Container } from '@/src/features/home/components/container/Container';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import { WHATSAPP_URL } from '@/src/config/site';
 
-import styles from './trust-cta.module.css';
+import styles from './article-cta.module.css';
 
-type TrustCtaProps = { t: ITranslations };
+type ArticleCtaProps = { t: ITranslations; tKey?: string };
 
-const TrustCta = ({ t }: TrustCtaProps): JSX.Element => {
+const ArticleCta = ({ t, tKey = 'cta' }: ArticleCtaProps): JSX.Element => {
   const openWhatsApp = () =>
     window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
 
@@ -30,7 +29,7 @@ const TrustCta = ({ t }: TrustCtaProps): JSX.Element => {
             delay={{ enter: 0, exit: 0 }}
             immediate
           >
-            {t('cta.title') as string}
+            {t(`${tKey}.title`) as string}
           </Text>
           <Text
             tag="p"
@@ -39,12 +38,12 @@ const TrustCta = ({ t }: TrustCtaProps): JSX.Element => {
             delay={{ enter: 0, exit: 0 }}
             immediate
           >
-            {t('cta.description') as string}
+            {t(`${tKey}.description`) as string}
           </Text>
         </div>
         <WrapperMotion delay={{ enter: 0, exit: 0 }} immediate>
           <Button
-            text={t('cta.button') as string}
+            text={t(`${tKey}.button`) as string}
             style="whatsapp"
             type="button"
             iconRight={faWhatsapp}
@@ -56,4 +55,4 @@ const TrustCta = ({ t }: TrustCtaProps): JSX.Element => {
   );
 };
 
-export { TrustCta };
+export { ArticleCta };

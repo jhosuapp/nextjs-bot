@@ -1,0 +1,80 @@
+{
+  "seo": {
+    "title": "The hybrid workforce is already here | Humanika",
+    "description": "In the coming years every company will have digital coworkers. The edge will belong to those that learn to integrate them alongside their teams first."
+  },
+  "hero": {
+    "eyebrow": "Vision",
+    "titleLead": "The ",
+    "titleAccent": "Hybrid Workforce",
+    "titleTrail": " is already here",
+    "imageAlt": "Human team working alongside artificial intelligence agents",
+    "meta": {
+      "readingTime": "4 min read",
+      "date": "June 2026",
+      "author": "Humanika Team"
+    },
+    "lead": [
+      "In the coming years, every company will have digital coworkers. The only difference will be which ones learned to integrate them first.",
+      "For decades, organizations grew by hiring more people to sell more, serve more customers and run more processes. Yet for the first time in history, companies can increase their operating capacity without growing their teams proportionally."
+    ]
+  },
+  "intro": {
+    "quote": "We are entering the era of the hybrid workforce."
+  },
+  "toc": {
+    "title": "In this article",
+    "transformacion": "The transformation",
+    "diferencia": "The difference",
+    "workforce": "Humanika Workforce"
+  },
+  "transformacion": {
+    "eyebrow": "The shift",
+    "title": "The next great business transformation",
+    "paragraphs": [
+      "The leading organizations of the next decade won't be the ones with the most employees nor the ones that buy the most artificial intelligence tools.",
+      "They'll be the ones that best combine human talent with digital talent."
+    ],
+    "examples": [
+      "A sales executive supported by intelligent agents researches prospects, prepares proposals and follows up in minutes.",
+      "A service team handles thousands of requests simultaneously while people focus on the cases that require judgment, empathy and experience.",
+      "An operations area automates repetitive processes, validates information and generates reports continuously."
+    ],
+    "emphasis": "We're not talking about the future. We're talking about a reality that is already transforming companies around the world."
+  },
+  "diferencia": {
+    "eyebrow": "The key",
+    "title": "The difference isn't the technology",
+    "paragraphs": [
+      "Many organizations are adopting artificial intelligence. Very few are redesigning the way they work.",
+      "The competitive advantage will no longer be having access to an AI tool. That technology will become increasingly accessible to everyone.",
+      "The real difference will be in how companies integrate digital coworkers within their teams, processes and operations."
+    ],
+    "emphasis": "The most successful organizations won't be the ones that use artificial intelligence. They'll be the ones that learn to work alongside it."
+  },
+  "workforce": {
+    "eyebrow": "Our vision",
+    "title": "Humanika Workforce",
+    "paragraphs": [
+      "At Humanika we believe the next business revolution isn't about replacing people. It's about empowering people.",
+      "We design hybrid workforces where humans and intelligent agents work together to increase productivity, accelerate execution and drive better business results.",
+      "Just as the cloud transformed infrastructure and remote work transformed collaboration, the hybrid workforce will transform the way companies operate in the coming years."
+    ],
+    "quote": "The question is no longer whether your organization will bring in digital coworkers. The question is when it will start gaining an edge thanks to them.",
+    "quoteAccent": "That future has already begun.",
+    "tagline": "Humans + Artificial Intelligence + Results."
+  },
+  "takeaways": {
+    "title": "In short",
+    "items": [
+      "The hybrid workforce combines human and digital talent to grow without scaling teams proportionally.",
+      "The advantage isn't in accessing AI, but in redesigning how you work alongside it.",
+      "The winning companies will be the ones that learn to integrate digital coworkers into their teams, processes and operations."
+    ]
+  },
+  "cta": {
+    "title": "Ready to build your hybrid workforce?",
+    "description": "Let's talk about how to integrate digital coworkers into your teams to increase productivity and accelerate execution.",
+    "button": "Chat on WhatsApp"
+  }
+}

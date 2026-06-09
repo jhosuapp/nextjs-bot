@@ -52,7 +52,7 @@
   "comparison": {
     "eyebrow": "Before and after",
     "title": "Two ways to think about a digital agent",
-    "corporativo": {
+    "left": {
       "label": "Corporate avatar",
       "items": [
         "Blue shirt and catalog smile",
@@ -61,7 +61,7 @@
         "Designed to impress"
       ]
     },
-    "aiNative": {
+    "right": {
       "label": "AI Native Human",
       "items": [
         "Digital-native identity",
@@ -74,7 +74,7 @@
   "comportamiento": {
     "eyebrow": "The key",
     "title": "Trust is built through behavior, not graphics",
-    "intro": "An avatar builds trust when it:",
+    "intro": ["An avatar builds trust when it:"],
     "bullets": [
       "Understands the context.",
       "Responds accurately.",

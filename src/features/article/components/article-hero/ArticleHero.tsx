@@ -5,14 +5,18 @@ import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { Container } from '@/src/features/home/components/container/Container';
 import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
-import { ArticleMeta } from '@/src/features/trust/components/article-meta/ArticleMeta';
+import { ArticleMeta } from '@/src/features/article/components/article-meta/ArticleMeta';
 
-import styles from './trust-hero.module.css';
+import styles from './article-hero.module.css';
 
-type TrustHeroProps = { t: ITranslations };
+type ArticleHeroProps = {
+  t: ITranslations;
+  tKey?: string;
+  image?: string;
+};
 
-const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
-  const lead = t('hero.lead', { returnObjects: true }) as string[];
+const ArticleHero = ({ t, tKey = 'hero', image }: ArticleHeroProps): JSX.Element => {
+  const lead = t(`${tKey}.lead`, { returnObjects: true }) as string[];
 
   return (
     <header className={styles.hero}>
@@ -27,7 +31,7 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
             delay={{ enter: 0.53, exit: 0.14 }}
             immediate
           >
-            {t('hero.eyebrow') as string}
+            {t(`${tKey}.eyebrow`) as string}
           </Text>
 
           <Text
@@ -39,11 +43,11 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
             delay={{ enter: 0.55, exit: 0.13 }}
             immediate
           >
-            {t('hero.titleLead') as string}
+            {t(`${tKey}.titleLead`) as string}
             <strong className="gl-degradete-text font-bold">
-              {t('hero.titleAccent') as string}
+              {t(`${tKey}.titleAccent`) as string}
             </strong>
-            {t('hero.titleTrail') as string}
+            {t(`${tKey}.titleTrail`) as string}
           </Text>
 
           <WrapperMotion
@@ -55,7 +59,7 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
           </WrapperMotion>
 
           <WrapperMotion delay={{ enter: 0.58, exit: 0.12 }} immediate>
-            <ArticleMeta t={t} />
+            <ArticleMeta t={t} tKey={tKey} />
           </WrapperMotion>
 
           <div className={styles.lead}>
@@ -75,26 +79,28 @@ const TrustHero = ({ t }: TrustHeroProps): JSX.Element => {
           </div>
         </div>
 
-        <WrapperMotion
-          className={styles.heroMediaWrap}
-          delay={{ enter: 0.61, exit: 0.1 }}
-          immediate
-        >
-          <figure className={styles.heroMedia}>
-            <Image
-              src="/images/bg.jpg"
-              alt={t('hero.imageAlt') as string}
-              fill
-              sizes="(max-width: 900px) 100vw, 56rem"
-              className={styles.heroImage}
-              priority
-            />
-            <span className={styles.heroOverlay} aria-hidden="true" />
-          </figure>
-        </WrapperMotion>
+        {image ? (
+          <WrapperMotion
+            className={styles.heroMediaWrap}
+            delay={{ enter: 0.61, exit: 0.1 }}
+            immediate
+          >
+            <figure className={styles.heroMedia}>
+              <Image
+                src={image}
+                alt={t(`${tKey}.imageAlt`) as string}
+                fill
+                sizes="(max-width: 900px) 100vw, 56rem"
+                className={styles.heroImage}
+                priority
+              />
+              <span className={styles.heroOverlay} aria-hidden="true" />
+            </figure>
+          </WrapperMotion>
+        ) : null}
       </Container>
     </header>
   );
 };
 
-export { TrustHero };
+export { ArticleHero };

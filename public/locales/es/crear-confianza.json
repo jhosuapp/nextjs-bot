@@ -52,7 +52,7 @@
   "comparison": {
     "eyebrow": "Antes y después",
     "title": "Dos formas de pensar un agente digital",
-    "corporativo": {
+    "left": {
       "label": "Avatar corporativo",
       "items": [
         "Camisa azul y sonrisa de catálogo",
@@ -61,7 +61,7 @@
         "Diseñado para impresionar"
       ]
     },
-    "aiNative": {
+    "right": {
       "label": "AI Native Human",
       "items": [
         "Identidad nativa digital",
@@ -74,7 +74,7 @@
   "comportamiento": {
     "eyebrow": "La clave",
     "title": "La confianza se construye con comportamiento, no con gráficos",
-    "intro": "Un avatar genera confianza cuando:",
+    "intro": ["Un avatar genera confianza cuando:"],
     "bullets": [
       "Entiende el contexto.",
       "Responde con precisión.",

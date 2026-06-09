@@ -7,10 +7,10 @@ import { StaggerGroup, StaggerItem } from '@/src/shared/components/motion/Stagge
 
 import styles from './key-takeaways.module.css';
 
-type KeyTakeawaysProps = { t: ITranslations };
+type KeyTakeawaysProps = { t: ITranslations; tKey?: string };
 
-const KeyTakeaways = ({ t }: KeyTakeawaysProps): JSX.Element => {
-  const items = t('takeaways.items', { returnObjects: true }) as string[];
+const KeyTakeaways = ({ t, tKey = 'takeaways' }: KeyTakeawaysProps): JSX.Element => {
+  const items = t(`${tKey}.items`, { returnObjects: true }) as string[];
 
   return (
     <FadeIn as="aside" className={styles.card} y={24}>
@@ -24,7 +24,7 @@ const KeyTakeaways = ({ t }: KeyTakeawaysProps): JSX.Element => {
         delay={{ enter: 0, exit: 0 }}
         immediate
       >
-        {t('takeaways.title') as string}
+        {t(`${tKey}.title`) as string}
       </Text>
 
       <StaggerGroup className={styles.list} as="ul" stagger={0.08} amount={0.2}>

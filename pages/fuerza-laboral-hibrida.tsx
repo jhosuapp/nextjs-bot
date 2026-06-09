@@ -3,12 +3,12 @@ import { serverSideTranslations } from "next-i18next/pages/serverSideTranslation
 import type { GetStaticPropsContext } from "next";
 
 import { ArticleRenderer } from "@/src/features/article/renderer/ArticleRenderer";
-import { crearConfianzaContent } from "@/src/features/article/data/crear-confianza.content";
+import { fuerzaLaboralHibridaContent } from "@/src/features/article/data/fuerza-laboral-hibrida.content";
 import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
 import { PageTransition } from "@/src/shared/layouts/pageTransition/PageTransition";
 
-export default function CrearConfianzaPage() {
-  const { t } = useTranslation("crear-confianza");
+export default function FuerzaLaboralHibridaPage() {
+  const { t } = useTranslation("fuerza-laboral-hibrida");
 
   return (
     <PageLayout
@@ -16,7 +16,7 @@ export default function CrearConfianzaPage() {
       description={t("seo.description") as string}
     >
       <PageTransition>
-        <ArticleRenderer t={t} content={crearConfianzaContent} />
+        <ArticleRenderer t={t} content={fuerzaLaboralHibridaContent} />
       </PageTransition>
     </PageLayout>
   );
@@ -27,7 +27,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     props: {
       ...(await serverSideTranslations(locale ?? "es", [
         "common",
-        "crear-confianza",
+        "fuerza-laboral-hibrida",
       ])),
     },
   };
