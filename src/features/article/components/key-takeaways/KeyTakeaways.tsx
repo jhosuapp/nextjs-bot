@@ -2,8 +2,7 @@ import type { JSX } from 'react';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
-import { FadeIn } from '@/src/shared/components/motion/FadeIn';
-import { StaggerGroup, StaggerItem } from '@/src/shared/components/motion/StaggerGroup';
+import { Reveal } from '@/src/features/article/components/reveal/Reveal';
 
 import styles from './key-takeaways.module.css';
 
@@ -13,7 +12,7 @@ const KeyTakeaways = ({ t, tKey = 'takeaways' }: KeyTakeawaysProps): JSX.Element
   const items = t(`${tKey}.items`, { returnObjects: true }) as string[];
 
   return (
-    <FadeIn as="aside" className={styles.card} y={24}>
+    <Reveal as="aside" className={styles.card}>
       <div className={styles.glow} aria-hidden="true" />
       <Text
         className={styles.title}
@@ -21,21 +20,20 @@ const KeyTakeaways = ({ t, tKey = 'takeaways' }: KeyTakeawaysProps): JSX.Element
         variant="subtitle_small"
         color="secondary"
         weight="bold"
-        delay={{ enter: 0, exit: 0 }}
-        immediate
+        noMotion
       >
         {t(`${tKey}.title`) as string}
       </Text>
 
-      <StaggerGroup className={styles.list} as="ul" stagger={0.08} amount={0.2}>
+      <ul className={styles.list}>
         {items.map((item, index) => (
-          <StaggerItem key={index} as="li" className={styles.item}>
+          <li key={index} className={styles.item}>
             <span className={styles.number}>{String(index + 1).padStart(2, '0')}</span>
             <span className={styles.text}>{item}</span>
-          </StaggerItem>
+          </li>
         ))}
-      </StaggerGroup>
-    </FadeIn>
+      </ul>
+    </Reveal>
   );
 };
 

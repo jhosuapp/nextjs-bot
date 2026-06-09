@@ -4,9 +4,8 @@ import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import { useLenisStore } from '@/src/shared/stores/lenis.store';
 import { useRouter } from 'next/router';
 
+import { NavDropdown, type NavLink } from './NavDropdown';
 import styles from './header-nav-list.module.css';
-
-type NavLink = { label: string; href: string; external?: boolean };
 
 type HeaderNavListProps = {
   items: ReadonlyArray<NavLink>;
@@ -37,9 +36,7 @@ const HeaderNavList = ({
   const itemVariants = buildItemVariants(!!reduce);
   const router = useRouter();
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const href = e.currentTarget.getAttribute('href') || '/';
+  const navigate = (href: string) => {
     const hashMatch = href.match(/^(?:\/)?#(.+)$/);
 
     if (hashMatch) {
@@ -58,6 +55,11 @@ const HeaderNavList = ({
       router.push(href);
       onItemClick?.();
     }, 700);
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    navigate(e.currentTarget.getAttribute('href') || '/');
   }
 
   return (
@@ -70,7 +72,9 @@ const HeaderNavList = ({
           className={styles.item}
           variants={animated ? itemVariants : undefined}
         >
-          {item.external ? (
+          {item.children?.length ? (
+            <NavDropdown item={item} variant={variant} onNavigate={navigate} />
+          ) : item.external ? (
             <a
               href={item.href}
               className={styles.link}

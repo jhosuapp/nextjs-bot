@@ -39,6 +39,11 @@ const Header = ({ t }: HeaderProps) => {
     label: t(`nav.${item.key}`) as string,
     href: item.href,
     external: item.external,
+    children: item.children?.map((child) => ({
+      label: t(`nav.${child.key}`) as string,
+      href: child.href,
+      external: child.external,
+    })),
   }));
 
   return (

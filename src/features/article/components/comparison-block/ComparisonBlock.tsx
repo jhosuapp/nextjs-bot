@@ -4,7 +4,11 @@ import { faXmark, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
-import { FadeIn } from '@/src/shared/components/motion/FadeIn';
+import {
+  Reveal,
+  RevealGroup,
+  RevealItem,
+} from '@/src/features/article/components/reveal/Reveal';
 
 import styles from './comparison-block.module.css';
 
@@ -20,31 +24,23 @@ const ComparisonBlock = ({ t, tKey, id }: ComparisonBlockProps): JSX.Element => 
 
   return (
     <section id={id} className={styles.section}>
-      <div className={styles.header}>
+      <Reveal className={styles.header}>
         <Text
           tag="p"
           variant="description_xs"
           color="primary"
           weight="semibold"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
+          noMotion
         >
           {t(`${tKey}.eyebrow`) as string}
         </Text>
-        <Text
-          tag="h2"
-          variant="title_small"
-          color="secondary"
-          weight="bold"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
-        >
+        <Text tag="h2" variant="title_small" color="secondary" weight="bold" noMotion>
           {t(`${tKey}.title`) as string}
         </Text>
-      </div>
+      </Reveal>
 
-      <div className={styles.grid}>
-        <FadeIn className={`${styles.card} ${styles.cardMuted}`} y={20}>
+      <RevealGroup className={styles.grid}>
+        <RevealItem className={`${styles.card} ${styles.cardMuted}`}>
           <p className={styles.label}>{t(`${tKey}.left.label`) as string}</p>
           <ul className={styles.list}>
             {left.map((item) => (
@@ -58,9 +54,9 @@ const ComparisonBlock = ({ t, tKey, id }: ComparisonBlockProps): JSX.Element => 
               </li>
             ))}
           </ul>
-        </FadeIn>
+        </RevealItem>
 
-        <FadeIn className={`${styles.card} ${styles.cardAccent}`} y={20} delay={0.08}>
+        <RevealItem className={`${styles.card} ${styles.cardAccent}`}>
           <div className={styles.cardGlow} aria-hidden="true" />
           <p className={styles.labelAccent}>{t(`${tKey}.right.label`) as string}</p>
           <ul className={styles.list}>
@@ -75,8 +71,8 @@ const ComparisonBlock = ({ t, tKey, id }: ComparisonBlockProps): JSX.Element => 
               </li>
             ))}
           </ul>
-        </FadeIn>
-      </div>
+        </RevealItem>
+      </RevealGroup>
     </section>
   );
 };

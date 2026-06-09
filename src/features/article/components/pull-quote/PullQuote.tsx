@@ -2,7 +2,7 @@ import type { JSX } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
-import { FadeIn } from '@/src/shared/components/motion/FadeIn';
+import { Reveal } from '@/src/features/article/components/reveal/Reveal';
 
 import styles from './pull-quote.module.css';
 
@@ -12,7 +12,7 @@ type PullQuoteProps = {
 };
 
 const PullQuote = ({ quote, accent }: PullQuoteProps): JSX.Element => (
-  <FadeIn as="blockquote" className={styles.quote} y={16}>
+  <Reveal as="blockquote" className={styles.quote}>
     <FontAwesomeIcon
       icon={faQuoteLeft}
       className={styles.mark}
@@ -22,7 +22,7 @@ const PullQuote = ({ quote, accent }: PullQuoteProps): JSX.Element => (
     {accent ? (
       <span className={`${styles.accent} gl-degradete-text`}>{accent}</span>
     ) : null}
-  </FadeIn>
+  </Reveal>
 );
 
 export { PullQuote };

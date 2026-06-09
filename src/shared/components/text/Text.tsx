@@ -21,6 +21,9 @@ type TextProps = {
   zoomIn?: boolean;
   staggerItem?: boolean;
   immediate?: boolean;
+  /** Render the styled tag without any built-in motion wrapper, so an outer
+   *  component can own the animation (used by the article reveal system). */
+  noMotion?: boolean;
 };
 
 const Text = ({
@@ -34,7 +37,8 @@ const Text = ({
   fadeUpTertiary,
   zoomIn,
   staggerItem,
-  immediate
+  immediate,
+  noMotion
 }: TextProps): JSX.Element => {
   const reduce = useReducedMotion();
 
@@ -44,6 +48,10 @@ const Text = ({
     weight ? styles[`weight_${weight}`] : '',
     customClass ?? '',
   ].filter(Boolean).join(' ');
+
+  if (noMotion) {
+    return <Tag className={className}>{children}</Tag>;
+  }
 
   if (staggerItem) {
     const MotionTag = motion[Tag as keyof typeof motion] as typeof motion.div;

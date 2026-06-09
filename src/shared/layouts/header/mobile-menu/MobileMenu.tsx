@@ -18,7 +18,12 @@ import { ThemeToggle } from '../theme-toggle/ThemeToggle';
 import { Button } from '@/src/shared/components/button/Button';
 import styles from './mobile-menu.module.css';
 
-type NavItem = { label: string; href: string };
+type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+  children?: ReadonlyArray<NavItem>;
+};
 
 type MobileMenuProps = {
   open: boolean;

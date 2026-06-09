@@ -4,8 +4,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
 import { Button } from '@/src/shared/components/button/Button';
-import { WrapperMotion } from '@/src/shared/components/wrapper-motion/WrapperMotion';
-import { FadeIn } from '@/src/shared/components/motion/FadeIn';
+import { Reveal } from '@/src/features/article/components/reveal/Reveal';
 import { WHATSAPP_URL } from '@/src/config/site';
 
 import styles from './article-cta.module.css';
@@ -18,30 +17,17 @@ const ArticleCta = ({ t, tKey = 'cta' }: ArticleCtaProps): JSX.Element => {
 
   return (
     <div className={styles.inner}>
-      <FadeIn className={styles.card} y={24}>
+      <Reveal className={styles.card}>
         <div className={styles.glow} aria-hidden="true" />
         <div className={styles.copy}>
-          <Text
-            tag="h2"
-            variant="title_small"
-            color="secondary"
-            weight="bold"
-            delay={{ enter: 0, exit: 0 }}
-            immediate
-          >
+          <Text tag="h2" variant="title_small" color="secondary" weight="bold" noMotion>
             {t(`${tKey}.title`) as string}
           </Text>
-          <Text
-            tag="p"
-            variant="description"
-            color="muted"
-            delay={{ enter: 0, exit: 0 }}
-            immediate
-          >
+          <Text tag="p" variant="description" color="muted" noMotion>
             {t(`${tKey}.description`) as string}
           </Text>
         </div>
-        <WrapperMotion delay={{ enter: 0, exit: 0 }} immediate>
+        <div className={styles.action}>
           <Button
             text={t(`${tKey}.button`) as string}
             style="whatsapp"
@@ -49,8 +35,8 @@ const ArticleCta = ({ t, tKey = 'cta' }: ArticleCtaProps): JSX.Element => {
             iconRight={faWhatsapp}
             onClick={openWhatsApp}
           />
-        </WrapperMotion>
-      </FadeIn>
+        </div>
+      </Reveal>
     </div>
   );
 };

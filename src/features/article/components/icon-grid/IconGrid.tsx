@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { Text } from '@/src/shared/components/text/Text';
-import { StaggerGroup, StaggerItem } from '@/src/shared/components/motion/StaggerGroup';
+import {
+  Reveal,
+  RevealGroup,
+  RevealItem,
+} from '@/src/features/article/components/reveal/Reveal';
 
 import styles from './icon-grid.module.css';
 
@@ -23,41 +27,27 @@ const IconGrid = ({ t, tKey, items, id }: IconGridProps): JSX.Element => {
 
   return (
     <section id={id} className={styles.section}>
-      <div className={styles.header}>
+      <Reveal className={styles.header}>
         <Text
           tag="p"
           variant="description_xs"
           color="primary"
           weight="semibold"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
+          noMotion
         >
           {t(`${tKey}.eyebrow`) as string}
         </Text>
-        <Text
-          tag="h2"
-          variant="title_small"
-          color="secondary"
-          weight="bold"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
-        >
+        <Text tag="h2" variant="title_small" color="secondary" weight="bold" noMotion>
           {t(`${tKey}.title`) as string}
         </Text>
-        <Text
-          tag="p"
-          variant="description"
-          color="muted"
-          delay={{ enter: 0, exit: 0 }}
-          fadeUpTertiary
-        >
+        <Text tag="p" variant="description" color="muted" noMotion>
           {t(`${tKey}.description`) as string}
         </Text>
-      </div>
+      </Reveal>
 
-      <StaggerGroup className={styles.grid} stagger={0.05} amount={0.15}>
+      <RevealGroup className={styles.grid}>
         {items.map((item) => (
-          <StaggerItem key={item.key}>
+          <RevealItem key={item.key}>
             <motion.div
               className={styles.tile}
               whileHover={reduce ? undefined : { y: -3, scale: 1.02 }}
@@ -72,9 +62,9 @@ const IconGrid = ({ t, tKey, items, id }: IconGridProps): JSX.Element => {
                 {t(`${tKey}.items.${item.key}`) as string}
               </span>
             </motion.div>
-          </StaggerItem>
+          </RevealItem>
         ))}
-      </StaggerGroup>
+      </RevealGroup>
     </section>
   );
 };

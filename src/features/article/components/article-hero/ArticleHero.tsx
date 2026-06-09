@@ -40,7 +40,7 @@ const ArticleHero = ({ t, tKey = 'hero', image }: ArticleHeroProps): JSX.Element
             variant="title"
             color="secondary"
             weight="bold"
-            delay={{ enter: 0.55, exit: 0.13 }}
+            delay={{ enter: 0.54, exit: 0.13 }}
             immediate
           >
             {t(`${tKey}.titleLead`) as string}
@@ -52,13 +52,13 @@ const ArticleHero = ({ t, tKey = 'hero', image }: ArticleHeroProps): JSX.Element
 
           <WrapperMotion
             className={styles.dividerWrap}
-            delay={{ enter: 0.57, exit: 0.12 }}
+            delay={{ enter: 0.55, exit: 0.12 }}
             immediate
           >
             <span className={styles.divider} aria-hidden="true" />
           </WrapperMotion>
 
-          <WrapperMotion delay={{ enter: 0.58, exit: 0.12 }} immediate>
+          <WrapperMotion delay={{ enter: 0.56, exit: 0.12 }} immediate>
             <ArticleMeta t={t} tKey={tKey} />
           </WrapperMotion>
 
@@ -70,7 +70,7 @@ const ArticleHero = ({ t, tKey = 'hero', image }: ArticleHeroProps): JSX.Element
                 variant={index === 0 ? 'subtitle_small' : 'description'}
                 color="muted"
                 weight={index === 0 ? 'medium' : 'normal'}
-                delay={{ enter: 0.59 + index * 0.02, exit: 0.11 }}
+                delay={{ enter: 0.57 + index * 0.01, exit: 0.11 }}
                 immediate
               >
                 {paragraph}

@@ -39,3 +39,73 @@
 .mobile .link:hover {
   background: var(--surface-elevated);
 }
+
+/* ---- Dropdown / submenu ---- */
+.dropdown {
+  @apply relative;
+}
+
+.dropdownMobile {
+  @apply w-full;
+}
+
+.trigger {
+  @apply gap-1.5 cursor-pointer bg-transparent border-0;
+}
+
+.chevron {
+  @apply text-[0.65rem] transition-transform duration-200;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Desktop floating panel. Sits flush under the trigger (no margin) so the
+   pointer can travel onto it without crossing a gap that would close it. */
+.panel {
+  @apply absolute left-0 top-full flex flex-col gap-1 p-2 rounded-2xl list-none z-50;
+  margin-top: 0.5rem;
+  min-width: 14rem;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 18px 50px -28px rgba(11, 16, 36, 0.55);
+}
+
+/* Invisible bridge that fills the margin gap so hover stays active. */
+.panel::before {
+  content: '';
+  @apply absolute left-0 right-0;
+  top: -0.5rem;
+  height: 0.5rem;
+}
+
+.panelItem {
+  @apply m-0;
+}
+
+.panelLink {
+  @apply block rounded-xl px-3 py-2 text-sm font-medium no-underline whitespace-nowrap transition-[background,color] duration-200;
+  color: var(--text-muted);
+}
+
+.panelLink:hover {
+  background: var(--surface-overlay);
+  color: var(--text-strong);
+}
+
+.panelLink:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Mobile inline accordion */
+.panelMobile {
+  @apply static mt-1 ml-3 min-w-0 gap-0 p-0 overflow-hidden rounded-none border-0 shadow-none;
+  background: transparent;
+}
+
+.panelMobile .panelLink {
+  @apply text-base px-4 py-2.5;
+  color: var(--text-strong);
+}

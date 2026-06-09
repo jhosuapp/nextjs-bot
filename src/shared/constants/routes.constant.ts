@@ -4,4 +4,5 @@ export const routes: Record<string, string> = {
   "/privacy": "Privacidad",
   "/terms": "Términos",
   "/crear-confianza": "Confianza",
+  "/fuerza-laboral-hibrida": "Fuerza laboral híbrida",
 };

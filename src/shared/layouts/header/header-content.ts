@@ -2,6 +2,7 @@ type NavLinkStatic = {
   key: string;
   href: string;
   external?: boolean;
+  children?: ReadonlyArray<NavLinkStatic>;
 };
 
 type LanguageOption = {
@@ -26,7 +27,14 @@ const headerStaticData: HeaderStaticData = {
     { key: "process", href: "/#process" },
     { key: "pricing", href: "/#pricing" },
     { key: "faqs", href: "/#faqs" },
-    { key: "trust", href: "/crear-confianza" },
+    {
+      key: "articles",
+      href: "",
+      children: [
+        { key: "trust", href: "/crear-confianza" },
+        { key: "fuerzaLaboral", href: "/fuerza-laboral-hibrida" },
+      ],
+    },
     { key: "about150", href: "https://150porciento.com/", external: true },
   ],
   primaryCta: { href: "#get-started" },

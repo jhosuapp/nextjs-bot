@@ -25,7 +25,7 @@
 }
 
 .copy,
-.card > :global(.wrapperMotion) {
+.action {
   @apply relative;
 }
 
