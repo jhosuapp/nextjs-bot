@@ -1,6 +1,6 @@
-import type { ArticleContent } from '@/src/features/article/types/article.types';
-import { crearConfianzaContent } from './crear-confianza.content';
-import { fuerzaLaboralHibridaContent } from './fuerza-laboral-hibrida.content';
+import type { ArticleContent } from "@/src/features/article/types/article.types";
+import { crearConfianzaContent } from "./crear-confianza.content";
+import { fuerzaLaboralHibridaContent } from "./fuerza-laboral-hibrida.content";
 
 /**
  * Single source of truth for every article.
@@ -32,16 +32,16 @@ type ArticleEntry = {
 
 const articlesRegistry: ReadonlyArray<ArticleEntry> = [
   {
-    slug: 'fuerza-laboral-hibrida',
+    slug: "fuerza-laboral-hibrida",
     content: fuerzaLaboralHibridaContent,
-    cover: '/images/bg.jpg',
-    publishedAt: '2026-06-09',
+    cover: "/images/bg-update.jpg",
+    publishedAt: "2026-06-09",
   },
   {
-    slug: 'crear-confianza',
+    slug: "crear-confianza",
     content: crearConfianzaContent,
-    cover: '/images/bg.jpg',
-    publishedAt: '2026-06-08',
+    cover: "/images/bg-update.jpg",
+    publishedAt: "2026-06-08",
   },
 ];
 
@@ -56,5 +56,10 @@ const getArticleSlugs = (): string[] => articlesRegistry.map((a) => a.slug);
 const getArticleBySlug = (slug: string): ArticleEntry | undefined =>
   articlesRegistry.find((a) => a.slug === slug);
 
-export { articlesRegistry, getSortedArticles, getArticleSlugs, getArticleBySlug };
+export {
+  articlesRegistry,
+  getSortedArticles,
+  getArticleSlugs,
+  getArticleBySlug,
+};
 export type { ArticleEntry };

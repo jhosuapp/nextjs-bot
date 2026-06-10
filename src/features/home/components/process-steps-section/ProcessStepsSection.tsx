@@ -83,7 +83,7 @@ const ProcessStepsSection = ({ t }: Props) => {
       aria-label={`${t('process.titleLead')}${t('process.titleAccent')}`}
     >
       <div className={styles.sticky}>
-        <Image className={ styles.image } src={'/images/bg.jpg'} alt='test' width={1920} height={1220}/>
+        <Image className={ styles.image } src={'/images/bg-update.jpg'} alt='test' width={1920} height={1220}/>
         {!reduce &&
           homeStaticData.process.floatIcons.map((item) => (
             <FloatIcon
