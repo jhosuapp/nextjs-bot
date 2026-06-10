@@ -3,6 +3,6 @@ export const routes: Record<string, string> = {
   "/login": "Login",
   "/privacy": "Privacidad",
   "/terms": "Términos",
-  "/crear-confianza": "Confianza",
-  "/fuerza-laboral-hibrida": "Fuerza laboral híbrida",
+  "/blog": "Artículos",
+  "/blog/[slug]": "Artículo",
 };

@@ -29,10 +29,11 @@ const headerStaticData: HeaderStaticData = {
     { key: "faqs", href: "/#faqs" },
     {
       key: "articles",
-      href: "",
+      href: "/blog",
       children: [
-        { key: "trust", href: "/crear-confianza" },
-        { key: "fuerzaLaboral", href: "/fuerza-laboral-hibrida" },
+        // { key: "allArticles", href: "/blog" },
+        { key: "trust", href: "/blog/crear-confianza" },
+        { key: "fuerzaLaboral", href: "/blog/fuerza-laboral-hibrida" },
       ],
     },
     { key: "about150", href: "https://150porciento.com/", external: true },

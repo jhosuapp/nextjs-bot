@@ -2,13 +2,15 @@ import { useTranslation } from "next-i18next/pages";
 import { serverSideTranslations } from "next-i18next/pages/serverSideTranslations";
 import type { GetStaticPropsContext } from "next";
 
-import { ArticleRenderer } from "@/src/features/article/renderer/ArticleRenderer";
-import { fuerzaLaboralHibridaContent } from "@/src/features/article/data/fuerza-laboral-hibrida.content";
+import { BlogView } from "@/src/features/blog/views/Blog.view";
+import { getArticleSlugs } from "@/src/features/article/data/articles.registry";
 import { PageLayout } from "@/src/shared/layouts/page-layout/PageLayout";
 import { PageTransition } from "@/src/shared/layouts/pageTransition/PageTransition";
 
-export default function FuerzaLaboralHibridaPage() {
-  const { t } = useTranslation("fuerza-laboral-hibrida");
+export default function BlogPage() {
+  // `blog` is the listing's own namespace; each article namespace is also loaded
+  // (see getStaticProps) so the cards can read each article's hero copy.
+  const { t } = useTranslation("blog");
 
   return (
     <PageLayout
@@ -16,7 +18,7 @@ export default function FuerzaLaboralHibridaPage() {
       description={t("seo.description") as string}
     >
       <PageTransition>
-        <ArticleRenderer t={t} content={fuerzaLaboralHibridaContent} />
+        <BlogView t={t} />
       </PageTransition>
     </PageLayout>
   );
@@ -27,7 +29,8 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     props: {
       ...(await serverSideTranslations(locale ?? "es", [
         "common",
-        "fuerza-laboral-hibrida",
+        "blog",
+        ...getArticleSlugs(),
       ])),
     },
   };

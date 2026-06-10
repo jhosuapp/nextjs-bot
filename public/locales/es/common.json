@@ -24,6 +24,7 @@
     "pricing": "Precios",
     "faqs": "FAQs",
     "articles": "Artículos",
+    "allArticles": "Ver todos",
     "trust": "Crear confianza",
     "fuerzaLaboral": "Fuerza laboral híbrida",
     "about150": "¿Qué es 150%?"
@@ -79,7 +80,7 @@
         "process": "Proceso",
         "pricing": "Precios",
         "faqs": "Preguntas frecuentes",
-        "trust": "Confianza"
+        "articles": "Artículos"
       },
       "company": {
         "title": "Empresa",

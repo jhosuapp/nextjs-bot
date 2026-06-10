@@ -49,7 +49,7 @@ const footerStaticData: FooterStaticData = {
           { key: "process", href: "/#process" },
           { key: "pricing", href: "/#pricing" },
           { key: "faqs", href: "/#faqs" },
-          { key: "trust", href: "/crear-confianza" },
+          { key: "articles", href: "/blog" },
         ],
       },
       {

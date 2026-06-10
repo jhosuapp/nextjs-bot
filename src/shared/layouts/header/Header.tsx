@@ -67,22 +67,6 @@ const Header = ({ t }: HeaderProps) => {
         </nav>
 
         <div className={styles.actions}>
-          {/* <div className={styles.controls}>
-            <ThemeToggle t={t} />
-            <LanguageDropdown t={t} />
-          </div> */}
-
-          {/* <div className={styles.ctas}>
-            <a href={headerStaticData.secondaryCta.href} className={styles.signIn}>
-              {t('header.signIn')}
-            </a>
-            <Button
-              text={t('header.startFree') as string}
-              style="fit"
-              type="button"
-            />
-          </div> */}
-
           <MobileMenu
             open={menuOpen}
             onClose={closeMenu}
