@@ -21,6 +21,10 @@ const formatTime = (ts: number): string => {
 
 const ChatBubble = ({ message, youLabel, botLabel }: Props): JSX.Element => {
   const isUser = message.role === 'user';
+  const lines = message.text
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean);
   return (
     <motion.li
       className={`${styles.row} ${isUser ? styles.rowUser : styles.rowBot}`}
@@ -30,7 +34,13 @@ const ChatBubble = ({ message, youLabel, botLabel }: Props): JSX.Element => {
     >
       <div className={`${styles.bubble} ${isUser ? styles.bubbleUser : styles.bubbleBot}`}>
         <span className={styles.author}>{isUser ? youLabel : botLabel}</span>
-        <p className={styles.text}>{message.text}</p>
+        <div className={styles.text}>
+          {lines.map((line, i) => (
+            <span key={i} className={styles.line}>
+              {line}
+            </span>
+          ))}
+        </div>
         <span className={styles.ts}>{formatTime(message.ts)}</span>
       </div>
     </motion.li>

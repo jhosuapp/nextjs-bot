@@ -39,6 +39,7 @@ const useBotEngine = ({
   const clearChat = useChatStore((s) => s.clear);
   const consumeUserInput = useChatStore((s) => s.consumeUserInput);
   const pendingUserInput = useChatStore((s) => s.pendingUserInput);
+  const setLastScriptId = useChatStore((s) => s.setLastScriptId);
 
   const videoPlayer = useVideoPlayer();
   const stateRef = useRef(state);
@@ -88,12 +89,18 @@ const useBotEngine = ({
       }, 2000);
 
       try {
-        const response = await requestBotResponse({ input, locale });
+        const previousScriptId = useChatStore.getState().lastScriptId;
+        const response = await requestBotResponse({
+          input,
+          locale,
+          previousScriptId,
+        });
         if (statusIntervalRef.current) {
           clearInterval(statusIntervalRef.current);
           statusIntervalRef.current = null;
         }
         setStatusKey(null);
+        setLastScriptId(response.scriptId ?? null);
         pushMessage({ role: "bot", text: response.text });
         setBotVideo(response.videoUrl, { loop: false, muted: false });
         setState("RESPONDING");
@@ -119,6 +126,7 @@ const useBotEngine = ({
       pushMessage,
       setBotVideo,
       setLastInput,
+      setLastScriptId,
       setState,
       setStatusKey,
       transitionToError,

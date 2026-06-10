@@ -78,7 +78,7 @@ const ChatPanel = ({ t, embedded = false }: Props): JSX.Element => {
               </button>
             </header>
 
-            <ul className={styles.list} ref={listRef}>
+            <ul className={styles.list} ref={listRef} data-lenis-prevent>
               {messages.length === 0 ? (
                 <li className={styles.empty}>{t('chat.empty')}</li>
               ) : (

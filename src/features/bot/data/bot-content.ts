@@ -3,23 +3,12 @@ const VIDEOS = {
   intro: '/videos/INTRONEW.mp4',
 } as const;
 
-type BotResponse = { videoUrl: string; text: string };
-type BotApiPayload = { input: string; locale: string };
-
-const MOCK_RESPONSES: ReadonlyArray<BotResponse> = [
-  {
-    videoUrl: '/videos/E1_VPH_CUERPO.mp4',
-    text: 'Claro, te cuento. Lo que pediste tiene varias capas, pero en esencia se trata de un avatar de IA respondiéndote en video, en tiempo real.',
-  },
-  {
-    videoUrl: '/videos/E1_VPH_CUERPO.mp4',
-    text: 'Buena pregunta. Déjame mostrarte cómo funciona el flujo — observa cómo cambia el video según la intención detectada.',
-  },
-  {
-    videoUrl: '/videos/E1_VPH_CUERPO.mp4',
-    text: 'Perfecto. Cada respuesta es un video pre-renderizado, servido según tu intención por el endpoint del bot.',
-  },
-];
+type BotResponse = { videoUrl: string; text: string; scriptId?: string };
+type BotApiPayload = {
+  input: string;
+  locale: string;
+  previousScriptId?: string | null;
+};
 
 const STATUS_KEYS = ['thinking', 'analyzing', 'preparing'] as const;
 
@@ -37,7 +26,6 @@ type StatusKey = (typeof STATUS_KEYS)[number];
 
 export {
   VIDEOS,
-  MOCK_RESPONSES,
   STATUS_KEYS,
   INACTIVITY_MS,
   INACTIVITY_WARNING_MS,

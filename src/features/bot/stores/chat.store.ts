@@ -13,6 +13,8 @@ interface ChatMessage {
 interface ChatStoreState {
   messages: ChatMessage[];
   pendingUserInput: string | null;
+  /** Último guion respondido por el bot — se pasa como contexto al clasificador. */
+  lastScriptId: string | null;
 }
 
 interface ChatStoreActions {
@@ -20,6 +22,7 @@ interface ChatStoreActions {
   clear: () => void;
   submitUserText: (text: string) => void;
   consumeUserInput: () => string | null;
+  setLastScriptId: (id: string | null) => void;
 }
 
 const generateId = (): string =>
@@ -31,6 +34,7 @@ const storeAPI: StateCreator<
 > = (set, get) => ({
   messages: [],
   pendingUserInput: null,
+  lastScriptId: null,
 
   push: ({ role, text }) => {
     const trimmed = text.trim();
@@ -48,7 +52,12 @@ const storeAPI: StateCreator<
     );
   },
 
-  clear: () => set({ messages: [], pendingUserInput: null }, false, 'clear'),
+  clear: () =>
+    set(
+      { messages: [], pendingUserInput: null, lastScriptId: null },
+      false,
+      'clear',
+    ),
 
   submitUserText: (text) => {
     const trimmed = text.trim();
@@ -63,6 +72,8 @@ const storeAPI: StateCreator<
     }
     return value;
   },
+
+  setLastScriptId: (id) => set({ lastScriptId: id }, false, 'setLastScriptId'),
 });
 
 const useChatStore = create<ChatStoreState & ChatStoreActions>()(
