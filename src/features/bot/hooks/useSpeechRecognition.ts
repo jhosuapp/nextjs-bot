@@ -107,7 +107,15 @@ const useSpeechRecognition = ({
     setEngine('whisper');
     setSpeechEngine('whisper');
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        // Cancelación de eco/ruido: evita que el micrófono capte el audio del
+        // propio bot que sale por los parlantes (auto-escucha / bucle).
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+        },
+      });
       streamRef.current = stream;
       const recorder = new MediaRecorder(stream);
       mediaRecorderRef.current = recorder;
@@ -126,7 +134,10 @@ const useSpeechRecognition = ({
           const res = await fetch('/api/transcribe', { method: 'POST', body: form });
           if (!res.ok) throw new Error(`transcribe_${res.status}`);
           const data = (await res.json()) as { text?: string };
-          if (data.text) onResultRef.current?.(data.text, true);
+          if (data.text) {
+            console.log('[mic] whisper:', data.text);
+            onResultRef.current?.(data.text, true);
+          }
         } catch (e) {
           setError(e instanceof Error ? e.message : 'transcribe_failed');
         }
@@ -171,8 +182,13 @@ const useSpeechRecognition = ({
         if (result.isFinal) final += transcript;
         else interim += transcript;
       }
-      if (final) onResultRef.current?.(final, true);
-      else if (interim) onResultRef.current?.(interim, false);
+      if (final) {
+        console.log('[mic] final:', final);
+        onResultRef.current?.(final, true);
+      } else if (interim) {
+        console.log('[mic] interim:', interim);
+        onResultRef.current?.(interim, false);
+      }
     };
     recognition.onerror = (e) => {
       setError(e.error);

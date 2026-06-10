@@ -21,6 +21,10 @@ interface UseBotEngineOptions {
   interruptWord: string;
 }
 
+// Al entrar a LISTENING (el bot acaba de callar), se ignora la voz captada
+// durante este lapso para no tomar como pregunta la cola de audio del propio bot.
+const LISTENING_GRACE_MS = 1200;
+
 const useBotEngine = ({
   locale,
   startWord,
@@ -44,6 +48,7 @@ const useBotEngine = ({
   const videoPlayer = useVideoPlayer();
   const stateRef = useRef(state);
   const statusIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const listeningSinceRef = useRef(0);
 
   useEffect(() => {
     stateRef.current = state;
@@ -179,9 +184,15 @@ const useBotEngine = ({
   const handleSpeechResult = useCallback(
     (transcript: string, isFinal: boolean) => {
       const current = stateRef.current;
+      console.log(
+        `[mic] estado=${current} final=${isFinal} →`,
+        JSON.stringify(transcript),
+      );
 
       if (current === "LISTENING") {
         if (!isFinal) return;
+        // Ventana de gracia: descarta la cola de audio del bot al recién pasar a escuchar.
+        if (Date.now() - listeningSinceRef.current < LISTENING_GRACE_MS) return;
         const words = transcript.trim().split(/\s+/).filter(Boolean);
         if (words.length >= MIN_INPUT_WORDS) {
           sendToBackend(transcript.trim());
@@ -271,6 +282,7 @@ const useBotEngine = ({
         break;
       }
       case "LISTENING": {
+        listeningSinceRef.current = Date.now();
         setBotVideo(VIDEOS.defaultWait, { loop: true, muted: true });
         videoPlayer.play(VIDEOS.defaultWait, { loop: true, muted: true });
         if (!speech.isListening) speech.start().catch(() => undefined);
