@@ -23,7 +23,7 @@ const HomeView = ({ t, tBot }: HomeViewProps): JSX.Element => {
       <TrustedByStrip t={t} />
       <AudienceTabsSection t={t} />
       <ProcessStepsSection t={t} />
-      <PricingSection t={t} />
+      {/* <PricingSection t={t} /> */}
       <IntegrationsGrid t={t} />
       <FaqSection t={t} />
     </MainContent>
