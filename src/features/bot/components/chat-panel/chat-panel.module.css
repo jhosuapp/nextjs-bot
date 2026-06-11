@@ -86,4 +86,10 @@
     width: calc(100vw - 1.5rem);
     max-height: 60vh;
   }
+
+  .panelEmbedded {
+    position: absolute !important;
+    width: calc(100% - 1.5rem);
+    max-height: calc(100% - 7rem);
+  }
 }
