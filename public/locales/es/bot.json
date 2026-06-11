@@ -55,6 +55,6 @@
   "wakeWords": {
     "start": "hola",
     "interrupt": "pregunta",
-    "initBot": "Iniciar demo"
+    "initBot": "Conocer Humanika"
   }
 }
