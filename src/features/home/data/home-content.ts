@@ -1,14 +1,11 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
-  faGoogle,
   faGoogleDrive,
   faHubspot,
   faMicrosoft,
-  faOpenai,
   faShopify,
   faWhatsapp,
   faSalesforce,
-  faMeta,
   faAmazon,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
@@ -38,8 +35,8 @@ type TrustedByLogoItem = {
 };
 
 type AudienceTabStatic = {
-  key: "digitalHumans" | "aiContent" | "aiAgents";
-  icon: IconDefinition;
+  key: "training" | "knowledge" | "service" | "sales" | "operations";
+  image: string;
 };
 
 type ProcessStepStatic = {
@@ -151,9 +148,11 @@ const homeStaticData: HomeStaticData = {
   },
   audience: {
     tabs: [
-      { key: "digitalHumans", icon: faMicrophone },
-      { key: "aiContent", icon: faVideo },
-      { key: "aiAgents", icon: faRobot },
+      { key: "training", image: "/images/formacion-empresarial.jpg" },
+      { key: "knowledge", image: "/images/contociento-organizacional.jpg" },
+      { key: "service", image: "/images/servicio-y-soporte.jpg" },
+      { key: "sales", image: "/images/ventas-y-crecimiento.jpg" },
+      { key: "operations", image: "/images/productividad-y-opetaciones.jpg" },
     ],
   },
   process: {
@@ -225,16 +224,14 @@ const homeStaticData: HomeStaticData = {
   integrations: {
     cta: { href: "#integrations" },
     logos: [
-      { name: "WhatsApp Business API", icon: faWhatsapp },
-      { name: "OpenAI", icon: faOpenai },
-      { name: "Meta AI", icon: faMeta },
-      { name: "HubSpot", icon: faHubspot },
-      { name: "Salesforce", icon: faSalesforce },
-      { name: "Google Gemini", icon: faGoogle },
-      { name: "Google Workspace", icon: faGoogleDrive },
       { name: "Microsoft Teams", icon: faMicrosoft },
-      { name: "Microsoft Azure", icon: faMicrosoft },
-      { name: "Amazon web Service", icon: faAmazon },
+      { name: "WhatsApp", icon: faWhatsapp },
+      { name: "Salesforce", icon: faSalesforce },
+      { name: "HubSpot", icon: faHubspot },
+      { name: "SharePoint", icon: faMicrosoft },
+      { name: "Google Workspace", icon: faGoogleDrive },
+      { name: "Microsoft Dynamics", icon: faMicrosoft },
+      { name: "Amazon Web Services", icon: faAmazon },
       { name: "Shopify", icon: faShopify },
       { name: "Github", icon: faGithub },
     ],
@@ -245,12 +242,13 @@ const homeStaticData: HomeStaticData = {
   },
   faq: {
     items: [
-      { id: "what-is" },
-      { id: "how-fast" },
-      { id: "languages" },
-      { id: "security" },
-      { id: "brand" },
-      { id: "pricing" },
+      { id: "digital-worker" },
+      { id: "implementation-time" },
+      { id: "replaces-people" },
+      { id: "integrations" },
+      { id: "documents" },
+      { id: "engagement-model" },
+      { id: "vs-tools" },
     ],
     contactCta: { href: "#contact" },
   },

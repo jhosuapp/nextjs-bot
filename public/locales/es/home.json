@@ -1,12 +1,12 @@
 {
   "hero": {
-    "titleLead": "Creamos ",
-    "titleAccent": "Humanika",
-    "titleTrail": " para empresas que quieren automatizar sus procesos",
-    "subtitle": "Agentes inteligentes para web, WhatsApp, ventas, soporte, capacitación y experiencias digitales.",
-    "subtitle_small": "Disponibles en tiempo real desde web, WhatsApp, eventos y pantallas interactivas.",
+    "titleLead": "Convierte el ",
+    "titleAccent": "conocimiento",
+    "titleTrail": " de tu organización en colaboradores digitales.",
+    "subtitle": "Disponibles a través de web, WhatsApp, Microsoft Teams, voz y humanos digitales.",
+    "subtitle_small": "Diseñamos e implementamos colaboradores digitales que ayudan a tus equipos a aprender, atender, vender y operar mejor utilizando la información y los procesos que ya existen en tu organización.",
     "primaryCta": "Solicitar demo",
-    "secondaryCta": "Quiero asesoría"
+    "secondaryCta": "Hablar con un especialista"
   },
 
   "contact": {
@@ -40,70 +40,102 @@
   "audience": {
     "eyebrow": "Experiencias Humanika",
 
-    "title_strong": "IA lista",
-    "title": "para operar.",
+    "title_strong": "Colaboradores digitales",
+    "title": "listos para trabajar.",
+    "description": "Diseñados para ayudar a las organizaciones a capacitar, atender, vender y operar mejor.",
 
-    "digitalHumans": {
-      "label": "Humanos digitales",
+    "training": {
+      "label": "Formación",
 
-      "title": "Presentadores virtuales impulsados por IA.",
+      "title": "Tutores digitales disponibles cuando las personas los necesitan.",
 
-      "description": "Crea humanos digitales capaces de comunicar, presentar, explicar y atender usuarios en tiempo real desde web, eventos, formación o canales digitales.",
+      "description": "Acelera el aprendizaje y la integración de nuevos colaboradores mediante tutores digitales disponibles cuando las personas los necesitan.",
 
       "bullets": [
-        "Avatares realistas con voz natural",
-        "Experiencias multilenguaje",
-        "Atención y presentación en tiempo real",
-        "Embajadores digitales para marcas y empresas"
+        "Onboarding digital",
+        "Capacitación continua",
+        "Compliance y normativas",
+        "Tutor corporativo 24/7"
       ]
     },
 
-    "aiContent": {
-      "label": "Contenido IA",
+    "knowledge": {
+      "label": "Conocimiento",
 
-      "title": "Producción audiovisual automatizada para empresas.",
+      "title": "Tu documentación corporativa, accesible en lenguaje natural.",
 
-      "description": "Transforma ideas, documentos o guiones en contenido audiovisual generado con IA para campañas, formación, social media y comunicación corporativa.",
+      "description": "Convierte manuales, procedimientos y documentación corporativa en conocimiento accesible mediante lenguaje natural.",
 
       "bullets": [
-        "Videos automáticos desde texto o documentos",
-        "Shorts, cápsulas y contenido social",
-        "Localización en múltiples idiomas",
-        "Escalamiento de producción sin equipos tradicionales"
+        "Manuales y procedimientos",
+        "Políticas corporativas",
+        "SharePoint y repositorios",
+        "Búsqueda inteligente de información"
       ]
     },
 
-    "aiAgents": {
-      "label": "Agentes IA",
+    "service": {
+      "label": "Servicio",
 
-      "title": "Agentes inteligentes que conversan y operan 24/7.",
+      "title": "Responde consultas y apoya tus procesos de soporte.",
 
-      "description": "Implementa agentes IA conectados a tus procesos, canales y sistemas para ventas, soporte, onboarding y automatización empresarial.",
+      "description": "Mejora la atención y reduce la carga operativa con colaboradores digitales capaces de responder consultas y apoyar procesos de soporte.",
 
       "bullets": [
-        "Web, WhatsApp y canales digitales",
-        "Integración con CRM y sistemas empresariales",
-        "Automatización de atención y soporte",
-        "Escalamiento a humano cuando es necesario"
+        "Atención al cliente",
+        "Soporte interno",
+        "WhatsApp y canales digitales",
+        "Escalamiento a equipos humanos"
+      ]
+    },
+
+    "sales": {
+      "label": "Ventas",
+
+      "title": "Acompaña cada oportunidad comercial.",
+
+      "description": "Acompaña oportunidades comerciales y facilita el acceso a información para equipos de ventas y clientes.",
+
+      "bullets": [
+        "Preventa inteligente",
+        "Información comercial",
+        "Seguimiento de oportunidades",
+        "Atención comercial"
+      ]
+    },
+
+    "operations": {
+      "label": "Operaciones",
+
+      "title": "Automatiza lo repetitivo y libera a tus equipos.",
+
+      "description": "Automatiza consultas y tareas repetitivas para que los equipos puedan concentrarse en actividades de mayor valor.",
+
+      "bullets": [
+        "Consultas internas",
+        "Procesos operativos",
+        "Automatización de tareas",
+        "Productividad organizacional"
       ]
     }
   },
 
   "process": {
-    "titleLead": "Nosotros ",
-    "titleAccent": "implementamos todo",
+    "titleLead": "Cómo implementamos un ",
+    "titleAccent": "colaborador digital",
+    "description": "Cada organización es diferente. Por eso comenzamos entendiendo sus objetivos, procesos y conocimiento existente. Diseñamos colaboradores digitales alineados con necesidades reales de formación, conocimiento, servicio, ventas y operaciones. Nuestro objetivo no es implementar tecnología. Nuestro objetivo es generar resultados.",
     "steps": {
       "design": {
-        "label": "Diseñamos la experiencia"
+        "label": "Entendemos el desafío"
       },
       "train": {
-        "label": "Entrenamos el agente"
+        "label": "Organizamos el conocimiento"
       },
       "integrate": {
-        "label": "Integramos canales y sistemas"
+        "label": "Diseñamos el colaborador digital"
       },
       "operate": {
-        "label": "Operamos y optimizamos continuamente"
+        "label": "Medimos y evolucionamos"
       }
     }
   },
@@ -125,8 +157,8 @@
   },
 
   "integrations": {
-    "title": "Combina nuestra plataforma con tus herramientas favoritas.",
-    "description": "Integraciones de primera clase con el stack en el que ya confías. Lleva los avatares donde ya ocurre tu trabajo.",
+    "title": "Se integra con las herramientas que tu organización ya utiliza.",
+    "description": "Los colaboradores digitales de Humanika pueden conectarse con plataformas de comunicación, gestión documental, CRM y sistemas empresariales para facilitar el acceso al conocimiento y apoyar procesos de negocio.",
     "cta": "Descubrir integraciones"
   },
 
@@ -138,34 +170,39 @@
     "stillHaveQuestion": "¿Tienes otra pregunta?",
 
     "items": {
-      "what-is": {
-        "question": "¿Qué hace realmente la plataforma?",
-        "answer": "Humanika permite crear agentes inteligentes capaces de conversar, responder preguntas, automatizar interacciones y operar experiencias digitales desde web, WhatsApp y otros canales."
+      "digital-worker": {
+        "question": "¿Qué es un colaborador digital?",
+        "answer": "Un colaborador digital es un agente impulsado por inteligencia artificial diseñado para apoyar una función específica dentro de una organización. Puede ayudar en procesos de formación, acceso al conocimiento, servicio, ventas y operaciones utilizando la información y los procesos existentes de la organización."
       },
 
-      "how-fast": {
-        "question": "¿Con qué rapidez puedo publicar mi primer agente?",
-        "answer": "La mayoría de implementaciones iniciales pueden estar operativas en pocos días, dependiendo del nivel de integración y personalización requerido."
+      "implementation-time": {
+        "question": "¿Cuánto tiempo toma implementar una solución?",
+        "answer": "Cada proyecto es diferente. Normalmente comenzamos con un caso de uso específico, construimos un piloto y medimos resultados antes de escalar a otras áreas de la organización."
       },
 
-      "languages": {
-        "question": "¿Qué idiomas y voces son compatibles?",
-        "answer": "Humanika soporta más de 80 idiomas y voces con sonido natural, incluidos acentos regionales y experiencias multilenguaje."
+      "replaces-people": {
+        "question": "¿Humanika reemplaza a las personas?",
+        "answer": "No. Los colaboradores digitales están diseñados para trabajar junto a las personas, ayudándolas a acceder más rápido a información, automatizar actividades repetitivas y mejorar su productividad."
       },
 
-      "security": {
-        "question": "¿Están mis datos seguros para uso empresarial?",
-        "answer": "Sí. Implementamos cifrado, controles de acceso y arquitecturas empresariales para proteger la información y las integraciones de cada cliente."
+      "integrations": {
+        "question": "¿Puede conectarse con nuestros sistemas y herramientas?",
+        "answer": "Sí. Los colaboradores digitales pueden integrarse con plataformas de colaboración, CRM, sistemas documentales y otras herramientas empresariales para acceder a información y apoyar procesos de negocio."
       },
 
-      "brand": {
-        "question": "¿Puedo usar mi propia imagen de marca o humanos digitales?",
-        "answer": "Sí. Puedes personalizar agentes, voces, flujos, branding y humanos digitales según la identidad y necesidades de tu empresa."
+      "documents": {
+        "question": "¿Necesito tener mis documentos organizados para empezar?",
+        "answer": "No necesariamente. Durante el proceso de implementación ayudamos a identificar, estructurar y preparar la información necesaria para que el colaborador digital pueda aportar valor."
       },
 
-      "pricing": {
-        "question": "¿Cómo funciona el precio?",
-        "answer": "El costo depende del nivel de interacción, canales, integraciones y volumen operativo requerido por cada implementación."
+      "engagement-model": {
+        "question": "¿Cómo funciona el modelo de contratación?",
+        "answer": "Humanika opera mediante un modelo de implementación inicial y operación continua. Esto nos permite diseñar, poner en marcha y evolucionar colaboradores digitales alineados con las necesidades de cada organización."
+      },
+
+      "vs-tools": {
+        "question": "¿Qué diferencia a Humanika de herramientas como ChatGPT o Claude?",
+        "answer": "Herramientas como ChatGPT o Claude generan respuestas. Humanika ayuda a las organizaciones a convertir ese potencial en soluciones concretas para formación, conocimiento, servicio, ventas y operaciones. Diseñamos colaboradores digitales alineados con procesos, objetivos y necesidades reales de negocio."
       }
     }
   }

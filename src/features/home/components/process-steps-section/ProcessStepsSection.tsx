@@ -109,9 +109,9 @@ const ProcessStepsSection = ({ t }: Props) => {
             fadeUpTertiary
           >
             {t('process.titleLead') as string}
-            <strong className="gl-degradete-text font-semibold">
+            {/* <strong className="gl-degradete-text font-semibold"> */}
               {t('process.titleAccent') as string}
-            </strong>
+            {/* </strong> */}
           </Text>
           <WrapperMotion delay={{ enter:0, exit: 0 }} fadeUpTertiary>
             <div className={styles.track}>
@@ -145,13 +145,13 @@ const ProcessStepsSection = ({ t }: Props) => {
           <Text
             tag="p"
             variant="description_small"
-            color="muted"
+            color="secondary"
             weight="semibold"
             delay={{ enter: 0.1, exit: 0.1 }}
             className="text-center"
             fadeUpTertiary
           >
-            <strong className='gl-degradete-text'>En Humanika@150%</strong> desarrollamos agentes inteligentes conectados a canales, datos y operaciones reales de negocio. Combinamos <strong className='gl-degradete-text'>inteligencia artificial</strong>, automatización, contenido dinámico y experiencias conversacionales para crear soluciones capaces de atender usuarios, ejecutar procesos, impulsar ventas y operar campañas a escala en web, WhatsApp y ecosistemas enterprise. Nuestros avatars son solo una pequeña capa visible de la infraestructura de interacción inteligente que construimos para empresas.
+            {t('process.description')}
           </Text>
         </div>
       </div>

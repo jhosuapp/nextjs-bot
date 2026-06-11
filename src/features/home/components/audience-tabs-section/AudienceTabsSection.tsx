@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
 import {
@@ -73,8 +73,15 @@ const AudienceTabsSection = ({ t }: Props) => {
               ))}
             </ul>
           </div>
-          <div className={styles.panelMedia} aria-hidden="true">
-            <FontAwesomeIcon icon={tabItem.icon} className={styles.panelMediaIcon} />
+          <div className={styles.panelMedia}>
+            <Image
+              src={tabItem.image}
+              alt={t(`audience.${tabItem.key}.label`) as string}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className={styles.panelMediaImage}
+            />
+            <span className={styles.panelMediaOverlay} aria-hidden="true" />
           </div>
         </article>
       ),
@@ -93,6 +100,15 @@ const AudienceTabsSection = ({ t }: Props) => {
           fadeUpTertiary
         >
           <strong className='gl-degradete-text font-bold'>{t('audience.title_strong')}</strong> {t('audience.title')}
+        </Text>
+        <Text 
+          tag="p" 
+          variant="description" 
+          color="muted"
+          delay={{ enter: 0, exit: 0 }}
+          fadeUpTertiary
+        >
+          {t('audience.description')}
         </Text>
       </FadeIn>
 

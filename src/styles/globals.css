@@ -81,6 +81,7 @@
 
 :root[data-theme="dark"] {
   --btn-secondary: #00b1d7;
+  --secondary: #aab6d3;
 
   --text-primary: #fff;
   --text-secondary: #fff;

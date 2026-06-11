@@ -77,11 +77,6 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
                   type="button"
                   iconRight={ faWhatsapp }
                 />
-                <Button
-                  text={t('hero.primaryCta') as string}
-                  style="primary"
-                  type="button"
-                />
               </div>
             </WrapperMotion>
         </article>

@@ -32,46 +32,62 @@
     "playAria": "Play preview"
   },
   "audience": {
-    "eyebrow": "For every team",
-    "title": "AI avatars for any team.",
-    "marketing": {
-      "label": "Marketing",
-      "title": "Personalize every campaign at scale.",
-      "description": "Spin up branded avatar videos for any audience segment in minutes, not weeks.",
+    "eyebrow": "Humanika experiences",
+    "title_strong": "AI ready",
+    "title": "to operate.",
+    "training": {
+      "label": "Training",
+      "title": "Digital tutors available whenever people need them.",
+      "description": "Accelerate learning and the onboarding of new team members with digital tutors available whenever people need them.",
       "bullets": [
-        "Localized creatives in 80+ languages",
-        "A/B test scripts without re-shoots",
-        "Sync with your CRM and CDP"
+        "Digital onboarding",
+        "Continuous training",
+        "Compliance and regulations",
+        "24/7 corporate tutor"
       ]
     },
-    "creators": {
-      "label": "Content creators",
-      "title": "Publish more, shoot less.",
-      "description": "Generate full-length explainers and shorts from a single script, on brand and on schedule.",
+    "knowledge": {
+      "label": "Knowledge",
+      "title": "Your corporate documentation, accessible in natural language.",
+      "description": "Turn manuals, procedures and corporate documentation into knowledge that is accessible through natural language.",
       "bullets": [
-        "Multiple avatar styles and voices",
-        "One-click vertical and horizontal exports",
-        "Native captioning in any language"
+        "Manuals and procedures",
+        "Corporate policies",
+        "SharePoint and repositories",
+        "Intelligent information search"
       ]
     },
-    "learning": {
-      "label": "Learning & Development",
-      "title": "Roll out training that actually retains.",
-      "description": "Turn dense documents into interactive courses with avatars that answer questions on demand.",
+    "service": {
+      "label": "Service",
+      "title": "Answer queries and support your service processes.",
+      "description": "Improve service and reduce operational load with digital workers able to answer queries and support service processes.",
       "bullets": [
-        "Quiz-aware adaptive avatars",
-        "SCORM / xAPI ready",
-        "Audit logs for compliance teams"
+        "Customer service",
+        "Internal support",
+        "WhatsApp and digital channels",
+        "Escalation to human teams"
       ]
     },
     "sales": {
       "label": "Sales",
-      "title": "Show up personalized, every time.",
-      "description": "Send 1:1 video pitches at scale and let prospects ask follow-ups to an always-available agent.",
+      "title": "Support every commercial opportunity.",
+      "description": "Support commercial opportunities and make information easier to access for sales teams and customers.",
       "bullets": [
-        "Auto-generate prospect videos from CRM data",
-        "Trackable engagement analytics",
-        "Calendar handoff when intent spikes"
+        "Intelligent pre-sales",
+        "Commercial information",
+        "Opportunity tracking",
+        "Commercial assistance"
+      ]
+    },
+    "operations": {
+      "label": "Operations",
+      "title": "Automate the repetitive and free up your teams.",
+      "description": "Automate queries and repetitive tasks so teams can focus on higher-value activities.",
+      "bullets": [
+        "Internal queries",
+        "Operational processes",
+        "Task automation",
+        "Organizational productivity"
       ]
     }
   },
@@ -108,29 +124,33 @@
     "contactCta": "Talk to our team",
     "stillHaveQuestion": "Still have a question?",
     "items": {
-      "what-is": {
-        "question": "What does the platform actually do?",
-        "answer": "150% turns scripts, documents and prompts into lifelike avatar videos and real-time agents you can drop into your product, marketing site, training portal or sales workflow."
+      "digital-worker": {
+        "question": "What is a digital worker?",
+        "answer": "A digital worker is an agent powered by artificial intelligence designed to support a specific function within an organization. It can help with training, knowledge access, service, sales and operations using the organization's existing information and processes."
       },
-      "how-fast": {
-        "question": "How quickly can I publish my first avatar?",
-        "answer": "Most teams ship their first avatar in under two minutes from sign-up: pick a presenter, paste a script, choose a voice and language, then export or embed."
+      "implementation-time": {
+        "question": "How long does it take to implement a solution?",
+        "answer": "Every project is different. We usually start with a specific use case, build a pilot and measure results before scaling to other areas of the organization."
       },
-      "languages": {
-        "question": "Which languages and voices are supported?",
-        "answer": "We support 80+ languages and locales with native-sounding voices, including regional accents. You can also clone a brand voice with consent for premium plans."
+      "replaces-people": {
+        "question": "Does Humanika replace people?",
+        "answer": "No. Digital workers are designed to work alongside people, helping them access information faster, automate repetitive tasks and improve their productivity."
       },
-      "security": {
-        "question": "Is my data safe to use with enterprise content?",
-        "answer": "Yes. We are SOC 2 Type II, encrypt data at rest and in transit, never train shared models on customer content, and offer regional residency and SSO on enterprise plans."
+      "integrations": {
+        "question": "Can it connect with our systems and tools?",
+        "answer": "Yes. Digital workers can integrate with collaboration platforms, CRMs, document systems and other enterprise tools to access information and support business processes."
       },
-      "brand": {
-        "question": "Can I bring my own brand likeness or presenters?",
-        "answer": "Absolutely. Upload your brand kit, customize avatar wardrobes and backdrops, or onboard a custom presenter from a short consented recording."
+      "documents": {
+        "question": "Do I need my documents organized to get started?",
+        "answer": "Not necessarily. During the implementation process we help identify, structure and prepare the information needed so the digital worker can deliver value."
       },
-      "pricing": {
-        "question": "How does pricing work?",
-        "answer": "There is a free tier for individuals and small teams, usage-based plans for growing companies, and custom enterprise pricing with dedicated infrastructure and SLAs."
+      "engagement-model": {
+        "question": "How does the engagement model work?",
+        "answer": "Humanika operates through an initial implementation and continuous operation model. This allows us to design, launch and evolve digital workers aligned with each organization's needs."
+      },
+      "vs-tools": {
+        "question": "What makes Humanika different from tools like ChatGPT or Claude?",
+        "answer": "Tools like ChatGPT or Claude generate answers. Humanika helps organizations turn that potential into concrete solutions for training, knowledge, service, sales and operations. We design digital workers aligned with real business processes, goals and needs."
       }
     }
   }

@@ -45,17 +45,31 @@
 }
 
 .panelMedia {
-  @apply relative flex w-full items-center justify-center overflow-hidden rounded-2xl aspect-[16/10];
+  @apply relative w-full overflow-hidden rounded-2xl aspect-[16/10] border;
+  border-color: var(--border-subtle);
   background: linear-gradient(
     160deg,
     rgba(0, 190, 255, 0.1),
     rgba(23, 241, 209, 0.06)
   );
+  box-shadow: 0 24px 48px -24px rgba(0, 190, 255, 0.25);
 }
 
-.panelMediaIcon {
-  @apply opacity-85;
-  font-size: clamp(3rem, 8vw, 5rem);
-  color: var(--primary);
-  filter: drop-shadow(0 12px 24px rgba(0, 190, 255, 0.2));
+.panelMediaImage {
+  @apply absolute inset-0 h-full w-full object-cover;
+  transition: transform 0.6s ease;
+}
+
+.panelMedia:hover .panelMediaImage {
+  transform: scale(1.04);
+}
+
+.panelMediaOverlay {
+  @apply pointer-events-none absolute inset-0;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 190, 255, 0.12),
+    rgba(8, 14, 26, 0.05) 45%,
+    rgba(8, 14, 26, 0.45)
+  );
 }
