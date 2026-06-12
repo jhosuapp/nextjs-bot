@@ -47,7 +47,8 @@ const HeroSection = ({ t, tbot }: HeroSectionProps):JSX.Element => {
               weight='semibold'
               immediate
             >
-              {t('hero.titleLead') as string}<strong className='gl-degradete-text font-semibold'>{t('hero.titleAccent') as string}</strong>{t('hero.titleTrail') as string}
+              {t('hero.titleLead') as string}<strong className='gl-degradete-text font-semibold'>{t('hero.titleAccent') as string}</strong>
+              {/* {t('hero.titleLead') as string}<strong className='gl-degradete-text font-semibold'>{t('hero.titleAccent') as string}</strong>{t('hero.titleTrail') as string} */}
             </Text>
             <Text
               tag='h2'

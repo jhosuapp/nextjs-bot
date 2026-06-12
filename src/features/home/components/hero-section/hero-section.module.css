@@ -14,7 +14,7 @@
 }
 
 .heroSection__content {
-  @apply w-full md:w-1/2 flex flex-col justify-center gap-4 max-w-lg;
+  @apply w-full md:w-1/2 flex flex-col justify-center gap-4 max-w-[570px];
 }
 
 .heroSection__content h2 {

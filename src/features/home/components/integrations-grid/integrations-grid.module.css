@@ -33,7 +33,7 @@
 }
 
 .logo {
-  @apply h-12 w-12 object-contain transition-transform duration-200;
+  @apply h-9 w-9 lg:h-12 lg:w-12 object-contain transition-transform duration-200;
 }
 
 .tile:hover .logo {
@@ -46,6 +46,6 @@
 }
 
 .tileLabel {
-  @apply text-sm font-semibold tracking-[-0.005em];
+  @apply text-sm font-semibold text-center tracking-[-0.005em];
   color: var(--foreground);
 }

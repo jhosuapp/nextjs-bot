@@ -103,6 +103,7 @@ const detectSpecialOt = (normalized: string): string | null => {
     return script ? includesAny(normalized, script.keywords) : false;
   };
 
+  if (matches("OT12_PRECIO")) return "OT12_PRECIO";
   if (matches("OT5_CLIMA")) return "OT5_CLIMA";
   if (matches("OT6_GROSERIAS")) return "OT6_GROSERIAS";
   if (matches("OT7_PIROPOS")) return "OT7_PIROPOS";
@@ -202,16 +203,17 @@ ${catalog}
 REGLAS DE PRIORIDAD (en este orden):
 1. Si el usuario acepta una oferta o pide profundizar/demo/contacto → CTA_MAS_INFORMACION.
 2. Preguntas sobre el avatar: quién eres → OT1_PRESENTACION; datos personales → OT2_PERSONAL; qué IA usas → OT8_IA.
-3. Clima → OT5_CLIMA; groserías → OT6_GROSERIAS; piropos → OT7_PIROPOS; despedida → OT11_CIERRE; charla casual → OT3_CONVERSACION_GENERAL; interrupción → OT4_INTERRUPCION.
-4. Tema completamente ajeno a Humanika / colaboradores digitales / IA → OT9_FUERA_ALCANCE.
-5. Mensaje incomprensible o ambiguo → OT10_NO_ENTENDI.
-6. En cualquier otro caso, elige el mejor guion temático (A–L).
+3. Precio / costo / tarifa / presupuesto / cotización (cuánto cuesta, cuánto vale, es caro) → OT12_PRECIO.
+4. Clima → OT5_CLIMA; groserías → OT6_GROSERIAS; piropos → OT7_PIROPOS; despedida → OT11_CIERRE; charla casual → OT3_CONVERSACION_GENERAL; interrupción → OT4_INTERRUPCION.
+5. Tema completamente ajeno a Humanika / colaboradores digitales / IA → OT9_FUERA_ALCANCE.
+6. Mensaje incomprensible o ambiguo → OT10_NO_ENTENDI.
+7. En cualquier otro caso, elige el mejor guion temático (A–L).
 ${context}
 Debes elegir SOLO un script_id del catálogo.
 ${previous ? `Contexto: guion previo = ${previous.id}.` : ""}
 Mensaje del usuario: "${input}"
 
-reason_code permitidos: GREETING, IN_SCOPE_TOPIC, CTA, PRESENTATION, PERSONAL, AI_QUESTION, WEATHER, PROFANITY, COMPLIMENT, INTERRUPTION, SMALL_TALK, CLOSING, OUT_OF_SCOPE, LOW_CONFIDENCE.
+reason_code permitidos: GREETING, IN_SCOPE_TOPIC, CTA, PRESENTATION, PERSONAL, AI_QUESTION, WEATHER, PROFANITY, COMPLIMENT, INTERRUPTION, SMALL_TALK, CLOSING, PRICE, OUT_OF_SCOPE, LOW_CONFIDENCE.
 
 Responde SOLO en JSON estricto:
 {"script_id":"...","confidence":0.00,"reason_code":"...","reason":"explicación breve"}`;

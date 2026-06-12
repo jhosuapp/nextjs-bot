@@ -14,27 +14,10 @@ interface CookieConsentActions {
   hydrate: () => void;
 }
 
-const STORAGE_KEY = 'lumina:cookies';
-
-const persist = (status: ConsentStatus): void => {
-  try {
-    localStorage.setItem(STORAGE_KEY, status);
-  } catch {
-    /* storage may be blocked */
-  }
-};
-
-const readStored = (): ConsentStatus => {
-  if (typeof window === 'undefined') return 'pending';
-  try {
-    const v = window.localStorage.getItem(STORAGE_KEY);
-    if (v === 'accepted' || v === 'declined') return v;
-  } catch {
-    /* fall through */
-  }
-  return 'pending';
-};
-
+/**
+ * Consentimiento de cookies por sesión: NO se persiste. El estado vive solo en
+ * memoria, así que cada recarga vuelve a `pending` y el banner se pide de nuevo.
+ */
 const storeAPI: StateCreator<
   CookieConsentState & CookieConsentActions,
   [['zustand/devtools', never]]
@@ -43,18 +26,16 @@ const storeAPI: StateCreator<
   hydrated: false,
 
   accept: () => {
-    persist('accepted');
     set({ status: 'accepted' }, false, 'accept');
   },
 
   decline: () => {
-    persist('declined');
     set({ status: 'declined' }, false, 'decline');
   },
 
+  // Marca el montaje en cliente para evitar renderizar el banner en SSR.
   hydrate: () => {
-    const status = readStored();
-    set({ status, hydrated: true }, false, 'hydrate');
+    set({ hydrated: true }, false, 'hydrate');
   },
 });
 

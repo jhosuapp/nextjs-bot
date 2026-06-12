@@ -224,6 +224,14 @@
     "triggers": []
   },
   {
+    "id": "OT12_PRECIO",
+    "group": "OT",
+    "text": "El costo depende del caso de uso, el alcance y las integraciones necesarias.\nNo es lo mismo implementar un tutor digital para onboarding que una solución integrada con múltiples áreas y sistemas de una organización.\nSi lo deseas, uno de nuestros especialistas puede ayudarte a estimar el alcance y compartir una referencia ajustada a tus necesidades.",
+    "description": "El usuario pregunta por el precio, costo, tarifa, presupuesto o cotización del servicio. Úsalo cuando quieren saber cuánto cuesta, cuánto vale, qué tarifa o planes manejan, si es caro o piden una cotización.",
+    "keywords": ["precio", "precios", "costo", "costos", "cuanto cuesta", "cuanto vale", "cuanto sale", "cuanto cobran", "tarifa", "tarifas", "presupuesto", "cotizacion", "caro", "es caro", "que precio tiene", "planes y precios"],
+    "triggers": []
+  },
+  {
     "id": "CTA_MAS_INFORMACION",
     "group": "CTA",
     "text": "Excelente.\nSi te gustaría profundizar en este tema o explorar posibles aplicaciones para tu organización, te invito a dejarnos tus datos a través del formulario de contacto o escribirnos por WhatsApp.\nUno de nuestros especialistas podrá ayudarte a resolver preguntas específicas y evaluar oportunidades de implementación según tus necesidades.\nEstaremos encantados de conversar contigo.",
