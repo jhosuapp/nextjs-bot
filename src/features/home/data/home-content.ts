@@ -1,15 +1,5 @@
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
-  faGoogleDrive,
-  faHubspot,
-  faMicrosoft,
-  faShopify,
-  faWhatsapp,
-  faSalesforce,
-  faAmazon,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import {
   faBolt,
   faBrain,
   faChartLine,
@@ -26,7 +16,7 @@ import {
 
 type LogoItem = {
   name: string;
-  icon: IconDefinition;
+  src: string;
 };
 
 type TrustedByLogoItem = {
@@ -224,16 +214,20 @@ const homeStaticData: HomeStaticData = {
   integrations: {
     cta: { href: "#integrations" },
     logos: [
-      { name: "Microsoft Teams", icon: faMicrosoft },
-      { name: "WhatsApp", icon: faWhatsapp },
-      { name: "Salesforce", icon: faSalesforce },
-      { name: "HubSpot", icon: faHubspot },
-      { name: "SharePoint", icon: faMicrosoft },
-      { name: "Google Workspace", icon: faGoogleDrive },
-      { name: "Microsoft Dynamics", icon: faMicrosoft },
-      { name: "Amazon Web Services", icon: faAmazon },
-      { name: "Shopify", icon: faShopify },
-      { name: "Github", icon: faGithub },
+      { name: "Microsoft Teams", src: "/logos/integrations/microsoft-teams.svg" },
+      { name: "WhatsApp", src: "/logos/integrations/whatsapp.svg" },
+      { name: "Salesforce", src: "/logos/integrations/salesforce.svg" },
+      { name: "HubSpot", src: "/logos/integrations/hubspot.svg" },
+      { name: "SharePoint", src: "/logos/integrations/sharepoint.svg" },
+      { name: "Google Workspace", src: "/logos/integrations/google-workspace.svg" },
+      { name: "SAP", src: "/logos/integrations/sap.svg" },
+      { name: "Microsoft Dynamics", src: "/logos/integrations/dynamics-365.svg" },
+      { name: "Zendesk", src: "/logos/integrations/zendesk.svg" },
+      { name: "ServiceNow", src: "/logos/integrations/servicenow.svg" },
+      { name: "Moodle", src: "/logos/integrations/moodle.svg" },
+      { name: "Amazon Web Services", src: "/logos/integrations/aws.svg" },
+      { name: "Shopify", src: "/logos/integrations/shopify.svg" },
+      { name: "Github", src: "/logos/integrations/github.svg" },
     ],
   },
   pricing: {

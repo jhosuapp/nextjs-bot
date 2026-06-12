@@ -25,7 +25,6 @@ const headerStaticData: HeaderStaticData = {
     { key: "bot", href: "/#hero" },
     { key: "solutions", href: "/#solutions" },
     { key: "process", href: "/#process" },
-    { key: "pricing", href: "/#pricing" },
     { key: "faqs", href: "/#faqs" },
     {
       key: "articles",

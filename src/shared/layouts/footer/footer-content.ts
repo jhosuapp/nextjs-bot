@@ -47,7 +47,6 @@ const footerStaticData: FooterStaticData = {
           { key: "bot", href: "/#hero" },
           { key: "solutions", href: "/#solutions" },
           { key: "process", href: "/#process" },
-          { key: "pricing", href: "/#pricing" },
           { key: "faqs", href: "/#faqs" },
           { key: "articles", href: "/blog" },
         ],
@@ -86,12 +85,6 @@ const footerStaticData: FooterStaticData = {
         name: "LinkedIn",
         href: "https://www.linkedin.com/company/150porciento/",
         icon: faLinkedinIn,
-      },
-      {
-        key: "github",
-        name: "GitHub",
-        href: "https://github.com/150PorcientoCol/",
-        icon: faGithub,
       },
     ],
     legalLinks: [

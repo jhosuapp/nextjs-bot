@@ -22,7 +22,7 @@
 }
 
 .tile {
-  @apply flex aspect-square flex-col items-center justify-center gap-2 rounded-2xl p-6 border transition-[transform,box-shadow] duration-200;
+  @apply flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl p-6 border transition-[transform,box-shadow] duration-200;
   background: var(--surface-elevated);
   border-color: var(--border-subtle);
 }
@@ -32,14 +32,17 @@
   box-shadow: 0 16px 40px -20px rgba(0, 22, 67, 0.25);
 }
 
-.icon {
-  @apply h-9 w-9 text-[2.25rem] opacity-85 transition-[color,opacity] duration-200;
-  color: var(--text-strong);
+.logo {
+  @apply h-12 w-12 object-contain transition-transform duration-200;
 }
 
-.tile:hover .icon {
-  @apply opacity-100;
-  color: var(--primary);
+.tile:hover .logo {
+  @apply scale-105;
+}
+
+/* En modo oscuro: tile oscura (token) + logos en blanco */
+:global(:root[data-theme="dark"]) .logo {
+  filter: brightness(0) invert(1);
 }
 
 .tileLabel {

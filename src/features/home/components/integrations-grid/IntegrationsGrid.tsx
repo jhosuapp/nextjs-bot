@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { FadeIn } from '@/src/shared/components/motion/FadeIn';
@@ -55,10 +55,13 @@ const IntegrationsGrid = ({ t }: IntegrationsGridProps) => {
                 whileHover={reduce ? undefined : { y: -3, scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <FontAwesomeIcon
-                  icon={logo.icon}
-                  className={styles.icon}
-                  aria-hidden="true"
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={48}
+                  height={48}
+                  unoptimized
+                  className={styles.logo}
                 />
                 <span className={styles.tileLabel}>{logo.name}</span>
               </motion.div>

@@ -21,7 +21,6 @@
     "bot": "Bot",
     "solutions": "Solutions",
     "process": "How it works",
-    "pricing": "Pricing",
     "faqs": "FAQs",
     "articles": "Articles",
     "trust": "Building trust",
@@ -77,7 +76,6 @@
         "bot": "Bot",
         "solutions": "Solutions",
         "process": "Process",
-        "pricing": "Pricing",
         "faqs": "FAQs",
         "trust": "Trust"
       },
@@ -90,7 +88,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} 150%. All rights reserved.",
+      "copyright": "© {{year}} Humanika, a 150 Percent initiative. All rights reserved.",
       "socialsAria": "Social media",
       "legalsAria": "Legal links",
       "legal": {

@@ -48,9 +48,9 @@ const FooterNav = ({ t }: FooterNavProps) => {
           aria-label={t('footer.brand.homeAria', { name: brand.name }) as string}
         >
           {theme === 'light' ? (
-            <Image src="/svg/logo.svg" alt={brand.name} width={96} height={33} />
+            <Image src="/images/logo.png" alt={brand.name} width={170} height={33} />
           ) : (
-            <Image src="/svg/logo-white.svg" alt={brand.name} width={96} height={33} />
+            <Image src="/images/logo-white.png" alt={brand.name} width={170} height={33} />
           )}
         </Link>
       </div>

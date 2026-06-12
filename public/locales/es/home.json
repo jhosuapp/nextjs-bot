@@ -1,10 +1,10 @@
 {
   "hero": {
-    "titleLead": "Colaboradores digitales ",
-    "titleAccent": "impulsados por IA",
-    "titleTrail": " para atención, ventas y operación.",
+    "titleLead": "Automatice procesos, aproveche el  ",
+    "titleAccent": "conocimiento",
+    "titleTrail": " de su organización y aumente la productividad con inteligencia artificial.",
     "subtitle": "Disponibles a través de web, WhatsApp, voz y humanos digitales.",
-    "subtitle_small": "Diseñamos e implementamos colaboradores digitales conectados al conocimiento, los sistemas y los procesos de tu organización para ayudar a tus equipos a aprender, atender, vender y operar mejor.",
+    "subtitle_small": "Diseñamos e implementamos colaboradores digitales conectados al conocimiento, los sistemas y los procesos de su organización para ayudar a sus equipos a aprender, atender, vender y operar mejor.",
     "primaryCta": "Solicitar demo",
     "secondaryCta": "Hablar con un especialista"
   },
@@ -20,7 +20,7 @@
     "phonePlaceholder": "3001234567",
     "phoneExtensionLabel": "Extensión (opcional)",
     "phoneExtensionPlaceholder": "57",
-    "cta": "Quiero mi avatar",
+    "cta": "Solicitar asesoría",
     "ctaSuccess": "Registro exitoso"
   },
 
@@ -43,6 +43,7 @@
     "title_strong": "Colaboradores digitales",
     "title": "listos para trabajar.",
     "description": "Diseñados para ayudar a las organizaciones a capacitar, atender, vender y operar mejor.",
+    "availableOn": "Disponible en:",
 
     "training": {
       "label": "Formación",
@@ -56,7 +57,9 @@
         "Capacitación continua",
         "Compliance y normativas",
         "Tutor corporativo 24/7"
-      ]
+      ],
+
+      "channels": "Microsoft Teams, Web, WhatsApp y Avatar Digital"
     },
 
     "knowledge": {
@@ -71,7 +74,9 @@
         "Políticas corporativas",
         "SharePoint y repositorios",
         "Búsqueda inteligente de información"
-      ]
+      ],
+
+      "channels": "WhatsApp, Microsoft Teams, Web e Intranet Corporativa"
     },
 
     "service": {
@@ -86,7 +91,9 @@
         "Soporte interno",
         "WhatsApp y canales digitales",
         "Escalamiento a equipos humanos"
-      ]
+      ],
+
+      "channels": "WhatsApp, Web, Microsoft Teams y Voz"
     },
 
     "sales": {
@@ -101,7 +108,9 @@
         "Información comercial",
         "Seguimiento de oportunidades",
         "Atención comercial"
-      ]
+      ],
+
+      "channels": "WhatsApp, Web, Voz y CRM"
     },
 
     "operations": {
@@ -116,7 +125,9 @@
         "Procesos operativos",
         "Automatización de tareas",
         "Productividad organizacional"
-      ]
+      ],
+
+      "channels": "Microsoft Teams, WhatsApp, Web y Sistemas Internos"
     }
   },
 

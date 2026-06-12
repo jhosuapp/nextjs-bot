@@ -21,7 +21,6 @@
     "bot": "Bot",
     "solutions": "Soluciones",
     "process": "Cómo funciona",
-    "pricing": "Precios",
     "faqs": "FAQs",
     "articles": "Artículos",
     "allArticles": "Ver todos",
@@ -78,7 +77,6 @@
         "bot": "Bot",
         "solutions": "Soluciones",
         "process": "Proceso",
-        "pricing": "Precios",
         "faqs": "Preguntas frecuentes",
         "articles": "Artículos"
       },
@@ -91,7 +89,7 @@
       }
     },
     "bottom": {
-      "copyright": "© {{year}} 150%. Todos los derechos reservados.",
+      "copyright": "© {{year}} Humanika, una iniciativa de 150 Por Ciento. Todos los derechos reservados.",
       "socialsAria": "Redes sociales",
       "legalsAria": "Enlaces legales",
       "legal": {

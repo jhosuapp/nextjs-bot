@@ -35,6 +35,8 @@
     "eyebrow": "Humanika experiences",
     "title_strong": "AI ready",
     "title": "to operate.",
+    "description": "Designed to help organizations train, serve, sell and operate better.",
+    "availableOn": "Available on:",
     "training": {
       "label": "Training",
       "title": "Digital tutors available whenever people need them.",
@@ -44,7 +46,8 @@
         "Continuous training",
         "Compliance and regulations",
         "24/7 corporate tutor"
-      ]
+      ],
+      "channels": "Microsoft Teams, Web, WhatsApp and Digital Avatar"
     },
     "knowledge": {
       "label": "Knowledge",
@@ -55,7 +58,8 @@
         "Corporate policies",
         "SharePoint and repositories",
         "Intelligent information search"
-      ]
+      ],
+      "channels": "WhatsApp, Microsoft Teams, Web and Corporate Intranet"
     },
     "service": {
       "label": "Service",
@@ -66,7 +70,8 @@
         "Internal support",
         "WhatsApp and digital channels",
         "Escalation to human teams"
-      ]
+      ],
+      "channels": "WhatsApp, Web, Microsoft Teams and Voice"
     },
     "sales": {
       "label": "Sales",
@@ -77,7 +82,8 @@
         "Commercial information",
         "Opportunity tracking",
         "Commercial assistance"
-      ]
+      ],
+      "channels": "WhatsApp, Web, Voice and CRM"
     },
     "operations": {
       "label": "Operations",
@@ -88,7 +94,8 @@
         "Operational processes",
         "Task automation",
         "Organizational productivity"
-      ]
+      ],
+      "channels": "Microsoft Teams, WhatsApp, Web and Internal Systems"
     }
   },
   "process": {

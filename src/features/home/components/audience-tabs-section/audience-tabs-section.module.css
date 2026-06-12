@@ -44,6 +44,29 @@
   background: var(--primary);
 }
 
+.availability {
+  @apply mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 rounded-xl border px-3.5 py-2.5 text-sm leading-relaxed;
+  color: var(--foreground);
+  border-color: var(--border-subtle);
+  background: linear-gradient(
+    160deg,
+    rgba(0, 190, 255, 0.08),
+    rgba(23, 241, 209, 0.04)
+  );
+}
+
+.availabilityLabel {
+  @apply inline-flex items-center gap-1.5 font-semibold;
+  color: var(--primary);
+}
+
+.availabilityLabel::before {
+  content: "";
+  @apply h-1.5 w-1.5 rounded-full;
+  background: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 190, 255, 0.18);
+}
+
 .panelMedia {
   @apply relative w-full overflow-hidden rounded-2xl aspect-[16/10] border;
   border-color: var(--border-subtle);

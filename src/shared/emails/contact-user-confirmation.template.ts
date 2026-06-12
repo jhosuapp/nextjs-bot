@@ -24,7 +24,7 @@ export function buildUserConfirmationEmail({
     "",
     "— El equipo de 150%",
     "",
-    "© 2026 150%. Todos los derechos reservados.",
+    "© 2026 Humanika, una iniciativa de 150 Por Ciento. Todos los derechos reservados.",
   ].join("\n");
 
   // NOTE: el logo viene en SVG. Gmail/Outlook no renderizan SVG inline en <img>.
@@ -117,7 +117,7 @@ export function buildUserConfirmationEmail({
                   <a href="mailto:contacto@150porciento.com" style="color:#17f1d1;text-decoration:none;">contacto@150porciento.com</a>
                 </p>
                 <p style="margin:0;font-size:12px;line-height:18px;color:#aab6d3;mso-line-height-rule:exactly;">
-                  © 2026 150%. Todos los derechos reservados.
+                  © 2026 Humanika, una iniciativa de 150 Por Ciento. Todos los derechos reservados.
                 </p>
               </td>
             </tr>

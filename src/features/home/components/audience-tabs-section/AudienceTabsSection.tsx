@@ -72,6 +72,14 @@ const AudienceTabsSection = ({ t }: Props) => {
                 </WrapperMotion>
               ))}
             </ul>
+            <WrapperMotion delay={{ enter: 0.5, exit: 0.1 }} fadeUpTertiary immediate>
+              <p className={styles.availability}>
+                <span className={styles.availabilityLabel}>
+                  {t('audience.availableOn')}
+                </span>{' '}
+                {t(`audience.${tabItem.key}.channels`)}
+              </p>
+            </WrapperMotion>
           </div>
           <div className={styles.panelMedia}>
             <Image
