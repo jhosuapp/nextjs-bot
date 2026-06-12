@@ -5,6 +5,24 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { classifyScript } from "@/src/features/bot/server/classify-script";
 import { getScriptById } from "@/src/features/bot/data/humanika-scripts.type";
+import type { ConversationTurn } from "@/src/features/bot/data/bot-content";
+
+// Límites del historial recibido para acotar tokens enviados al clasificador.
+const MAX_HISTORY_TURNS = 6;
+const MAX_TURN_CHARS = 300;
+
+const parseHistory = (raw: unknown): ConversationTurn[] => {
+  if (!Array.isArray(raw)) return [];
+  const turns: ConversationTurn[] = [];
+  for (const item of raw) {
+    if (!item || typeof item !== "object") continue;
+    const { role, text } = item as { role?: unknown; text?: unknown };
+    if (role !== "user" && role !== "bot") continue;
+    if (typeof text !== "string" || !text.trim()) continue;
+    turns.push({ role, text: text.trim().slice(0, MAX_TURN_CHARS) });
+  }
+  return turns.slice(-MAX_HISTORY_TURNS);
+};
 
 type BotResponseBody = {
   scriptId: string;
@@ -45,10 +63,11 @@ export default async function handler(
     return;
   }
 
-  const { input, previousScriptId } = (req.body ?? {}) as {
+  const { input, previousScriptId, history } = (req.body ?? {}) as {
     input?: unknown;
     locale?: unknown;
     previousScriptId?: unknown;
+    history?: unknown;
   };
 
   if (typeof input !== "string" || !input.trim()) {
@@ -61,8 +80,10 @@ export default async function handler(
       ? previousScriptId
       : null;
 
+  const conversation = parseHistory(history);
+
   try {
-    const result = await classifyScript(input.trim(), previous);
+    const result = await classifyScript(input.trim(), previous, conversation);
     const script = getScriptById(result.scriptId);
 
     if (!script) {

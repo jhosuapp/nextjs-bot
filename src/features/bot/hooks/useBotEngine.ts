@@ -12,8 +12,12 @@ import { useBotStore } from "@/src/features/bot/stores/bot.store";
 import { useChatStore } from "@/src/features/bot/stores/chat.store";
 import { useInactivityTimer } from "@/src/features/bot/hooks/useInactivityTimer";
 import { useSpeechRecognition } from "@/src/features/bot/hooks/useSpeechRecognition";
-import { useVideoPlayer } from "@/src/features/bot/hooks/useVideoPlayer";
-import { useWakeWord } from "@/src/features/bot/hooks/useWakeWord";
+import {
+  useVideoPlayer,
+  BASE_VIDEO_VOLUME,
+} from "@/src/features/bot/hooks/useVideoPlayer";
+import { useVoiceActivity } from "@/src/features/bot/hooks/useVoiceActivity";
+import { useWakeWord, normalize } from "@/src/features/bot/hooks/useWakeWord";
 
 interface UseBotEngineOptions {
   locale: string;
@@ -23,7 +27,16 @@ interface UseBotEngineOptions {
 
 // Al entrar a LISTENING (el bot acaba de callar), se ignora la voz captada
 // durante este lapso para no tomar como pregunta la cola de audio del propio bot.
-const LISTENING_GRACE_MS = 1200;
+const LISTENING_GRACE_MS = 500;
+
+// Mientras el bot habla (INTRO/RESPONDING), al detectar voz del usuario (VAD) se
+// baja casi a silencio el audio del bot para que las voces no se crucen y el
+// micrófono capte el "pregunta" al primer intento. Se restaura al callar.
+const DUCK_VOLUME = 0.08;
+const DUCK_RESTORE_MS = 1000;
+
+// Cuántos mensajes recientes (usuario+bot) se envían como contexto al clasificador.
+const HISTORY_TURNS = 6;
 
 const useBotEngine = ({
   locale,
@@ -49,6 +62,7 @@ const useBotEngine = ({
   const stateRef = useRef(state);
   const statusIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const listeningSinceRef = useRef(0);
+  const duckTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     stateRef.current = state;
@@ -59,6 +73,10 @@ const useBotEngine = ({
       if (statusIntervalRef.current) {
         clearInterval(statusIntervalRef.current);
         statusIntervalRef.current = null;
+      }
+      if (duckTimeoutRef.current) {
+        clearTimeout(duckTimeoutRef.current);
+        duckTimeoutRef.current = null;
       }
       // On unmount during THINKING, the in-flight request becomes orphaned — recover to a stable state.
       const store = useBotStore.getState();
@@ -94,11 +112,19 @@ const useBotEngine = ({
       }, 2000);
 
       try {
-        const previousScriptId = useChatStore.getState().lastScriptId;
+        const chat = useChatStore.getState();
+        const previousScriptId = chat.lastScriptId;
+        // Historial reciente para dar contexto al clasificador. El último mensaje
+        // es el input actual (ya recién empujado), así que se excluye.
+        const history = chat.messages
+          .slice(0, -1)
+          .slice(-HISTORY_TURNS)
+          .map((m) => ({ role: m.role, text: m.text }));
         const response = await requestBotResponse({
           input,
           locale,
           previousScriptId,
+          history,
         });
         if (statusIntervalRef.current) {
           clearInterval(statusIntervalRef.current);
@@ -139,34 +165,40 @@ const useBotEngine = ({
     ],
   );
 
-  const handleWake = useCallback(
-    (word: string) => {
-      const current = stateRef.current;
-      const normalizedStart = startWord.toLowerCase();
-      const normalizedInterrupt = interruptWord.toLowerCase();
+  // Sets normalizados para clasificar cada wake word detectada por categoría.
+  const startWordSet = useMemo(
+    () => new Set([startWord, ...WAKE_WORDS_FALLBACK.start].map(normalize)),
+    [startWord],
+  );
+  const interruptWordSet = useMemo(
+    () =>
+      new Set([interruptWord, ...WAKE_WORDS_FALLBACK.interrupt].map(normalize)),
+    [interruptWord],
+  );
 
+  const handleWake = useCallback(
+    (words: string[]) => {
+      const current = stateRef.current;
+      const hasInterrupt = words.some((w) => interruptWordSet.has(w));
+      const hasStart = words.some((w) => startWordSet.has(w));
+
+      // La interrupción tiene prioridad mientras el bot habla o piensa, aunque el
+      // transcript también traiga la palabra de inicio (ej. "hola pregunta").
       if (
-        current === "IDLE" &&
-        (word === normalizedStart || WAKE_WORDS_FALLBACK.start.includes(word))
+        hasInterrupt &&
+        (current === "INTRO" ||
+          current === "RESPONDING" ||
+          current === "THINKING")
       ) {
-        setState("INTRO");
+        setState("LISTENING");
         return;
       }
 
-      if (
-        word === normalizedInterrupt ||
-        WAKE_WORDS_FALLBACK.interrupt.includes(word)
-      ) {
-        if (
-          current === "INTRO" ||
-          current === "RESPONDING" ||
-          current === "THINKING"
-        ) {
-          setState("LISTENING");
-        }
+      if (hasStart && current === "IDLE") {
+        setState("INTRO");
       }
     },
-    [interruptWord, setState, startWord],
+    [interruptWordSet, setState, startWordSet],
   );
 
   const allWakeWords = useMemo(
@@ -181,6 +213,43 @@ const useBotEngine = ({
 
   const wake = useWakeWord({ words: allWakeWords, onDetect: handleWake });
 
+  // Coincidencia por prefijo (consistente con la detección): "pregunta" cubre
+  // "preguntas"/"pregúntame". Se usa para recortar el preámbulo antes de la instrucción.
+  const tokenMatches = useCallback(
+    (token: string, set: Set<string>): boolean => {
+      const t = normalize(token);
+      if (!t) return false;
+      for (const w of set) {
+        if (t === w || t.startsWith(w)) return true;
+      }
+      return false;
+    },
+    [],
+  );
+
+  // Devuelve solo la instrucción: descarta el preámbulo (saludo/nombre) anterior a
+  // la primera palabra de interrupción y la corrida inicial de wake words.
+  // Ej.: "hola mi nombre es jhosua penagos pregunta por que soy asi" → "por que soy asi".
+  const extractInstruction = useCallback(
+    (tokens: string[]): string[] => {
+      let toks = tokens;
+      const firstInterrupt = toks.findIndex((t) =>
+        tokenMatches(t, interruptWordSet),
+      );
+      if (firstInterrupt >= 0) toks = toks.slice(firstInterrupt);
+      let i = 0;
+      while (
+        i < toks.length &&
+        (tokenMatches(toks[i], interruptWordSet) ||
+          tokenMatches(toks[i], startWordSet))
+      ) {
+        i += 1;
+      }
+      return toks.slice(i);
+    },
+    [interruptWordSet, startWordSet, tokenMatches],
+  );
+
   const handleSpeechResult = useCallback(
     (transcript: string, isFinal: boolean) => {
       const current = stateRef.current;
@@ -189,24 +258,88 @@ const useBotEngine = ({
         JSON.stringify(transcript),
       );
 
+      const tokens = transcript.trim().split(/\s+/).filter(Boolean);
+      const hasInterrupt = tokens.some((t) => tokenMatches(t, interruptWordSet));
+
       if (current === "LISTENING") {
         if (!isFinal) return;
-        // Ventana de gracia: descarta la cola de audio del bot al recién pasar a escuchar.
-        if (Date.now() - listeningSinceRef.current < LISTENING_GRACE_MS) return;
-        const words = transcript.trim().split(/\s+/).filter(Boolean);
-        if (words.length >= MIN_INPUT_WORDS) {
-          sendToBackend(transcript.trim());
+        // La gracia ignora la cola de audio del bot; pero si el usuario dijo una
+        // palabra de interrupción, es intencional y no debe descartarse.
+        if (
+          !hasInterrupt &&
+          Date.now() - listeningSinceRef.current < LISTENING_GRACE_MS
+        ) {
+          return;
         }
+        // En LISTENING la pregunta se envía VERBATIM: nada se recorta. Solo se ignora
+        // un transcript que sea SOLO palabra(s) de activación (residuo del "pregunta"
+        // con que se interrumpió, que a veces llega como final ya en LISTENING).
+        const onlyWake =
+          tokens.length > 0 &&
+          tokens.every(
+            (t) =>
+              tokenMatches(t, interruptWordSet) ||
+              tokenMatches(t, startWordSet),
+          );
+        if (onlyWake) return;
+        const text = transcript.trim();
+        if (text) sendToBackend(text);
         return;
       }
 
-      // Wake-word scanning runs in every other active state (IDLE, INTRO, RESPONDING, THINKING)
+      // Estados donde el bot habla/piensa: buscar wake words (transición de estado).
       wake.inspect(transcript);
+
+      // Si en la MISMA frase final venía la interrupción + la instrucción, enviarla
+      // ya (sin obligar a repetir). Ej.: "...pregunta por que soy asi" → "por que soy asi".
+      if (
+        isFinal &&
+        hasInterrupt &&
+        (current === "INTRO" ||
+          current === "RESPONDING" ||
+          current === "THINKING")
+      ) {
+        const instruction = extractInstruction(tokens);
+        if (instruction.length >= MIN_INPUT_WORDS) {
+          sendToBackend(instruction.join(" "));
+        }
+      }
     },
-    [sendToBackend, wake],
+    [
+      extractInstruction,
+      interruptWordSet,
+      sendToBackend,
+      startWordSet,
+      tokenMatches,
+      wake,
+    ],
   );
 
   const speech = useSpeechRecognition({ locale, onResult: handleSpeechResult });
+
+  // Ducking proactivo por energía de voz: en cuanto el usuario empieza a hablar
+  // mientras el bot responde, se baja casi a silencio el audio del bot (las voces
+  // dejan de cruzarse) para reconocer la interrupción al primer intento. Se
+  // restaura al callar. Funciona aunque el usuario use parlantes (sin audífonos).
+  const handleVoiceActive = useCallback(() => {
+    const s = stateRef.current;
+    if (s !== "INTRO" && s !== "RESPONDING") return;
+    videoPlayer.setActiveVolume(DUCK_VOLUME);
+    if (duckTimeoutRef.current) clearTimeout(duckTimeoutRef.current);
+    duckTimeoutRef.current = setTimeout(() => {
+      duckTimeoutRef.current = null;
+      const now = stateRef.current;
+      if (now === "INTRO" || now === "RESPONDING") {
+        videoPlayer.setActiveVolume(BASE_VIDEO_VOLUME);
+      }
+    }, DUCK_RESTORE_MS);
+  }, [videoPlayer]);
+
+  useVoiceActivity({
+    enabled:
+      state === "THINKING" || state === "INTRO" || state === "RESPONDING",
+    onActive: handleVoiceActive,
+  });
 
   const start = useCallback(() => {
     if (stateRef.current === "IDLE") {
@@ -261,6 +394,11 @@ const useBotEngine = ({
       clearInterval(statusIntervalRef.current);
       statusIntervalRef.current = null;
       setStatusKey(null);
+    }
+    // Al dejar los estados en que el bot habla, cancelar cualquier atenuación pendiente.
+    if (state !== "INTRO" && state !== "RESPONDING" && duckTimeoutRef.current) {
+      clearTimeout(duckTimeoutRef.current);
+      duckTimeoutRef.current = null;
     }
     switch (state) {
       case "IDLE": {

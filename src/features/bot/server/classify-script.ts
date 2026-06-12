@@ -3,6 +3,7 @@ import {
   scriptsById,
   type HumanikaScript,
 } from "@/src/features/bot/data/humanika-scripts.type";
+import type { ConversationTurn } from "@/src/features/bot/data/bot-content";
 
 /**
  * Clasificador de intención del avatar Humanika.
@@ -184,7 +185,11 @@ const classifyWithKeywords = (
 // Clasificador GPT (principal)
 // ---------------------------------------------------------------------------
 
-const buildPrompt = (input: string, previous: HumanikaScript | null): string => {
+const buildPrompt = (
+  input: string,
+  previous: HumanikaScript | null,
+  history: ConversationTurn[],
+): string => {
   const catalog = humanikaScripts
     .map((s) => `- ${s.id}: ${s.description}`)
     .join("\n");
@@ -192,6 +197,13 @@ const buildPrompt = (input: string, previous: HumanikaScript | null): string => 
   const context = previous
     ? `\nEl avatar acababa de mostrar el guion "${previous.id}", que terminaba ofreciendo un siguiente paso. Si el usuario responde afirmativamente (sí, claro, dale, cuéntame más, quiero una demo), normalmente corresponde CTA_MAS_INFORMACION o el siguiente tema ofrecido.\n`
     : "";
+
+  const transcript =
+    history.length > 0
+      ? `\nHISTORIAL RECIENTE (del más antiguo al más reciente):\n${history
+          .map((h) => `${h.role === "user" ? "Usuario" : "Avatar"}: ${h.text}`)
+          .join("\n")}\n\nSi el mensaje actual es un seguimiento (usa "eso", "y de...", pronombres, o se apoya en lo ya dicho), usa el historial para resolver a qué tema se refiere y elige el guion temático (A–L) u OT correspondiente.\n`
+      : "";
 
   return `Eres un clasificador de intención para el avatar conversacional de Humanika (una empresa que crea colaboradores digitales con IA).
 
@@ -208,7 +220,7 @@ REGLAS DE PRIORIDAD (en este orden):
 5. Tema completamente ajeno a Humanika / colaboradores digitales / IA → OT9_FUERA_ALCANCE.
 6. Mensaje incomprensible o ambiguo → OT10_NO_ENTENDI.
 7. En cualquier otro caso, elige el mejor guion temático (A–L).
-${context}
+${context}${transcript}
 Debes elegir SOLO un script_id del catálogo.
 ${previous ? `Contexto: guion previo = ${previous.id}.` : ""}
 Mensaje del usuario: "${input}"
@@ -222,6 +234,7 @@ Responde SOLO en JSON estricto:
 const classifyWithGpt = async (
   input: string,
   previousScriptId: string | null,
+  history: ConversationTurn[],
 ): Promise<ClassificationResult | null> => {
   const apiKey = process.env.OPENAI_API_KEY;
   const useGpt = (process.env.USE_GPT_ANALYZER ?? "true").toLowerCase() === "true";
@@ -251,7 +264,7 @@ const classifyWithGpt = async (
             content:
               "Eres un clasificador experto. Respondes siempre en JSON válido.",
           },
-          { role: "user", content: buildPrompt(input, previous) },
+          { role: "user", content: buildPrompt(input, previous, history) },
         ],
       }),
     });
@@ -293,8 +306,9 @@ const classifyWithGpt = async (
 const classifyScript = async (
   input: string,
   previousScriptId: string | null,
+  history: ConversationTurn[] = [],
 ): Promise<ClassificationResult> => {
-  const gpt = await classifyWithGpt(input, previousScriptId);
+  const gpt = await classifyWithGpt(input, previousScriptId, history);
   if (gpt && gpt.confidence > GPT_CONFIDENCE_THRESHOLD) return gpt;
   return classifyWithKeywords(input, previousScriptId);
 };

@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+// Límite de volumen base para TODOS los videos (intro, respuestas…): nunca suenan
+// al 100% para que la voz del bot no se cruce con la del usuario. El ducking por
+// voz baja aún más este valor de forma puntual.
+const BASE_VIDEO_VOLUME = 0.6;
+
 type Slot = 'A' | 'B';
 
 interface PlayOptions {
@@ -13,6 +18,8 @@ interface UseVideoPlayerResult {
   refB: React.RefObject<HTMLVideoElement | null>;
   active: Slot;
   play: (src: string, opts?: PlayOptions) => Promise<void>;
+  /** Ajusta el volumen del slot activo (0–1). Se usa para atenuar (ducking) el audio del bot al detectar voz. */
+  setActiveVolume: (volume: number) => void;
 }
 
 const useVideoPlayer = (): UseVideoPlayerResult => {
@@ -58,6 +65,7 @@ const useVideoPlayer = (): UseVideoPlayerResult => {
       if (sameSrcOnActive && opts.loop && activeEl && !activeEl.paused) {
         onEndedRef.current = opts.onEnded ?? null;
         activeEl.muted = opts.muted ?? activeEl.muted;
+        activeEl.volume = BASE_VIDEO_VOLUME;
         return;
       }
 
@@ -73,6 +81,7 @@ const useVideoPlayer = (): UseVideoPlayerResult => {
       nextEl.muted = opts.muted ?? false;
       nextEl.loop = opts.loop ?? false;
       nextEl.playsInline = true;
+      nextEl.volume = BASE_VIDEO_VOLUME;
       currentSrcRef.current = { ...currentSrcRef.current, [nextSlot]: src };
 
       try {
@@ -105,7 +114,16 @@ const useVideoPlayer = (): UseVideoPlayerResult => {
     [getRef],
   );
 
-  return { refA, refB, active, play };
+  const setActiveVolume = useCallback(
+    (volume: number) => {
+      const el = getRef(activeRef.current);
+      if (!el) return;
+      el.volume = Math.min(1, Math.max(0, volume));
+    },
+    [getRef],
+  );
+
+  return { refA, refB, active, play, setActiveVolume };
 };
 
-export { useVideoPlayer };
+export { useVideoPlayer, BASE_VIDEO_VOLUME };

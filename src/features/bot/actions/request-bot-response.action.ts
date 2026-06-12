@@ -20,11 +20,13 @@ const requestBotResponse = async ({
   input,
   locale,
   previousScriptId = null,
+  history = [],
 }: BotApiPayload): Promise<BotResponse> => {
   const { data } = await api.post<BotApiResponse>("/bot", {
     input,
     locale,
     previousScriptId,
+    history,
   });
 
   return {
