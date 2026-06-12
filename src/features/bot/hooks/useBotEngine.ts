@@ -261,19 +261,41 @@ const useBotEngine = ({
       const tokens = transcript.trim().split(/\s+/).filter(Boolean);
       const hasInterrupt = tokens.some((t) => tokenMatches(t, interruptWordSet));
 
+      // EL DISCRIMINADOR ES EL VIDEO ACTIVO (no el estado, que puede cambiar en un
+      // interim antes de que llegue el final y arruinar la decisión).
+      const activeSrc = videoPlayer.getActiveSrc() ?? "";
+      const onWaitVideo = !activeSrc || activeSrc.includes("default-wait-answer");
+
+      // (1) Reproduciendo cualquier video que NO sea el de espera (respuesta/intro):
+      // el bot está "hablando". Para tomar algo hay que decir "pregunta"; se descarta
+      // TODO lo anterior a "pregunta" y se toma lo que viene después.
+      // Se decide solo en el FINAL para no cortar la frase a mitad ni reaccionar a un
+      // interim incompleto.
+      if (!onWaitVideo) {
+        if (!isFinal || !hasInterrupt) return;
+        const instruction = extractInstruction(tokens);
+        if (instruction.length >= MIN_INPUT_WORDS) {
+          sendToBackend(instruction.join(" "));
+        } else {
+          // Dijo solo "pregunta": interrumpe y queda escuchando.
+          setState("LISTENING");
+        }
+        return;
+      }
+
+      // (2) Reproduciendo default-wait-answer.
       if (current === "LISTENING") {
         if (!isFinal) return;
-        // La gracia ignora la cola de audio del bot; pero si el usuario dijo una
-        // palabra de interrupción, es intencional y no debe descartarse.
+        // La gracia ignora la cola de audio del bot; si dijo una palabra de
+        // interrupción es intencional y no se descarta.
         if (
           !hasInterrupt &&
           Date.now() - listeningSinceRef.current < LISTENING_GRACE_MS
         ) {
           return;
         }
-        // En LISTENING la pregunta se envía VERBATIM: nada se recorta. Solo se ignora
-        // un transcript que sea SOLO palabra(s) de activación (residuo del "pregunta"
-        // con que se interrumpió, que a veces llega como final ya en LISTENING).
+        // Escucha pura → frase COMPLETA verbatim, aunque diga "pregunta". Solo se
+        // ignora si es SOLO palabra(s) de activación (residuo de la interrupción).
         const onlyWake =
           tokens.length > 0 &&
           tokens.every(
@@ -287,30 +309,18 @@ const useBotEngine = ({
         return;
       }
 
-      // Estados donde el bot habla/piensa: buscar wake words (transición de estado).
+      // (2b) Video de espera pero IDLE/THINKING: detectar "hola" (IDLE→INTRO) o una
+      // interrupción durante THINKING.
       wake.inspect(transcript);
-
-      // Si en la MISMA frase final venía la interrupción + la instrucción, enviarla
-      // ya (sin obligar a repetir). Ej.: "...pregunta por que soy asi" → "por que soy asi".
-      if (
-        isFinal &&
-        hasInterrupt &&
-        (current === "INTRO" ||
-          current === "RESPONDING" ||
-          current === "THINKING")
-      ) {
-        const instruction = extractInstruction(tokens);
-        if (instruction.length >= MIN_INPUT_WORDS) {
-          sendToBackend(instruction.join(" "));
-        }
-      }
     },
     [
       extractInstruction,
       interruptWordSet,
       sendToBackend,
+      setState,
       startWordSet,
       tokenMatches,
+      videoPlayer,
       wake,
     ],
   );
