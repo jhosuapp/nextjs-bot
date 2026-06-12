@@ -63,6 +63,10 @@ const useBotEngine = ({
   const statusIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const listeningSinceRef = useRef(0);
   const duckTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Marca que la frase en curso es una interrupción (se dijo "pregunta" mientras el
+  // bot hablaba): el corte es inmediato en un interim, pero el texto se recorta y
+  // envía en el final.
+  const interruptArmedRef = useRef(false);
 
   useEffect(() => {
     stateRef.current = state;
@@ -266,26 +270,33 @@ const useBotEngine = ({
       const activeSrc = videoPlayer.getActiveSrc() ?? "";
       const onWaitVideo = !activeSrc || activeSrc.includes("default-wait-answer");
 
-      // (1) Reproduciendo cualquier video que NO sea el de espera (respuesta/intro):
-      // el bot está "hablando". Para tomar algo hay que decir "pregunta"; se descarta
-      // TODO lo anterior a "pregunta" y se toma lo que viene después.
-      // Se decide solo en el FINAL para no cortar la frase a mitad ni reaccionar a un
-      // interim incompleto.
-      if (!onWaitVideo) {
-        if (!isFinal || !hasInterrupt) return;
+      // INTERRUPCIÓN INMEDIATA: si el bot está hablando (video ≠ espera) y se oye la
+      // palabra de interrupción, cortar YA — incluso en un interim, sin esperar al
+      // final (que tarda 1-2 s). Se "arma" el flag para recortar el texto en el final.
+      if (!onWaitVideo && hasInterrupt) {
+        interruptArmedRef.current = true;
+        if (stateRef.current !== "LISTENING") setState("LISTENING");
+      }
+
+      // Los ENVÍOS de texto se deciden solo en el resultado final.
+      if (!isFinal) return;
+
+      // Frase que vino como interrupción: descartar todo lo anterior a "pregunta" y
+      // enviar la instrucción posterior. Si solo dijo "pregunta", ya quedó escuchando.
+      if (interruptArmedRef.current) {
+        interruptArmedRef.current = false;
         const instruction = extractInstruction(tokens);
         if (instruction.length >= MIN_INPUT_WORDS) {
           sendToBackend(instruction.join(" "));
-        } else {
-          // Dijo solo "pregunta": interrumpe y queda escuchando.
-          setState("LISTENING");
         }
         return;
       }
 
-      // (2) Reproduciendo default-wait-answer.
+      // Bot hablando (video ≠ espera) pero sin "pregunta": no se interrumpe.
+      if (!onWaitVideo) return;
+
+      // Reproduciendo default-wait-answer (escucha pura).
       if (current === "LISTENING") {
-        if (!isFinal) return;
         // La gracia ignora la cola de audio del bot; si dijo una palabra de
         // interrupción es intencional y no se descarta.
         if (
@@ -294,8 +305,8 @@ const useBotEngine = ({
         ) {
           return;
         }
-        // Escucha pura → frase COMPLETA verbatim, aunque diga "pregunta". Solo se
-        // ignora si es SOLO palabra(s) de activación (residuo de la interrupción).
+        // Frase COMPLETA verbatim, aunque diga "pregunta". Solo se ignora si es SOLO
+        // palabra(s) de activación (residuo de la interrupción).
         const onlyWake =
           tokens.length > 0 &&
           tokens.every(
@@ -309,7 +320,7 @@ const useBotEngine = ({
         return;
       }
 
-      // (2b) Video de espera pero IDLE/THINKING: detectar "hola" (IDLE→INTRO) o una
+      // Video de espera pero IDLE/THINKING: detectar "hola" (IDLE→INTRO) o una
       // interrupción durante THINKING.
       wake.inspect(transcript);
     },

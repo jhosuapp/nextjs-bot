@@ -4,9 +4,10 @@ import {
   faPlay,
   faStop,
 } from '@fortawesome/free-solid-svg-icons';
-import { motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import type { JSX } from 'react';
 
+import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import type { BotState } from '@/src/features/bot/stores/bot.store';
 
@@ -51,41 +52,52 @@ const VoiceControl = ({
         ? faMicrophone
         : faStop;
   
-  if (state === 'LISTENING') {
-    return (
-      <div className={styles.root}>
-        <VoiceIndicator />
-      </div>
-    );
-  }
+  const swap = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.9 },
+    transition: { duration: DURATION.fast, ease: EASE },
+  };
 
   return (
     <div className={styles.root}>
-      <motion.button
-        type="button"
-        className={styles.button}
-        onClick={handleClick}
-        whileTap={reduce ? undefined : { scale: 0.94 }}
-        whileHover={reduce ? undefined : { scale: 1.04 }}
-        aria-label={label}
-        data-state={state}
-        data-listening={isListening}
-      >
-        <span className={styles.pulseRing} aria-hidden="true" />
-        <span className={styles.iconWrap}>
-          <FontAwesomeIcon icon={icon} className={styles.icon} aria-hidden="true" />
-        </span>
-      </motion.button>
-      {state !== 'THINKING' && (
-        <div className={'gl-dropshadow'}>
-          {state !== 'IDLE' && (
-            <p className={'gl-label'}>{label}</p>
-          )}
-          {state === 'IDLE' && (
-            <p className={'gl-label'}>{t('idle.wakeHint')}</p>
-          )}
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {state === 'LISTENING' ? (
+          <motion.div key="indicator" {...swap}>
+            <VoiceIndicator />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="control"
+            className="flex flex-col items-center gap-3"
+            {...swap}
+          >
+            <motion.button
+              type="button"
+              className={styles.button}
+              onClick={handleClick}
+              whileTap={reduce ? undefined : { scale: 0.94 }}
+              whileHover={reduce ? undefined : { scale: 1.04 }}
+              aria-label={label}
+              data-state={state}
+              data-listening={isListening}
+            >
+              <span className={styles.pulseRing} aria-hidden="true" />
+              <span className={styles.iconWrap}>
+                <FontAwesomeIcon icon={icon} className={styles.icon} aria-hidden="true" />
+              </span>
+            </motion.button>
+            {state !== 'THINKING' && (
+              <div className={'gl-dropshadow'}>
+                {state !== 'IDLE' && <p className={'gl-label'}>{label}</p>}
+                {state === 'IDLE' && (
+                  <p className={'gl-label'}>{t('idle.wakeHint')}</p>
+                )}
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

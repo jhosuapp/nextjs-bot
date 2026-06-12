@@ -1,6 +1,7 @@
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import type { JSX } from 'react';
 
+import { DURATION, EASE } from '@/src/shared/helpers/motion-variants';
 import type { ITranslations } from '@/src/shared/interfaces/i18n.interface';
 import { ErrorScreen } from '@/src/features/bot/components/error-screen/ErrorScreen';
 import { InactivityWarning } from '@/src/features/bot/components/inactivity-warning/InactivityWarning';
@@ -50,17 +51,33 @@ const BotStage = ({
       />
 
       <div className={styles.toastSlot}>
-        {engine.state === 'THINKING' && (
-          <div className={`${styles.listening} gl-dropshadow !px-3`}>
-            <BotSpinner />
-          </div>
-        )}
-        {engine.state === 'LISTENING' && (
-          <div className={`${styles.listening} gl-dropshadow`}>
-            <span className='gl-dot'></span>
-            <p className={'gl-label'}>{t('listening.instruction')}</p>
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {engine.state === 'THINKING' && (
+            <motion.div
+              key="thinking"
+              className={`${styles.listening} gl-dropshadow !px-3`}
+              initial={{ opacity: 0, y: -10, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.96 }}
+              transition={{ duration: DURATION.fast, ease: EASE }}
+            >
+              <BotSpinner />
+            </motion.div>
+          )}
+          {engine.state === 'LISTENING' && (
+            <motion.div
+              key="listening"
+              className={`${styles.listening} gl-dropshadow`}
+              initial={{ opacity: 0, y: -10, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.96 }}
+              transition={{ duration: DURATION.fast, ease: EASE }}
+            >
+              <span className='gl-dot'></span>
+              <p className={'gl-label'}>{t('listening.instruction')}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <InactivityWarning
           t={t}
           visible={inactivityWarning}
